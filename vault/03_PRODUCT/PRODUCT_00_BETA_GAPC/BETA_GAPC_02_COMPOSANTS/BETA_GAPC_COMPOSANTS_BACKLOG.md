@@ -2,10 +2,10 @@
 id: BETA_GAPC_COMPOSANTS_00_BACKLOG
 type: BACKLOG_CO
 title: Backlog CO — Bootstrap Git + Qualité
-version: v1.0
+version: v1.1
 status: READY_TO_FREEZE
 created: 05-03-2026
-updated: 05-03-2026
+updated: 06-03-2026
 tags: [beta, backlog, git, vscode, validator, smoke, hooks, dod, gapc]
 depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT]
 arc: PRODUCT
@@ -16,7 +16,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC
 
 Contexte :
 - Vault `vault/` : **FROZEN**, Gate PASS = OK (structure/doc prête).
-- Environnement Git : **non créé**, aucun commit.
+- Environnement Git : **créé**, remote connecté, hooks/gates P0 opérationnels.
 - Objectif : rendre l’exécution **product-ready** pour Beta v1.0 : repo Git + bootstrap VS Code + **Validator + Hook + Smoke Runner** (P0), puis dépannage + DoD merge (P1), puis options hors pipeline (P2).
 
 Références SYSTEM (procédures opérateur) :
@@ -28,6 +28,11 @@ Références SYSTEM (procédures opérateur) :
 Règles d’exécution :
 - 1 CO = 1 intention = 1 résultat vérifiable.
 - P0 d’abord. Pas de scope creep.
+
+État d’exécution (06-03-2026) :
+- P0.1 → P0.8 : **DONE**
+- P1.1 → P1.3 : **TODO**
+- P2.1 → P2.3 : **TODO**
 
 ---
 
@@ -47,9 +52,9 @@ Règles d’exécution :
 - Vérifier `git status` depuis `repo/`
 
 **AC (Acceptance Criteria)**
-- [ ] `git status` fonctionne dans VS Code Terminal ouvert sur `repo/`
-- [ ] `git branch --show-current` retourne `main`
-- [ ] `REPO_ROOT.md` visible et versionnable
+- [x] `git status` fonctionne dans VS Code Terminal ouvert sur `repo/`
+- [x] `git branch --show-current` retourne `main`
+- [x] `REPO_ROOT.md` visible et versionnable
 
 **Estimation** : 0.5–1.0 h
 
@@ -62,9 +67,9 @@ Règles d’exécution :
 - `.gitignore` incluant `.env`, `*.key`, `*.pem`, etc.
 
 **AC**
-- [ ] `git config --list` affiche `user.name` et `user.email`
-- [ ] `.env` n’apparaît pas dans `git status` même s’il existe localement
-- [ ] Procédure “remove cached secret” documentée (si besoin)
+- [x] `git config --list` affiche `user.name` et `user.email`
+- [x] `.env` n’apparaît pas dans `git status` même s’il existe localement
+- [x] Procédure “remove cached secret” documentée (si besoin)
 
 **Estimation** : 0.5–1.0 h
 
@@ -77,9 +82,9 @@ Règles d’exécution :
 - `main` poussé sur le remote
 
 **AC**
-- [ ] `git remote -v` OK
-- [ ] `git push -u origin main` OK
-- [ ] historique contient 1 commit bootstrap propre (ex: `chore(repo): bootstrap framework`)
+- [x] `git remote -v` OK
+- [x] `git push -u origin main` OK
+- [x] historique contient 1 commit bootstrap propre (ex: `chore(repo): bootstrap framework`)
 
 **Estimation** : 0.5–1.5 h (inclut aléas auth)
 
@@ -92,9 +97,9 @@ Règles d’exécution :
 - doc “ouvrir repo/ dans VS Code ; vault/ dans Obsidian” rappelée
 
 **AC**
-- [ ] VS Code ouvre `repo/` et détecte Git
-- [ ] YAML validate actif (frontmatter)
-- [ ] pas de format-on-save destructeur par défaut
+- [x] VS Code ouvre `repo/` et détecte Git
+- [x] YAML validate actif (frontmatter)
+- [x] pas de format-on-save destructeur par défaut
 
 **Estimation** : 0.5–1.0 h
 
@@ -107,9 +112,9 @@ Règles d’exécution :
 - commande unique de validation (ex: `python scripts/ValidateFrontmatter.py`)
 
 **AC**
-- [ ] lancer le validator retourne succès sur l’état actuel (Vault FROZEN)
-- [ ] en cas d’erreur volontaire introduite, le validator la détecte
-- [ ] output lisible (fichier + ligne / message utile)
+- [x] lancer le validator retourne succès sur l’état actuel (Vault FROZEN)
+- [x] en cas d’erreur volontaire introduite, le validator la détecte
+- [x] output lisible (fichier + ligne / message utile)
 
 **Estimation** : 1.0–2.5 h (selon existence du script)
 
@@ -122,8 +127,8 @@ Règles d’exécution :
 - commande unique (ex: `python scripts/SmokeRunner.py`)
 
 **AC**
-- [ ] smoke passe sur l’état actuel
-- [ ] smoke détecte au moins 1 failure contrôlée (test volontaire) **ou** justification “non applicable en Beta v1.0” écrite
+- [x] smoke passe sur l’état actuel
+- [x] smoke détecte au moins 1 failure contrôlée (test volontaire) **ou** justification “non applicable en Beta v1.0” écrite
 
 **Estimation** : 1.0–2.5 h (selon existence du script)
 
@@ -141,9 +146,9 @@ Règles d’exécution :
   - si scripts absents → message clair + policy (bloquant ou non) documentée
 
 **AC**
-- [ ] un push est refusé si validator (ou smoke) échoue, selon règles ci-dessus
-- [ ] le hook n’exécute pas de secrets, ne log pas de secrets
-- [ ] le hook est reproductible sur une nouvelle machine (documenté)
+- [x] un push est refusé si validator (ou smoke) échoue, selon règles ci-dessus
+- [x] le hook n’exécute pas de secrets, ne log pas de secrets
+- [x] le hook est reproductible sur une nouvelle machine (documenté)
 
 **Estimation** : 1.0–2.0 h
 
@@ -157,9 +162,9 @@ Règles d’exécution :
 - push OK
 
 **AC**
-- [ ] `git diff` relu, `git add -p` utilisé au moins une fois
-- [ ] validator/smoke exécutés (via hook ou manuel) et PASS
-- [ ] push de `work/bootstrap-test` OK
+- [x] `git diff` relu, `git add -p` utilisé au moins une fois
+- [x] validator/smoke exécutés (via hook ou manuel) et PASS
+- [x] push de `work/bootstrap-test` OK
 
 **Estimation** : 0.5–1.0 h
 
@@ -253,4 +258,5 @@ Règles d’exécution :
 - Ce backlog est READY_TO_FREEZE : toute modification via patch ciblé + version bump.
 
 ## Changelog
+- v1.1 (06-03-2026) : backlog d’exécution généré, P0.1→P0.8 marqués DONE, contexte et date mis à jour.
 - v1.0 (05-03-2026) : création backlog CO bootstrap Git/VS Code + gates validator/smoke/hooks pour Beta v1.0.
