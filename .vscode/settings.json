@@ -1,0 +1,8 @@
+{
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": false,
+  "editor.wordWrap": "on",
+  "editor.rulers": [100],
+  "yaml.validate": true
+}

@@ -1,0 +1,12 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "GAPC : Validate Vault",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/ValidateFrontmatter.py",
+      "problemMatcher": [],
+      "group": "test"
+    }
+  ]
+}
