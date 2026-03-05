@@ -1,0 +1,94 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ZERO_SHA="0000000000000000000000000000000000000000"
+RUN_VALIDATOR=0
+RUN_SMOKE=0
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+collect_paths_from_commit() {
+  local commit="$1"
+  git diff-tree --root --no-commit-id --name-only -r "$commit"
+}
+
+process_commit_paths() {
+  local commit="$1"
+  while IFS= read -r path; do
+    [ -z "$path" ] && continue
+    case "$path" in
+      vault/*)
+        RUN_VALIDATOR=1
+        ;;
+    esac
+    case "$path" in
+      scripts/*|.vscode/*)
+        RUN_SMOKE=1
+        ;;
+    esac
+  done < <(collect_paths_from_commit "$commit")
+}
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+  [ -z "${local_ref:-}" ] && continue
+
+  # Branch/tag deletion push: no checks needed.
+  if [ "$local_sha" = "$ZERO_SHA" ]; then
+    continue
+  fi
+
+  if [ "$remote_sha" = "$ZERO_SHA" ]; then
+    # New remote ref: inspect commits not yet reachable from known refs.
+    found=0
+    while IFS= read -r commit; do
+      [ -z "$commit" ] && continue
+      found=1
+      process_commit_paths "$commit"
+    done < <(git rev-list "$local_sha" --not --all)
+    if [ "$found" -eq 0 ]; then
+      process_commit_paths "$local_sha"
+    fi
+  else
+    while IFS= read -r commit; do
+      [ -z "$commit" ] && continue
+      process_commit_paths "$commit"
+    done < <(git rev-list "${remote_sha}..${local_sha}")
+  fi
+done
+
+if [ "$RUN_VALIDATOR" -eq 0 ] && [ "$RUN_SMOKE" -eq 0 ]; then
+  echo "pre-push: no gated paths changed, checks skipped"
+  exit 0
+fi
+
+run_script_or_fail() {
+  local script_path="$1"
+  local label="$2"
+
+  if [ -x "$script_path" ]; then
+    "$script_path"
+    return
+  fi
+
+  if [ -f "$script_path" ] && command -v python3 >/dev/null 2>&1; then
+    python3 "$script_path"
+    return
+  fi
+
+  echo "pre-push: KO ${label} script missing or not executable: ${script_path}"
+  echo "pre-push: policy=blocking"
+  exit 1
+}
+
+if [ "$RUN_VALIDATOR" -eq 1 ]; then
+  echo "pre-push: running validator (vault/** changed)"
+  run_script_or_fail "./scripts/ValidateFrontmatter.py" "validator"
+fi
+
+if [ "$RUN_SMOKE" -eq 1 ]; then
+  echo "pre-push: running smoke (scripts/** or .vscode/** changed)"
+  run_script_or_fail "./scripts/SmokeRunner.py" "smoke"
+fi
+
+echo "pre-push: all required checks passed"
