@@ -1,0 +1,22 @@
+# OS
+.DS_Store
+
+# Env and secrets
+.env
+.env.*
+*.key
+*.pem
+*.p12
+*.pfx
+*.crt
+*.cer
+*.jks
+id_rsa
+id_ed25519
+
+# Local editor/workspace artifacts
+.vscode/*.code-workspace
+
+# Python cache
+__pycache__/
+*.py[cod]

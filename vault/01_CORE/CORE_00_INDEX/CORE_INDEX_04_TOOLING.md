@@ -1,0 +1,79 @@
+---
+id: CORE_INDEX_04_TOOLING
+type: INDEX
+title: CoreToolingIndex
+version: v1.1
+status: FROZEN
+created: 05-03-2026
+updated: 05-03-2026
+tags: [core, tooling, index]
+depends_on: []
+arc: CORE
+scope: vault/01_CORE/CORE_00_INDEX
+---
+
+# CORE_INDEX_04 - Tooling
+
+## Objet
+
+Index des **outils génériques du framework GAPC**.
+
+Ces outils permettent :
+- production
+- validation
+- automatisation
+- normalisation des livrables.
+
+---
+
+## Familles
+
+### KNOWLEDGE
+
+[[KNOWLEDGE_00_INDEX]]
+
+Listes de référence : plateformes, outils, stacks, datasets.
+
+---
+
+### CHECKLIST
+
+Checklists pour : session, revue, gel, incident.
+
+Documents :
+
+[[CHECKLIST_00_INDEX]]  
+[[CHECKLIST_01_START_SESSION]]  
+[[CHECKLIST_02_END_SESSION]]  
+[[CHECKLIST_03_READY_TO_FREEZE]]  
+[[CHECKLIST_04_FROZEN_AMENDMENT]]  
+[[CHECKLIST_05_INCIDENT]]  
+[[CHECKLIST_06_DOC_REVIEW]]  
+[[CHECKLIST_07_CODE_REVIEW]]  
+[[CHECKLIST_08_RAG_SESSION]]  
+[[CHECKLIST_09_OPTIMIZATION]]  
+[[CHECKLIST_10_RELEASE_NOTE]]
+
+---
+
+### EXTENSION
+
+Protocoles d’intégration d’outils externes.
+
+[[EXTENSION_00_INDEX]]  
+[[EXTENSION_01_BOLT_NEW_PROTOCOL]]  
+[[EXTENSION_02_MIDJOURNEY_PROTOCOL]]  
+[[EXTENSION_03_KLING_AI_PROTOCOL]]  
+[[EXTENSION_04_EVIDENCE_PACK]]  
+[[EXTENSION_05_ASSET_NAMING_POLICY]]  
+[[EXTENSION_06_COST_LIMITS]]  
+[[EXTENSION_07_RIGHTS_AND_ATTRIBUTION]]
+
+---
+
+## Amendements (FROZEN)
+Modifications uniquement via patch ciblé + validation + version bump.
+
+## Changelog
+- v1.1 (05-03-2026) : passage en FROZEN.
+- v1.0 (05-03-2026) : création index TOOLING du CORE.
