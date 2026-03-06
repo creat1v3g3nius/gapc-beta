@@ -2,7 +2,7 @@
 id: BETA_GAPC_COMPOSANTS_00_BACKLOG
 type: BACKLOG_CO
 title: Backlog CO — Bootstrap Git + Qualité
-version: v1.6
+version: v1.7
 status: READY_TO_FREEZE
 created: 05-03-2026
 updated: 06-03-2026
@@ -36,7 +36,8 @@ Règles d’exécution :
 - P1.3 : **DONE**
 - Gate P1 : **PASS**
 - P2.1 : **DONE**
-- P2.2 → P2.3 : **TODO**
+- P2.2 : **DONE**
+- P2.3 : **TODO**
 
 ---
 
@@ -233,8 +234,8 @@ Règles d’exécution :
 ### CO_P2_002 — Tags jalons freeze (optionnel)
 **But** : états reproductibles (release markers).
 **AC**
-- [ ] tag `v1.0` (ou `v1.0-beta`) annoté créé sur `main`
-- [ ] push tag OK
+- [x] tag `v1.0` (ou `v1.0-beta`) annoté créé sur `main`
+- [x] push tag OK
 
 **Estimation** : 0.25–0.5 h
 
@@ -262,6 +263,7 @@ Règles d’exécution :
 - Ce backlog est READY_TO_FREEZE : toute modification via patch ciblé + version bump.
 
 ## Changelog
+- v1.7 (06-03-2026) : P2_002 exécuté, tag annoté `v1.0-beta` créé sur `main` et poussé sur `origin`.
 - v1.6 (06-03-2026) : P2_001 exécuté, matrice extensions VS Code (recommandées/optionnelles) ajoutée.
 - v1.5 (06-03-2026) : statut explicite “Gate P1 PASS” ajouté dans l’état d’exécution.
 - v1.4 (06-03-2026) : P1_003 exécuté, tasks VS Code alignées sur les commandes hook validator/smoke.
