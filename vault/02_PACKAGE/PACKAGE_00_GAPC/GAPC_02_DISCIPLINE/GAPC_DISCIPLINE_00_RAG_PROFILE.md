@@ -91,7 +91,7 @@ Corpus attendu :
 - Préférer des réponses qui renvoient vers :
   - `GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER` pour classer,
   - `GAPC_DISCIPLINE_04_RISK_REGISTER` pour risques/signaux,
-  - `GAPC_DISCIPLINE_01_GELRULES` pour gel,
+  - `GAPC_DISCIPLINE_01_GEL_RULES` pour gel,
   - plutôt que d’inventer des “règles implicites”.
 
 ---

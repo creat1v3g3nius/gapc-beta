@@ -107,7 +107,7 @@ Le mentor doit **stopper** et demander clarification / isolation si :
 - la liste de fichiers à toucher dépasse 5 (risque scope creep),
 - la demande pousse à inventer (pas de sources).
 
-Fichier référence : `CONSTRAINT_00_GUARDRAILS.md`
+Fichier référence : `CONSTRAINT_00_GUARD_RAILS.md`
 
 ---
 

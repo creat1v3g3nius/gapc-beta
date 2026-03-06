@@ -1,22 +1,29 @@
 ---
 id: BETA_GAPC_DOD_05_OPTIMIZATION
 type: DOD
-title: GapcBetaOptimization
-version: v1.0
+title: GapcBetaOptimizationReference
+version: v1.1
 status: READY_TO_FREEZE
 created: 01-03-2026
-updated: 01-03-2026
-tags: [product, gapcbeta, dod, optimization, p2]
-depends_on: [PIPELINE_00_PRODUCT, PIPELINE_05_RELEASE_FREEZE, DISCIPLINE_03_DOCQG, DISCIPLINE_04_CODEQG, DISCIPLINE_02_RAGQG, DISCIPLINE_01_GELRULES, CONSTRAINT_00_GUARDRAILS, CONSTRAINT_03_SECRETSPOLICY, CONSTRAINT_01_RAGSCOPEPOLICY, TPL_00_PRDONEPAGER, TPL_01_SPECTECH, TPL_02_ADRLITE, TPL_03_BACKLOGCO, TPL_04_TESTPLANSMOKE, TPL_05_ACTIONDOC, TPL_06_ACTIONCODE, TPL_09_REVIEWCHECK, TPL_10_RELEASENOTE, PIPELINE_04_OPTIMIZATION_PROTOCOL]
+updated: 06-03-2026
+tags: [product, gapcbeta, dod, optimization, reference]
+depends_on: [BETA_GAPC_DOD_05_OPTIMIZATION_PROCESS, META_06_REFERENCE_EXISTING_FILES]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 05 Optimization (P2 minimal) — v1.0
+# BETA_GAPC_DOD_05_OPTIMIZATION
 
-- Autorisé uniquement si signal mesurable.
-- Scope limité (pas de refactor massif).
-- PASS/FAIL + backout obligatoires.
+Ce fichier est conserve pour compatibilite de navigation.
+Le contenu operationnel n'est plus maintenu ici pour eviter la duplication.
+
+Reference canonique:
+- `BETA_GAPC_DOD_05_OPTIMIZATION_PROCESS`
+- `vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_01_DOD/BETA_GAPC_DOD_05_OPTIMIZATION_PROCESS.md`
+
+Decision locale:
+- appliquer le processus d'optimisation uniquement depuis la source canonique ci-dessus.
 
 ## Changelog
+- v1.1 (06-03-2026) : remplacement du contenu duplique par une reference canonique (META_06).
 - v1.0 (01-03-2026) : DoD optimisation minimal.

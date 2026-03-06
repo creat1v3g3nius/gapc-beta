@@ -84,7 +84,7 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 ## 5) Phase E — Gel / Release
 **Output** : état READY_TO_FREEZE puis FROZEN
 
-- Déclarer READY_TO_FREEZE via `DISCIPLINE_01_GELRULES`.
+- Déclarer READY_TO_FREEZE via `DISCIPLINE_01_GEL_RULES`.
 - Produire Release Note via `TPL_10_RELEASENOTE` si gel/release.
 - Passer FROZEN si critères de gel satisfaits (amendements contrôlés, reproductibilité, zéro P0 ouvert).
 

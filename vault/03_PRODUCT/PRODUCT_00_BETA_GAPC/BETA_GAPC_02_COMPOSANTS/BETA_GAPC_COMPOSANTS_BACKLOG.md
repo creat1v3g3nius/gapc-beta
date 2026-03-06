@@ -250,6 +250,8 @@ Règles d’exécution :
 
 **Estimation** : 0.5–1.0 h
 
+## CO_P2_004 - Normalisation de l’architecture documentaire du vault
+
 ---
 
 ## Résumé effort (ordre de grandeur)

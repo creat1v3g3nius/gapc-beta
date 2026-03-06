@@ -7,7 +7,7 @@ status: READY_TO_FREEZE
 created: 05-03-2026
 updated: 05-03-2026
 tags: [codex, vscode, agent, git, bootstrap, validator, smoke, hooks, gapc]
-depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT, BETA_GAPC_COMPOSANTS_00_BACKLOG]
+depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT, BETA_GAPC_COMPOSANTS_BACKLOG]
 arc: SYSTEM
 scope: vault/00_SYSTEM
 ---

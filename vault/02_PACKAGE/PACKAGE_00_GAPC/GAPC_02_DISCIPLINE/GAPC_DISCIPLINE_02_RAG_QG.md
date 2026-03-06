@@ -42,7 +42,7 @@ PASS si :
 Quand une question touche :
 - **priorisation** → le mentor renvoie à `GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER`,
 - **risques** → renvoie à `GAPC_DISCIPLINE_04_RISK_REGISTER`,
-- **gel** → renvoie à `GAPC_DISCIPLINE_01_GELRULES`.
+- **gel** → renvoie à `GAPC_DISCIPLINE_01_GEL_RULES`.
 
 ### 2.3 Anti-derives (P0)
 - Si > 3 items proposés : le mentor propose un Backlog CO (CO atomiques) plutôt qu’une liste vague.

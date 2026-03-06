@@ -7,7 +7,7 @@ status: FROZEN
 created: 01-03-2026
 updated: 04-03-2026
 tags: [package, gapc, constraint, allowlist, p1, no-secrets]
-depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_03_SECRETS_POLICY, GAPC_TOOLING_EXTENSION_01_ALLOW_LIST, GAPC_TOOLING_KNOWLEDGE_01_ALLOWED_TOOLS]
+depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_03_SECRETS_POLICY, GAPC_TOOLING_EXTENSION_00_ALLOW_LIST, GAPC_TOOLING_KNOWLEDGE_00_ALLOWED_TOOLS]
 arc: PACKAGE
 scope: vault/02_PACKAGE/PACKAGE_00_GAPC/GAPC_03_CONSTRAINT
 ---
@@ -23,7 +23,7 @@ But : réduire le bruit et éviter les usages non gouvernés.
 ## 1) Autorisés (par défaut)
 - Outils de dev : VS Code, Git CLI, Cursor (diff-first)
 - Mentor/RAG : AnythingLLM en workspace scoped (read-only)
-- Extensions : uniquement celles présentes dans CORE/EXTENSION et autorisées par `GAPC_TOOLING_EXTENSION_01_ALLOW_LIST`
+- Extensions : uniquement celles présentes dans CORE/EXTENSION et autorisées par `GAPC_TOOLING_EXTENSION_00_ALLOW_LIST`
 
 ## 2) Interdits (par défaut) — P0
 - auto-commit / auto-push
