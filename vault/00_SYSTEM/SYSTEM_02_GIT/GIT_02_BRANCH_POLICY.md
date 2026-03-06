@@ -2,10 +2,10 @@
 id: GIT_02_BRANCH_POLICY
 type: GIT
 title: BranchPolicy
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 06-03-2026
 tags: [boostrap, branch-policy, git, system]
 depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL]
 arc: SYSTEM
@@ -122,6 +122,18 @@ git branch -d work/<topic>
 git push origin --delete work/<topic>
 ```
 
+### 3.4) Règle PR GitHub (même solo)
+Objectif : conserver une trace de revue et une porte d’entrée scalable équipe.
+
+Règle :
+- toute branche `work/*` destinée à `main` passe par une PR GitHub (même en solo)
+- stratégie de merge : **Squash and merge**
+- titre PR aligné sur le commit squash final (1 intention)
+- checklist obligatoire : validator, smoke (si applicable), no-secrets, diff relu
+
+Template :
+- utiliser `.github/pull_request_template.md` comme trame standard
+
 ---
 
 ## 4) Hotfix (exception)
@@ -199,5 +211,6 @@ Un merge vers `main` est acceptable si :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (06-03-2026) : ajout règle PR GitHub même solo + référence template `.github/pull_request_template.md`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.
