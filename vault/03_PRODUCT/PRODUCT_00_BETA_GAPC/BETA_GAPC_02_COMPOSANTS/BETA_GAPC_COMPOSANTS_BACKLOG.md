@@ -2,7 +2,7 @@
 id: BETA_GAPC_COMPOSANTS_00_BACKLOG
 type: BACKLOG_CO
 title: Backlog CO — Bootstrap Git + Qualité
-version: v1.1
+version: v1.2
 status: READY_TO_FREEZE
 created: 05-03-2026
 updated: 06-03-2026
@@ -31,7 +31,8 @@ Règles d’exécution :
 
 État d’exécution (06-03-2026) :
 - P0.1 → P0.8 : **DONE**
-- P1.1 → P1.3 : **TODO**
+- P1.1 : **DONE**
+- P1.2 → P1.3 : **TODO**
 - P2.1 → P2.3 : **TODO**
 
 ---
@@ -177,8 +178,8 @@ Règles d’exécution :
 **Sorties** : une checklist P1 consolidée (référence `GIT_01` + `GIT_02`).
 
 **AC**
-- [ ] chaque scénario a : symptôme → cause probable → fix safe (commandes)
-- [ ] inclut “STOP conditions” (ne pas improviser)
+- [x] chaque scénario a : symptôme → cause probable → fix safe (commandes)
+- [x] inclut “STOP conditions” (ne pas improviser)
 
 **Estimation** : 0.5–1.0 h
 
@@ -258,5 +259,6 @@ Règles d’exécution :
 - Ce backlog est READY_TO_FREEZE : toute modification via patch ciblé + version bump.
 
 ## Changelog
+- v1.2 (06-03-2026) : P1_001 lancé, checklist dépannage top 6 produite et AC P1_001 cochés.
 - v1.1 (06-03-2026) : backlog d’exécution généré, P0.1→P0.8 marqués DONE, contexte et date mis à jour.
 - v1.0 (05-03-2026) : création backlog CO bootstrap Git/VS Code + gates validator/smoke/hooks pour Beta v1.0.
