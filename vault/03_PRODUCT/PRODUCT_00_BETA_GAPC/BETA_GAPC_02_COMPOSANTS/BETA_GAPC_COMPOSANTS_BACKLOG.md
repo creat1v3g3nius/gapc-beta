@@ -2,7 +2,7 @@
 id: BETA_GAPC_COMPOSANTS_00_BACKLOG
 type: BACKLOG_CO
 title: Backlog CO — Bootstrap Git + Qualité
-version: v1.8
+version: v1.9
 status: READY_TO_FREEZE
 created: 05-03-2026
 updated: 06-03-2026
@@ -38,6 +38,7 @@ Règles d’exécution :
 - P2.1 : **DONE**
 - P2.2 : **DONE**
 - P2.3 : **DONE**
+- Gate P2 : **PASS**
 
 ---
 
@@ -263,6 +264,7 @@ Règles d’exécution :
 - Ce backlog est READY_TO_FREEZE : toute modification via patch ciblé + version bump.
 
 ## Changelog
+- v1.9 (06-03-2026) : état d’exécution consolidé avec `Gate P2 : PASS` (P2.1→P2.3 DONE).
 - v1.8 (06-03-2026) : P2_003 exécuté, règle PR même solo documentée et template PR GitHub ajouté.
 - v1.7 (06-03-2026) : P2_002 exécuté, tag annoté `v1.0-beta` créé sur `main` et poussé sur `origin`.
 - v1.6 (06-03-2026) : P2_001 exécuté, matrice extensions VS Code (recommandées/optionnelles) ajoutée.
