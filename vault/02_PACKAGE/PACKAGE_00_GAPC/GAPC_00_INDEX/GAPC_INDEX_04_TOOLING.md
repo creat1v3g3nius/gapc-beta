@@ -2,10 +2,10 @@
 id: GAPC_INDEX_04_TOOLING
 type: INDEX
 title: GAPCPackageToolingIndex
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 06-03-2026
 tags: [gapc, package, tooling, index]
 depends_on: []
 arc: PACKAGE
@@ -51,7 +51,7 @@ Checklists opérationnelles pour cadrer la session et la qualité.
 Extensions / add-ons de protocole (intégrations et exigences).
 
 [[GAPC_TOOLING_EXTENSION_00_ALLOW_LIST]] : extension de l’allowlist (cas métier / toolchain).
-[[GAPC_TOOLING_EXTENSION_01_EVIDENCE_REQUIREMENTS]] : exigences d’évidence (preuves minimales) pour validation.
+[[GAPC_TOOLING_EXTENSION_02_EVIDENCE_REQUIREMENTS]] : exigences d’évidence (preuves minimales) pour validation.
 
 ---
 
@@ -59,6 +59,7 @@ Extensions / add-ons de protocole (intégrations et exigences).
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.4 (06-03-2026) : lien extension evidence aligné vers `GAPC_TOOLING_EXTENSION_02_EVIDENCE_REQUIREMENTS`.
 - v1.3 (05-03-2026) : passage en FROZEN.
 - v1.2 (05-03-2026) : ajout descriptions + chemins complets par famille.
 - v1.1 (05-03-2026) : ajout des chemins complets par famille (tooling).

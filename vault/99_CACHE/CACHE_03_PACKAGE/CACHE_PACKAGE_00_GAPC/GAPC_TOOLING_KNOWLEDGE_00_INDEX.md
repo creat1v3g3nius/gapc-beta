@@ -8,7 +8,7 @@ created: 01-03-2026
 updated: 04-03-2026
 tags: [package, gapc, tooling, knowledge, index, p1]
 depends_on: [KNOWLEDGE_00_INDEX, GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES]
-arc: PACKAGE
+arc: CACHE
 scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_00_GAPC/
 ---
 

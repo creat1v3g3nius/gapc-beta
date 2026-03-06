@@ -8,7 +8,7 @@ created: 01-03-2026
 updated: 04-03-2026
 tags: [package, asso, tooling, knowledge, index, p0]
 depends_on: [ASSO_KNOWLEDGE_01_GLOSSARY]
-arc: PACKAGE
+arc: CACHE
 scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 ---
 

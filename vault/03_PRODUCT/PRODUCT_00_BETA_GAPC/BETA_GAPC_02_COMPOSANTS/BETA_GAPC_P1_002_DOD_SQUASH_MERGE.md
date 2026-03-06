@@ -7,7 +7,7 @@ status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
 tags: [beta, p1, dod, merge, squash, git]
-depends_on: [GIT_02_BRANCH_POLICY, BETA_GAPC_COMPOSANTS_00_BACKLOG]
+depends_on: [GIT_02_BRANCH_POLICY, BETA_GAPC_COMPOSANTS_BACKLOG]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_02_COMPOSANTS
 ---

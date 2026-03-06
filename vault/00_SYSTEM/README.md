@@ -1,7 +1,7 @@
 ---
 id: README
 type: SYSTEM
-title: README_00_SYSTEM
+title: Readme00System
 version: v1.2
 status: FROZEN
 created: 02-03-2026

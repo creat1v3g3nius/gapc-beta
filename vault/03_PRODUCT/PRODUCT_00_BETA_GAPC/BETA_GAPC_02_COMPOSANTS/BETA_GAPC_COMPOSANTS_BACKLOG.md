@@ -1,8 +1,8 @@
 ---
-id: BETA_GAPC_COMPOSANTS_00_BACKLOG
+id: BETA_GAPC_COMPOSANTS_BACKLOG
 type: BACKLOG_CO
-title: Backlog CO — Bootstrap Git + Qualité
-version: v1.9
+title: GapcBetaComposantsBacklog
+version: v2.0
 status: READY_TO_FREEZE
 created: 05-03-2026
 updated: 06-03-2026
@@ -12,7 +12,7 @@ arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC
 ---
 
-# BETA_GAPC_COMPOSANTS_00_BACKLOG
+# BETA_GAPC_COMPOSANTS_BACKLOG
 
 Contexte :
 - Vault `vault/` : **FROZEN**, Gate PASS = OK (structure/doc prête).
@@ -264,6 +264,7 @@ Règles d’exécution :
 - Ce backlog est READY_TO_FREEZE : toute modification via patch ciblé + version bump.
 
 ## Changelog
+- v2.0 (06-03-2026) : alignement strict DocQG (`id==filename`, `title` UpperCamelCase) pour le backlog composants.
 - v1.9 (06-03-2026) : état d’exécution consolidé avec `Gate P2 : PASS` (P2.1→P2.3 DONE).
 - v1.8 (06-03-2026) : P2_003 exécuté, règle PR même solo documentée et template PR GitHub ajouté.
 - v1.7 (06-03-2026) : P2_002 exécuté, tag annoté `v1.0-beta` créé sur `main` et poussé sur `origin`.

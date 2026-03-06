@@ -1,18 +1,18 @@
 ---
-id: GAPC_TOOLING_EXTENSION_01_EVIDENCE_REQUIREMENTS
+id: GAPC_TOOLING_EXTENSION_02_EVIDENCE_REQUIREMENTS
 type: TOOLING
 title: GapcEvidenceRequirements
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 06-03-2026
 tags: [package, gapc, tooling, extension, evidence, p1]
 depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_03_SECRETS_POLICY, CONSTRAINT_02_NON_DUPLICATION_POLICY, DISCIPLINE_06_SCOPE_CLASSIFIER, GAPC_DISCIPLINE_04_RISK_REGISTER, GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER, GAPC_DISCIPLINE_01_GEL_RULES, META_01_OUTPUT_PROTOCOL, META_02_SOP_STANDARD_LOOP, EXTENSION_04_EVIDENCE_PACK, GAPC_TPL_02_BETA_EVIDENCE_PACK]
 arc: PACKAGE
 scope: vault/02_PACKAGE/PACKAGE_00_GAPC/GAPC_04_TOOLING/GAPC_TOOLING_04_EXTENSION
 ---
 
-# GAPC_TOOLING_EXTENSION_01 - Evidence Requirements
+# GAPC_TOOLING_EXTENSION_02 - Evidence Requirements
 
 ## Objet
 Renforcer les exigences de preuve quand une extension est utilisée dans une production GAPC.
@@ -35,6 +35,7 @@ Renforcer les exigences de preuve quand une extension est utilisée dans une pro
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (06-03-2026) : alignement `id==filename` et heading.
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/depends_on.
 - v1.0 : READY_TO_FREEZE.

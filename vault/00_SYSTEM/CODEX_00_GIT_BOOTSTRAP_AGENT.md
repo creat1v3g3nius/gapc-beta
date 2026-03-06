@@ -1,7 +1,7 @@
 ---
 id: CODEX_00_GIT_BOOTSTRAP_AGENT
 type: SYSTEM_PROMPT_GUIDE
-title: Codex — Agent IDE VS Code — Bootstrap Repo Git + Gates (GAPC Beta v1.0)
+title: CodexGitBootstrapAgent
 version: v1.0
 status: READY_TO_FREEZE
 created: 05-03-2026
@@ -9,7 +9,7 @@ updated: 05-03-2026
 tags: [codex, vscode, agent, git, bootstrap, validator, smoke, hooks, gapc]
 depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT, BETA_GAPC_COMPOSANTS_00_BACKLOG]
 arc: SYSTEM
-scope: repo/ (à placer à la racine du repo Git)
+scope: vault/00_SYSTEM
 ---
 
 # CODEX_00 — Instructions Agent (Codex / VS Code) : Git Bootstrap + Gates (GAPC)

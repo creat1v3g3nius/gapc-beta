@@ -1,22 +1,14 @@
 ---
 arc: SYSTEM
-created: 2026-03-05
-depends_on:
-- META_02_SOP_STANDARD_LOOP
-- DISCIPLINE_01_GEL_RULES
-- DISCIPLINE_03_DOC_QG
-- DISCIPLINE_04_CODE_QG
+created: 05-03-2026
+depends_on: [META_02_SOP_STANDARD_LOOP, DISCIPLINE_01_GEL_RULES, DISCIPLINE_03_DOC_QG, DISCIPLINE_04_CODE_QG]
 id: FRAMEWORK_00_AMELIORATION_PIPELINE
 scope: vault/00_SYSTEM/SYSTEM_20_PATCH/PATCH_01_FRAMEWORK
 status: READY_TO_FREEZE
-tags:
-- system
-- pipeline
-- framework
-- improvement
+tags: [system, pipeline, framework, improvement]
 title: FrameworkImprovementPipeline
 type: PIPELINE
-updated: 2026-03-05
+updated: 05-03-2026
 version: v1.0
 ---
 

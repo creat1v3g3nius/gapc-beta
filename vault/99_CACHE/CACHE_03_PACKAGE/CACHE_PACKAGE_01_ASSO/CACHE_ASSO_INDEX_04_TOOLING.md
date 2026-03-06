@@ -1,22 +1,25 @@
 ---
-id: ASSO_INDEX_01_META
+id: CACHE_ASSO_INDEX_04_TOOLING
 type: INDEX
-title: AssoIndexMeta
+title: AssoIndexTooling
 version: v1.3
 status: DEPRECATED
 created: 01-03-2026
 updated: 04-03-2026
 tags: [package, asso, index, p2, minimal]
-depends_on: [ASSO_META_00_PACKAGE_PROFILE, ASSO_META_01_DOMAIN_DEFINITIONS]
-arc: PACKAGE
+depends_on: [ASSO_TOOLING_00_INDEX, ASSO_KNOWLEDGE_00_INDEX, ASSO_TPL_00_STRUCTURED_DOC_CANON]
+arc: CACHE
 scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 ---
 
-# ASSO_INDEX_01 - Meta
+# ASSO_INDEX_04 - Tooling (P2 minimal)
 
 ## Liens
-- [[ASSO_META_00_PACKAGE_PROFILE]]
-- [[ASSO_META_01_DOMAIN_DEFINITIONS]]
+- [[ASSO_KNOWLEDGE_00_INDEX]]
+- [[ASSO_KNOWLEDGE_01_GLOSSARY]]
+- [[ASSO_TPL_00_STRUCTURED_DOC_CANON]]
+- [[ASSO_CHECKLIST_00_INDEX]]
+- [[ASSO_CHECKLIST_01_READY_TO_FREEZE_ADDON]]
 
 ## Changelog
 - v1.3 (04-03-2026) : correction `scope` du frontmatter + déplacement dans CACHE.

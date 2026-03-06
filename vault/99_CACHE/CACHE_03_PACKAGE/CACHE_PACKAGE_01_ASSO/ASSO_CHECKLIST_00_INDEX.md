@@ -8,7 +8,7 @@ created: 01-03-2026
 updated: 04-03-2026
 tags: [package, asso, tooling, checklist, index, p1]
 depends_on: [CHECKLIST_00_INDEX, ASSO_CHECKLIST_01_READY_TO_FREEZE_ADDON, ASSO_DISCIPLINE_01_GEL_RULES]
-arc: PACKAGE
+arc: CACHE
 scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 ---
 

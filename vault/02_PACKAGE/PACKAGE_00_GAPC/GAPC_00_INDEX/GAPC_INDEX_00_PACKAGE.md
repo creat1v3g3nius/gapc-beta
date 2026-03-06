@@ -2,10 +2,10 @@
 id: GAPC_INDEX_00_PACKAGE
 type: INDEX
 title: GAPCPackageNavigationIndex
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 06-03-2026
 tags: [gapc, package, index, navigation]
 depends_on: []
 arc: PACKAGE
@@ -83,7 +83,7 @@ Le PACKAGE ne contient pas :
 
 #### EXTENSION
 - [[GAPC_TOOLING_EXTENSION_00_ALLOW_LIST]] :  extension allowlist (compléments et cas).  
-- [[GAPC_TOOLING_EXTENSION_01_EVIDENCE_REQUIREMENTS]] : extension exigences de preuves (règles additionnelles).
+- [[GAPC_TOOLING_EXTENSION_02_EVIDENCE_REQUIREMENTS]] : extension exigences de preuves (règles additionnelles).
 
 ---
 
@@ -92,6 +92,7 @@ Le PACKAGE ne contient pas :
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (06-03-2026) : lien extension evidence aligné vers `GAPC_TOOLING_EXTENSION_02_EVIDENCE_REQUIREMENTS`.
 - v1.2 (05-03-2026) : passage en FROZEN.
 - v1.1 (05-03-2026) : ajout navigation TOOLING par famille (liste complète + chemins + descriptions).
 - v1.0 (05-03-2026) : création index PACKAGE du PACKAGE_00_GAPC.
