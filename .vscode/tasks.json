@@ -2,9 +2,16 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "GAPC : Validate Vault",
+      "label": "GAPC: Validate Vault",
       "type": "shell",
-      "command": "${workspaceFolder}/scripts/ValidateFrontmatter.py",
+      "command": "./scripts/ValidateFrontmatter.py",
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "GAPC: Smoke",
+      "type": "shell",
+      "command": "./scripts/SmokeRunner.py",
       "problemMatcher": [],
       "group": "test"
     }

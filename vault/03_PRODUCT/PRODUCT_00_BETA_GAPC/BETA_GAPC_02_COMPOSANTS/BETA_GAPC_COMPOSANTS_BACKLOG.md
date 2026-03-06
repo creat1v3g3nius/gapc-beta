@@ -2,7 +2,7 @@
 id: BETA_GAPC_COMPOSANTS_00_BACKLOG
 type: BACKLOG_CO
 title: Backlog CO — Bootstrap Git + Qualité
-version: v1.3
+version: v1.4
 status: READY_TO_FREEZE
 created: 05-03-2026
 updated: 06-03-2026
@@ -33,7 +33,7 @@ Règles d’exécution :
 - P0.1 → P0.8 : **DONE**
 - P1.1 : **DONE**
 - P1.2 : **DONE**
-- P1.3 : **TODO**
+- P1.3 : **DONE**
 - P2.1 → P2.3 : **TODO**
 
 ---
@@ -206,9 +206,9 @@ Règles d’exécution :
 **Sorties** : `repo/.vscode/tasks.json` avec 2 tâches.
 
 **AC**
-- [ ] `GAPC: Validate Vault` == commande hook (même script/args)
-- [ ] `GAPC: Smoke` == commande hook
-- [ ] exécution depuis VS Code OK
+- [x] `GAPC: Validate Vault` == commande hook (même script/args)
+- [x] `GAPC: Smoke` == commande hook
+- [x] exécution depuis VS Code OK
 
 **Estimation** : 0.5–1.0 h
 
@@ -260,6 +260,7 @@ Règles d’exécution :
 - Ce backlog est READY_TO_FREEZE : toute modification via patch ciblé + version bump.
 
 ## Changelog
+- v1.4 (06-03-2026) : P1_003 exécuté, tasks VS Code alignées sur les commandes hook validator/smoke.
 - v1.3 (06-03-2026) : P1_002 exécuté, merge test squash vers `main` validé et AC P1_002 cochés.
 - v1.2 (06-03-2026) : P1_001 lancé, checklist dépannage top 6 produite et AC P1_001 cochés.
 - v1.1 (06-03-2026) : backlog d’exécution généré, P0.1→P0.8 marqués DONE, contexte et date mis à jour.
