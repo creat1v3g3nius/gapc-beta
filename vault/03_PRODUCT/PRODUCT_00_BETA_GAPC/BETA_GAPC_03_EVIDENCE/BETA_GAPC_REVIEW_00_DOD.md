@@ -2,7 +2,7 @@
 id: BETA_GAPC_REVIEW_00_DOD
 type: REVIEW
 title: GapcBetaReviewDodRemediation
-version: v1.2
+version: v1.3
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
@@ -24,6 +24,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ## Code/Tooling
 - [x] Intention atomique (CO remediation)
 - [x] Controles requis PASS (strict global + smoke)
+- [x] Rerun DoD_00 global execute (validator strict global PASS)
 - [x] Vault health check execute (P0/P1/P2 traces)
 - [x] No-secrets/no-PII
 - [x] Traceabilite (ADR scope presente)
@@ -32,8 +33,10 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ## Verdict
 - Verdict: OK
 - P0 fails: aucun sur le scope global cible.
-- Next step unique: emettre la release note.
+- Risques clotures: R-0001, R-0005, R-0009.
+- Next step unique: finaliser la release note de cloture.
 
 ## Changelog
 - v1.1 (06-03-2026) : ajoute le controle vault health check dans la revue finale.
 - v1.2 (06-03-2026) : bascule la revue DocQG de scope product vers scope global.
+- v1.3 (06-03-2026) : trace le rerun DoD_00 global et la cloture des risques P0.

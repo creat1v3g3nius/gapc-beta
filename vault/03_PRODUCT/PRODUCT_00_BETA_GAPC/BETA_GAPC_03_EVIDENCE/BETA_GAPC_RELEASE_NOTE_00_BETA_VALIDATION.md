@@ -2,7 +2,7 @@
 id: BETA_GAPC_RELEASE_NOTE_00_BETA_VALIDATION
 type: RELEASE
 title: GapcBetaReleaseNoteValidation
-version: v1.2
+version: v1.3
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
@@ -15,7 +15,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 # BETA_GAPC_RELEASE_NOTE_00_BETA_VALIDATION
 
 ## Version / Perimetre
-- Version: v1.2
+- Version: v1.3
 - Date: 06-03-2026
 - Perimetre: remediation DoD_00 sur `PRODUCT_00_BETA_GAPC`.
 
@@ -24,23 +24,25 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Added: health check vault `GAPC_VAULT_HEALTH_CHECK`.
 - Changed: frontmatter strict du backlog composants.
 - Fixed: references depends_on vers ID backlog aligne.
+- Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun DOD_00 global.
 - Deprecated: aucun.
 
 ## Tests / Validations
 - Smoke: PASS (`./scripts/SmokeRunner.py`).
 - Validator strict global: PASS.
 - Vault health check: PASS.
+- DOD_00 global rerun: PASS.
 
 ## Risques Connus
-- R-0009: couverture DocQG globale en cours de cloture.
-- Mitigation: rerun health check + validator strict global, puis cloture risque.
+- Aucun risque P0/P1 ouvert sur le scope global valide.
 
 ## Backout Plan
 - Revert du commit `CO_00_DOD`.
 
 ## Next Step Unique
-- Rejouer `BETA_GAPC_DOD_00_BETA_VALIDATION` sur scope global `vault/`.
+- Lancer le prochain lot avec la meme gate globale (`validator strict + smoke + health check`).
 
 ## Changelog
 - v1.1 (06-03-2026) : integre le health check vault dans la release note du lot evidence.
 - v1.2 (06-03-2026) : aligne la release note sur un PASS DocQG global.
+- v1.3 (06-03-2026) : cloture officielle des risques R-0001/R-0005/R-0009 apres rerun global.
