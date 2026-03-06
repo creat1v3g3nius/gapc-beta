@@ -2,7 +2,7 @@
 id: BETA_GAPC_TESTPLAN_00_SMOKE_DOD
 type: TESTPLAN
 title: GapcBetaTestplanSmokeDod
-version: v1.1
+version: v1.2
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
@@ -20,9 +20,9 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Pre-requis: scripts validator/smoke executables.
 
 ## Scenarios P0
-### S1 - Validator strict perimetre product
+### S1 - Validator strict vault global
 - Steps:
-  1. Lancer `./scripts/ValidateFrontmatter.py --strict --enforce-unique-ids --vault vault/03_PRODUCT/PRODUCT_00_BETA_GAPC`.
+  1. Lancer `./scripts/ValidateFrontmatter.py --strict --enforce-unique-ids --vault vault`.
 - Expected: sortie `PASS validated`.
 - PASS/FAIL: PASS.
 
@@ -36,7 +36,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Steps:
   1. Lancer `git status --short --branch`.
   2. Lancer `git push --dry-run`.
-  3. Lancer `./scripts/ValidateFrontmatter.py`.
+  3. Lancer `./scripts/ValidateFrontmatter.py --strict --enforce-unique-ids --vault vault`.
   4. Lancer `./scripts/SmokeRunner.py`.
 - Expected: pas de fichier en attente, dry-run OK, validator PASS, smoke PASS.
 - PASS/FAIL: PASS.
@@ -57,3 +57,4 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 
 ## Changelog
 - v1.1 (06-03-2026) : ajoute le scenario S3 de health check vault et sa reference.
+- v1.2 (06-03-2026) : aligne S1/S3 sur validator strict global `vault/`.

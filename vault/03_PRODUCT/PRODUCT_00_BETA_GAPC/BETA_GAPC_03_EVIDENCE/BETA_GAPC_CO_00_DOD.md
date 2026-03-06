@@ -2,22 +2,22 @@
 id: BETA_GAPC_CO_00_DOD
 type: BACKLOG_CO
 title: GapcBetaCoDodRemediation
-version: v1.0
+version: v1.1
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
 tags: [product, gapcbeta, co, dod, remediation, p0]
-depends_on: [BETA_GAPC_PRD_00_DOD, TPL_03_BACKLOG_CO]
+depends_on: [BETA_GAPC_PRD_00_DOD, TPL_03_BACKLOG_CO, GAPC_VAULT_HEALTH_CHECK]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ---
 
 # BETA_GAPC_CO_00_DOD
 
-### CO_001 - DocQG strict perimetre product
+### CO_001 - DocQG strict vault global
 - Arc principal: PRODUCT
-- Goal: rendre tous les docs `PRODUCT_00_BETA_GAPC` conformes strict.
-- Output attendu: validator strict PASS sur le perimetre product.
+- Goal: rendre tous les docs du `vault/` conformes strict.
+- Output attendu: validator strict PASS sur l'ensemble du vault.
 - Critere PASS/FAIL: PASS si 0 erreur strict.
 - Scope: NOW
 - Priorite: P0
@@ -32,10 +32,10 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Priorite: P0
 - Risque: R-0005
 
-### CO_003 - Risques product
+### CO_003 - Risques vault
 - Arc principal: PRODUCT
 - Goal: instancier un registre risques avec owners/mitigations/statuts.
-- Output attendu: risk register product traceable.
+- Output attendu: risk register traceable incluant couverture DocQG globale.
 - Critere PASS/FAIL: PASS si aucun risque critique Open sans mitigation + owner.
 - Scope: NOW
 - Priorite: P0
@@ -43,3 +43,6 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 
 ## Next Step Unique
 - Executer le spec `BETA_GAPC_SPEC_00_DOD`.
+
+## Changelog
+- v1.1 (06-03-2026) : bascule CO_001 vers DocQG strict global `vault/`.

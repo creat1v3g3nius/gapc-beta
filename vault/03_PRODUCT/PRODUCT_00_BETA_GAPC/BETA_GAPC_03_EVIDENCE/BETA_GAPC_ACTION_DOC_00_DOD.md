@@ -2,7 +2,7 @@
 id: BETA_GAPC_ACTION_DOC_00_DOD
 type: ACTION
 title: GapcBetaActionDocDodRemediation
-version: v1.1
+version: v1.2
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
@@ -15,7 +15,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 # BETA_GAPC_ACTION_DOC_00_DOD
 
 ## Actions Executees
-1. Backlog composants aligne strict (`id==filename`, `title` UpperCamelCase).
+1. Conformite DocQG alignee sur tout `vault/` (`id==filename`, `title` UpperCamelCase, arc/scope coherents).
 2. References `depends_on` mises a jour vers `BETA_GAPC_COMPOSANTS_BACKLOG`.
 3. Pack evidence thin-slice cree sous `BETA_GAPC_03_EVIDENCE`.
 4. Registre risques product instancie.
@@ -23,14 +23,14 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 
 ## Commandes Executees
 ```bash
-./scripts/ValidateFrontmatter.py --strict --enforce-unique-ids --vault vault/03_PRODUCT/PRODUCT_00_BETA_GAPC
+./scripts/ValidateFrontmatter.py --strict --enforce-unique-ids --vault vault
 ./scripts/SmokeRunner.py
 git status --short --branch
 git push --dry-run
 ```
 
 ## Critere de Cloture
-- PASS strict sur perimetre product.
+- PASS strict sur l'ensemble du vault.
 - PASS smoke runner.
 - GAPC_VAULT_HEALTH verifie et trace dans `GAPC_VAULT_HEALTH_CHECK`.
 
@@ -39,3 +39,4 @@ git push --dry-run
 
 ## Changelog
 - v1.1 (06-03-2026) : integre l'execution du vault health check dans les actions et criteres.
+- v1.2 (06-03-2026) : bascule execution/critere DocQG vers scope global `vault/`.

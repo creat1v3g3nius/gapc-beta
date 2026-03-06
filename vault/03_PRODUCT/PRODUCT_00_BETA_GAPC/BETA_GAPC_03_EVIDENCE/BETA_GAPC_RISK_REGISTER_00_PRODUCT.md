@@ -2,12 +2,12 @@
 id: BETA_GAPC_RISK_REGISTER_00_PRODUCT
 type: DISCIPLINE
 title: GapcBetaRiskRegisterProduct
-version: v1.0
+version: v1.1
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
 tags: [product, gapcbeta, risk, register, dod, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, BETA_GAPC_CO_00_DOD]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, BETA_GAPC_CO_00_DOD, GAPC_VAULT_HEALTH_CHECK]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ---
@@ -24,11 +24,11 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ### R-0001
 - Titre: FrontmatterStrictNonConforme
 - Categorie: Governance
-- Description: non-conformite `id/title` bloquante pour DoD strict product.
+- Description: non-conformite `id/title` bloquante pour DoD strict global.
 - P: P2
 - I: I3
 - Score: 6
-- Mitigation: patch cible backlog + re-run validator strict.
+- Mitigation: patchs cibles multi-arcs + re-run validator strict global.
 - Signal: S1 Frontmatter KO
 - Owner: repo-maintainer
 - Statut: Mitigating
@@ -50,18 +50,21 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Liens: `BETA_GAPC_PRD_00_DOD`, `BETA_GAPC_RELEASE_NOTE_00_BETA_VALIDATION`
 
 ### R-0009
-- Titre: DocqgGlobalVaultNotInScope
+- Titre: DocqgGlobalVaultCoverage
 - Categorie: Governance
-- Description: des erreurs strictes persistent hors perimetre product.
+- Description: risque de non-couverture DocQG globale si le controle reste limite au product.
 - P: P2
 - I: I2
 - Score: 4
-- Mitigation: ouvrir un CO dedie multi-arc apres validation beta.
+- Mitigation: integrer DocQG global dans CO/PRD/SPEC/ADR/TestPlan/Review/Release + health check.
 - Signal: S1 Frontmatter KO
 - Owner: framework-owner
-- Statut: Open
+- Statut: Mitigating
 - Date revue: 06-03-2026
 - Liens: `BETA_GAPC_DOD_00_BETA_VALIDATION`
 
 ## Next Step Unique
-- Clore R-0001 et R-0005 apres rerun DoD_00 scope product.
+- Clore R-0001 et R-0009 apres rerun DoD_00 sur vault global.
+
+## Changelog
+- v1.1 (06-03-2026) : aligne le registre risques sur la cible DocQG globale.

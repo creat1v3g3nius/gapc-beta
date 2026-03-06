@@ -86,13 +86,13 @@ Checklist :
 
 Commandes :
 
-tree vault  
+tree vaul
 git ls-files
 
 Résultat attendu :
 
-STRUCTURE_OK  
-ou  
+STRUCTURE_OK
+ou
 STRUCTURE_FIX_REQUIRED
 
 ---
@@ -103,7 +103,7 @@ Objectif : identifier les règles dupliquées.
 
 Commandes :
 
-git grep  
+git grep
 vault search
 
 Action :
@@ -134,10 +134,10 @@ Validation :
 
 Vérifier la présence des éléments suivants :
 
-Backlog  
-Gate logs  
-DoD  
-ADR  
+Backlog
+Gate logs
+DoD
+ADR
 Release notes
 
 Chaîne attendue :
@@ -172,9 +172,9 @@ git revert <commit_optimisation>
 
 Après optimisation, le vault doit être :
 
-lisible  
-cohérent  
-traçable  
+lisible
+cohérent
+traçable
 maintenable
 
 Cela garantit que le framework GAPC reste **stable et évolutif**.
