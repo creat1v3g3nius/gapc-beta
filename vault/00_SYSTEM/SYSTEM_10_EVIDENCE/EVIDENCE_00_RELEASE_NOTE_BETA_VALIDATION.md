@@ -6,8 +6,8 @@ version: v1.5
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
-tags: [system, evidence, release-note, dod, validation]
-depends_on: [EVIDENCE_01_REVIEW_DOD, DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
+tags: [system, evidence, release-note, beta, validation]
+depends_on: [EVIDENCE_01_REVIEW_BETA, DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -17,7 +17,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ## Version / Perimetre
 - Version: v1.5
 - Date: 09-03-2026
-- Perimetre: remediation DoD_00 sur `PRODUCT_00_BETA_GAPC`.
+- Perimetre: remediation beta globale sur `PRODUCT_00_BETA_GAPC`.
 
 ## Changements
 - Added: pack evidence thin-slice complet.
@@ -25,7 +25,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Changed: frontmatter strict du backlog composants.
 - Fixed: references depends_on vers ID backlog aligne.
 - Added: index consolide R-0001 `EVIDENCE_04_R0001_TOUCHED_FILES`.
-- Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun DOD_00 global.
+- Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun beta global.
 - Closed: risque `R-0011` apres commit/push + rerun checks.
 - Deprecated: aucun.
 
@@ -33,13 +33,13 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Smoke: PASS (`./scripts/SmokeRunner.py`).
 - Validator strict global: PASS.
 - Vault health check: PASS.
-- DOD_00 global rerun: PASS.
+- Beta global rerun: PASS.
 
 ## Risques Connus
 - Aucun risque Open sur le scope global valide (registre: `EVIDENCE_02_RISK_REGISTER`).
 
 ## Backout Plan
-- Revert du commit `CO_00_DOD`.
+- Revert du commit `CO_00_BETA`.
 
 ## Next Step Unique
 - Lancer le prochain lot avec la meme gate globale (`validator strict + smoke + health check`) et mise a jour du registre risques.

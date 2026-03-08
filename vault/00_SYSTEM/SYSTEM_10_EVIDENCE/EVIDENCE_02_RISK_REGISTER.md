@@ -6,8 +6,8 @@ version: v1.8
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
-tags: [system, evidence, risk, register, dod, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_03_ADR_DOD_SCOPE, EVIDENCE_04_R0001_TOUCHED_FILES]
+tags: [system, evidence, risk, register, beta, p0]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_03_ADR_BETA_SCOPE, EVIDENCE_04_R0001_TOUCHED_FILES]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -31,7 +31,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ### R-0001
 - Titre: FrontmatterStrictNonConforme
 - Categorie: Governance
-- Description: non-conformite `id/title` bloquante pour DoD strict global.
+- Description: non-conformite `id/title` bloquante pour la validation beta stricte globale.
 - P: P2
 - I: I3
 - Score: 6
@@ -56,7 +56,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `OPS_01_PRD_DOD`, `EVIDENCE_01_REVIEW_DOD`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
+- Liens: `OPS_01_PRD_DOD`, `EVIDENCE_01_REVIEW_BETA`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
 
 ### R-0009
 - Titre: DocqgGlobalVaultCoverage
@@ -71,7 +71,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `DOD_00_BETA_VALIDATION`, `EVIDENCE_01_REVIEW_DOD`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`, `EVIDENCE_03_ADR_DOD_SCOPE`
+- Liens: `DOD_00_BETA_VALIDATION`, `EVIDENCE_01_REVIEW_BETA`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`, `EVIDENCE_03_ADR_BETA_SCOPE`
 
 ### R-0011
 - Titre: BranchAheadOriginPendingSync
@@ -86,7 +86,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 09-03-2026
-- Liens: `RUN_06_VAULT_HEALTH_CHECK`, `EVIDENCE_03_ADR_DOD_SCOPE`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
+- Liens: `RUN_06_VAULT_HEALTH_CHECK`, `EVIDENCE_03_ADR_BETA_SCOPE`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
 
 ## Next Step Unique
 - Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` a chaque lot documentaire et revalider ce registre a chaque fermeture de risque.

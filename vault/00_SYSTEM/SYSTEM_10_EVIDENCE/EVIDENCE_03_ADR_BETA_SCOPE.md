@@ -1,18 +1,18 @@
 ---
-id: EVIDENCE_03_ADR_DOD_SCOPE
+id: EVIDENCE_03_ADR_BETA_SCOPE
 type: EVIDENCE
-title: AdrDodScope
+title: AdrBetaScope
 version: v1.4
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
-tags: [system, evidence, adr, dod, scope]
+tags: [system, evidence, adr, beta, scope]
 depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# EVIDENCE_03 - ADR DoD Scope
+# EVIDENCE_03 - ADR Beta Scope
 
 ## Statut
 - Status: ACCEPTED
@@ -26,7 +26,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 
 ## Options
 ### Option A
-- Description: corriger tout le vault avant de rejouer DoD_00.
+- Description: corriger tout le vault avant de rejouer la validation beta globale.
 - Pros: homogeneite globale immediate.
 - Cons: effort initial plus large.
 - Risques: augmentation du temps de traitement.
@@ -35,11 +35,11 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Description: corriger strict sur `PRODUCT_00_BETA_GAPC` + evidence thin-slice complete.
 - Pros: delivre une preuve rapide.
 - Cons: ne repond pas a l'exigence de DocQG global.
-- Risques: verdict DoD incomplet.
+- Risques: verdict beta incomplet.
 
 ## Decision
-- Option A retenue: validation DoD_00 avec DocQG strict sur l'ensemble du vault.
-- Decision confirmee: la preuve est maintenue en chaines canoniques `OPS_* -> DOD_* -> EVIDENCE_*` avec references d'ID et sans duplication locale.
+- Option A retenue: validation beta globale avec DocQG strict sur l'ensemble du vault.
+- Decision confirmee: la preuve est maintenue en chaines canoniques `OPS_* -> BETA_* -> EVIDENCE_*` avec references d'ID et sans duplication locale.
 
 ## Consequences
 - Positives: verdict de conformite coherent avec l'exigence globale.
@@ -59,6 +59,6 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 
 ## Changelog
 - v1.1 (06-03-2026) : decision de scope mise a jour vers DocQG global `vault/`.
-- v1.2 (09-03-2026) : confirmation de l'execution globale (RUN_07) et formalisation de la chaine canonique `OPS_* -> DOD_* -> EVIDENCE_*`.
+- v1.2 (09-03-2026) : confirmation de l'execution globale (RUN_07) et formalisation de la chaine canonique `OPS_* -> BETA_* -> EVIDENCE_*`.
 - v1.3 (09-03-2026) : ajoute la reference consolidee des fichiers touches par R-0001.
 - v1.4 (09-03-2026) : aligne l'ADR avec le registre de risques consolide (`EVIDENCE_02_RISK_REGISTER`) et la cloture de R-0011.
