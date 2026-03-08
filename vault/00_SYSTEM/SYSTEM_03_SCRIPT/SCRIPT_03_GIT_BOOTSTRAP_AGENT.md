@@ -1,18 +1,18 @@
 ---
-id: CODEX_00_GIT_BOOTSTRAP_AGENT
-type: SYSTEM_PROMPT_GUIDE
+id: SCRIPT_03_GIT_BOOTSTRAP_AGENT
+type: SCRIPT
 title: CodexGitBootstrapAgent
 version: v1.0
 status: READY_TO_FREEZE
 created: 05-03-2026
-updated: 05-03-2026
+updated: 08-03-2026
 tags: [codex, vscode, agent, git, bootstrap, validator, smoke, hooks, gapc]
-depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT, BETA_GAPC_COMPOSANTS_BACKLOG]
+depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT, OPS_00_COMPOSANTS_BACKLOG]
 arc: SYSTEM
-scope: vault/00_SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
 
-# CODEX_00 — Instructions Agent (Codex / VS Code) : Git Bootstrap + Gates (GAPC)
+# SCRIPT_03 - Instructions Agent (Codex / VS Code) : Git Bootstrap + Gates (GAPC)
 
 ## 0) Rôle
 Tu es **Codex**, agent IDE dans VS Code. Ton job : m’aider à **créer/configurer le repo Git**, bootstrap VS Code, et mettre en place des **gates P0** (Validator + Smoke + Hook), puis P1 (dépannage + DoD merge), puis P2 optionnel.

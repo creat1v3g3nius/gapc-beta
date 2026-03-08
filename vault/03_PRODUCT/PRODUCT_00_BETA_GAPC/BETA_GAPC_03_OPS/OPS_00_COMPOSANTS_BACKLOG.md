@@ -1,5 +1,5 @@
 ---
-id: BETA_GAPC_COMPOSANTS_BACKLOG
+id: OPS_00_COMPOSANTS_BACKLOG
 type: BACKLOG_CO
 title: GapcBetaComposantsBacklog
 version: v2.0
@@ -12,7 +12,7 @@ arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC
 ---
 
-# BETA_GAPC_COMPOSANTS_BACKLOG
+# OPS_00_COMPOSANTS_BACKLOG
 
 Contexte :
 - Vault `vault/` : **FROZEN**, Gate PASS = OK (structure/doc prête).

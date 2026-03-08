@@ -1,9 +1,9 @@
 ---
-id: BETA_GAPC_DOD_06_INCIDENT_DRILLS
+id: DOD_06_INCIDENT_DRILLS
 type: DOD
 title: GapcBetaIncidentDrills
 version: v1.0
-status: READY_TO_FREEZE
+status: DEPRECATED
 created: 01-03-2026
 updated: 01-03-2026
 tags: [product, gapcbeta, dod, incident, p2]

@@ -1,9 +1,9 @@
 ---
-id: BETA_GAPC_DOD_04_RAG_WORKSPACE_TESTS
+id: DOD_04_RAG_WORKSPACE_TESTS
 type: DOD
 title: GapcBetaRagWorkspaceTests
 version: v1.0
-status: READY_TO_FREEZE
+status: DEPRECATED
 created: 01-03-2026
 updated: 01-03-2026
 tags: [product, gapcbeta, dod, rag, tests, p1]

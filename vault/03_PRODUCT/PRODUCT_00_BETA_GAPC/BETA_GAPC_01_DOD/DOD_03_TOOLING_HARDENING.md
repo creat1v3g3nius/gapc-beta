@@ -1,9 +1,9 @@
 ---
-id: BETA_GAPC_DOD_03_TOOLING_HARDENING
+id: DOD_03_TOOLING_HARDENING
 type: DOD
 title: GapcBetaToolingHardening
 version: v1.0
-status: READY_TO_FREEZE
+status: DEPRECATED
 created: 01-03-2026
 updated: 01-03-2026
 tags: [product, gapcbeta, dod, tooling, hardening, p1]

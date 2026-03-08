@@ -1,5 +1,5 @@
 ---
-id: BETA_GAPC_CO_00_DOD
+id: OPS_05_CO_DOD
 type: BACKLOG_CO
 title: GapcBetaCoDodRemediation
 version: v1.1
@@ -7,12 +7,12 @@ status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
 tags: [product, gapcbeta, co, dod, remediation, p0]
-depends_on: [BETA_GAPC_PRD_00_DOD, TPL_03_BACKLOG_CO, GAPC_VAULT_HEALTH_CHECK]
+depends_on: [OPS_01_PRD_DOD, TPL_03_BACKLOG_CO, RUN_06_VAULT_HEALTH_CHECK]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ---
 
-# BETA_GAPC_CO_00_DOD
+# OPS_05_CO_DOD
 
 ### CO_001 - DocQG strict vault global
 - Arc principal: PRODUCT
@@ -42,7 +42,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Risque: R-0001
 
 ## Next Step Unique
-- Executer le spec `BETA_GAPC_SPEC_00_DOD`.
+- Executer le spec `OPS_02_SPEC_DOD`.
 
 ## Changelog
 - v1.1 (06-03-2026) : bascule CO_001 vers DocQG strict global `vault/`.

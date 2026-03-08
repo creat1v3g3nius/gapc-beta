@@ -1,5 +1,5 @@
 ---
-id: BETA_GAPC_PRD_00_DOD
+id: OPS_01_PRD_DOD
 type: PRD
 title: GapcBetaPrdDodRemediation
 version: v1.1
@@ -7,19 +7,19 @@ status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
 tags: [product, gapcbeta, prd, dod, remediation, p0]
-depends_on: [BETA_GAPC_DOD_00_BETA_VALIDATION, TPL_00_PROD_ONE_PAGER, BETA_GAPC_COMPOSANTS_BACKLOG, GAPC_VAULT_HEALTH_CHECK]
+depends_on: [DOD_00_BETA_VALIDATION, TPL_00_PROD_ONE_PAGER, OPS_00_COMPOSANTS_BACKLOG, RUN_06_VAULT_HEALTH_CHECK]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ---
 
-# BETA_GAPC_PRD_00_DOD
+# OPS_01_PRD_DOD
 
 ## Contexte
 - Le DoD de validation beta doit maintenant prouver un DocQG strict sur l'ensemble du vault.
 - Le pipeline P0->P2 composants est deja operationnel sur Git/validator/smoke.
 
 ## Objectif
-- Passer le DoD `BETA_GAPC_DOD_00_BETA_VALIDATION` avec conformite DocQG sur tout `vault/`.
+- Passer le DoD `DOD_00_BETA_VALIDATION` avec conformite DocQG sur tout `vault/`.
 
 ## Hypothese centrale
 - Si les artefacts thin-slice minimaux sont instancies et si la conformite stricte est corrigee sur l'ensemble du vault, le verdict DoD peut passer a OK.
@@ -41,7 +41,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Evidence thin-slice complete et traçable dans `BETA_GAPC_03_EVIDENCE`.
 
 ## Next Step Unique
-- Executer le CO `BETA_GAPC_CO_00_DOD`.
+- Executer le CO `OPS_05_CO_DOD`.
 
 ## Changelog
 - v1.1 (06-03-2026) : aligne le PRD sur un objectif DocQG global `vault/`.

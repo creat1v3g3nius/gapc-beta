@@ -1,18 +1,18 @@
 ---
-id: BETA_GAPC_RISK_REGISTER_00_PRODUCT
-type: DISCIPLINE
-title: GapcBetaRiskRegisterProduct
+id: EVIDENCE_02_RISK_REGISTER_PRODUCT
+type: EVIDENCE
+title: RiskRegisterProduct
 version: v1.2
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [product, gapcbeta, risk, register, dod, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, BETA_GAPC_CO_00_DOD, GAPC_VAULT_HEALTH_CHECK]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
+updated: 08-03-2026
+tags: [system, evidence, risk, register, dod, p0]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# BETA_GAPC_RISK_REGISTER_00_PRODUCT
+# EVIDENCE_02 - Risk Register Product
 
 ## Regles
 - Max 3 risques actifs.
@@ -34,7 +34,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Statut: Closed
 - Date revue: 06-03-2026
 - Date cloture: 06-03-2026
-- Liens: `BETA_GAPC_CO_00_DOD`, `BETA_GAPC_ACTION_DOC_00_DOD`
+- Liens: `OPS_05_CO_DOD`, `OPS_04_ACTION_DOC_DOD`
 
 ### R-0005
 - Titre: EvidenceThinSliceIncomplete
@@ -49,7 +49,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Statut: Closed
 - Date revue: 06-03-2026
 - Date cloture: 06-03-2026
-- Liens: `BETA_GAPC_PRD_00_DOD`, `BETA_GAPC_RELEASE_NOTE_00_BETA_VALIDATION`
+- Liens: `OPS_01_PRD_DOD`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
 
 ### R-0009
 - Titre: DocqgGlobalVaultCoverage
@@ -64,7 +64,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Statut: Closed
 - Date revue: 06-03-2026
 - Date cloture: 06-03-2026
-- Liens: `BETA_GAPC_DOD_00_BETA_VALIDATION`
+- Liens: `DOD_00_BETA_VALIDATION`
 
 ## Next Step Unique
 - Maintenir un rerun health check + validator strict global a chaque lot documentaire.

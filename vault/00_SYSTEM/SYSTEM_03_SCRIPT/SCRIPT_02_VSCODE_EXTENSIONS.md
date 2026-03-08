@@ -1,18 +1,18 @@
 ---
-id: BETA_GAPC_P2_001_VSCODE_EXTENSIONS
-type: TOOLING
+id: SCRIPT_02_VSCODE_EXTENSIONS
+type: SCRIPT
 title: VsCodeExtensionsDecisionMatrix
 version: v1.0
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [beta, p2, vscode, extensions, tooling]
-depends_on: [GIT_00_CONFIG, BETA_GAPC_COMPOSANTS_BACKLOG]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_02_COMPOSANTS
+updated: 08-03-2026
+tags: [vscode, extensions, script, system]
+depends_on: [GIT_00_CONFIG, RUN_00_PIPELINE]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
 
-# BETA_GAPC_P2_001_VSCODE_EXTENSIONS
+# SCRIPT_02 - VS Code Extensions
 
 Objet : décision P2.1 sur les extensions VS Code (recommandées vs optionnelles) avec règle de retrait si bruit/instabilité.
 

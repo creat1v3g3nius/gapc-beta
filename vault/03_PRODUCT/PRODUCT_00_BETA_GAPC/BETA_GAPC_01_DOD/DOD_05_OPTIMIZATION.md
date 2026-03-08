@@ -1,25 +1,25 @@
 ---
-id: BETA_GAPC_DOD_05_OPTIMIZATION
+id: DOD_05_OPTIMIZATION
 type: DOD
 title: GapcBetaOptimizationReference
 version: v1.1
-status: READY_TO_FREEZE
+status: DEPRECATED
 created: 01-03-2026
 updated: 06-03-2026
 tags: [product, gapcbeta, dod, optimization, reference]
-depends_on: [BETA_GAPC_DOD_05_OPTIMIZATION_PROCESS, META_06_REFERENCE_EXISTING_FILES]
+depends_on: [RUN_07_OPTIMIZATION_PROCESS, META_06_REFERENCE_EXISTING_FILES]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_01_DOD
 ---
 
-# BETA_GAPC_DOD_05_OPTIMIZATION
+# DOD_05_OPTIMIZATION
 
 Ce fichier est conserve pour compatibilite de navigation.
 Le contenu operationnel n'est plus maintenu ici pour eviter la duplication.
 
 Reference canonique:
-- `BETA_GAPC_DOD_05_OPTIMIZATION_PROCESS`
-- `vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_01_DOD/BETA_GAPC_DOD_05_OPTIMIZATION_PROCESS.md`
+- `RUN_07_OPTIMIZATION_PROCESS`
+- `vault/00_SYSTEM/SYSTEM_01_RUN/RUN_07_OPTIMIZATION_PROCESS.md`
 
 Decision locale:
 - appliquer le processus d'optimisation uniquement depuis la source canonique ci-dessus.

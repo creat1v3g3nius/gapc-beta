@@ -1,5 +1,5 @@
 ---
-id: BETA_GAPC_TESTPLAN_00_SMOKE_DOD
+id: OPS_03_TESTPLAN_SMOKE_DOD
 type: TESTPLAN
 title: GapcBetaTestplanSmokeDod
 version: v1.2
@@ -7,12 +7,12 @@ status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 06-03-2026
 tags: [product, gapcbeta, testplan, smoke, dod, p0]
-depends_on: [BETA_GAPC_SPEC_00_DOD, TPL_04_TEST_PLAN_SMOKE, GAPC_VAULT_HEALTH_CHECK]
+depends_on: [OPS_02_SPEC_DOD, TPL_04_TEST_PLAN_SMOKE, RUN_06_VAULT_HEALTH_CHECK]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 ---
 
-# BETA_GAPC_TESTPLAN_00_SMOKE_DOD
+# OPS_03_TESTPLAN_SMOKE_DOD
 
 ## Perimetre
 - Artefact: `BETA_GAPC_03_EVIDENCE` + backlog composants.
@@ -53,7 +53,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Revert du commit thin-slice remediation si regression.
 
 ## Next Step Unique
-- Produire la revue finale dans `BETA_GAPC_REVIEW_00_DOD`.
+- Produire la revue finale dans `EVIDENCE_01_REVIEW_DOD`.
 
 ## Changelog
 - v1.1 (06-03-2026) : ajoute le scenario S3 de health check vault et sa reference.

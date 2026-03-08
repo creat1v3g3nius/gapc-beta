@@ -1,9 +1,9 @@
 ---
-id: BETA_GAPC_DOD_00_BETA_VALIDATION
+id: DOD_00_BETA_VALIDATION
 type: DOD
 title: GapcBetaValidation
 version: v1.0
-status: READY_TO_FREEZE
+status: DEPRECATED
 created: 01-03-2026
 updated: 01-03-2026
 tags: [product, gapcbeta, dod, validation, product-ready]
@@ -48,7 +48,7 @@ PASS si gates applicables passent :
 - RagQG (si mentor utilisé)
 
 ### 2.3 Preuve thin slice (P0)
-PASS si un **thin slice** complet existe (cf. `BETA_GAPC_DOD_01_PRODUCT_THIN_SLICE`) :
+PASS si un **thin slice** complet existe (cf. `DOD_01_PRODUCT_THIN_SLICE`) :
 - PRD → CO → Spec/ADR → Action Doc/Code → Smoke → Review.
 
 ### 2.4 Risques (P0)

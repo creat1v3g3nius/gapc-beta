@@ -1,18 +1,18 @@
 ---
-id: BETA_GAPC_P1_002_DOD_SQUASH_MERGE
-type: DOD
-title: DodSquashMergeProcedure
+id: GIT_05_DOD_SQUASH_MERGE
+type: GIT
+title: GitSquashMergeProcedure
 version: v1.0
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [beta, p1, dod, merge, squash, git]
-depends_on: [GIT_02_BRANCH_POLICY, BETA_GAPC_COMPOSANTS_BACKLOG]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_02_COMPOSANTS
+updated: 08-03-2026
+tags: [git, dod, merge, squash, system]
+depends_on: [GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_02_GIT
 ---
 
-# BETA_GAPC_P1_002_DOD_SQUASH_MERGE
+# GIT_05 - DoD Squash Merge
 
 Objectif : formaliser la DoD de merge vers `main` et une procédure squash merge reproductible.
 

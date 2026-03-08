@@ -1,18 +1,18 @@
 ---
-id: BETA_GAPC_REVIEW_00_DOD
-type: REVIEW
-title: GapcBetaReviewDodRemediation
+id: EVIDENCE_01_REVIEW_DOD
+type: EVIDENCE
+title: ReviewDodRemediation
 version: v1.3
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [product, gapcbeta, review, dod, quality]
-depends_on: [BETA_GAPC_TESTPLAN_00_SMOKE_DOD, TPL_09_REVIEW_CHECK, GAPC_VAULT_HEALTH_CHECK]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
+updated: 08-03-2026
+tags: [system, evidence, review, dod, quality]
+depends_on: [OPS_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, RUN_06_VAULT_HEALTH_CHECK]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# BETA_GAPC_REVIEW_00_DOD
+# EVIDENCE_01 - Review DoD
 
 ## Doc
 - [x] Frontmatter conforme (scope vault global)

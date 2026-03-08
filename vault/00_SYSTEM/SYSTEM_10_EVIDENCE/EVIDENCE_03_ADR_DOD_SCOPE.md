@@ -1,24 +1,24 @@
 ---
-id: BETA_GAPC_ADR_00_DOD_SCOPE
-type: ADR
-title: GapcBetaAdrDodScope
+id: EVIDENCE_03_ADR_DOD_SCOPE
+type: EVIDENCE
+title: AdrDodScope
 version: v1.1
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [product, gapcbeta, adr, dod, scope]
-depends_on: [BETA_GAPC_SPEC_00_DOD, TPL_02_ADR_LITE, GAPC_VAULT_HEALTH_CHECK]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
+updated: 08-03-2026
+tags: [system, evidence, adr, dod, scope]
+depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# BETA_GAPC_ADR_00_DOD_SCOPE
+# EVIDENCE_03 - ADR DoD Scope
 
 ## Statut
 - Status: ACCEPTED
 - Date: 06-03-2026
 - Owner: product-owner-beta-gapc
-- Liens: `BETA_GAPC_PRD_00_DOD`, `BETA_GAPC_SPEC_00_DOD`
+- Liens: `OPS_01_PRD_DOD`, `OPS_02_SPEC_DOD`
 
 ## Contexte
 - Le besoin de validation a ete releve: le DocQG PASS doit couvrir tout `vault/`.
@@ -47,7 +47,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Backout plan: revert du lot evidence + correction globale associee.
 
 ## Next Step Unique
-- Executer `BETA_GAPC_ACTION_DOC_00_DOD`.
+- Executer `OPS_04_ACTION_DOC_DOD`.
 
 ## Changelog
 - v1.1 (06-03-2026) : decision de scope mise a jour vers DocQG global `vault/`.

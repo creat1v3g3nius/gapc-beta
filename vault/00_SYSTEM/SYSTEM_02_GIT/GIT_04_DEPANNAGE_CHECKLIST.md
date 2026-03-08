@@ -1,20 +1,20 @@
 ---
-id: BETA_GAPC_P1_001_DEPANNAGE_CHECKLIST
-type: CHECKLIST
-title: DepannageTop6Checklist
+id: GIT_04_DEPANNAGE_CHECKLIST
+type: GIT
+title: DepannageGitChecklist
 version: v1.0
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [beta, p1, git, depannage, checklist]
-depends_on: [GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY, BETA_GAPC_COMPOSANTS_BACKLOG]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_02_COMPOSANTS
+updated: 08-03-2026
+tags: [git, depannage, checklist, system]
+depends_on: [GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_02_GIT
 ---
 
-# BETA_GAPC_P1_001_DEPANNAGE_CHECKLIST
+# GIT_04 - Checklist Depannage Git
 
-But : checklist opérateur consolidée “top 6” (symptôme -> cause probable -> fix safe) pour exécuter P1_001.
+But : checklist operateur consolidee "top 6" (symptome -> cause probable -> fix safe).
 
 Références consolidées :
 - `GIT_01_ESSENTIEL`

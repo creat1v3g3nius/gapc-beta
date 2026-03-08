@@ -1,18 +1,18 @@
 ---
-id: BETA_GAPC_RELEASE_NOTE_00_BETA_VALIDATION
-type: RELEASE
-title: GapcBetaReleaseNoteValidation
+id: EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION
+type: EVIDENCE
+title: ReleaseNoteBetaValidation
 version: v1.3
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [product, gapcbeta, release-note, dod, validation]
-depends_on: [BETA_GAPC_REVIEW_00_DOD, BETA_GAPC_DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, GAPC_VAULT_HEALTH_CHECK]
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
+updated: 08-03-2026
+tags: [system, evidence, release-note, dod, validation]
+depends_on: [EVIDENCE_01_REVIEW_DOD, DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK]
+arc: SYSTEM
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# BETA_GAPC_RELEASE_NOTE_00_BETA_VALIDATION
+# EVIDENCE_00 - Release Note Beta Validation
 
 ## Version / Perimetre
 - Version: v1.3
@@ -21,7 +21,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 
 ## Changements
 - Added: pack evidence thin-slice complet.
-- Added: health check vault `GAPC_VAULT_HEALTH_CHECK`.
+- Added: health check vault `RUN_06_VAULT_HEALTH_CHECK`.
 - Changed: frontmatter strict du backlog composants.
 - Fixed: references depends_on vers ID backlog aligne.
 - Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun DOD_00 global.

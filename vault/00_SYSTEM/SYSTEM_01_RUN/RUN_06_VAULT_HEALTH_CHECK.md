@@ -1,18 +1,18 @@
 ---
-id: GAPC_VAULT_HEALTH_CHECK
-type: TOOLING
-title: GapcVaultHealthCheck
+id: RUN_06_VAULT_HEALTH_CHECK
+type: RUN
+title: VaultHealthCheckRunbook
 version: v1.1
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
-tags: [vault, audit, health-check, gapc, checklist, tooling]
+updated: 08-03-2026
+tags: [vault, audit, health-check, gapc, checklist, run, system]
 depends_on: [META_03_NAMING_CONVENTIONS, META_04_WRITING_RULES, META_05_FRONTMATTER, DISCIPLINE_03_DOC_QG, DISCIPLINE_01_GEL_RULES, CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_02_NON_DUPLICATION_POLICY, CONSTRAINT_04_DECISION_TRACEABILITY_POLICY, PIPELINE_00_PRODUCT, PIPELINE_03_BACKLOG_COMPOSANT]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_99_AUDIT
+scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---
 
-# GAPC_VAULT_HEALTH_CHECK
+# RUN_06 - Vault Health Check
 
 ## Objectif
 
