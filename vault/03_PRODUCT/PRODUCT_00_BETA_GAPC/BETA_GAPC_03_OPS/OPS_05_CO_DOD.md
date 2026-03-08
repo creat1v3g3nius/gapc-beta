@@ -2,14 +2,14 @@
 id: OPS_05_CO_DOD
 type: BACKLOG_CO
 title: GapcBetaCoDodRemediation
-version: v1.1
+version: v1.2
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
+updated: 09-03-2026
 tags: [product, gapcbeta, co, dod, remediation, p0]
-depends_on: [OPS_01_PRD_DOD, TPL_03_BACKLOG_CO, RUN_06_VAULT_HEALTH_CHECK]
+depends_on: [OPS_01_PRD_DOD, TPL_03_BACKLOG_CO, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
+scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_OPS
 ---
 
 # OPS_05_CO_DOD
@@ -41,8 +41,12 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Priorite: P0
 - Risque: R-0001
 
+## Tracabilite R-0001
+- Index consolide des fichiers touches: `EVIDENCE_04_R0001_TOUCHED_FILES`.
+
 ## Next Step Unique
 - Executer le spec `OPS_02_SPEC_DOD`.
 
 ## Changelog
 - v1.1 (06-03-2026) : bascule CO_001 vers DocQG strict global `vault/`.
+- v1.2 (09-03-2026) : ajout de la tracabilite R-0001 via index evidence dedie.
