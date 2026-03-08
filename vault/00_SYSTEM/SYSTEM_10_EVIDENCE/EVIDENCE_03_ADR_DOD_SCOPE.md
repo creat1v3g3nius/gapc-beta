@@ -2,12 +2,12 @@
 id: EVIDENCE_03_ADR_DOD_SCOPE
 type: EVIDENCE
 title: AdrDodScope
-version: v1.3
+version: v1.4
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, adr, dod, scope]
-depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_04_R0001_TOUCHED_FILES]
+depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -52,11 +52,13 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Relocalisation des preuves validee dans `SYSTEM_10_EVIDENCE`.
 - Validator global et Smoke runner executes avec PASS.
 - Tracabilite R-0001 consolidee dans `EVIDENCE_04_R0001_TOUCHED_FILES`.
+- Registre de risques consolide et renomme en `EVIDENCE_02_RISK_REGISTER` (R-0011 clos).
 
 ## Next Step Unique
-- Pousser le commit de normalisation et rerun `RUN_06_VAULT_HEALTH_CHECK`.
+- Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` a chaque lot et conserver la coherence ADR <-> Risk Register.
 
 ## Changelog
 - v1.1 (06-03-2026) : decision de scope mise a jour vers DocQG global `vault/`.
 - v1.2 (09-03-2026) : confirmation de l'execution globale (RUN_07) et formalisation de la chaine canonique `OPS_* -> DOD_* -> EVIDENCE_*`.
 - v1.3 (09-03-2026) : ajoute la reference consolidee des fichiers touches par R-0001.
+- v1.4 (09-03-2026) : aligne l'ADR avec le registre de risques consolide (`EVIDENCE_02_RISK_REGISTER`) et la cloture de R-0011.

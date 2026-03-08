@@ -2,12 +2,12 @@
 id: EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION
 type: EVIDENCE
 title: ReleaseNoteBetaValidation
-version: v1.4
+version: v1.5
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, release-note, dod, validation]
-depends_on: [EVIDENCE_01_REVIEW_DOD, DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES]
+depends_on: [EVIDENCE_01_REVIEW_DOD, DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -15,8 +15,8 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 # EVIDENCE_00 - Release Note Beta Validation
 
 ## Version / Perimetre
-- Version: v1.3
-- Date: 06-03-2026
+- Version: v1.5
+- Date: 09-03-2026
 - Perimetre: remediation DoD_00 sur `PRODUCT_00_BETA_GAPC`.
 
 ## Changements
@@ -26,6 +26,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Fixed: references depends_on vers ID backlog aligne.
 - Added: index consolide R-0001 `EVIDENCE_04_R0001_TOUCHED_FILES`.
 - Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun DOD_00 global.
+- Closed: risque `R-0011` apres commit/push + rerun checks.
 - Deprecated: aucun.
 
 ## Tests / Validations
@@ -35,16 +36,17 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - DOD_00 global rerun: PASS.
 
 ## Risques Connus
-- Aucun risque P0/P1 ouvert sur le scope global valide.
+- Aucun risque Open sur le scope global valide (registre: `EVIDENCE_02_RISK_REGISTER`).
 
 ## Backout Plan
 - Revert du commit `CO_00_DOD`.
 
 ## Next Step Unique
-- Lancer le prochain lot avec la meme gate globale (`validator strict + smoke + health check`).
+- Lancer le prochain lot avec la meme gate globale (`validator strict + smoke + health check`) et mise a jour du registre risques.
 
 ## Changelog
 - v1.1 (06-03-2026) : integre le health check vault dans la release note du lot evidence.
 - v1.2 (06-03-2026) : aligne la release note sur un PASS DocQG global.
 - v1.3 (06-03-2026) : cloture officielle des risques R-0001/R-0005/R-0009 apres rerun global.
 - v1.4 (09-03-2026) : ajoute la consolidation de tracabilite R-0001.
+- v1.5 (09-03-2026) : aligne la release note avec le registre consolide et la cloture de R-0011.

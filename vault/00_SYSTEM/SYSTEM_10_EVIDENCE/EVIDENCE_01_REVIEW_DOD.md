@@ -2,12 +2,12 @@
 id: EVIDENCE_01_REVIEW_DOD
 type: EVIDENCE
 title: ReviewDodRemediation
-version: v1.4
+version: v1.5
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, review, dod, quality]
-depends_on: [OPS_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES]
+depends_on: [OPS_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -28,17 +28,19 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - [x] Vault health check execute (P0/P1/P2 traces)
 - [x] No-secrets/no-PII
 - [x] Traceabilite (ADR scope presente)
+- [x] Registre risques consolide et a jour (`EVIDENCE_02_RISK_REGISTER`)
 - [x] Backout plan possible (revert commit)
 
 ## Verdict
 - Verdict: OK
 - P0 fails: aucun sur le scope global cible.
-- Risques clotures: R-0001, R-0005, R-0009.
+- Risques clotures: R-0001, R-0005, R-0009, R-0011.
 - Tracabilite R-0001: `EVIDENCE_04_R0001_TOUCHED_FILES`.
-- Next step unique: finaliser la release note de cloture.
+- Next step unique: maintenir la routine RUN_06 + mise a jour du registre a chaque lot.
 
 ## Changelog
 - v1.1 (06-03-2026) : ajoute le controle vault health check dans la revue finale.
 - v1.2 (06-03-2026) : bascule la revue DocQG de scope product vers scope global.
 - v1.3 (06-03-2026) : trace le rerun DoD_00 global et la cloture des risques P0.
 - v1.4 (09-03-2026) : ajoute la reference de tracabilite consolidee pour R-0001.
+- v1.5 (09-03-2026) : aligne la revue avec le registre consolide et la cloture de R-0011.
