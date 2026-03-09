@@ -3,13 +3,13 @@ arc: SYSTEM
 created: 05-03-2026
 depends_on: [META_02_SOP_STANDARD_LOOP, DISCIPLINE_01_GEL_RULES, DISCIPLINE_03_DOC_QG, DISCIPLINE_04_CODE_QG]
 id: FRAMEWORK_00_AMELIORATION_PIPELINE
-scope: vault/00_SYSTEM/SYSTEM_20_PATCH/PATCH_01_FRAMEWORK
-status: READY_TO_FREEZE
+scope: vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_01_FRAMEWORK
+status: FROZEN
 tags: [system, pipeline, framework, improvement]
 title: FrameworkImprovementPipeline
 type: PIPELINE
-updated: 05-03-2026
-version: v1.0
+updated: 09-03-2026
+version: v1.1
 ---
 
 # FRAMEWORK_00 --- Amélioration Pipeline
@@ -25,7 +25,7 @@ contrôlées - revalider les gates qualité - re-geler le vault.
 
 ------------------------------------------------------------------------
 
-# Pipeline
+## Pipeline
 
 ## 1 --- Diagnostic Framework
 
@@ -66,7 +66,7 @@ Règle :
 
 Créer un dossier patch :
 
-    SYSTEM_20_PATCH
+    SYSTEM_30_PATCH
 
 Structure :
 
@@ -151,7 +151,7 @@ Actions :
 
 ------------------------------------------------------------------------
 
-# Indicateurs de performance
+## Indicateurs de performance
 
 Framework considéré **10/10** si :
 
@@ -170,3 +170,4 @@ Modifications uniquement via patch ciblé + validation + version bump.
 ## Changelog
 
 -   v1.0 (2026-03-05) : création pipeline amélioration framework.
+-   v1.1 (2026-03-09) : gel FROZEN, scope aligné SYSTEM_30_PATCH, structure H1/H2 normalisée.
