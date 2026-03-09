@@ -10,6 +10,7 @@ import sys
 from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
+from frontmatter_utils import parse_frontmatter_file
 
 REQUIRED_KEYS = (
     "id",
@@ -83,38 +84,11 @@ def markdown_files(vault_root: Path) -> list[Path]:
 
 
 def read_frontmatter(path: Path) -> tuple[dict[str, str], dict[str, int], list[ValidationError]]:
-    errors: list[ValidationError] = []
-    text = path.read_text(encoding="utf-8", errors="replace")
-    lines = text.splitlines()
-
-    if not lines or lines[0].strip() != "---":
-        return {}, {}, [ValidationError(path, 1, "frontmatter missing (expected opening ---)")]
-
-    closing_idx = None
-    for idx, line in enumerate(lines[1:], start=2):
-        if line.strip() == "---":
-            closing_idx = idx
-            break
-
-    if closing_idx is None:
-        return {}, {}, [ValidationError(path, 1, "frontmatter missing closing ---")]
-
-    metadata: dict[str, str] = {}
-    key_line: dict[str, int] = {}
-
-    for idx, raw_line in enumerate(lines[1 : closing_idx - 1], start=2):
-        line = raw_line.strip()
-        if not line or line.startswith("#"):
-            continue
-        match = KEY_VALUE_RE.match(raw_line)
-        if not match:
-            continue
-        key = match.group(1).strip()
-        value = match.group(2).strip()
-        metadata[key] = value
-        key_line[key] = idx
-
-    return metadata, key_line, errors
+    result = parse_frontmatter_file(path, KEY_VALUE_RE)
+    if result.error_message:
+        line = result.error_line if result.error_line is not None else 1
+        return {}, {}, [ValidationError(path, line, result.error_message)]
+    return result.metadata, result.line_map, []
 
 
 def parse_date(value: str) -> bool:

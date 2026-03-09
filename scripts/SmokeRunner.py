@@ -7,6 +7,7 @@ import argparse
 import subprocess
 import sys
 from pathlib import Path
+from frontmatter_utils import parse_frontmatter_file
 
 
 class SmokeFailure(Exception):
@@ -51,6 +52,14 @@ def parse_args() -> argparse.Namespace:
         help=(
             "Highest acceptable DocIntegrityChecker exit code. "
             "0=PASS only, 1=PASS+FAIL threshold, 2=PASS/WARN accepted (default)."
+        ),
+    )
+    parser.add_argument(
+        "--check-pre-freeze",
+        action="store_true",
+        help=(
+            "Enable strict pre-freeze status gate: outside CACHE, "
+            "status must be FROZEN and DEPRECATED is forbidden."
         ),
     )
     return parser.parse_args()
@@ -118,6 +127,59 @@ def check_arcs(vault_root: Path) -> None:
         raise SmokeFailure("missing cache arc: expected vault/99_CACHE or vault/04_CACHE")
 
 
+def _is_cache_file(path: Path, vault_root: Path) -> bool:
+    rel = path.relative_to(vault_root)
+    if not rel.parts:
+        return False
+    return rel.parts[0] in {"99_CACHE", "04_CACHE"}
+
+
+def _read_status(path: Path) -> str | None:
+    result = parse_frontmatter_file(path)
+    if result.error_message:
+        return None
+    raw = result.metadata.get("status", "").strip()
+    if not raw:
+        return None
+    if (raw.startswith('"') and raw.endswith('"')) or (raw.startswith("'") and raw.endswith("'")):
+        raw = raw[1:-1].strip()
+    return raw or None
+
+
+def check_pre_freeze_status(vault_root: Path) -> None:
+    not_frozen: list[Path] = []
+    deprecated_outside_cache: list[Path] = []
+    missing_status: list[Path] = []
+
+    for path in sorted(vault_root.rglob("*.md")):
+        if _is_cache_file(path, vault_root):
+            continue
+
+        status = _read_status(path)
+        if status is None:
+            missing_status.append(path)
+            continue
+
+        if status == "DEPRECATED":
+            deprecated_outside_cache.append(path)
+        if status != "FROZEN":
+            not_frozen.append(path)
+
+    if not_frozen or deprecated_outside_cache or missing_status:
+        samples: list[str] = []
+        for group in (not_frozen, deprecated_outside_cache, missing_status):
+            for sample in group[:2]:
+                samples.append(str(sample.relative_to(vault_root)))
+
+        raise SmokeFailure(
+            "pre-freeze status gate failed: "
+            f"outside-cache status!=FROZEN: {len(not_frozen)}, "
+            f"outside-cache DEPRECATED: {len(deprecated_outside_cache)}, "
+            f"outside-cache missing status/frontmatter: {len(missing_status)}; "
+            f"examples: {', '.join(samples) if samples else 'n/a'}"
+        )
+
+
 def run() -> int:
     args = parse_args()
     repo_root = Path(args.repo_root).resolve()
@@ -148,6 +210,10 @@ def run() -> int:
 
         run_validator(repo_root, args.validator)
         _ok("validator execution")
+
+        if args.check_pre_freeze:
+            check_pre_freeze_status(vault_root)
+            _ok("pre-freeze status gate")
 
         if args.run_doc_integrity:
             doc_exit = run_doc_integrity(

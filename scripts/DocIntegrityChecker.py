@@ -18,6 +18,7 @@ import sys
 from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Iterable
+from frontmatter_utils import parse_frontmatter_file
 
 SEVERITY_ORDER = {"P0": 0, "P1": 1, "P2": 2}
 VALID_ARCS = {"SYSTEM", "CORE", "PACKAGE", "PRODUCT", "CACHE"}
@@ -158,61 +159,37 @@ def _line_for(line_map: dict[str, int], key: str) -> int:
 
 
 def parse_frontmatter(path: Path, repo_root: Path) -> tuple[ParsedDoc | None, list[Issue]]:
-    text = path.read_text(encoding="utf-8", errors="replace")
-    lines = text.splitlines()
     rel_path = str(path.relative_to(repo_root))
-
-    if not lines or lines[0].strip() != "---":
+    result = parse_frontmatter_file(path, KEY_VALUE_RE)
+    if result.error_code == "missing_opening":
         return None, [
             Issue(
                 severity="P0",
                 file=rel_path,
-                line=1,
+                line=result.error_line or 1,
                 rule="frontmatter_present",
-                message="frontmatter missing (expected opening ---)",
+                message=result.error_message or "frontmatter missing (expected opening ---)",
                 expected_fix="add YAML frontmatter with required keys",
             )
         ]
-
-    closing_idx: int | None = None
-    for idx, line in enumerate(lines[1:], start=2):
-        if line.strip() == "---":
-            closing_idx = idx
-            break
-
-    if closing_idx is None:
+    if result.error_code == "missing_closing":
         return None, [
             Issue(
                 severity="P0",
                 file=rel_path,
-                line=1,
+                line=result.error_line or 1,
                 rule="frontmatter_closed",
-                message="frontmatter missing closing ---",
+                message=result.error_message or "frontmatter missing closing ---",
                 expected_fix="close YAML frontmatter with ---",
             )
         ]
 
-    metadata: dict[str, str] = {}
-    line_map: dict[str, int] = {}
-    body = lines[1 : closing_idx - 1]
-    for idx, raw in enumerate(body, start=2):
-        line = raw.strip()
-        if not line or line.startswith("#"):
-            continue
-        match = KEY_VALUE_RE.match(raw)
-        if not match:
-            continue
-        key = match.group(1).strip()
-        value = match.group(2).strip()
-        metadata[key] = value
-        line_map[key] = idx
-
     parsed = ParsedDoc(
         path=path,
         rel_path=rel_path,
-        metadata=metadata,
-        line_map=line_map,
-        frontmatter_raw="\n".join(body),
+        metadata=result.metadata,
+        line_map=result.line_map,
+        frontmatter_raw=result.raw,
     )
     return parsed, []
 
