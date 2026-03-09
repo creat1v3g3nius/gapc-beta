@@ -1,11 +1,11 @@
 ---
 id: TPL_03_BACKLOG_CO
 type: TOOLING
-title: BacklogComposants
-version: v1.2
+title: BacklogCoTemplate
+version: v1.3
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 09-03-2026
 tags: [tooling, backlog, composant, core]
 depends_on: [META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL, META_02_SOP_STANDARD_LOOP, DISCIPLINE_06_SCOPE_CLASSIFIER, DISCIPLINE_07_RISK_REGISTER, CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_02_NON_DUPLICATION_POLICY, CONSTRAINT_03_SECRETS_POLICY]
 arc: CORE
@@ -48,6 +48,7 @@ Lister les **CO** (unités de livraison) selon :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (09-03-2026) : debruitage title pour eviter collision semantique avec `PIPELINE_03_BACKLOG_COMPOSANTS`.
 - v1.2 (04-03-2026) : correction heading.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : version initiale READY_TO_FREEZE.

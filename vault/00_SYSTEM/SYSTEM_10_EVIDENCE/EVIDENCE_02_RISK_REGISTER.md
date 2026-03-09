@@ -1,8 +1,8 @@
 ---
 id: EVIDENCE_02_RISK_REGISTER
 type: EVIDENCE
-title: RiskRegister
-version: v1.11
+title: RiskRegisterEvidence
+version: v1.12
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
@@ -103,3 +103,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.9 (09-03-2026) : retire la dependance active a `EVIDENCE_04` et conserve la reference comme archive CACHE/DEPRECATED.
 - v1.10 (09-03-2026) : retire la dependance active a `RUN_07_OPTIMIZATION_PROCESS` (deprecated).
 - v1.11 (09-03-2026) : ajoute `DocIntegrityChecker` comme controle transverse recurrent du registre.
+- v1.12 (09-03-2026) : debruitage title pour distinguer le registre evidence du registre discipline CORE.

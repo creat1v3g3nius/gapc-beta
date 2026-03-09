@@ -2,7 +2,7 @@
 id: META_05_FRONTMATTER
 type: META
 title: FrontmatterStandard
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 28-02-2026
 updated: 09-03-2026
@@ -83,7 +83,7 @@ scope: vault/<ARC_PATH>/<FAMILY_PATH>
 ```yaml
 id: CONSTRAINT_06_TERMINOLOGY_POLICY
 type: CONSTRAINT
-title: TerminologyPolicy
+title: TerminologyPolicyExample
 version: v1.0
 status: READY_TO_FREEZE
 created: 01-03-2026
@@ -129,6 +129,7 @@ Le validator doit au minimum vérifier :
 ---
 
 ## Changelog
+- v1.4 (09-03-2026) : debruitage de l'exemple `title` pour eviter collision avec un frontmatter reel.
 - v1.3 (09-03-2026) : aligne les exemples sur les IDs canoniques (`*_TERMINOLOGY_POLICY`, `*_NON_DUPLICATION_POLICY`).
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (01-03-2026) : standardisation `created/updated/depends_on`, correction des typos, clarification `scope`, exemple CONSTRAINT.

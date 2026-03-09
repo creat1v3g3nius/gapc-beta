@@ -2,7 +2,7 @@
 id: EVIDENCE_04_R0001_TOUCHED_FILES
 type: EVIDENCE
 title: R0001TouchedFilesIndex
-version: v1.1
+version: v1.2
 status: DEPRECATED
 created: 09-03-2026
 updated: 09-03-2026
@@ -20,7 +20,7 @@ Rassembler en un point unique les fichiers touches par la mitigation du risque `
 ## Fichiers touches (canonique)
 - `vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_OPS/OPS_05_CO_DOD.md`
 - `vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_OPS/OPS_04_ACTION_DOC_DOD.md`
-- `vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_01_DOD/DOD_00_BETA_VALIDATION.md`
+- `vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD/DOD_00_BETA_VALIDATION.md`
 - `vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_REVIEW_BETA.md`
 - `vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION.md`
 - `vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_02_RISK_REGISTER.md`
@@ -40,3 +40,4 @@ Rassembler en un point unique les fichiers touches par la mitigation du risque `
 ## Changelog
 - v1.0 (09-03-2026) : creation de l'index consolide des fichiers touches par R-0001.
 - v1.1 (09-03-2026) : deplacement en CACHE et passage en DEPRECATED.
+- v1.2 (09-03-2026) : met a jour les chemins de fichiers deprecies relocalises en CACHE.
