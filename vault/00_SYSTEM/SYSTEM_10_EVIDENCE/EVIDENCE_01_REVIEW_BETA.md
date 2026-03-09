@@ -2,12 +2,12 @@
 id: EVIDENCE_01_REVIEW_BETA
 type: EVIDENCE
 title: ReviewBetaRemediation
-version: v1.7
-status: READY_TO_FREEZE
+version: v1.8
+status: FROZEN
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, review, beta, quality]
-depends_on: [OPS_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER]
+depends_on: [OPS_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -25,6 +25,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - [x] Intention atomique (CO remediation)
 - [x] Controles requis PASS (strict global + smoke)
 - [x] DocIntegrityChecker PASS (`P0=0`, `P1=0`, `P2=0`)
+- [x] SemanticNoiseChecker PASS (`P0=0`, `P1=0`, `P2=0`)
 - [x] Rerun beta global execute (validator strict global PASS)
 - [x] Vault health check execute (P0/P1/P2 traces)
 - [x] No-secrets/no-PII
@@ -48,3 +49,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.5 (09-03-2026) : aligne la revue avec le registre consolide et la cloture de R-0011.
 - v1.6 (09-03-2026) : retire la dependance active a `EVIDENCE_04` (archivee en CACHE/DEPRECATED).
 - v1.7 (09-03-2026) : ajoute la revue explicite `DocIntegrityChecker` et confirme PASS P0/P1.
+- v1.8 (09-03-2026) : passage en FROZEN + revue explicite `SemanticNoiseChecker` et `frontmatter_utils`.

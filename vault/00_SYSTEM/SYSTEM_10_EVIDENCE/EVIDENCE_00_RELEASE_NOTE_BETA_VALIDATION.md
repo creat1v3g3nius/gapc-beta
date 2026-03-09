@@ -2,12 +2,12 @@
 id: EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION
 type: EVIDENCE
 title: ReleaseNoteBetaValidation
-version: v1.8
-status: READY_TO_FREEZE
+version: v1.9
+status: FROZEN
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, release-note, beta, validation]
-depends_on: [EVIDENCE_01_REVIEW_BETA, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_01_SMOKE_RUNNER]
+depends_on: [EVIDENCE_01_REVIEW_BETA, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, SCRIPT_01_SMOKE_RUNNER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -15,7 +15,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 # EVIDENCE_00 - Release Note Beta Validation
 
 ## Version / Perimetre
-- Version: v1.8
+- Version: v1.9
 - Date: 09-03-2026
 - Perimetre: remediation beta globale sur `PRODUCT_00_BETA_GAPC`.
 
@@ -28,6 +28,8 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun beta global.
 - Closed: risque `R-0011` apres commit/push + rerun checks.
 - Added: script `DocIntegrityChecker` (controle coherence transverse P0/P1/P2).
+- Added: script `SemanticNoiseChecker` (controle bruit semantique).
+- Added: module partage `frontmatter_utils` pour homogeneiser le parsing des validators/checkers.
 - Added: integration `SmokeRunner --run-doc-integrity`.
 - Deprecated: aucun.
 
@@ -36,6 +38,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Smoke + DocIntegrity: PASS (`./scripts/SmokeRunner.py --run-doc-integrity`).
 - Validator strict global: PASS.
 - DocIntegrityChecker: PASS (`P0=0`, `P1=0`, `P2=0`).
+- SemanticNoiseChecker: PASS (`P0=0`, `P1=0`, `P2=0`).
 - Vault health check: PASS.
 - Beta global rerun: PASS.
 
@@ -57,3 +60,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.6 (09-03-2026) : retire la dependance active a `EVIDENCE_04` (archivee en CACHE/DEPRECATED).
 - v1.7 (09-03-2026) : remplace la dependance deprecated `DOD_02_RELEASE_FREEZE` par `PIPELINE_05_RELEASE_FREEZE`.
 - v1.8 (09-03-2026) : ajoute `DocIntegrityChecker` + integration SmokeRunner et rerun PASS global.
+- v1.9 (09-03-2026) : passage en FROZEN + integration `SemanticNoiseChecker` et `frontmatter_utils`.
