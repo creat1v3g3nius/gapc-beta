@@ -2,12 +2,12 @@
 id: EVIDENCE_02_RISK_REGISTER
 type: EVIDENCE
 title: RiskRegister
-version: v1.8
+version: v1.10
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, risk, register, beta, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_03_ADR_BETA_SCOPE, EVIDENCE_04_R0001_TOUCHED_FILES]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_BETA_SCOPE]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -35,13 +35,13 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - P: P2
 - I: I3
 - Score: 6
-- Mitigation: patchs cibles multi-arcs + re-run validator strict global + consolidation dans `EVIDENCE_04_R0001_TOUCHED_FILES`.
+- Mitigation: patchs cibles multi-arcs + re-run validator strict global + consolidation dans l'archive cache/deprecated `EVIDENCE_04_R0001_TOUCHED_FILES`.
 - Signal: S1 Frontmatter KO
 - Owner: repo-maintainer
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `OPS_05_CO_DOD`, `OPS_04_ACTION_DOC_DOD`, `EVIDENCE_04_R0001_TOUCHED_FILES`
+- Liens: `OPS_05_CO_DOD`, `OPS_04_ACTION_DOC_DOD`, `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`
 
 ### R-0005
 - Titre: EvidenceThinSliceIncomplete
@@ -100,3 +100,5 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.6 (09-03-2026) : integre la revue explicite de R-0009 (statut confirme Closed avec preuves).
 - v1.7 (09-03-2026) : fermeture de R-0011 + suppression du suffixe `_PRODUCT` sur naming/id.
 - v1.8 (09-03-2026) : mise a jour complete du registre (etat global, dates de revue harmonisees, preuves de cloture).
+- v1.9 (09-03-2026) : retire la dependance active a `EVIDENCE_04` et conserve la reference comme archive CACHE/DEPRECATED.
+- v1.10 (09-03-2026) : retire la dependance active a `RUN_07_OPTIMIZATION_PROCESS` (deprecated).

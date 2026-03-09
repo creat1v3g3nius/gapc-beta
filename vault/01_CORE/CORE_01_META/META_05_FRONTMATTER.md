@@ -2,10 +2,10 @@
 id: META_05_FRONTMATTER
 type: META
 title: FrontmatterStandard
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 04-03-2026
+updated: 09-03-2026
 tags: [governance, frontmatter, llm, meta, core]
 depends_on: [META_03_NAMING_CONVENTIONS, META_04_WRITING_RULES]
 arc: CORE
@@ -31,10 +31,10 @@ Définir le **standard unique** du frontmatter YAML pour tous les fichiers “so
 Tout document “source” (SYSTEM/CORE/PACKAGE/PRODUCT) doit avoir un frontmatter YAML conforme.
 
 ### 1.2 Règle d’ID
-**`id` = nom du fichier sans extension** (contrat).  
+**`id` = nom du fichier sans extension** (contrat).
 Exemple :
-- fichier : `CONSTRAINT_06_TERMINOLOGYPOLICY.md`
-- frontmatter : `id: CONSTRAINT_06_TERMINOLOGYPOLICY`
+- fichier : `CONSTRAINT_06_TERMINOLOGY_POLICY.md`
+- frontmatter : `id: CONSTRAINT_06_TERMINOLOGY_POLICY`
 
 ### 1.3 Champs obligatoires (P0)
 Champs requis :
@@ -81,7 +81,7 @@ scope: vault/<ARC_PATH>/<FAMILY_PATH>
 ## 3) Exemple (conforme)
 
 ```yaml
-id: CONSTRAINT_06_TERMINOLOGYPOLICY
+id: CONSTRAINT_06_TERMINOLOGY_POLICY
 type: CONSTRAINT
 title: TerminologyPolicy
 version: v1.0
@@ -89,9 +89,9 @@ status: READY_TO_FREEZE
 created: 01-03-2026
 updated: 01-03-2026
 tags: [constraint, core]
-depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_02_NONDUPLICATIONPOLICY]
+depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_02_NON_DUPLICATION_POLICY]
 arc: CORE
-scope: vault/01_CORE/CORE_02_CONSTRAINT
+scope: vault/01_CORE/CORE_03_CONSTRAINT
 ```
 
 ---
@@ -129,6 +129,7 @@ Le validator doit au minimum vérifier :
 ---
 
 ## Changelog
+- v1.3 (09-03-2026) : aligne les exemples sur les IDs canoniques (`*_TERMINOLOGY_POLICY`, `*_NON_DUPLICATION_POLICY`).
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (01-03-2026) : standardisation `created/updated/depends_on`, correction des typos, clarification `scope`, exemple CONSTRAINT.
 - v1.0 (28-02-2026) : version initiale fileciteturn43file0.

@@ -1,11 +1,11 @@
 ---
 id: CONSTRAINT_01_RAG_SCOPE_POLICY
 type: CONSTRAINT
-title: Ragscopepolicy
-version: v1.2
+title: RagScopePolicy
+version: v1.3
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 09-03-2026
 tags: [limites, rag-scope-policy, llm, discipline, core]
 depends_on: [CONSTRAINT_00_GUARD_RAILS, DISCIPLINE_00_RAG_PROFILE, DISCIPLINE_02_RAG_QG, META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL]
 arc: CORE

@@ -1,12 +1,12 @@
 ---
-id: RUN_01_COMPOSANT
+id: RUN_01_COMPOSANTS
 type: RUN
 title: WorkflowProductComposantsRules
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
-tags: [workflow, composant-rules, run, system]
+updated: 09-03-2026
+tags: [workflow, composants-rules, run, system]
 depends_on: [INDEX_01_ARCHITECTURE, RUN_00_PIPELINE]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN

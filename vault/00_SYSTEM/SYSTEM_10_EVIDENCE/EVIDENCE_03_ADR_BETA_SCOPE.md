@@ -2,12 +2,12 @@
 id: EVIDENCE_03_ADR_BETA_SCOPE
 type: EVIDENCE
 title: AdrBetaScope
-version: v1.4
+version: v1.6
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, adr, beta, scope]
-depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, RUN_07_OPTIMIZATION_PROCESS, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
+depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -51,7 +51,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - RUN_07 execute sur tout le vault avec PASS structurel (naming/frontmatter/depends_on coherents).
 - Relocalisation des preuves validee dans `SYSTEM_10_EVIDENCE`.
 - Validator global et Smoke runner executes avec PASS.
-- Tracabilite R-0001 consolidee dans `EVIDENCE_04_R0001_TOUCHED_FILES`.
+- Tracabilite R-0001 consolidee dans l'archive cache/deprecated `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
 - Registre de risques consolide et renomme en `EVIDENCE_02_RISK_REGISTER` (R-0011 clos).
 
 ## Next Step Unique
@@ -62,3 +62,5 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.2 (09-03-2026) : confirmation de l'execution globale (RUN_07) et formalisation de la chaine canonique `OPS_* -> BETA_* -> EVIDENCE_*`.
 - v1.3 (09-03-2026) : ajoute la reference consolidee des fichiers touches par R-0001.
 - v1.4 (09-03-2026) : aligne l'ADR avec le registre de risques consolide (`EVIDENCE_02_RISK_REGISTER`) et la cloture de R-0011.
+- v1.5 (09-03-2026) : retire la dependance active a `EVIDENCE_04` et conserve la trace via archive CACHE/DEPRECATED.
+- v1.6 (09-03-2026) : retire la dependance active a `RUN_07_OPTIMIZATION_PROCESS` (deprecated).

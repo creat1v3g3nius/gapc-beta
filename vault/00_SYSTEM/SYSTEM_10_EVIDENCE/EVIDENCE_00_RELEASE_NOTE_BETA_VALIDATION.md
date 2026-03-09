@@ -2,12 +2,12 @@
 id: EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION
 type: EVIDENCE
 title: ReleaseNoteBetaValidation
-version: v1.5
+version: v1.7
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, release-note, beta, validation]
-depends_on: [EVIDENCE_01_REVIEW_BETA, DOD_02_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES, EVIDENCE_02_RISK_REGISTER]
+depends_on: [EVIDENCE_01_REVIEW_BETA, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -15,7 +15,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 # EVIDENCE_00 - Release Note Beta Validation
 
 ## Version / Perimetre
-- Version: v1.5
+- Version: v1.7
 - Date: 09-03-2026
 - Perimetre: remediation beta globale sur `PRODUCT_00_BETA_GAPC`.
 
@@ -24,7 +24,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Added: health check vault `RUN_06_VAULT_HEALTH_CHECK`.
 - Changed: frontmatter strict du backlog composants.
 - Fixed: references depends_on vers ID backlog aligne.
-- Added: index consolide R-0001 `EVIDENCE_04_R0001_TOUCHED_FILES`.
+- Archived: index consolide R-0001 deplace en cache/deprecated (`vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`).
 - Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun beta global.
 - Closed: risque `R-0011` apres commit/push + rerun checks.
 - Deprecated: aucun.
@@ -50,3 +50,5 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.3 (06-03-2026) : cloture officielle des risques R-0001/R-0005/R-0009 apres rerun global.
 - v1.4 (09-03-2026) : ajoute la consolidation de tracabilite R-0001.
 - v1.5 (09-03-2026) : aligne la release note avec le registre consolide et la cloture de R-0011.
+- v1.6 (09-03-2026) : retire la dependance active a `EVIDENCE_04` (archivee en CACHE/DEPRECATED).
+- v1.7 (09-03-2026) : remplace la dependance deprecated `DOD_02_RELEASE_FREEZE` par `PIPELINE_05_RELEASE_FREEZE`.

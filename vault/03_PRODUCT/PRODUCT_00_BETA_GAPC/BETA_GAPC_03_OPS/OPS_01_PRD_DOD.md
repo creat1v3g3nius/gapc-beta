@@ -2,14 +2,14 @@
 id: OPS_01_PRD_DOD
 type: PRD
 title: GapcBetaPrdDodRemediation
-version: v1.1
+version: v1.2
 status: READY_TO_FREEZE
 created: 06-03-2026
-updated: 06-03-2026
+updated: 09-03-2026
 tags: [product, gapcbeta, prd, dod, remediation, p0]
-depends_on: [DOD_00_BETA_VALIDATION, TPL_00_PROD_ONE_PAGER, OPS_00_COMPOSANTS_BACKLOG, RUN_06_VAULT_HEALTH_CHECK]
+depends_on: [TPL_00_PROD_ONE_PAGER, OPS_00_COMPOSANTS_BACKLOG, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
+scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_OPS
 ---
 
 # OPS_01_PRD_DOD
@@ -45,3 +45,4 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 
 ## Changelog
 - v1.1 (06-03-2026) : aligne le PRD sur un objectif DocQG global `vault/`.
+- v1.2 (09-03-2026) : retire la dependance active vers `DOD_00_BETA_VALIDATION` (deprecated) et corrige le scope OPS.

@@ -2,12 +2,12 @@
 id: OPS_04_ACTION_DOC_DOD
 type: ACTION
 title: GapcBetaActionDocDodRemediation
-version: v1.4
+version: v1.5
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [product, gapcbeta, action, dod, remediation]
-depends_on: [OPS_05_CO_DOD, EVIDENCE_03_ADR_BETA_SCOPE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_04_R0001_TOUCHED_FILES]
+depends_on: [OPS_05_CO_DOD, EVIDENCE_03_ADR_BETA_SCOPE, EVIDENCE_02_RISK_REGISTER, RUN_06_VAULT_HEALTH_CHECK]
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_OPS
 ---
@@ -21,7 +21,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_OPS
 4. Registre risques product instancie.
 5. Health check vault execute et integre au lot evidence.
 6. Rerun DoD_00 global execute et confirme (validator strict global PASS).
-7. Consolidation des fichiers touches par R-0001 dans `EVIDENCE_04_R0001_TOUCHED_FILES`.
+7. Consolidation des fichiers touches par R-0001 archivee dans `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
 
 ## Commandes Executees
 ```bash
@@ -45,3 +45,4 @@ git push --dry-run
 - v1.2 (06-03-2026) : bascule execution/critere DocQG vers scope global `vault/`.
 - v1.3 (06-03-2026) : ajoute la preuve de rerun DOD_00 global et la cloture des risques.
 - v1.4 (09-03-2026) : ajoute la consolidation R-0001 et aligne le scope vers `BETA_GAPC_03_OPS`.
+- v1.5 (09-03-2026) : retire la dependance active vers `EVIDENCE_04` (archive CACHE/DEPRECATED).

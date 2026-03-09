@@ -1,13 +1,13 @@
 ---
 id: RUN_03_START_SESSION
 type: RUN
-title: WorkflowstartSession
-version: v1.1
+title: WorkflowStartSession
+version: v1.2
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 09-03-2026
 tags: [workflow, start-session, run, system]
-depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANT, INDEX_01_ARCHITECTURE, INDEX_04_OBSIDIAN]
+depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANTS, INDEX_01_ARCHITECTURE, INDEX_04_OBSIDIAN]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---

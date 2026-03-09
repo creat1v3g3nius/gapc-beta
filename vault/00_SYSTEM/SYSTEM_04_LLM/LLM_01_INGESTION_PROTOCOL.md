@@ -23,7 +23,7 @@ Permet de définir un protocole **répétable** et **scalable** pour :
 
 Alignement :
 - principes RAG : `LLM_00_RAGPRINCIPES` fileciteturn20file0  
-- runbooks exécution/ingestion/CO : `RUN_00_PIPELINE` / `RUN_01_COMPOSANT` / `RUN_02_CHECKLISTS`
+- runbooks exécution/ingestion/CO : `RUN_00_PIPELINE` / `RUN_01_COMPOSANTS` / `RUN_02_CHECKLISTS`
 
 Contraintes :
 - **No secrets**

@@ -7,7 +7,7 @@ status: FROZEN
 created: 27-02-2026
 updated: 02-03-2026
 tags: [workflow, end-session, run, system]
-depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANT]
+depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANTS]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---

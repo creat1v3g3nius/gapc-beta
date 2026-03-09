@@ -2,12 +2,12 @@
 id: ASSO_CONSTRAINT_00_ALLOW_LIST
 type: CONSTRAINT
 title: AssoExtensionAllowlist
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 09-03-2026
 tags: [package, asso, tooling, extension, allowlist, p1]
-depends_on: [EXTENSION_00_INDEX, EXTENSION_04_EVIDENCE_PACK, CONSTRAINT_03_SECRETS_POLICY, ASSO_CONSTRAINT_04_DATA_PRIVACY_POLICY]
+depends_on: [EXTENSION_04_EVIDENCE_PACK, CONSTRAINT_03_SECRETS_POLICY, ASSO_CONSTRAINT_04_DATA_PRIVACY_POLICY]
 arc: PACKAGE
 scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_03_CONSTRAINT
 ---
@@ -30,6 +30,7 @@ Définir les outils externes autorisés pour produire des assets “asso”, ave
 - Evidence Pack CORE obligatoire (`EXTENSION_04_EVIDENCEPACK`)
 
 ## Changelog
+- v1.4 (09-03-2026) : retire la dependance deprecated `EXTENSION_00_INDEX`.
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (01-03-2026) : passage en FROZEN v1.2 + normalisation ids/depends_on.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation frontmatter/id/depends_on.
