@@ -2,12 +2,12 @@
 id: EVIDENCE_02_RISK_REGISTER
 type: EVIDENCE
 title: RiskRegister
-version: v1.10
+version: v1.11
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, risk, register, beta, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_BETA_SCOPE]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_BETA_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -89,7 +89,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Liens: `RUN_06_VAULT_HEALTH_CHECK`, `EVIDENCE_03_ADR_BETA_SCOPE`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
 
 ## Next Step Unique
-- Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` a chaque lot documentaire et revalider ce registre a chaque fermeture de risque.
+- Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` + `DocIntegrityChecker` a chaque lot documentaire et revalider ce registre a chaque fermeture de risque.
 
 ## Changelog
 - v1.1 (06-03-2026) : aligne le registre risques sur la cible DocQG globale.
@@ -102,3 +102,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.8 (09-03-2026) : mise a jour complete du registre (etat global, dates de revue harmonisees, preuves de cloture).
 - v1.9 (09-03-2026) : retire la dependance active a `EVIDENCE_04` et conserve la reference comme archive CACHE/DEPRECATED.
 - v1.10 (09-03-2026) : retire la dependance active a `RUN_07_OPTIMIZATION_PROCESS` (deprecated).
+- v1.11 (09-03-2026) : ajoute `DocIntegrityChecker` comme controle transverse recurrent du registre.

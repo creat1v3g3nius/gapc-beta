@@ -2,12 +2,12 @@
 id: EVIDENCE_03_ADR_BETA_SCOPE
 type: EVIDENCE
 title: AdrBetaScope
-version: v1.6
+version: v1.7
 status: READY_TO_FREEZE
 created: 06-03-2026
 updated: 09-03-2026
 tags: [system, evidence, adr, beta, scope]
-depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER]
+depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -51,6 +51,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - RUN_07 execute sur tout le vault avec PASS structurel (naming/frontmatter/depends_on coherents).
 - Relocalisation des preuves validee dans `SYSTEM_10_EVIDENCE`.
 - Validator global et Smoke runner executes avec PASS.
+- DocIntegrityChecker implemente et integre au SmokeRunner avec PASS (`P0=0`, `P1=0`).
 - Tracabilite R-0001 consolidee dans l'archive cache/deprecated `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
 - Registre de risques consolide et renomme en `EVIDENCE_02_RISK_REGISTER` (R-0011 clos).
 
@@ -64,3 +65,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.4 (09-03-2026) : aligne l'ADR avec le registre de risques consolide (`EVIDENCE_02_RISK_REGISTER`) et la cloture de R-0011.
 - v1.5 (09-03-2026) : retire la dependance active a `EVIDENCE_04` et conserve la trace via archive CACHE/DEPRECATED.
 - v1.6 (09-03-2026) : retire la dependance active a `RUN_07_OPTIMIZATION_PROCESS` (deprecated).
+- v1.7 (09-03-2026) : ajoute la decision d'integration `DocIntegrityChecker` et confirme PASS en orchestration smoke.

@@ -28,6 +28,31 @@ def parse_args() -> argparse.Namespace:
         default=[],
         help="Extra required path (relative to repo root). Can be repeated.",
     )
+    parser.add_argument(
+        "--run-doc-integrity",
+        action="store_true",
+        help="Run DocIntegrityChecker as part of smoke checks.",
+    )
+    parser.add_argument(
+        "--doc-integrity-script",
+        default="scripts/DocIntegrityChecker.py",
+        help="DocIntegrityChecker command path relative to repo root.",
+    )
+    parser.add_argument(
+        "--doc-integrity-scope",
+        default="vault",
+        help="Scope passed to DocIntegrityChecker (default: vault).",
+    )
+    parser.add_argument(
+        "--doc-integrity-max-exit",
+        type=int,
+        default=2,
+        choices=(0, 1, 2),
+        help=(
+            "Highest acceptable DocIntegrityChecker exit code. "
+            "0=PASS only, 1=PASS+FAIL threshold, 2=PASS/WARN accepted (default)."
+        ),
+    )
     return parser.parse_args()
 
 
@@ -57,6 +82,31 @@ def run_validator(repo_root: Path, validator_rel: str) -> None:
 
     if result.returncode != 0:
         raise SmokeFailure(f"validator failed with exit code {result.returncode}")
+
+
+def run_doc_integrity(
+    repo_root: Path,
+    checker_rel: str,
+    checker_scope: str,
+    max_exit: int,
+) -> int:
+    checker = (repo_root / checker_rel).resolve()
+    ensure_exists(checker, "doc integrity checker")
+
+    cmd = [str(checker), "--scope", checker_scope, "--output", "text", "--min-severity", "P1"]
+    try:
+        result = subprocess.run(cmd, cwd=repo_root, check=False)
+    except PermissionError:
+        # Fallback if executable bit is missing on another machine.
+        result = subprocess.run(["python3", str(checker), *cmd[1:]], cwd=repo_root, check=False)
+
+    if result.returncode > max_exit:
+        raise SmokeFailure(
+            "doc integrity checker failed with exit code "
+            f"{result.returncode} (max allowed: {max_exit})"
+        )
+
+    return result.returncode
 
 
 def check_arcs(vault_root: Path) -> None:
@@ -98,6 +148,20 @@ def run() -> int:
 
         run_validator(repo_root, args.validator)
         _ok("validator execution")
+
+        if args.run_doc_integrity:
+            doc_exit = run_doc_integrity(
+                repo_root=repo_root,
+                checker_rel=args.doc_integrity_script,
+                checker_scope=args.doc_integrity_scope,
+                max_exit=args.doc_integrity_max_exit,
+            )
+            if doc_exit == 0:
+                _ok("doc integrity execution")
+            elif doc_exit == 2:
+                _ok("doc integrity execution (WARN accepted)")
+            else:
+                _ok("doc integrity execution (non-blocking threshold applied)")
 
     except SmokeFailure as err:
         _ko(str(err))
