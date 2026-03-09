@@ -1,23 +1,23 @@
 ---
-id: EVIDENCE_03_ADR_BETA_SCOPE
+id: EVIDENCE_03_ADR_FRAMEWORK_SCOPE
 type: EVIDENCE
-title: AdrBetaScope
-version: v1.8
+title: AdrFrameworkScope
+version: v1.9
 status: FROZEN
 created: 06-03-2026
 updated: 09-03-2026
-tags: [system, evidence, adr, beta, scope]
+tags: [system, evidence, adr, framework, scope]
 depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# EVIDENCE_03 - ADR Beta Scope
+# EVIDENCE_03 - ADR Framework Scope
 
 ## Statut
 - Status: ACCEPTED
 - Date: 06-03-2026
-- Owner: product-owner-beta-gapc
+- Owner: framework-owner
 - Liens: `OPS_01_PRD_DOD`, `OPS_02_SPEC_DOD`
 
 ## Contexte
@@ -26,20 +26,20 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 
 ## Options
 ### Option A
-- Description: corriger tout le vault avant de rejouer la validation beta globale.
+- Description: corriger tout le vault avant de rejouer la validation framework canon globale.
 - Pros: homogeneite globale immediate.
 - Cons: effort initial plus large.
 - Risques: augmentation du temps de traitement.
 
 ### Option B
-- Description: corriger strict sur `PRODUCT_00_BETA_GAPC` + evidence thin-slice complete.
+- Description: corriger strict sur le scope produit + evidence thin-slice complete.
 - Pros: delivre une preuve rapide.
 - Cons: ne repond pas a l'exigence de DocQG global.
-- Risques: verdict beta incomplet.
+- Risques: verdict framework canon incomplet.
 
 ## Decision
-- Option A retenue: validation beta globale avec DocQG strict sur l'ensemble du vault.
-- Decision confirmee: la preuve est maintenue en chaines canoniques `OPS_* -> BETA_* -> EVIDENCE_*` avec references d'ID et sans duplication locale.
+- Option A retenue: validation framework canon globale avec DocQG strict sur l'ensemble du vault.
+- Decision confirmee: la preuve est maintenue en chaines canoniques `OPS_* -> FRAMEWORK_* -> EVIDENCE_*` avec references d'ID et sans duplication locale.
 
 ## Consequences
 - Positives: verdict de conformite coherent avec l'exigence globale.
@@ -62,10 +62,11 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 
 ## Changelog
 - v1.1 (06-03-2026) : decision de scope mise a jour vers DocQG global `vault/`.
-- v1.2 (09-03-2026) : confirmation de l'execution globale (RUN_07) et formalisation de la chaine canonique `OPS_* -> BETA_* -> EVIDENCE_*`.
+- v1.2 (09-03-2026) : confirmation de l'execution globale (RUN_07) et formalisation de la chaine canonique `OPS_* -> FRAMEWORK_* -> EVIDENCE_*`.
 - v1.3 (09-03-2026) : ajoute la reference consolidee des fichiers touches par R-0001.
 - v1.4 (09-03-2026) : aligne l'ADR avec le registre de risques consolide (`EVIDENCE_02_RISK_REGISTER`) et la cloture de R-0011.
 - v1.5 (09-03-2026) : retire la dependance active a `EVIDENCE_04` et conserve la trace via archive CACHE/DEPRECATED.
 - v1.6 (09-03-2026) : retire la dependance active a `RUN_07_OPTIMIZATION_PROCESS` (deprecated).
 - v1.7 (09-03-2026) : ajoute la decision d'integration `DocIntegrityChecker` et confirme PASS en orchestration smoke.
 - v1.8 (09-03-2026) : passage en FROZEN + integration `SemanticNoiseChecker` et `frontmatter_utils`.
+- v1.9 (09-03-2026) : bascule de naming/ID ADR vers la version FRAMEWORK canon.

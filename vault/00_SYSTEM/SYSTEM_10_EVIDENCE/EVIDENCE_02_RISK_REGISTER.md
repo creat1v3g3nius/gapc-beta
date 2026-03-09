@@ -1,13 +1,13 @@
 ---
 id: EVIDENCE_02_RISK_REGISTER
 type: EVIDENCE
-title: RiskRegisterEvidence
-version: v1.13
+title: RiskRegisterFramework
+version: v1.14
 status: FROZEN
 created: 06-03-2026
 updated: 09-03-2026
-tags: [system, evidence, risk, register, beta, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_BETA_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS]
+tags: [system, evidence, risk, register, framework, p0]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_FRAMEWORK_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -31,7 +31,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ### R-0001
 - Titre: FrontmatterStrictNonConforme
 - Categorie: Governance
-- Description: non-conformite `id/title` bloquante pour la validation beta stricte globale.
+- Description: non-conformite `id/title` bloquante pour la validation framework canon stricte globale.
 - P: P2
 - I: I3
 - Score: 6
@@ -52,11 +52,11 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Score: 4
 - Mitigation: creation du pack canonique `OPS_*` + `EVIDENCE_*`.
 - Signal: S6 Derive CO
-- Owner: product-owner-beta-gapc
+- Owner: framework-owner
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `OPS_01_PRD_DOD`, `EVIDENCE_01_REVIEW_BETA`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
+- Liens: `OPS_01_PRD_DOD`, `EVIDENCE_01_REVIEW_FRAMEWORK`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION`
 
 ### R-0009
 - Titre: DocqgGlobalVaultCoverage
@@ -71,7 +71,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `DOD_00_BETA_VALIDATION`, `EVIDENCE_01_REVIEW_BETA`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`, `EVIDENCE_03_ADR_BETA_SCOPE`
+- Liens: `PIPELINE_05_RELEASE_FREEZE`, `EVIDENCE_01_REVIEW_FRAMEWORK`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION`, `EVIDENCE_03_ADR_FRAMEWORK_SCOPE`
 
 ### R-0011
 - Titre: BranchAheadOriginPendingSync
@@ -86,7 +86,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 09-03-2026
-- Liens: `RUN_06_VAULT_HEALTH_CHECK`, `EVIDENCE_03_ADR_BETA_SCOPE`, `EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION`
+- Liens: `RUN_06_VAULT_HEALTH_CHECK`, `EVIDENCE_03_ADR_FRAMEWORK_SCOPE`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION`
 
 ## Next Step Unique
 - Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` + `DocIntegrityChecker` + `SemanticNoiseChecker` a chaque lot documentaire et revalider ce registre a chaque fermeture de risque.
@@ -105,3 +105,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.11 (09-03-2026) : ajoute `DocIntegrityChecker` comme controle transverse recurrent du registre.
 - v1.12 (09-03-2026) : debruitage title pour distinguer le registre evidence du registre discipline CORE.
 - v1.13 (09-03-2026) : passage en FROZEN + ajout des controles `SemanticNoiseChecker` et `frontmatter_utils`.
+- v1.14 (09-03-2026) : bascule semantique EVIDENCE vers FRAMEWORK canon + alignement des liens.

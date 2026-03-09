@@ -45,7 +45,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - R-0005: evidence incomplete => mitigation: artefacts minimaux obligatoires.
 
 ## Next Step Unique
-- Valider la decision de scope dans `EVIDENCE_03_ADR_BETA_SCOPE`.
+- Valider la decision de scope dans `EVIDENCE_03_ADR_FRAMEWORK_SCOPE`.
 
 ## Changelog
 - v1.1 (06-03-2026) : bascule les validations spec vers DocQG global `vault/`.

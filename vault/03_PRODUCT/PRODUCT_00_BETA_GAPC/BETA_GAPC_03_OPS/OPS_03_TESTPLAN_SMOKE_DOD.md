@@ -53,7 +53,7 @@ scope: vault/03_PRODUCT/PRODUCT_00_BETA_GAPC/BETA_GAPC_03_EVIDENCE
 - Revert du commit thin-slice remediation si regression.
 
 ## Next Step Unique
-- Produire la revue finale dans `EVIDENCE_01_REVIEW_BETA`.
+- Produire la revue finale dans `EVIDENCE_01_REVIEW_FRAMEWORK`.
 
 ## Changelog
 - v1.1 (06-03-2026) : ajoute le scenario S3 de health check vault et sa reference.

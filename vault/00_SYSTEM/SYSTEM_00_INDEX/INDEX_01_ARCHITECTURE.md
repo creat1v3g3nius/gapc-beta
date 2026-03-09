@@ -2,10 +2,10 @@
 id: INDEX_01_ARCHITECTURE
 type: INDEX
 title: ArchitectureFrameworkGAPC
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 09-03-2026
 tags: [repo, framework-architecture, index, system]
 depends_on: []
 arc: SYSTEM
@@ -120,11 +120,13 @@ FIELD générique - FIELD spécifique si package actif
 
 ------------------------------------------------------------------------
 
-## 7. 04_CACHE
+## 7. 99_CACHE
 
 Rôle : Stockage temporaire non conventionnel.
 
 Ne contient aucune source de vérité.
+
+Compatibilité legacy : certains documents historiques peuvent encore mentionner `04_CACHE`.
 
 ------------------------------------------------------------------------
 
@@ -144,8 +146,7 @@ Ne contient aucune source de vérité.
 
 ## 9. Statut
 
-Cette architecture constitue la base stable du framework GAPC pour la
-phase Beta.
+Cette architecture constitue la base stable du framework GAPC (version canon).
 
 Toute évolution ultérieure nécessite : - Audit - ADR - Mise à jour de
 version.
@@ -162,5 +163,6 @@ version.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (09-03-2026) : alignement architecture sur la version FRAMEWORK canon (`99_CACHE` explicite).
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.1 : READY_TO_FREEZE.

@@ -2,10 +2,10 @@
 id: INDEX_02_REPOSITORY
 type: INDEX
 title: RepositoryFilesList
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 09-03-2026
 tags: [repo, framework-files-list, index, system]
 depends_on: [INDEX_01_ARCHITECTURE]
 arc: SYSTEM
@@ -35,8 +35,11 @@ repo/
 docs/
 
 scripts/
-validate_vault.py
-smoke.py
+ValidateFrontmatter.py
+SmokeRunner.py
+DocIntegrityChecker.py
+SemanticNoiseChecker.py
+frontmatter_utils.py
 
 vault/
 00_SYSTEM/
@@ -65,12 +68,27 @@ GIT_03_PATCH_COMMIT.md
 SYSTEM_03_SCRIPT/
 SCRIPT_00_VALIDATOR.md
 SCRIPT_01_SMOKE_RUNNER.md
-SCRIPT_02_CODEX.md
+SCRIPT_02_VSCODE_EXTENSIONS.md
+SCRIPT_03_GIT_BOOTSTRAP_AGENT.md
+SCRIPT_04_DOC_INTEGRITY_CHECKER.md
+SCRIPT_05_SEMANTIC_NOISE_CHECKER.md
+SCRIPT_06_FRONTMATTER_UTILS.md
 
-SYSTEM_10_BACKLOG/
+SYSTEM_04_LLM/
+LLM_00_RAG_PRINCIPES.md
+LLM_01_INGESTION_PROTOCOL.md
+LLM_02_PERMISSION_SECURITY.md
+
+SYSTEM_10_EVIDENCE/
+EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION.md
+EVIDENCE_01_REVIEW_FRAMEWORK.md
+EVIDENCE_02_RISK_REGISTER.md
+EVIDENCE_03_ADR_FRAMEWORK_SCOPE.md
+
+SYSTEM_20_BACKLOG/
 BACKLOG_00_AUDIT_ARCHITECTURE.md
 
-SYSTEM_20_PATCH/
+SYSTEM_30_PATCH/
 PATCH_00_HOSTING/
 HOSTING_00_INDEX_CONFIG.md
 HOSTING_01_TARGET_ARCHITECTURE.md
@@ -78,6 +96,8 @@ HOSTING_02_BACKUP_RSYNC.md
 HOSTING_03_OPERATION_MONITORING.md
 HOSTING_04_DISASTER_RECOVERY.md
 HOSTING_05_SERVER_BACKUP.md
+PATCH_01_FRAMEWORK/
+FRAMEWORK_00_AMELIORATION_PIPELINE.md
 
 SYSTEM_99_FAQ/
 FAQ_00_FORM.md
@@ -169,7 +189,7 @@ preuves
 CO
 validations
 
-04_CACHE/
+99_CACHE/
 zone temporaire
 jamais source de vérité
 
@@ -212,6 +232,7 @@ CORE > PACKAGE > PRODUCT > SYSTEM > CACHE
 Modifications uniquement via : patch ciblé, validation, version bump.
 
 ## Changelog
+- v1.3 (09-03-2026) : alignement de l'index repository avec scripts/evidence FRAMEWORK canons et arc `99_CACHE`.
 - v1.2 (05-03-2026) : repository complet stabilisé (CORE, PACKAGE, CHECKLIST, EXTENSION, PATCH_HOSTING, FAQ)
 - v1.1 (02-03-2026) : normalisation frontmatter + passage FROZEN
 - v1.0 (27-02-2026) : version initiale

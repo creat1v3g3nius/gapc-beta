@@ -1,23 +1,23 @@
 ---
-id: EVIDENCE_00_RELEASE_NOTE_BETA_VALIDATION
+id: EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION
 type: EVIDENCE
-title: ReleaseNoteBetaValidation
-version: v1.9
+title: ReleaseNoteFrameworkValidation
+version: v1.10
 status: FROZEN
 created: 06-03-2026
 updated: 09-03-2026
-tags: [system, evidence, release-note, beta, validation]
-depends_on: [EVIDENCE_01_REVIEW_BETA, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, SCRIPT_01_SMOKE_RUNNER]
+tags: [system, evidence, release-note, framework, validation]
+depends_on: [EVIDENCE_01_REVIEW_FRAMEWORK, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, SCRIPT_01_SMOKE_RUNNER]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
 
-# EVIDENCE_00 - Release Note Beta Validation
+# EVIDENCE_00 - Release Note Framework Validation
 
 ## Version / Perimetre
-- Version: v1.9
+- Version: v1.10
 - Date: 09-03-2026
-- Perimetre: remediation beta globale sur `PRODUCT_00_BETA_GAPC`.
+- Perimetre: remediation framework canon globale sur le vault.
 
 ## Changements
 - Added: pack evidence thin-slice complet.
@@ -25,7 +25,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Changed: frontmatter strict du backlog composants.
 - Fixed: references depends_on vers ID backlog aligne.
 - Archived: index consolide R-0001 deplace en cache/deprecated (`vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`).
-- Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun beta global.
+- Closed: risques `R-0001`, `R-0005`, `R-0009` apres rerun framework canon global.
 - Closed: risque `R-0011` apres commit/push + rerun checks.
 - Added: script `DocIntegrityChecker` (controle coherence transverse P0/P1/P2).
 - Added: script `SemanticNoiseChecker` (controle bruit semantique).
@@ -40,13 +40,13 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - DocIntegrityChecker: PASS (`P0=0`, `P1=0`, `P2=0`).
 - SemanticNoiseChecker: PASS (`P0=0`, `P1=0`, `P2=0`).
 - Vault health check: PASS.
-- Beta global rerun: PASS.
+- Framework canon global rerun: PASS.
 
 ## Risques Connus
 - Aucun risque Open sur le scope global valide (registre: `EVIDENCE_02_RISK_REGISTER`).
 
 ## Backout Plan
-- Revert du commit `CO_00_BETA`.
+- Revert du lot evidence via le commit associe a `OPS_05_CO_DOD`.
 
 ## Next Step Unique
 - Lancer le prochain lot avec la meme gate globale (`validator strict + smoke + health check`) et mise a jour du registre risques.
@@ -61,3 +61,4 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.7 (09-03-2026) : remplace la dependance deprecated `DOD_02_RELEASE_FREEZE` par `PIPELINE_05_RELEASE_FREEZE`.
 - v1.8 (09-03-2026) : ajoute `DocIntegrityChecker` + integration SmokeRunner et rerun PASS global.
 - v1.9 (09-03-2026) : passage en FROZEN + integration `SemanticNoiseChecker` et `frontmatter_utils`.
+- v1.10 (09-03-2026) : bascule de naming/ID EVIDENCE vers la version FRAMEWORK canon.
