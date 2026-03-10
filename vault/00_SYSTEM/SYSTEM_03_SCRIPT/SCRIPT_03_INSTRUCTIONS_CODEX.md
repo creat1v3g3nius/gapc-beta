@@ -162,6 +162,7 @@ Ne pas continuer ou demander arbitrage si :
 ### Cas de redirection
 
 Rediriger vers AnythingLLM local si la demande est purement documentaire :
+- "localise le(s) fichier(s)"
 - “où est la règle”
 - “quels fichiers parlent de…”
 - “résume-moi le corpus”

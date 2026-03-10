@@ -2,7 +2,7 @@
 id: LLM_00_RAG_PRINCIPES
 type: LLM
 title: RagPrincipes
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 28-02-2026
 updated: 10-03-2026
@@ -70,6 +70,7 @@ Elle est déclenchée **seulement** si le mode local ne tient plus le niveau att
 - produire des checklists, étapes, critères, mappings règle → action
 - dire **NON TROUVÉ** si l’information n’existe pas
 - respecter le package actif et le product actif
+- si `product actif = PRODUCT_00_BETA_GAPC`, utiliser `OPS_06_READY_TO_FREEZE_CHECKLIST` comme checklist product de référence
 - rester en lecture seule
 
 ### 2.2) Ce que le mentor NE DOIT PAS faire
@@ -202,6 +203,7 @@ Ce découpage est le mode nominal du système LLM documentaire.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (10-03-2026) : ajoute la reference explicite a `OPS_06_READY_TO_FREEZE_CHECKLIST` pour `PRODUCT_00_BETA_GAPC`.
 - v1.2 (10-03-2026) : alignement sur la nouvelle architecture LLM cible.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 (28-02-2026) : READY_TO_FREEZE.
