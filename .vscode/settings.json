@@ -1,6 +1,9 @@
 {
   "files.eol": "\n",
   "files.trimTrailingWhitespace": true,
+  "files.exclude": {
+    "**/.git": false
+  },
   "editor.formatOnSave": false,
   "editor.wordWrap": "on",
   "editor.rulers": [100],
