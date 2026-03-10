@@ -4,6 +4,9 @@ set -euo pipefail
 ZERO_SHA="0000000000000000000000000000000000000000"
 RUN_VALIDATOR=0
 RUN_SMOKE=0
+RUN_DOC_INTEGRITY=0
+RUN_SEMANTIC_NOISE=0
+RUN_FRONTMATTER_UTILS=0
 
 repo_root="$(git rev-parse --show-toplevel)"
 cd "$repo_root"
@@ -20,11 +23,27 @@ process_commit_paths() {
     case "$path" in
       vault/*)
         RUN_VALIDATOR=1
+        RUN_DOC_INTEGRITY=1
+        RUN_SEMANTIC_NOISE=1
+        RUN_FRONTMATTER_UTILS=1
         ;;
     esac
     case "$path" in
       scripts/*|.vscode/*)
         RUN_SMOKE=1
+        ;;
+    esac
+    case "$path" in
+      scripts/DocIntegrityChecker.py)
+        RUN_DOC_INTEGRITY=1
+        ;;
+      scripts/SemanticNoiseChecker.py)
+        RUN_SEMANTIC_NOISE=1
+        ;;
+      scripts/frontmatter_utils.py)
+        RUN_DOC_INTEGRITY=1
+        RUN_SEMANTIC_NOISE=1
+        RUN_FRONTMATTER_UTILS=1
         ;;
     esac
   done < <(collect_paths_from_commit "$commit")
@@ -57,7 +76,11 @@ while read -r local_ref local_sha remote_ref remote_sha; do
   fi
 done
 
-if [ "$RUN_VALIDATOR" -eq 0 ] && [ "$RUN_SMOKE" -eq 0 ]; then
+if [ "$RUN_VALIDATOR" -eq 0 ] \
+  && [ "$RUN_SMOKE" -eq 0 ] \
+  && [ "$RUN_DOC_INTEGRITY" -eq 0 ] \
+  && [ "$RUN_SEMANTIC_NOISE" -eq 0 ] \
+  && [ "$RUN_FRONTMATTER_UTILS" -eq 0 ]; then
   echo "pre-push: no gated paths changed, checks skipped"
   exit 0
 fi
@@ -65,14 +88,23 @@ fi
 run_script_or_fail() {
   local script_path="$1"
   local label="$2"
+  shift 2
 
   if [ -x "$script_path" ]; then
-    "$script_path"
+    if [ "$#" -gt 0 ]; then
+      "$script_path" "$@"
+    else
+      "$script_path"
+    fi
     return
   fi
 
   if [ -f "$script_path" ] && command -v python3 >/dev/null 2>&1; then
-    python3 "$script_path"
+    if [ "$#" -gt 0 ]; then
+      python3 "$script_path" "$@"
+    else
+      python3 "$script_path"
+    fi
     return
   fi
 
@@ -81,9 +113,40 @@ run_script_or_fail() {
   exit 1
 }
 
+run_frontmatter_utils_or_fail() {
+  if [ ! -f "./scripts/frontmatter_utils.py" ]; then
+    echo "pre-push: KO frontmatter_utils script missing: ./scripts/frontmatter_utils.py"
+    echo "pre-push: policy=blocking"
+    exit 1
+  fi
+
+  if ! command -v python3 >/dev/null 2>&1; then
+    echo "pre-push: KO python3 required for frontmatter_utils check"
+    echo "pre-push: policy=blocking"
+    exit 1
+  fi
+
+  python3 -c "import sys; sys.path.insert(0, 'scripts'); import frontmatter_utils as m; assert callable(getattr(m, 'parse_frontmatter_file', None))"
+}
+
 if [ "$RUN_VALIDATOR" -eq 1 ]; then
   echo "pre-push: running validator (vault/** changed)"
   run_script_or_fail "./scripts/ValidateFrontmatter.py" "validator"
+fi
+
+if [ "$RUN_DOC_INTEGRITY" -eq 1 ]; then
+  echo "pre-push: running doc integrity checker"
+  run_script_or_fail "./scripts/DocIntegrityChecker.py" "doc integrity" --scope "vault" --output "text"
+fi
+
+if [ "$RUN_SEMANTIC_NOISE" -eq 1 ]; then
+  echo "pre-push: running semantic noise checker"
+  run_script_or_fail "./scripts/SemanticNoiseChecker.py" "semantic noise" --scope "vault" --output "text"
+fi
+
+if [ "$RUN_FRONTMATTER_UTILS" -eq 1 ]; then
+  echo "pre-push: running frontmatter utils check"
+  run_frontmatter_utils_or_fail
 fi
 
 if [ "$RUN_SMOKE" -eq 1 ]; then
