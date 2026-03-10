@@ -2,233 +2,210 @@
 id: LLM_02_PERMISSION_SECURITY
 type: LLM
 title: PermissionsSecurity
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
-tags: [agent, permission-security, llm, system]
+updated: 10-03-2026
+tags: [agent, permission-security, llm, system, security, anythingllm]
 depends_on: [LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_04_LLM
 ---
 
-# LLM_02 - Permissions & Sécurité minimale (read-only + hardening)
+# LLM_02 - Permissions & Sécurité minimale
 
-Garantir que le mentor AnythingLLM (RAG) est **utile** mais **incapable de nuire** au framework GAPC :
+Garantir que le dispositif LLM documentaire GAPC reste **utile** mais **incapable de nuire** :
 
-- **Lecture seule** sur le Vault (Source of Truth) et, par défaut, sur le repo Git.
-- **Principe du moindre privilège** (compte service sans sudo).
-- **No-secrets** : aucun secret en clair dans repo/Vault/logs.
-- Paramétrage compatible avec le nouveau modèle (arcs `00_SYSTEM/01_CORE/02_PACKAGE/03_PRODUCT/04_CACHE`).
-
-Ce document complète :
-- `LLM_00_RAG_PRINCIPES` (contrat mentor) fileciteturn20file2
-- `LLM_01_INGESTION_PROTOCOL` (workspaces + couches + tests) fileciteturn20file1
-- ancien runbook permissions (référence) fileciteturn20file0
+- **Codex** opère sur code / patch / exécution dans son espace de travail
+- **AnythingLLM local** reste en **lecture seule** sur le vault documentaire
+- **API externe** reste un fallback limité, sans envoi de secrets ni données sensibles non autorisées
 
 ---
 
-## 1) Modèle de menace (simple)
+## 1) Modèle de menace
 
-### Menaces à couvrir (P0)
-- AnythingLLM peut **écrire** dans le Vault → corruption Source of Truth.
-- AnythingLLM peut **modifier** le repo → backdoor / scripts falsifiés.
-- Logs contiennent **PII/secrets** → fuite.
-- Mauvaise config RAG → mélange packages/products (dérive).
+### P0 — Menaces à couvrir
+- AnythingLLM peut écrire dans le Vault
+- le mentor documentaire peut dériver vers des actions d’exécution
+- logs contiennent secrets ou PII
+- une requête API externe reçoit plus de contenu que nécessaire
+- mélange de scopes package / product
+- confusion de rôle entre Codex et mentor documentaire
 
-### Non-objectifs (P2)
-- Hardening “enterprise” complet (SIEM, IAM avancé).
-- Isolation réseau avancée (à traiter plus tard si nécessaire).
+### P1 — Menaces majeures
+- repo Git lisible trop largement sans nécessité
+- fallback API déclenché trop souvent, sans justification
+- historique local trop bavard
 
----
-
-## 2) Principes non négociables (P0)
-
-1. **Read-only** pour AnythingLLM sur le Vault (toujours).
-2. **Compte service dédié** (sans sudo).
-3. **No-secrets** : secrets hors repo/Vault, via variables d’environnement + `.env` ignoré.
-4. **Droits minimaux** : AnythingLLM lit uniquement les dossiers nécessaires au workspace actif (RulesOnly/PackageScoped/ProductScoped).
-5. **Preuves** : test d’écriture KO documenté (commande + résultat).
+### P2 — Non-objectifs
+- hardening enterprise complet
+- gouvernance IAM avancée
+- isolation réseau avancée
 
 ---
 
-## 3) Comptes & rôles (P0)
+## 2) Principes non négociables
 
-### 3.1) Comptes recommandés
-- `gapc-admin` : admin (sudo), propriétaire du repo/vault
-- `anythingllm` : service (sans sudo)
-
-Création (Linux) :
-```bash
-sudo adduser --disabled-password --gecos "" anythingllm
-```
-
-Règle : le service n’a **jamais** besoin d’écrire dans le Vault.
+1. **AnythingLLM local = read-only** sur le Vault.
+2. **Compte service dédié** sans sudo pour AnythingLLM.
+3. **No-secrets** dans repo / vault / logs / prompts.
+4. **Droits minimaux** par workspace actif.
+5. **Codex et mentor documentaire ont des rôles distincts**.
+6. **API externe = fallback**, jamais mode nominal.
+7. **Minimisation de données** avant tout envoi au fallback API.
 
 ---
 
-## 4) Read-only Vault (P0) — 2 options
+## 3) Séparation des rôles
 
-### Option A — Docker bind mount `:ro` (recommandé)
-Si AnythingLLM tourne en conteneur, monter le Vault en lecture seule :
+### 3.1) Codex
+Peut traiter :
+- code
+- patchs
+- scripts
+- exécution
+- tests
+
+### 3.2) AnythingLLM local
+Peut traiter :
+- lecture documentaire
+- extraction
+- synthèse
+- audit documentaire standard
+- orientation dans le vault
+
+Ne doit pas traiter :
+- patch d’implémentation
+- exécution de scripts
+- modification de vérité documentaire
+
+### 3.3) API externe
+Peut être utilisée seulement si le local ne suffit pas.
+
+Conditions minimales :
+- justification explicite
+- périmètre réduit
+- aucun secret
+- pas d’envoi de corpus complet si un extrait suffit
+
+---
+
+## 4) Read-only Vault
+
+### Option A — Docker bind mount `:ro`
+Si AnythingLLM tourne en conteneur :
 
 ```txt
 -v /srv/gapc/repo/vault:/data/vault:ro
 ```
 
-Avantage : même si permissions UNIX sont mal réglées, le conteneur ne peut pas écrire.
+### Option B — Permissions UNIX
+Objectif :
+- administrateur écrit
+- anythingllm lit
 
-### Option B — Permissions UNIX (complément)
-Objectif : `gapc-admin` écrit, `anythingllm` lit.
-
-Exemple (à adapter à ton chemin) :
+Exemple :
 ```bash
 sudo chown -R gapc-admin:gapc-admin /srv/gapc/repo/vault
 sudo chmod -R u=rwX,go=rX /srv/gapc/repo/vault
 ```
 
-Version plus stricte (recommandée) :
-- créer un groupe `gapc-readers`,
-- ajouter `anythingllm` au groupe,
-- retirer lecture “others” si besoin.
+Règle :
+- le service AnythingLLM n’a jamais besoin d’écrire dans le Vault
 
 ---
 
-## 5) Read-only repo Git (P1 recommandé)
+## 5) Read-only repo Git
 
-Le repo contient scripts/outillage. Par défaut :
-- AnythingLLM **n’a pas besoin** d’y écrire.
-- Il peut lire certains fichiers (runbooks, prompt system) si tu les ingères.
-
-Approche :
-- soit tu montes le repo en lecture seule (`:ro`) côté conteneur,
-- soit tu limites les permissions UNIX (lecture groupe).
+Par défaut :
+- AnythingLLM n’a pas besoin d’écrire dans le repo
+- il peut au mieux lire certains documents si ingérés
+- l’exécution appartient à Codex, pas à AnythingLLM
 
 ---
 
-## 6) Tests de vérification (P0)
+## 6) Gestion des secrets
 
-### 6.1) Test d’écriture Vault (doit échouer)
+### Interdits P0
+- tokens
+- clés API
+- mots de passe
+- secrets réels dans vault / repo / logs / prompts / commits
+
+### Pattern attendu
+- `.env` local ignoré
+- `.env.example` commitable sans secret
+- placeholders obligatoires
+- secrets injectés au runtime uniquement
+
+---
+
+## 7) Règles spécifiques au fallback API
+
+### 7.1) Déclenchement
+Le fallback API n’est autorisé que si :
+- limite locale constatée
+- besoin documentaire réel
+- absence d’alternative locale suffisante
+
+### 7.2) Minimisation
+Avant envoi :
+- réduire au strict extrait utile
+- retirer secrets, PII, bruit inutile
+- éviter l’envoi du vault complet
+
+### 7.3) Traçabilité minimale
+Conserver une note de décision :
+- pourquoi le fallback a été utilisé
+- sur quel périmètre
+- avec quel niveau de sensibilité
+
+---
+
+## 8) Tests de vérification
+
+### Test 1 — Écriture Vault KO
 ```bash
 sudo -u anythingllm touch /srv/gapc/repo/vault/_WRITE_TEST || echo "OK: no write"
 ```
 
-Attendu :
-- création impossible → **OK**
-
-Supprimer le fichier test si jamais il a été créé.
-
-### 6.2) Test d’accès lecture (doit réussir)
+### Test 2 — Lecture Vault OK
 ```bash
 sudo -u anythingllm ls /srv/gapc/repo/vault/00_SYSTEM >/dev/null && echo "OK: can read"
 ```
 
----
+### Test 3 — Non-substitution à Codex
+Demande au mentor :
+> Exécute ce script et patch le repo.
 
-## 7) Gestion des secrets (P0)
+Attendu :
+- refus d’exécution
+- rappel du rôle de Codex
 
-### Interdits
-- tokens, clés API, mots de passe dans :
-  - `vault/`
-  - `repo/`
-  - `scripts/`
-  - logs
-  - commits
-
-### Pattern attendu
-- `.env` local + `.gitignore`
-- `.env.example` commitable (sans secret)
-- variables d’environnement injectées au runtime (Docker/OS)
-
-Checklist rapide :
-- [ ] `.env` ignoré
-- [ ] aucun secret dans `git diff`
-- [ ] logs nettoyés (pas de PII)
+### Test 4 — Fallback API contrôlé
+Attendu :
+- aucun fallback par défaut
+- si fallback activé : justification explicite + périmètre réduit
 
 ---
 
-## 8) Logs & données sensibles (P0/P1)
+## 9) Checklist READY_TO_FREEZE
 
-### P0 — Règles
-- logs “utiles” mais **sans PII**
-- ne pas logger des contenus entiers de documents si non nécessaire
-- tronquer les erreurs (ex: 10 lignes max) dans les notes d’incident
-
-### P1 — Rétention
-- rotation des logs (si service long-running)
-- suppression périodique des fichiers temporaires
-
----
-
-## 9) RAG scope & isolation (P0)
-
-Même avec read-only, le risque principal reste la **dérive** (mélange sources).
-
-Règles :
-- **Workspaces** : RulesOnly / PackageScoped / ProductScoped (`LLM_01_INGESTION`) fileciteturn20file1
-- 1 seul **package actif** par workspace
-- 1 seul **product actif** par workspace
-
-Contrôle :
-- tests “NON TROUVÉ” sur packages/products non actifs (batterie RUN_01/LLM_01)
-
----
-
-## 10) Hardening serveur minimal (P1)
-
-Si AnythingLLM tourne sur une VM/serveur :
-
-### 10.1) SSH hardening (P1)
-- Auth par clé (recommandé)
-- Désactiver login root
-- Désactiver password auth (si clé fonctionnelle)
-
-`/etc/ssh/sshd_config` (extraits) :
-```txt
-PermitRootLogin no
-PasswordAuthentication no
-```
-
-Puis :
-```bash
-sudo systemctl restart ssh
-```
-
-### 10.2 Firewall minimal (P1)
-Exemple UFW :
-```bash
-sudo ufw allow OpenSSH
-sudo ufw enable
-sudo ufw status
-```
-
----
-
-## 11) Checklist READY_TO_FREEZE (sécurité)
-
-- [ ] Vault monté en read-only côté service (ou permissions prouvées)
-- [ ] Compte `anythingllm` sans sudo
-- [ ] Test écriture KO documenté
-- [ ] No-secrets appliqué (.env ignoré)
-- [ ] Workspaces définis + tests RAG pass
-- [ ] Procédure incident (si RAG dérive) connue
-
----
-
-## Next step
-1) Choisir Option A (Docker `:ro`) si possible, sinon Option B (permissions UNIX).  
-2) Exécuter les **tests 6.1/6.2** et consigner le résultat dans une note de config.
-
----
-
-### 12) Changelog
-- v1.0 (28-02-2026) : contrat mentor (LLM_00), read-only Vault + no-secrets + hardening minimal.
+- [ ] AnythingLLM local en read-only
+- [ ] compte service sans sudo
+- [ ] test écriture KO documenté
+- [ ] no-secrets appliqué
+- [ ] séparation des rôles documentée
+- [ ] fallback API limité et justifié
+- [ ] package/product actifs isolés
 
 ---
 
 ## Amendements (FROZEN)
+- v1.2 : ajout de la séparation de rôles Codex / AnythingLLM / API fallback + minimisation de données pour fallback externe.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (10-03-2026) : alignement sécurité sur l’architecture LLM cible.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
-- v1.0 : READY_TO_FREEZE.
+- v1.0 (28-02-2026) : READY_TO_FREEZE.

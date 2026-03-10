@@ -2,212 +2,206 @@
 id: LLM_00_RAG_PRINCIPES
 type: LLM
 title: RagPrincipes
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
-tags: [agent, rag-principes, llm, system]
+updated: 10-03-2026
+tags: [agent, rag-principes, llm, system, mentor, anythingllm, codex]
 depends_on: []
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_04_LLM
 ---
 
 # LLM_00 - RAG Principes (Mentor AnythingLLM)
-Permet de définir les **principes opérationnels** pour utiliser AnythingLLM comme **mentor RAG** dans le framework GAPC, aligné avec la nouvelle architecture (v4.3 / framework v1.0) :
 
-- **Obsidian (Vault)** = *Source of Truth* documentaire
-- **VS Code + Git** = exécution (patch, scripts, commits, tests)
-- **AnythingLLM** = **mentor** (lecture/extraction/contrôle), **pas un décideur**
+Permet de définir les **principes opérationnels** du dispositif LLM documentaire GAPC, aligné avec l’architecture cible :
 
-Ce document vise : **utilité maximale** + **zéro hallucination** + **zéro dérive**.
+- **Obsidian (Vault)** = Source of Truth documentaire
+- **VS Code + Codex** = code / patch / exécution / scripts
+- **AnythingLLM local** = mentor documentaire standard (lecture / extraction / contrôle)
+- **API externe** = fallback, uniquement si le mentor local atteint une limite réelle
 
----
-
-## 1) RAG en 30 secondes (sans théorie)
-AnythingLLM en mode RAG fait 2 actions :
-
-1. **Retrieve** : retrouve des passages dans les docs ingérés  
-2. **Generate** : rédige une réponse **à partir** de ces passages
-
-Conséquence :
-- si le corpus est **flou**, **contradictoire**, ou **trop large** → réponses floues.
-- si le corpus est **petit**, **normatif**, **stable** → réponses précises.
+Ce document vise : **utilité maximale**, **zéro dérive**, **zéro ghost decision**, **séparation stricte des rôles**.
 
 ---
 
-## 2) Ce que le mentor DOIT faire (contrat)
+## 1) Architecture cible (décision courante)
 
-### 2.1) Retrouver “où est la vérité”
-- donner les **fichiers exacts** (chemins/IDs) utilisés
-- rappeler l’**arc** concerné : SYSTEM / CORE / PACKAGE / PRODUCT
+### 1.1) Répartition des rôles
+- **Codex** traite :
+  - code
+  - patchs
+  - scripts
+  - exécution
+  - aides de mise en oeuvre
+- **AnythingLLM local** traite :
+  - lecture documentaire
+  - extraction de règles
+  - navigation dans le corpus
+  - synthèses et checklists documentaires
+  - contrôle documentaire standard
+- **API externe** traite :
+  - cas complexes en fallback
+  - corpus volumineux ou réponses locales instables
+  - analyses documentaires nécessitant plus de robustesse
 
-### 2.2) Extraire des outputs actionnables
-- checklists
-- étapes ordonnées
-- critères de qualité (validator/smoke)
-- next step unique
-- mapping “règle → action”
+### 1.2) Principe directeur
+Le mentor documentaire n’est **pas** le moteur principal d’exécution.  
+Le moteur principal d’exécution est **Codex**.
 
-### 2.3) Dire “NON TROUVÉ”
-Règle stricte :
-- si l’information n’existe pas dans le corpus → répondre **NON TROUVÉ**  
-  puis proposer une action : *créer/compléter le fichier source* ou *ouvrir une ADR-lite* (si décision).
+AnythingLLM local reste utile comme couche :
+- de lecture
+- de rappel des règles
+- de contrôle documentaire
+- de consultation standard
 
-### 2.4) Respecter le “package/product actifs”
-Le mentor doit travailler avec :
-- **1 package actif unique**
-- **1 product actif unique**
-
-Si le contexte mélange plusieurs packages/products :
-- le mentor doit **refuser** et demander isolation (ou proposer une procédure de tri).
-
----
-
-## 3) Ce que le mentor NE DOIT PAS faire (interdits)
-
-### 3.1) No ghost decisions (interdit central)
-Le mentor **ne décide pas** :
-- pas de “stack imposée”
-- pas de règles inventées
-- pas d’architecture inventée
-- pas de “ça doit être comme ça” sans source
-
-Si une décision est nécessaire :
-- proposer une **ADR-lite** (ou un fichier décisionnel) à produire.
-
-### 3.2) No-secrets (interdit)
-Le mentor ne doit jamais :
-- demander des clés/tokens/mots de passe
-- suggérer de stocker des secrets dans le repo/Vault
-- générer des “vraies” clés
-
-Pattern attendu :
-- `.env` ignoré + `.env.example` sans secret
-
-### 3.3) Mélange de scopes (interdit)
-Interdit de :
-- mélanger plusieurs packages dans une réponse
-- utiliser des sources “CACHE” comme vérité
-- contredire les règles CORE
+L’API externe n’est pas le mode nominal.  
+Elle est déclenchée **seulement** si le mode local ne tient plus le niveau attendu.
 
 ---
 
-## 4) Hiérarchie d’autorité (Source of Truth)
+## 2) Contrat du mentor documentaire
 
-Le mentor doit appliquer l’ordre suivant en cas de contradiction :
+### 2.1) Ce que le mentor DOIT faire
+- retrouver où est la vérité documentaire
+- lister les fichiers utilisés
+- rappeler l’arc concerné : SYSTEM / CORE / PACKAGE / PRODUCT
+- extraire des outputs actionnables à partir du corpus
+- produire des checklists, étapes, critères, mappings règle → action
+- dire **NON TROUVÉ** si l’information n’existe pas
+- respecter le package actif et le product actif
+- rester en lecture seule
 
-1. **CORE** (règles transverses : META / FIELD / RESTRAINT / TOOLING selon ton vocabulaire) fileciteturn19file0  
-2. **PACKAGE actif** (extensions métier) fileciteturn19file0  
-3. **PRODUCT actif** (exécution / composants) fileciteturn19file0  
-4. **SYSTEM** (notice/outillage, non décisionnel) fileciteturn19file0  
-5. **CACHE** (jamais source de vérité)
-
-Règle : si contradiction non résolue → **NON TROUVÉ** + proposer correction de la doc source.
+### 2.2) Ce que le mentor NE DOIT PAS faire
+- patcher le code
+- exécuter des scripts
+- décider une architecture sans source
+- inventer des règles
+- se substituer à Codex sur les tâches d’implémentation
+- se substituer à une ADR-lite si décision structurante
 
 ---
 
-## 5) Stratégie anti-hallucination (procédure non négociable)
+## 3) Hiérarchie d’autorité
 
-Cette stratégie est cohérente avec :
-- pipeline d’exécution fileciteturn19file1
-- checklist ingestion/tests fileciteturn19file2
-- règles CO / composants fileciteturn19file3
+Le mentor applique l’ordre suivant en cas de contradiction :
 
-### 5.1) Small corpus first (RulesOnly)
+1. **CORE**
+2. **PACKAGE actif**
+3. **PRODUCT actif**
+4. **SYSTEM**
+5. **CACHE**
+
+Règle :
+- si contradiction non résolue → **NON TROUVÉ**
+- proposer correction de la doc source ou ADR-lite selon le cas
+
+---
+
+## 4) Stratégie d’usage recommandée
+
+### 4.1) Mode nominal
+Utiliser :
+- **Codex** pour produire / patcher / exécuter
+- **AnythingLLM local** pour lire / extraire / contrôler la documentation
+
+### 4.2) Mode fallback
+Passer à une **API externe** uniquement si au moins un des signaux suivants apparaît :
+- réponses locales instables sur une même demande
+- échec répété sur contradictions documentaires complexes
+- incapacité à tenir un long contexte utile
+- qualité insuffisante sur un audit documentaire important
+- difficulté à restituer proprement hiérarchie / scope / files utilisés
+
+### 4.3) Règle de coût / complexité
+Le fallback API doit rester :
+- ciblé
+- explicite
+- justifié
+- limité aux cas où le local ne suffit pas
+
+---
+
+## 5) Anti-hallucination (non négociable)
+
+### 5.1) Small corpus first
 Toujours démarrer avec un corpus minimal :
-- CORE (règles)
-- SYSTEM (runbooks indispensables)
-Puis tests obligatoires.
+- CORE
+- SYSTEM essentiels
 
 ### 5.2) Extension par couches
 Ajouter progressivement :
-1) TOOLING utile
-2) PACKAGE actif
-3) PRODUCT actif
+1. règles utiles
+2. package actif
+3. product actif
 
-Règle : **1 couche ajoutée = tests**.
-
-### 5.3) Tests obligatoires (après chaque ingestion)
-Checklist minimale (RUN_01) fileciteturn19file2 :
-- [ ] test hiérarchie des règles
-- [ ] test non-invention (**NON TROUVÉ**)
-- [ ] test no-secrets (refus)
-- [ ] test extraction actionnable (checklist + fichiers)
-- [ ] test contradictions (nuancé, sourcé)
+### 5.3) Sortie attendue
+Le mentor documentaire doit répondre avec :
+1. checklist actionnable
+2. fichiers utilisés
+3. next step unique
+4. hypothèses si nécessaire
 
 ---
 
-## 6) Formats de réponse attendus (anti-vague)
+## 6) Interdits centraux
 
-### 6.1) Format “extraction”
-Le mentor doit répondre avec :
+### 6.1) No ghost decisions
+Le mentor ne décide pas :
+- pas de stack imposée
+- pas de règle inventée
+- pas d’architecture imposée sans source
 
-1) **Checklist actionnable**  
-2) **Fichiers utilisés** (IDs + chemins si disponibles)  
-3) **Next step unique**  
-4) (si hypothèses) section **Hypothèses** (max 5)
+### 6.2) No-secrets
+Le mentor ne doit jamais :
+- demander de clés ou tokens
+- proposer de stocker des secrets dans repo / vault / logs
+- produire de secrets réels
 
-### 6.2) Format “audit”
-- Verdict : `OK | KO`
-- Liste P0/P1/P2
-- Patch recommandé : START/END REPLACE (si doc) ou plan de fix (si tooling)
-
----
-
-## 7) Workspaces recommandés (scalable)
-
-## WS_00 — RulesOnly
-But : règles CORE + runbooks SYSTEM, rien d’autre.
-
-### WS_01 — PackageScoped
-But : CORE + 1 package actif, pas de product.
-
-### WS_02 — ProductScoped
-But : CORE + package actif + product actif.
-
-Règle : éviter un workspace “tout le vault”, sauf usage très ponctuel.
+### 6.3) No scope mixing
+Interdit de :
+- mélanger plusieurs packages
+- mélanger plusieurs products
+- utiliser CACHE comme vérité
+- contredire CORE
 
 ---
 
-## 8) Prompts “standards” (copiables)
+## 7) Red flags
 
-### P0 — Extraction règles applicables
-> Liste les règles applicables à ce CO et cite les fichiers. Si absent : **NON TROUVÉ**.
-
-### P0 — Checklist exécution
-> Donne la checklist d’exécution (start → patch → validator/smoke → commit → end) et cite les fichiers.
-
-### P0 — Détection contradictions
-> Détecte contradictions entre CORE et package actif. Si doute : **NON TROUVÉ** + propose la correction à faire.
-
-### P0 — Anti-dérive package/product
-> Vérifie si je mélange plusieurs packages/products. Si oui : propose une procédure pour isoler un seul actif.
-
----
-
-## 9) Red flags (quand considérer le mentor KO)
-
-- réponse générique sans fichiers cités
-- réponse “inventée” (aucun ancrage dans la doc)
-- mélange plusieurs packages
-- refuse de dire NON TROUVÉ
-- propose d’ajouter des secrets dans le repo
+Considérer le mentor KO si :
+- réponse générique sans fichiers utilisés
+- réponse inventée
+- mélange de scopes
+- refus de dire NON TROUVÉ
+- dérive vers des tâches de code / patch / exécution
+- proposition d’usage d’un secret dans le repo
 
 Action corrective :
-- réduire le corpus (retirer la dernière couche)
+- réduire le corpus
 - corriger la doc source
-- ré-ingérer + retester
+- repasser par Codex pour l’exécution
+- utiliser l’API externe seulement si la limite locale est confirmée
 
 ---
 
-## 10) Changelog
-- v1.0 (28-02-2026) : RAG — Principes (Mentor AnythingLLM) — GAPC
+## 8) Synthèse d’architecture
+
+La cible GAPC est :
+
+- **Codex** = code / patch / exécution
+- **AnythingLLM local** = mentor documentaire standard
+- **API externe** = fallback
+
+Ce découpage est le mode nominal du système LLM documentaire.
 
 ---
 
 ## Amendements (FROZEN)
+- v1.2 : séparation explicite des rôles Codex / AnythingLLM local / API externe fallback.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (10-03-2026) : alignement sur la nouvelle architecture LLM cible.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
-- v1.0 : READY_TO_FREEZE.
+- v1.0 (28-02-2026) : READY_TO_FREEZE.

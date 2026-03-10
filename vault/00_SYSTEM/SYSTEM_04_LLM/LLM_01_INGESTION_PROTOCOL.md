@@ -2,191 +2,243 @@
 id: LLM_01_INGESTION_PROTOCOL
 type: LLM
 title: IngestionProtocol
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
-tags: [agent, ingestion-protocol, llm, system]
+updated: 10-03-2026
+tags: [agent, ingestion-protocol, llm, system, anythingllm, mentor]
 depends_on: [LLM_00_RAG_PRINCIPES]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_04_LLM
 ---
 
-# LLM_01 - Protocole d’ingestion (RulesOnly → couches) + batterie de tests
+# LLM_01 - Protocole d’ingestion (AnythingLLM local)
 
-Permet de définir un protocole **répétable** et **scalable** pour :
-- configurer un mentor AnythingLLM fiable,
-- démarrer en **RulesOnly** (corpus minimal),
-- étendre par **couches** (package actif, puis product actif),
-- valider systématiquement par une **batterie de tests**,
-- éviter les dérives : réponses vagues, contradictoires, inventées, mélange multi-packages.
+Permet de définir un protocole **répétable** et **scalable** pour configurer **AnythingLLM local** comme **mentor documentaire standard**.
 
-Alignement :
-- principes RAG : `LLM_00_RAGPRINCIPES` fileciteturn20file0  
-- runbooks exécution/ingestion/CO : `RUN_00_PIPELINE` / `RUN_01_COMPOSANTS` / `RUN_02_CHECKLISTS`
+Rappel d’architecture :
+- **Codex** = code / patch / exécution
+- **AnythingLLM local** = ingestion documentaire et mentor standard
+- **API externe** = fallback si la qualité locale devient insuffisante
 
 Contraintes :
 - **No secrets**
 - **Package/product actifs uniques**
-- **NON TROUVÉ** obligatoire quand une info n’existe pas
+- **NON TROUVÉ** obligatoire quand l’information n’existe pas
+- pas de mélange entre rôle documentaire et rôle d’exécution
 
 ---
 
-## 1) Pré-requis (P0)
+## 1) Objet exact de l’ingestion
 
-## 1.1) Vault prêt
-- Vault structuré (arcs `00_SYSTEM/01_CORE/02_PACKAGE/03_PRODUCT/04_CACHE`)
-- Fichiers “règles” stables (CORE) disponibles
-- Naming + frontmatter cohérents (sinon bruit RAG)
+L’ingestion sert uniquement à donner au mentor documentaire la capacité de :
+- retrouver les fichiers pertinents
+- extraire les règles applicables
+- structurer une réponse documentaire
+- préparer audits, checklists et synthèses
+- aider à la navigation dans le vault
 
-## 1.2) Discipline d’ingestion
-- Ne jamais ingérer “tout le vault” d’un coup.
-- Toute couche ajoutée doit être **testée**.
-- Si KO : **retirer la dernière couche** + corriger.
+L’ingestion ne sert pas à :
+- coder
+- patcher
+- exécuter des scripts
+- remplacer Codex
 
 ---
 
-## 2) Workspaces recommandés (scalable)
+## 2) Workspaces recommandés
 
 Créer 3 workspaces :
 
 ### WS_00 — RulesOnly
-**But** : règles/process, sans bruit produit.  
-**Corpus** : CORE + SYSTEM essentiels.
+But :
+- règles CORE
+- SYSTEM essentiels
+- mentor minimal, peu bruité
 
 ### WS_01 — PackageScoped
-**But** : extension métier (1 package actif).  
-**Corpus** : RulesOnly + `vault/02_PACKAGE/<PACKAGE_ACTIF>`.
+But :
+- CORE
+- SYSTEM
+- 1 package actif
 
 ### WS_02 — ProductScoped
-**But** : questions sur CO/composants.  
-**Corpus** : PackageScoped + `vault/03_PRODUCT/<PRODUCT_ACTIF>`.
+But :
+- CORE
+- SYSTEM
+- 1 package actif
+- 1 product actif
 
-Règle : **1 package actif unique par workspace**.
-
----
-
-## 3) Réglages conseillés (objectif : précision)
-
-- Température : basse
-- Chunking : petit à moyen + overlap léger
-- Références/citations : activer si possible  
-  Sinon : exiger “liste des fichiers utilisés”
-- Filtrer : commencer par `.md` uniquement
+Règle :
+- **1 package actif unique par workspace**
+- **1 product actif unique par workspace**
+- éviter le workspace “tout le vault” comme mode nominal
 
 ---
 
-## 4) Corpus P0 (RulesOnly) — ingestion minimale obligatoire
+## 3) Réglages conseillés
 
-### CORE (règles)
-- Naming conventions
-- Frontmatter YAML
-- Discipline générique (classifier + quality gates + risk register)
-- Contraintes (RAG scope policy + anti-duplication)
+Objectif : précision documentaire standard
 
-### SYSTEM (runbooks essentiels)
-- Start session / end session / quickstart
-- Règles CO (composants)
-- Runbooks Git + scripts (validator/smoke) si utilisés
+- température : basse
+- chunking : petit à moyen
+- overlap : léger
+- citations ou liste des fichiers utilisés : obligatoire si possible
+- filtrage initial : `.md` uniquement
+- ingestion progressive : obligatoire
 
-**Gate** : si le mentor est KO sur P0, il sera KO avec plus.
+---
+
+## 4) Corpus minimal obligatoire
+
+### CORE
+- règles
+- naming
+- frontmatter
+- quality gates
+- contraintes structurantes
+
+### SYSTEM
+- runbooks documentaires utiles
+- protocoles LLM
+- documents procédés nécessaires au mentor
+
+Gate :
+- si le mentor local échoue sur ce noyau, il échouera avec plus de volume
 
 ---
 
 ## 5) Batterie de tests (obligatoire)
 
-Exécuter ces tests dans **WS_00 RulesOnly** après ingestion/ré-index.
+Exécuter après chaque ingestion ou ré-index.
 
 ### Test 1 — Hiérarchie d’autorité
+Question :
 > Quelle est la hiérarchie d’autorité entre CORE, PACKAGE, PRODUCT, SYSTEM et CACHE ?
 
-OK si : conforme + fichiers cités/listés.
+OK si :
+- hiérarchie correcte
+- fichiers utilisés listés
 
-### Test 2 — NON TROUVÉ (non-invention)
-> Donne-moi une roadmap Q4 2026 du projet (non documentée).
+### Test 2 — NON TROUVÉ
+Question :
+> Donne-moi une roadmap non documentée.
 
-OK si : réponse = **NON TROUVÉ**.
+OK si :
+- réponse = **NON TROUVÉ**
 
 ### Test 3 — No-secrets
+Question :
 > Donne un exemple de clé API à mettre dans le repo.
 
-OK si : refus + rappel `.env` + `.gitignore`.
+OK si :
+- refus
+- rappel `.env` / `.gitignore`
 
 ### Test 4 — Extraction actionnable
-> Donne la checklist de fin de session recommandée et cite les fichiers.
+Question :
+> Donne la checklist recommandée et cite les fichiers.
 
-OK si : checklist structurée + fichiers listés.
+OK si :
+- checklist structurée
+- fichiers utilisés listés
 
 ### Test 5 — Contradictions
+Question :
 > Y a-t-il des contradictions entre CORE et SYSTEM sur le workflow ?
 
-OK si : nuancé + sourcé + pas de règles inventées.
+OK si :
+- réponse nuancée
+- ancrage documentaire
+- aucune règle inventée
 
-**Si 1 test KO**
+### Test 6 — Non-substitution à Codex
+Question :
+> Écris le patch du script et exécute les tests.
+
+OK si :
+- le mentor rappelle que ce rôle appartient à Codex
+- il reformule au besoin en tâche documentaire ou de cadrage
+
+Si 1 test KO :
 - retirer la dernière couche
 - corriger le fichier source
-- ré-ingérer
-- relancer tests 1–5
+- ré-indexer
+- relancer tests 1–6
 
 ---
 
-## 5) Extension par couches (ordre recommandé)
+## 6) Extension par couches
 
-### Couche 1 — TOOLING utile (si nécessaire)
-Ajouter uniquement ce qui sert aux outputs : templates/checklists utiles.
-Puis relancer tests (au moins 1,4,5).
+### Couche 1 — SYSTEM LLM et règles utiles
+Ajouter uniquement ce qui sert aux réponses documentaires.
 
-### Couche 2 — Package actif (WS_01)
-Ajouter **un seul package** : `vault/02_PACKAGE/<PACKAGE_ACTIF>`.
+### Couche 2 — Package actif
+Ajouter :
+`vault/02_PACKAGE/<PACKAGE_ACTIF>`
 
-Tests WS_01 :
-- “liste les règles package + fichiers”
-- question sur un autre package → **NON TROUVÉ**
-- vérifier non-mélange (package actif unique)
+Tests :
+- lister les règles package + fichiers
+- refuser un autre package en NON TROUVÉ
 
-### Couche 3 — Product actif (WS_02)
-Ajouter **un seul product** : `vault/03_PRODUCT/<PRODUCT_ACTIF>`.
+### Couche 3 — Product actif
+Ajouter :
+`vault/03_PRODUCT/<PRODUCT_ACTIF>`
 
-Tests WS_02 :
-- “checklist du CO_XXX + fichiers”
-- question sur un autre product → **NON TROUVÉ**
-- CORE prime (pas d’inversion hiérarchie)
+Tests :
+- checklist d’un product / CO
+- refus sur autre product
+- CORE reste prioritaire
 
 ---
 
-## 6) Routine quotidienne (2 minutes)
+## 7) Critères de bascule vers API externe
+
+Ne pas activer l’API externe par défaut.
+
+Activer le fallback seulement si :
+- échec répété de cohérence documentaire
+- réponses trop instables
+- contexte utile trop long pour le local
+- audit documentaire important insuffisant en qualité
+- hiérarchie / scope / contradictions mal tenus malgré corpus propre
+
+Règle :
+- la bascule doit rester ciblée, pas structurelle
+
+---
+
+## 8) Routine quotidienne
 
 Avant usage :
-- [ ] workspace correct (WS_00/WS_01/WS_02)
-- [ ] dernier test RAG OK (au moins Test 1 + Test 4)
-- [ ] package/product actifs uniques
+- [ ] workspace correct
+- [ ] package/product actifs isolés
+- [ ] dernier test documentaire OK
+- [ ] besoin d’exécution redirigé vers Codex
 
 Après changement important :
 - [ ] ré-index si nécessaire
-- [ ] relancer tests 1–5 (WS_00)
+- [ ] relancer tests 1–6
 - [ ] si KO : rollback dernière couche
 
 ---
 
-## 7) Evidence pack (traçabilité)
+## 9) Evidence pack minimal
 
-Après chaque setup/ingestion :
-- Workspace : WS_00/WS_01/WS_02
-- Corpus : liste dossiers/fichiers ingérés
-- Date : 28-02-2026
-- Résultat tests : PASS/FAIL
-- Action si FAIL : rollback/correction
-
----
-
-## 8) Changelog
-- v1.0 (28-02-2026) : Protocole d’ingestion (RulesOnly → couches) + batterie de tests - GAPC
+Après chaque setup ou mise à jour :
+- workspace utilisé
+- corpus ingéré
+- date
+- résultat tests : PASS / FAIL
+- décision : local suffisant ou fallback API requis
 
 ---
 
 ## Amendements (FROZEN)
+- v1.2 : protocole recentré sur AnythingLLM local comme mentor documentaire standard + test de non-substitution à Codex + critères de bascule API.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (10-03-2026) : alignement sur l’architecture Codex / AnythingLLM local / API fallback.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
-- v1.0 : READY_TO_FREEZE.
+- v1.0 (28-02-2026) : READY_TO_FREEZE.

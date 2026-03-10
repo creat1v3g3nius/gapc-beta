@@ -2,12 +2,12 @@
 id: EVIDENCE_03_ADR_FRAMEWORK_SCOPE
 type: EVIDENCE
 title: AdrFrameworkScope
-version: v1.9
+version: v1.11
 status: FROZEN
 created: 06-03-2026
-updated: 09-03-2026
+updated: 10-03-2026
 tags: [system, evidence, adr, framework, scope]
-depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS]
+depends_on: [OPS_02_SPEC_DOD, TPL_02_ADR_LITE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -23,6 +23,8 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ## Contexte
 - Le besoin de validation a ete releve: le DocQG PASS doit couvrir tout `vault/`.
 - Le lot evidence doit donc tracer une execution globale et non plus limitee au product.
+- Le setup operationnel a ete mis a jour avec les documents SYSTEM_04_LLM.
+- Les instructions verite Codex IDE ont ete formalisees via `SCRIPT_03_INSTRUCTIONS_CODEX`.
 
 ## Options
 ### Option A
@@ -40,6 +42,13 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ## Decision
 - Option A retenue: validation framework canon globale avec DocQG strict sur l'ensemble du vault.
 - Decision confirmee: la preuve est maintenue en chaines canoniques `OPS_* -> FRAMEWORK_* -> EVIDENCE_*` avec references d'ID et sans duplication locale.
+- Decision complementaire: clarifier la chaine SOT Codex IDE:
+  - `CORE/PACKAGE/PRODUCT` = SOT de fond
+  - `SCRIPT_03_INSTRUCTIONS_CODEX` = SOT procedurale Codex
+  - `skills/codex-ide-instructions/SKILL.md` = projection executable
+- Decision complementaire: aligner l hygiene repo sur ce cadre:
+  - ignorer `skills/` via `.gitignore`
+  - retirer `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` du scope actif
 
 ## Consequences
 - Positives: verdict de conformite coherent avec l'exigence globale.
@@ -56,6 +65,18 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Parsing frontmatter factorise via `frontmatter_utils` pour alignement des checks.
 - Tracabilite R-0001 consolidee dans l'archive cache/deprecated `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
 - Registre de risques consolide et renomme en `EVIDENCE_02_RISK_REGISTER` (R-0011 clos).
+- Setup operationnel aligne avec SYSTEM_04_LLM:
+  - `LLM_00_RAG_PRINCIPES`
+  - `LLM_01_INGESTION_PROTOCOL`
+  - `LLM_02_PERMISSION_SECURITY`
+  - `LLM_03_MENTOR_UTILITES`
+- Conversion de `SCRIPT_03_INSTRUCTIONS_CODEX` en skill `codex-ide-instructions` avec creation des 3 fichiers:
+  - `skills/codex-ide-instructions/SKILL.md`
+  - `skills/codex-ide-instructions/agents/openai.yaml`
+  - `skills/codex-ide-instructions/references/codex_ide_baseline.md`
+- Hygiene repo appliquee:
+  - `.gitignore` inclut `skills/`
+  - `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` retire
 
 ## Next Step Unique
 - Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` a chaque lot et conserver la coherence ADR <-> Risk Register.
@@ -70,3 +91,5 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.7 (09-03-2026) : ajoute la decision d'integration `DocIntegrityChecker` et confirme PASS en orchestration smoke.
 - v1.8 (09-03-2026) : passage en FROZEN + integration `SemanticNoiseChecker` et `frontmatter_utils`.
 - v1.9 (09-03-2026) : bascule de naming/ID ADR vers la version FRAMEWORK canon.
+- v1.10 (10-03-2026) : ajoute la decision SOT Codex IDE, la reference setup SYSTEM_04_LLM et la conversion `SCRIPT_03` en skill (3 fichiers `skills/`).
+- v1.11 (10-03-2026) : ajoute la decision hygiene repo (`.gitignore` -> `skills/`) et la trace du retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.

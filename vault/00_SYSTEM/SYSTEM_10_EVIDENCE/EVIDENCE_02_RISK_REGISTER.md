@@ -2,12 +2,12 @@
 id: EVIDENCE_02_RISK_REGISTER
 type: EVIDENCE
 title: RiskRegisterFramework
-version: v1.14
+version: v1.16
 status: FROZEN
 created: 06-03-2026
-updated: 09-03-2026
+updated: 10-03-2026
 tags: [system, evidence, risk, register, framework, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_FRAMEWORK_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_FRAMEWORK_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 ---
@@ -19,12 +19,31 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Chaque risque inclut mitigation, signal, owner, statut, liens.
 - Risque critique (score 6-9) interdit en Open sans mitigation + owner.
 
-## Etat Global (09-03-2026)
+## Etat Global (10-03-2026)
 - Risques suivis: 4
 - Risques Open: 0
 - Risques Closed: 4
 - Risques critiques Open (score 6-9): 0
 - Verdict registre: STABLE
+
+## Trace Lot 10-03-2026
+- Setup operationnel mis a jour avec references SYSTEM_04_LLM:
+  - `LLM_00_RAG_PRINCIPES`
+  - `LLM_01_INGESTION_PROTOCOL`
+  - `LLM_02_PERMISSION_SECURITY`
+  - `LLM_03_MENTOR_UTILITES`
+- Instructions verite Codex IDE creees via `SCRIPT_03_INSTRUCTIONS_CODEX`.
+- Conversion `SCRIPT_03` en skill + creation des 3 fichiers:
+  - `skills/codex-ide-instructions/SKILL.md`
+  - `skills/codex-ide-instructions/agents/openai.yaml`
+  - `skills/codex-ide-instructions/references/codex_ide_baseline.md`
+- Clarification SOT:
+  - `CORE/PACKAGE/PRODUCT` = SOT de fond
+  - `SCRIPT_03_INSTRUCTIONS_CODEX` = SOT procedurale Codex
+  - `skills/codex-ide-instructions/SKILL.md` = projection executable
+- Hygiene repo:
+  - `.gitignore` mis a jour pour ignorer `skills/`
+  - retrait `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` du scope actif
 
 ## Risques Suivis
 
@@ -106,3 +125,5 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - v1.12 (09-03-2026) : debruitage title pour distinguer le registre evidence du registre discipline CORE.
 - v1.13 (09-03-2026) : passage en FROZEN + ajout des controles `SemanticNoiseChecker` et `frontmatter_utils`.
 - v1.14 (09-03-2026) : bascule semantique EVIDENCE vers FRAMEWORK canon + alignement des liens.
+- v1.15 (10-03-2026) : trace lot setup SYSTEM_04_LLM + creation instructions verite Codex IDE + conversion `SCRIPT_03` en skill avec projection executable.
+- v1.16 (10-03-2026) : ajoute la trace hygiene repo (`.gitignore` -> `skills/`) et le retrait de `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.
