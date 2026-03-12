@@ -2,7 +2,7 @@
 id: OPS_00_BACKLOG_CO
 type: DOD
 title: GapcMentorBacklogCo
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 10-03-2026
 updated: 13-03-2026
@@ -41,16 +41,16 @@ Lister les CO atomiques du product mentor selon le format `Backlog CO`.
 - Risque : R1
 - Next step unique : consolider l evidence dans `OPS_03_TESTPLAN_SMOKE_DOD`
 
-### CO_003 - Formaliser le gel produit
+### CO_003 - Declarer le gel produit
 - Arc principal : PRODUCT
-- Goal (1 phrase) : preparer la decision `READY_TO_FREEZE` sur une base de preuves complete
+- Goal (1 phrase) : declarer le gel `FROZEN` sur une base de preuves complete
 - Inputs / dependances : `DOD_03_RELEASE_FREEZE`, `CHECKLIST_03_READY_TO_FREEZE`, `GAPC_TOOLING_CHECKLIST_01_READY_TO_FREEZE_ADDON`
 - Output attendu : checklist produit et verdict final
 - Critere PASS/FAIL : aucun P0 ouvert, chaine de preuve complete
 - Scope : NOW
 - Priorite : P0
 - Risque : R2
-- Next step unique : finaliser `OPS_06_READY_TO_FREEZE_CHECKLIST`
+- Next step unique : figer la decision finale dans `OPS_06_READY_TO_FREEZE_CHECKLIST`
 
 ## Evidence documentee
 ```txt
@@ -69,6 +69,7 @@ CO_003:
 ```
 
 ## Changelog
+- v1.3 (13-03-2026) : aligne `CO_003` sur la declaration finale `FROZEN`.
 - v1.2 (13-03-2026) : passe le backlog CO en `READY_TO_FREEZE` apres cloture des trois CO.
 - v1.1 (13-03-2026) : backfill les verdicts des CO a partir des preuves `WS_00`, `WS_01`, `WS_02` et des tests Codex.
 - v1.0 (10-03-2026) : creation du backlog CO pour `PRODUCT_00_GAPC_MENTOR`.

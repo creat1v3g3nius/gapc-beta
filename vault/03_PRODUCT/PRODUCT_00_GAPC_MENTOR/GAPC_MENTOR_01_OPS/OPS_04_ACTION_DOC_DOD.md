@@ -2,7 +2,7 @@
 id: OPS_04_ACTION_DOC_DOD
 type: DOD
 title: GapcMentorActionDocDod
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 10-03-2026
 updated: 13-03-2026
@@ -75,6 +75,7 @@ Next step unique: figer ces prompts comme reference operative dans le lot produi
 ```
 
 ## Changelog
+- v1.3 (13-03-2026) : aligne le controle action doc sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le controle action doc en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill l action doc avec les patchs ayant stabilise la qualification mentor + Codex.
 - v1.0 (10-03-2026) : creation du controle action doc pour `PRODUCT_00_GAPC_MENTOR`.

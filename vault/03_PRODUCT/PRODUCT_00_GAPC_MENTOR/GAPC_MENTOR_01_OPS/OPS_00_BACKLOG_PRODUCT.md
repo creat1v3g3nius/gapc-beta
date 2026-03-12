@@ -2,7 +2,7 @@
 id: OPS_00_BACKLOG_PRODUCT
 type: DOD
 title: GapcMentorBacklogProduct
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 10-03-2026
 updated: 13-03-2026
@@ -28,7 +28,7 @@ Structurer le backlog produit minimal de `PRODUCT_00_GAPC_MENTOR` pour rendre la
 ## 2) CO actifs
 - `CO_001` : verifier la separation `Codex / AnythingLLM / API`
 - `CO_002` : prouver les workspaces RAG et les tests P0
-- `CO_003` : formaliser le passage `READY_TO_FREEZE`
+- `CO_003` : formaliser le passage `FROZEN`
 
 ## 3) Mapping recommande
 - PRD / cadrage : `OPS_01_PRD_DOD`
@@ -116,6 +116,7 @@ Next step unique: conserver ce backlog comme reference gelée du produit
 ```
 
 ## Changelog
+- v1.5 (13-03-2026) : aligne `CO_003` sur l etat final `FROZEN`.
 - v1.4 (13-03-2026) : bascule le backlog produit en `FROZEN`.
 - v1.4 (13-03-2026) : passe le backlog produit en `READY_TO_FREEZE`.
 - v1.3 (13-03-2026) : passe le backlog produit en `READY_TO_FREEZE candidate` apres PASS des batteries mentor et Codex.

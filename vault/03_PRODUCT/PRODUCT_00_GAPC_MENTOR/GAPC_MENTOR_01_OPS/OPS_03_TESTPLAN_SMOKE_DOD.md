@@ -2,7 +2,7 @@
 id: OPS_03_TESTPLAN_SMOKE_DOD
 type: DOD
 title: GapcMentorTestPlanSmokeDod
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 10-03-2026
 updated: 13-03-2026
@@ -72,6 +72,7 @@ Verdict: PASS
 ```
 
 ## Changelog
+- v1.3 (13-03-2026) : aligne le smoke plan sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le smoke plan en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill le smoke plan avec les reruns mentor et Codex effectivement executes.
 - v1.0 (10-03-2026) : creation du controle smoke pour `PRODUCT_00_GAPC_MENTOR`.

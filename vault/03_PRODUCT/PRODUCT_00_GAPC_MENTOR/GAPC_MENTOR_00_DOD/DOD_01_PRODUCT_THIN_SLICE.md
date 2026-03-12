@@ -2,7 +2,7 @@
 id: DOD_01_PRODUCT_THIN_SLICE
 type: DOD
 title: GapcMentorProductThinSlice
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 10-03-2026
 updated: 13-03-2026
@@ -83,9 +83,10 @@ Verdict thin slice:
 ```
 
 ## 5) Next step standard
-- transformer ce thin slice en evidence ready-to-freeze si tous les P0 sont PASS
+- conserver ce thin slice comme preuve du lot gele si tous les P0 restent PASS
 
 ## Changelog
+- v1.4 (13-03-2026) : aligne le next step du thin slice sur l etat `FROZEN`.
 - v1.3 (13-03-2026) : passe le thin slice en `READY_TO_FREEZE` apres backfill des preuves.
 - v1.2 (13-03-2026) : backfill l evidence du thin slice a partir des reruns mentor + Codex et passe le verdict thin slice a PASS.
 - v1.1 (10-03-2026) : rattache le thin slice au backlog product et au backlog CO du lot OPS.

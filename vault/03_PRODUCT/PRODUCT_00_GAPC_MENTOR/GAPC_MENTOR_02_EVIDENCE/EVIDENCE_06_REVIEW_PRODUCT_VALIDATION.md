@@ -2,7 +2,7 @@
 id: EVIDENCE_06_REVIEW_PRODUCT_VALIDATION
 type: EVIDENCE
 title: ReviewProductValidation
-version: v1.0
+version: v1.1
 status: FROZEN
 created: 13-03-2026
 updated: 13-03-2026
@@ -38,8 +38,9 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - P0 fails : aucun
 - Setup mentor : PASS
 - Setup Codex : PASS
-- Gate `READY_TO_FREEZE` : PASS
-- Next step unique : basculer le lot en `FROZEN` seulement après une nouvelle modification significative et rerun complet
+- Gate `FROZEN` : PASS
+- Next step unique : rerun complet obligatoire avant toute future modification significative du lot
 
 ## Changelog
+- v1.1 (13-03-2026) : aligne la review finale sur l etat `FROZEN`.
 - v1.0 (13-03-2026) : création de la review finale de validation produit.
