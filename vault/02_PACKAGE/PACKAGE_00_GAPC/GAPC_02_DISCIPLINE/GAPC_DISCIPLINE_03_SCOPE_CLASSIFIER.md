@@ -27,7 +27,7 @@ Ce classifier est une **extension PACKAGE** (GAPC) :
 
 ## 1) Ce que l’on classifie (items)
 Un item peut être :
-- un livrable doc (INDEX/RUN/GIT/LLM/…),
+- un livrable doc (INDEX/WORKFLOW/GIT/LLM/…),
 - un script/outillage (validator, smoke, etc.),
 - une règle de gouvernance (CORE/PACKAGE),
 - un composant product (CO).
