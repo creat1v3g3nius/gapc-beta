@@ -1,5 +1,5 @@
 ---
-id: DOD_01_PRODUCT_THIN_SLICE
+id: DOD_01_BETA_PRODUCT_THIN_SLICE
 type: DOD
 title: GapcBetaProductThinSlice
 version: v1.0

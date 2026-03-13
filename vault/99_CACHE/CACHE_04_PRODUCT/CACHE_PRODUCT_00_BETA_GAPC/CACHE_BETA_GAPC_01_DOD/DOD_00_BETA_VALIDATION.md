@@ -48,7 +48,7 @@ PASS si gates applicables passent :
 - RagQG (si mentor utilisé)
 
 ### 2.3 Preuve thin slice (P0)
-PASS si un **thin slice** complet existe (cf. `DOD_01_PRODUCT_THIN_SLICE`) :
+PASS si un **thin slice** complet existe (cf. `DOD_01_BETA_PRODUCT_THIN_SLICE`) :
 - PRD → CO → Spec/ADR → Action Doc/Code → Smoke → Review.
 
 ### 2.4 Risques (P0)
