@@ -1,23 +1,23 @@
 ---
-id: RUN_10_COMMANDES
-type: RUN
+id: WORKFLOW_10_COMMANDES
+type: WORKFLOW
 title: ListCommandesLLM
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [workflow, commandes-llm, run, system]
-depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANTS, RUN_02_CHECKLISTS, RUN_03_START_SESSION, RUN_04_END_SESSION, RUN_05_INCIDENT]
+depends_on: [WORKFLOW_00_PIPELINE, WORKFLOW_03_START_SESSION, WORKFLOW_04_END_SESSION, WORKFLOW_05_INCIDENT, WORKFLOW_06_VAULT_HEALTH_CHECK, WORKFLOW_07_TESTS_LLM, WORKFLOW_08_TESTS_CODEX, PIPELINE_03_BACKLOG_COMPOSANTS, CHECKLIST_01_START_SESSION, CHECKLIST_02_END_SESSION, CHECKLIST_05_INCIDENT]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---
 
-# RUN_10 - List Commandes LLM
+# WORKFLOW_10 - List Commandes LLM
 
 Bibliothèque de **prompts/commandes standard** pour piloter le workflow de production avec un LLM (ChatGPT / AnythingLLM / Codex in-IDE), de façon :
 - **scalable** (multi-package, multi-product),
 - **anti-dérive** (scope verrouillé, 1 intention),
-- **compatible** avec les runbooks `RUN_00`/`RUN_05`/`RUN_06`,
+- **compatible** avec les runbooks `WORKFLOW_00`/`WORKFLOW_03`/`WORKFLOW_04`/`WORKFLOW_05`/`WORKFLOW_06`,
 - **no-secrets** (aucun token/PII en clair).
 
 > Règle : colle toujours un **Context Pack** en tête. Sans fichiers/chemins, le LLM doit répondre par des hypothèses explicites.
@@ -49,11 +49,11 @@ Si NON → le LLM doit proposer un plan pour isoler.
 
 ---
 
-## 2) Démarrer une session (RUN_05)
+## 2) Démarrer une session (WORKFLOW_03)
 
 ### 2.1) CMD_START_00 — Démarrage session “anti-dérive”
 ```text
-Applique RUN_05_START.
+Applique WORKFLOW_03_START_SESSION.
 1) Valide package/product actifs (1 seul chacun).
 2) Propose 1 CO atomique (DoD 3 bullets, ≤ 5 fichiers).
 3) Donne le plan 30–45min + stop conditions.
@@ -94,7 +94,7 @@ Output: fichier complet corrigé.
 
 ---
 
-## 4) Production par composant (CO) (RUN_02)
+## 4) Production par composant (CO) (`PIPELINE_03_BACKLOG_COMPOSANTS`)
 
 ### 4.1) CMD_CO_00 — Créer un CO atomique
 ```text
@@ -105,7 +105,7 @@ Output: contenu du fichier CO.
 
 ### 4.2) CMD_CO_01 — Détecter la dérive d’un CO
 ```text
-Audit ce CO selon RUN_02:
+Audit ce CO selon PIPELINE_03_BACKLOG_COMPOSANTS:
 - contient-il 2 intentions ?
 - >5 fichiers ?
 - DoD flou ?
@@ -141,12 +141,11 @@ Donne: comment l’exécuter, quels signaux = OK/KO.
 
 ---
 
-## 6) AnythingLLM / RAG (RUN_01)
+## 6) AnythingLLM / RAG (`WORKFLOW_07` + `SYSTEM_04_LLM`)
 
 ### 6.1) CMD_RAG_00 — Setup “RulesOnly”
 ```text
-Applique RUN_01.
-Propose un plan d’ingestion RulesOnly (CORE+SYSTEM minimaux), puis une batterie de 10 tests.
+À partir de WORKFLOW_07_TESTS_LLM et de SYSTEM_04_LLM, propose un plan d’ingestion RulesOnly (CORE+SYSTEM minimaux), puis une batterie de 10 tests.
 Règle: si info absente -> répondre NON TROUVÉ.
 ```
 
@@ -168,18 +167,16 @@ Si une info n’existe pas -> NON TROUVÉ.
 
 ---
 
-## 7) Fin de session (RUN_06)
+## 7) Fin de session (WORKFLOW_04)
 
 ### 7.1) CMD_END_00 — End session obligatoire
 ```text
-Applique RUN_06_END.
+Applique WORKFLOW_04_END_SESSION.
 Vérifie: diff propre, validator OK, smoke (si applicable), commit+push, doc à jour, statut CO, next step unique.
 Output: checklist cochable + next step.
 ```
 
----
-
-## 8) Incident (RUN_06_INCIDENT si présent) / Troubleshooting
+## 8) Incident (`WORKFLOW_05_INCIDENT`) / Troubleshooting
 
 ### 8.1) CMD_INC_00 — Triage incident
 ```text
@@ -215,6 +212,10 @@ Output: verdict + patch START/END REPLACE.
 Output: P0/P1/P2 + fixes.
 ```
 
+## 9.3) Batteries de tests
+- Qualification mentor AnythingLLM : `WORKFLOW_07_TESTS_LLM`
+- Qualification agent Codex : `WORKFLOW_08_TESTS_CODEX`
+
 ---
 
 ## 10) Prompts “mini” (copiables)
@@ -234,7 +235,7 @@ Output: P0/P1/P2 + fixes.
 ---
 
 ## 11) Changelog
-- v1.0 (28-02-2026) : version générique dérivée de RUN_10_COMMANDES_MVP, alignée RUN_00/01/02/05/06, multi-package/multi-product.
+- v1.0 (28-02-2026) : version générique dérivée de RUN_10_COMMANDES_MVP, alignée WORKFLOW_00/01/02/05/06, multi-package/multi-product.
 
 ---
 
@@ -242,5 +243,7 @@ Output: P0/P1/P2 + fixes.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (13-03-2026) : retire les renvois a `WORKFLOW_01` / `WORKFLOW_02` et recable les commandes sur `WORKFLOW_03/04/05/06` et `PIPELINE_03`.
+- v1.2 (12-03-2026) : ajoute les renvois vers `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

@@ -55,7 +55,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
   - relâchement si le rerun n est pas appliqué après modification
 
 ## 3) Decision
-- Decision : retenir l option B et considérer `PRODUCT_00_GAPC_MENTOR` comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `RUN_07_TESTS_LLM` et `RUN_08_TESTS_CODEX`
+- Decision : retenir l option B et considérer `PRODUCT_00_GAPC_MENTOR` comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`
 
 ## 4) Consequences
 - Positives :

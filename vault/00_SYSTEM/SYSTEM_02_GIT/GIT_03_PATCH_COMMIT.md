@@ -2,12 +2,12 @@
 id: GIT_03_PATCH_COMMIT
 type: GIT
 title: CodePatchCommit
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [boostrap, patch-commit, git, system]
-depends_on: [INDEX_01_ARCHITECTURE, RUN_00_PIPELINE]
+depends_on: [INDEX_01_ARCHITECTURE, WORKFLOW_00_PIPELINE]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_02_GIT
 ---
@@ -116,7 +116,7 @@ git push
 ```
 
 Exemples :
-- `docs(system): add RUN_06 incident checklist`
+- `docs(system): add WORKFLOW_06 incident checklist`
 - `docs(core): tighten naming rules`
 - `chore(scripts): improve frontmatter validator output`
 - `fix(smoke): handle missing vault folders`
@@ -130,7 +130,46 @@ Exemples :
 
 ---
 
-## 8) Red flags (STOP)
+## 8) Intégration vers `main` (quand applicable)
+
+Utilité :
+- ne sert pas au patch quotidien minimal,
+- sert quand un lot doit etre intégré proprement dans `main`,
+- remplace la procédure séparée anciennement portée par `GIT_05`.
+
+### 8.1) DoD merge vers `main`
+- [ ] Validator : PASS
+- [ ] Smoke : PASS
+- [ ] `git status` clean avant merge
+- [ ] no-secrets : `.env`, clés, PII absents du stage/diff
+- [ ] intention cohérente : 1 lot de changements maitrisé
+- [ ] `git diff --cached` relu avant commit final
+
+### 8.2) Procédure squash merge (locale)
+```bash
+git switch main
+git pull --rebase
+git merge --squash work/<topic>
+git commit -m "type(scope): action"
+git push
+```
+
+### 8.3) Vérifications post-merge
+```bash
+git status
+git log --oneline -n 5
+python scripts/ValidateFrontmatter.py --strict --enforce-unique-ids --vault vault
+python scripts/SmokeRunner.py
+```
+
+Règle :
+- garder `main` lisible et stable,
+- si conflit ou doute, abort et reprendre proprement,
+- cette étape complète le `diff-first`, elle ne le remplace pas.
+
+---
+
+## 9) Red flags (STOP)
 - [ ] 2 intentions dans le même diff
 - [ ] patch énorme sans validations
 - [ ] incompréhension totale du changement
@@ -139,7 +178,7 @@ Exemples :
 
 ---
 
-## 9) Mini-playbooks (cas fréquents)
+## 10) Mini-playbooks (cas fréquents)
 
 ### 9.1) J’ai committé trop large
 - [ ] Revenir en arrière (safe) : `git revert <sha>` (si déjà push)
@@ -157,7 +196,7 @@ Exemples :
 
 ---
 
-## 10) Changelog
+## 11) Changelog
 - v1.0 (28-02-2026) : version arcs, package/product actifs, intégration validator/smoke + policy work/main.
 
 ---
@@ -166,5 +205,6 @@ Exemples :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (13-03-2026) : fusionne la DoD squash merge de `GIT_05` dans `GIT_03` et formalise l integration vers `main`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

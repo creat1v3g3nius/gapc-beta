@@ -1,6 +1,6 @@
 ---
-id: RUN_06_VAULT_HEALTH_CHECK
-type: RUN
+id: WORKFLOW_06_VAULT_HEALTH_CHECK
+type: WORKFLOW
 title: VaultHealthCheckRunbook
 version: v1.1
 status: READY_TO_FREEZE
@@ -12,7 +12,7 @@ arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---
 
-# RUN_06 - Vault Health Check
+# WORKFLOW_06 - Vault Health Check
 
 ## Objectif
 

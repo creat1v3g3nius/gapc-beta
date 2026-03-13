@@ -2,12 +2,12 @@
 id: SCRIPT_01_SMOKE_RUNNER
 type: SCRIPT
 title: SmokeRunnerNotice
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [quality, smoke-runner, script, system]
-depends_on: [SCRIPT_00_VALIDATOR, RUN_00_PIPELINE, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT]
+depends_on: [SCRIPT_00_VALIDATOR, WORKFLOW_00_PIPELINE, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
@@ -34,7 +34,7 @@ Contraintes :
 ## 1) Emplacement recommandé
 
 ### Script (repo)
-- `repo/scripts/smoke.py` *(recommandé : Python, cross-platform)*
+- `repo/scripts/SmokeRunner.py` *(Python, cross-platform)*
 
 ### Notice (vault)
 - `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_01_SMOKE_RUNNER.md` (ce document)
@@ -51,13 +51,14 @@ Contraintes :
    - `vault/01_CORE/`
    - `vault/02_PACKAGE/`
    - `vault/03_PRODUCT/`
-   - `vault/04_CACHE/`
-4. **Validator exécutable** : appelle `scripts/validate_vault.py --vault vault` et lit le code retour
+   - `vault/99_CACHE/` *(ou legacy `vault/04_CACHE/`)*
+4. **Validator exécutable** : appelle `scripts/ValidateFrontmatter.py` et lit le code retour
+5. **DocIntegrity optionnel** : peut appeler `scripts/DocIntegrityChecker.py` sur le scope cible
 
 ### P1 (recommandé)
-5. **Package actif** : si configuré, vérifier existence dans `vault/02_PACKAGE/`
-6. **Product actif** : si configuré, vérifier existence dans `vault/03_PRODUCT/`
-7. **Typo traps** : détecter patterns connus (ex: `SpechTech`)
+6. **Package actif** : si explicitement demandé, vérifier existence dans `vault/02_PACKAGE/`
+7. **Product actif** : si explicitement demandé, vérifier existence dans `vault/03_PRODUCT/`
+8. **Typo traps** : détecter patterns connus (ex: `SpechTech`)
 
 ---
 
@@ -66,12 +67,17 @@ Contraintes :
 Depuis la racine `repo/` :
 
 ```bash
-python scripts/smoke.py
+python scripts/SmokeRunner.py
 ```
 
-Option (si config) :
+Option utile avec integrite documentaire :
 ```bash
-python scripts/smoke.py --config scripts/validator.config.json
+python scripts/SmokeRunner.py --run-doc-integrity --doc-integrity-scope vault
+```
+
+Option pre-freeze :
+```bash
+python scripts/SmokeRunner.py --run-doc-integrity --doc-integrity-scope vault --check-pre-freeze
 ```
 
 ---
@@ -87,7 +93,7 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
     {
       "label": "GAPC: Smoke",
       "type": "shell",
-      "command": "python scripts/smoke.py",
+      "command": "python scripts/SmokeRunner.py --run-doc-integrity --doc-integrity-scope vault",
       "problemMatcher": []
     }
   ]
@@ -126,5 +132,6 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (13-03-2026) : recale la notice sur `scripts/SmokeRunner.py`, `ValidateFrontmatter.py` et l option `DocIntegrityChecker`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

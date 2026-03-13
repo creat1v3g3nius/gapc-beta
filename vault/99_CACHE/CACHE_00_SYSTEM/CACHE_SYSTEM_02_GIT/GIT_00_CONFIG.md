@@ -2,17 +2,34 @@
 id: GIT_00_CONFIG
 type: GIT
 title: ConfigGitVsCode
-version: v1.1
-status: FROZEN
+version: v1.3
+status: DEPRECATED
 created: 28-02-2026
-updated: 02-03-2026
-tags: [boostrap, config, git, system]
-depends_on: [INDEX_01_ARCHITECTURE, RUN_00_PIPELINE]
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_02_GIT
+updated: 13-03-2026
+tags: [boostrap, config, git, cache, deprecated]
+depends_on: [INDEX_01_ARCHITECTURE, WORKFLOW_00_PIPELINE, EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION, EVIDENCE_04_CODEX_IDE]
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_02_GIT
 ---
 
 # GIT_00 - Mode d'emploi Configuration Git dans Vs Code
+
+## Statut
+- `DEPRECATED`
+- bootstrap historique uniquement
+- obsolete en routine si la configuration effective est deja tracee dans `EVIDENCE`
+
+## Regle operationnelle
+Si la configuration Git/VS Code/hooks est deja couverte par :
+- `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION`
+- `EVIDENCE_04_CODEX_IDE`
+
+alors `GIT_00_CONFIG` ne doit plus etre utilise comme source operationnelle.
+
+En regime finalise :
+- `GIT_01_ESSENTIEL` porte les commandes minimales,
+- `GIT_03_PATCH_COMMIT` porte la doctrine patch/commit/merge,
+- `EVIDENCE` porte la trace de configuration et de validation.
 
 Mode d’emploi **unique** (simple, sûr, répétable) pour :
 - configurer VS Code pour travailler dans le framework GAPC (Vault → Repo),
@@ -299,5 +316,7 @@ Exemple minimal (à adapter aux scripts existants) :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (13-03-2026) : archive en `CACHE_SYSTEM_02_GIT` car la configuration effective est deja tracee dans `EVIDENCE`.
+- v1.2 (13-03-2026) : passe en `DEPRECATED` ; obsolete si la configuration est deja tracee dans `EVIDENCE`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

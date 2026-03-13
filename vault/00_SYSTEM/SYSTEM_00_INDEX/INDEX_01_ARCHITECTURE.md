@@ -2,10 +2,10 @@
 id: INDEX_01_ARCHITECTURE
 type: INDEX
 title: ArchitectureFrameworkGAPC
-version: v1.3
+version: v1.10
 status: FROZEN
 created: 27-02-2026
-updated: 09-03-2026
+updated: 13-03-2026
 tags: [repo, framework-architecture, index, system]
 depends_on: []
 arc: SYSTEM
@@ -45,17 +45,76 @@ Chaque arc contient uniquement les familles nécessaires à sa fonction.
 Familles autorisées :
 
 -   INDEX
--   RUN
+-   WORKFLOW
 -   GIT
 -   SCRIPT
 -   LLM
 -   BACKLOG
 -   PATCH
+-   FAQ
 
-Rôle : Documentation d'usage, procédures d'exécution, configuration Git,
-scripts de validation, protocole RAG.
+Rôle : Documentation d'usage, procédures d'exécution, setup produit,
+configuration Git, scripts de validation et protocole RAG.
 
 Aucune règle produit ne doit exister dans cet arc.
+
+### 3.1 WORKFLOW
+
+`WORKFLOW_*` porte les runbooks d execution quotidienne :
+- demarrage et cloture de session
+- incident
+- health check
+- batteries de tests
+- commandes operatoires
+
+Noyau `WORKFLOW` actif :
+- `WORKFLOW_00_PIPELINE`
+- `WORKFLOW_03_START_SESSION`
+- `WORKFLOW_04_END_SESSION`
+- `WORKFLOW_05_INCIDENT`
+- `WORKFLOW_06_VAULT_HEALTH_CHECK`
+- `WORKFLOW_07_TESTS_LLM`
+- `WORKFLOW_08_TESTS_CODEX`
+- `WORKFLOW_10_COMMANDES`
+
+Annexes legacy archivees hors scope actif :
+- `WORKFLOW_01_COMPOSANTS` : deplace en `CACHE_SYSTEM_01_RUN`
+- `WORKFLOW_02_CHECKLISTS` : deplace en `CACHE_SYSTEM_01_RUN`
+
+### 3.2 RUN_01_SETUP_PRODUCT
+
+`SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT` porte la composition multi-products :
+- bootstrap
+- selection de profil
+- routine du product actif
+- destination finale
+- cycle de vie
+- merge-out
+- gouvernance
+
+La nomenclature active des documents de cette famille est :
+- `SETUP_PRODUCT_00_INDEX`
+- `SETUP_PRODUCT_01_BOOTSTRAP`
+- `SETUP_PRODUCT_02_PROFILE_SELECTION`
+- `SETUP_PRODUCT_03_ROUTINE_OPERATIONS`
+- `SETUP_PRODUCT_04_DESTINATION_POLICY`
+- `SETUP_PRODUCT_05_LIFECYCLE_POLICY`
+- `SETUP_PRODUCT_06_MERGE_OUT_POLICY`
+- `SETUP_PRODUCT_07_GOVERNANCE_RULES`
+
+Frontiere d integration :
+- `WORKFLOW_*` execute la session, les checks et les reruns
+- `SETUP_PRODUCT_*` declare ce qui doit etre maintenu, revalide ou promu
+- `RUN_01_SETUP_PRODUCT` ne remplace pas les runbooks quotidiens
+
+### 3.3 FAQ
+
+`SYSTEM_99_FAQ` porte un support operatoire leger :
+- formulaire de question / incident
+- reponses rapides aux cas frequents
+- point d entree secondaire, non canonique face aux index et runbooks
+
+Le point d entree principal de `00_SYSTEM` reste `README.md`, puis `INDEX_01` et `INDEX_02`.
 
 ------------------------------------------------------------------------
 
@@ -163,6 +222,13 @@ version.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.10 (13-03-2026) : ajoute la famille `FAQ`, raccorde `SYSTEM_99_FAQ` et clarifie `README.md` comme point d entree principal de `00_SYSTEM`.
+- v1.9 (13-03-2026) : retire `WORKFLOW_01` et `WORKFLOW_02` du scope SYSTEM actif et les archive en `CACHE`.
+- v1.8 (13-03-2026) : renomme la famille documentaire `RUN_*` en `WORKFLOW_*` et recable l architecture SYSTEM.
+- v1.7 (13-03-2026) : rehoste `SETUP_PRODUCT_*` sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT` et retire `MULTI_PRODUCT` comme famille separee.
+- v1.6 (13-03-2026) : raccorde l architecture au cadre final `WORKFLOW` vs `SETUP_PRODUCT`, avec noyau `WORKFLOW` et annexes legacy explicites.
+- v1.5 (13-03-2026) : applique la nomenclature active `SETUP_PRODUCT_00..07`.
+- v1.4 (13-03-2026) : ajout de la famille `MULTI_PRODUCT` et doctrine `WORKFLOW` vs `SETUP_PRODUCT`.
 - v1.3 (09-03-2026) : alignement architecture sur la version FRAMEWORK canon (`99_CACHE` explicite).
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.1 : READY_TO_FREEZE.

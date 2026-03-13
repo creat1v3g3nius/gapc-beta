@@ -1,27 +1,27 @@
 ---
-id: EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION
+id: EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION
 type: EVIDENCE
 title: ReleaseNoteFrameworkValidation
-version: v1.12
+version: v1.15
 status: FROZEN
 created: 06-03-2026
-updated: 10-03-2026
+updated: 13-03-2026
 tags: [system, evidence, release-note, framework, validation]
-depends_on: [EVIDENCE_01_REVIEW_FRAMEWORK, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, SCRIPT_01_SMOKE_RUNNER, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
+depends_on: [EVIDENCE_02_REVIEW_FRAMEWORK, PIPELINE_05_RELEASE_FREEZE, TPL_10_RELEASE_NOTE, WORKFLOW_06_VAULT_HEALTH_CHECK, EVIDENCE_03_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, SCRIPT_01_SMOKE_RUNNER, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 ---
 
-# EVIDENCE_00 - Release Note Framework Validation
+# EVIDENCE_01 - Release Note Framework Validation
 
 ## Version / Perimetre
-- Version: v1.12
-- Date: 10-03-2026
-- Perimetre: remediation framework canon globale sur le vault.
+- Version: v1.15
+- Date: 13-03-2026
+- Perimetre: verification finale du cadre `WORKFLOW + SETUP_PRODUCT` sur le vault.
 
 ## Changements
 - Added: pack evidence thin-slice complet.
-- Added: health check vault `RUN_06_VAULT_HEALTH_CHECK`.
+- Added: health check vault `WORKFLOW_06_VAULT_HEALTH_CHECK`.
 - Changed: frontmatter strict du backlog composants.
 - Fixed: references depends_on vers ID backlog aligne.
 - Archived: index consolide R-0001 deplace en cache/deprecated (`vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`).
@@ -43,6 +43,10 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
   - `skills/codex-ide-instructions/SKILL.md` = projection executable
 - Changed: `.gitignore` mis a jour avec `skills/` pour eviter le versioning des artefacts locaux de skill.
 - Removed: `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` du scope actif (remplace par `SCRIPT_03_INSTRUCTIONS_CODEX` + skill associe).
+- Changed: noyau `WORKFLOW` stabilise sur `WORKFLOW_00/03/04/05/06/07/08/10`.
+- Changed: annexes `WORKFLOW_01` et `WORKFLOW_02` passees en `DEPRECATED`.
+- Changed: famille `SETUP_PRODUCT_00..07` rehebergee dans `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+- Added: doctrine finale `WORKFLOW` vs `SETUP_PRODUCT` explicitee et index SYSTEM raccordes.
 - Deprecated: aucun.
 
 ## Tests / Validations
@@ -55,17 +59,22 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Framework canon global rerun: PASS.
 - Coherence SOT de fond / SOT procedurale / projection executable: PASS.
 - Trace `.gitignore` + retrait bootstrap script: PASS.
+- Convergence `WORKFLOW + SETUP_PRODUCT`: PASS.
+- Batteries `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`: raccordees au cadre final.
 
 ## Risques Connus
-- Aucun risque Open sur le scope global valide (registre: `EVIDENCE_02_RISK_REGISTER`).
+- Aucun risque Open sur le scope global valide (registre: `EVIDENCE_03_RISK_REGISTER`).
 
 ## Backout Plan
-- Revert du lot evidence via le commit associe a `OPS_05_CO_DOD`.
+- Revert du lot evidence via le commit associe a `OPS_SAMPLE_05_CO_DOD`.
 
 ## Next Step Unique
 - Lancer le prochain lot avec la meme gate globale (`validator strict + smoke + health check`) et mise a jour du registre risques.
 
 ## Changelog
+- v1.15 (13-03-2026) : rehost dans `EVIDENCE_00_FRAMEWORK` et renumerotation `EVIDENCE_00 -> EVIDENCE_01`.
+- v1.14 (13-03-2026) : trace le rehost de `SETUP_PRODUCT_*` sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+- v1.13 (13-03-2026) : trace la verification finale du cadre `WORKFLOW + SETUP_PRODUCT` et confirme PASS du cadre final.
 - v1.1 (06-03-2026) : integre le health check vault dans la release note du lot evidence.
 - v1.2 (06-03-2026) : aligne la release note sur un PASS DocQG global.
 - v1.3 (06-03-2026) : cloture officielle des risques R-0001/R-0005/R-0009 apres rerun global.

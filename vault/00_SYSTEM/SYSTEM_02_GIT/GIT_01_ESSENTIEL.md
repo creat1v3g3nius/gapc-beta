@@ -2,12 +2,12 @@
 id: GIT_01_ESSENTIEL
 type: GIT
 title: GitEssentiel
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [boostrap, commandes, git, system]
-depends_on: [INDEX_01_ARCHITECTURE, GIT_00_CONFIG]
+depends_on: [INDEX_01_ARCHITECTURE, GIT_03_PATCH_COMMIT]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_02_GIT
 ---
@@ -207,7 +207,68 @@ git rebase --abort
 
 ---
 
-## 8) Changelog
+## 8) Dépannage rapide (top 6)
+
+### 8.1) Repo non détecté
+Symptôme :
+- `fatal: not a git repository`
+
+Fix safe :
+```bash
+git rev-parse --show-toplevel
+```
+Si erreur :
+- ouvrir le bon dossier repo dans VS Code
+- relancer `git status`
+
+### 8.2) Push rejected / non-fast-forward
+Fix safe :
+```bash
+git pull --rebase
+git push
+```
+
+### 8.3) Fichier sensible stage par erreur
+Fix safe :
+```bash
+git restore --staged .env
+# si déjà tracké:
+git rm --cached .env
+```
+Puis compléter `.gitignore`.
+
+### 8.4) Annuler des changements locaux
+Fix safe :
+```bash
+git restore <file>
+# ou pour tout le working tree:
+git restore .
+```
+
+### 8.5) Detached HEAD
+Fix safe :
+```bash
+git switch -c work/recover-detached
+```
+
+### 8.6) Merge/Rebase en cours
+Fix safe :
+```bash
+git rebase --continue
+# ou abort si nécessaire:
+git merge --abort
+git rebase --abort
+```
+
+### STOP conditions
+- `detached HEAD` non résolu
+- `merge/rebase in progress` non compris
+- fichier sensible détecté dans le diff/stage
+- changement touche plusieurs arcs sans intention claire
+
+---
+
+## 9) Changelog
 -v1.0 (28-02-2026) : liste essentiel des commandes git dans VsCode pour la v1.0 du Gapc.
 
 ---
@@ -216,5 +277,7 @@ git rebase --abort
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (13-03-2026) : fusionne le top 6 de depannage de `GIT_04_DEPANNAGE_CHECKLIST`.
+- v1.2 (13-03-2026) : retire la dependance au bootstrap `GIT_00_CONFIG` devenu deprecated.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

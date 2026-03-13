@@ -1,6 +1,6 @@
 ---
 id: RUN_07_OPTIMIZATION_PROCESS
-type: RUN
+type: WORKFLOW
 title: VaultOptimizationProcess
 version: v1.2
 status: DEPRECATED
@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 ---
 
-# RUN_07 - Optimization Process
+# WORKFLOW_07 - Optimization Process
 
 ## Objectif
 
@@ -53,7 +53,7 @@ Ce DoD ne redéfinit pas les règles. Il applique des références existantes :
 | Frontmatter standard | `META_05_FRONTMATTER` |
 | Hiérarchie d’autorité des arcs | `INDEX_02_REPOSITORY` |
 | Discipline Git (intention/commit) | `GIT_02_BRANCH_POLICY` |
-| Chaîne de preuve produit | `PIPELINE_03_BACKLOG_COMPOSANTS`, `DOD_00_BETA_VALIDATION`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION` |
+| Chaîne de preuve produit | `PIPELINE_03_BACKLOG_COMPOSANTS`, `DOD_00_BETA_VALIDATION`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION` |
 
 Règle locale :
 - si une règle existe déjà dans une source canonique, ce document pointe vers cette source au lieu de recopier son contenu.

@@ -7,7 +7,7 @@ status: FROZEN
 created: 13-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, release-note, frozen]
-depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST, RUN_07_TESTS_LLM, RUN_08_TESTS_CODEX, EVIDENCE_00_INDEX]
+depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST, WORKFLOW_07_TESTS_LLM, WORKFLOW_08_TESTS_CODEX, EVIDENCE_00_INDEX]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
@@ -23,8 +23,8 @@ active-product: PRODUCT_00_GAPC_MENTOR
 
 ## 2) Changements
 - Added : pack `EVIDENCE_*` produit complet avec preuves `WS_00`, `WS_01`, `WS_02` et `Codex IDE`
-- Added : runbook `RUN_08_TESTS_CODEX` pour la qualification de l agent Codex
-- Changed : prompts de test canonises dans `RUN_07_TESTS_LLM` et `RUN_08_TESTS_CODEX`
+- Added : runbook `WORKFLOW_08_TESTS_CODEX` pour la qualification de l agent Codex
+- Changed : prompts de test canonises dans `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`
 - Fixed : alignement `CORE -> PACKAGE -> PRODUCT` sur hiérarchie, priorités de sources, rôles et no-secrets
 - Deprecated : aucun
 
@@ -38,11 +38,11 @@ active-product: PRODUCT_00_GAPC_MENTOR
 
 ## 4) Risques connus
 - R-XXXX : aucun risque P0 ouvert sur le setup mentor + Codex
-- Mitigations : rerun `RUN_07_TESTS_LLM` et `RUN_08_TESTS_CODEX` à toute modification de prompt, corpus ou gate DOD
+- Mitigations : rerun `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX` à toute modification de prompt, corpus ou gate DOD
 
 ## 5) Backout plan
 - revert du lot `PRODUCT_00_GAPC_MENTOR` vers le commit antérieur à la qualification
-- rerun des batteries `RUN_07_TESTS_LLM` et `RUN_08_TESTS_CODEX`
+- rerun des batteries `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`
 
 ## 6) Next step unique
 - conserver ce release note comme pièce de référence du lot `FROZEN`

@@ -2,10 +2,10 @@
 id: INDEX_04_OBSIDIAN
 type: INDEX
 title: ObsidianConfig
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [repo, obsidian-knowledge, index, system]
 depends_on: [INDEX_01_ARCHITECTURE, INDEX_02_REPOSITORY, INDEX_03_WRITING, META_00_HANDBOOK, META_05_FRONTMATTER]
 arc: SYSTEM
@@ -44,7 +44,7 @@ Le Vault est structuré en arcs :
 - `01_CORE/` : règles transverses (normatif)
 - `02_PACKAGE/` : extensions métier (ASSO, GAPC…)
 - `03_PRODUCT/` : exécution par composants (CO)
-- `04_CACHE/` : stockage temporaire non contractuel
+- `99_CACHE/` : stockage temporaire / archivage non contractuel
 
 ## 1.2 Règle
 - Si c’est **une règle transversale** → CORE
@@ -58,7 +58,7 @@ Le Vault est structuré en arcs :
 # 2. Création d’un fichier dans Obsidian
 
 ## 2.1 Choisir la famille
-Chaque fichier appartient à une **famille** (INDEX/RUN/GIT/SCRIPT/LLM/BACKLOG/PATCH/FAQ/META/DISCIPLINE/RESTRAINT/TOOLING…).
+Chaque fichier appartient à une **famille** (INDEX/WORKFLOW/GIT/SCRIPT/LLM/BACKLOG/PATCH/FAQ/META/DISCIPLINE/RESTRAINT/TOOLING…).
 
 La famille doit être cohérente avec le dossier parent.
 
@@ -135,7 +135,12 @@ Règles :
 ## 4.3 Hygiène anti-bruit (RAG)
 - Éviter les doublons (lien à la place)
 - Garder les fichiers courts, scannables
-- Mettre les brouillons instables dans `04_CACHE/` (puis migrer)
+- Mettre les brouillons instables dans `99_CACHE/` (ou legacy `04_CACHE/` si encore present), puis migrer/archiver
+
+## 4.4 Point d entree SYSTEM
+- `vault/00_SYSTEM/README.md` = point d entree de navigation rapide
+- `SYSTEM_00_INDEX/*` = tables des matieres canoniques
+- `SYSTEM_99_FAQ/FAQ_00_FORM.md` = support operatoire leger, secondaire
 
 ---
 
@@ -239,6 +244,7 @@ Avant de passer un doc en READY_TO_FREEZE :
 ---
 
 ## Changelog
+- v1.2 (13-03-2026) : aligne la navigation Obsidian sur `99_CACHE`, `README.md` et `SYSTEM_99_FAQ`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v0.1 (27-02-2026) : création du draft (réécriture depuis la v0, alignée naming/frontmatter).
 

@@ -7,7 +7,7 @@ status: FROZEN
 created: 12-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, ws02, productscoped, rag]
-depends_on: [DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, RUN_07_TESTS_LLM, OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_00_BACKLOG_PRODUCT, LLM_03_MENTOR_UTILITES]
+depends_on: [DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, WORKFLOW_07_TESTS_LLM, OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_00_BACKLOG_PRODUCT, LLM_03_MENTOR_UTILITES]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
@@ -34,7 +34,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 ## Evidence
 ```txt
 Prompt pack:
-- RUN_07_TESTS_LLM / WS_02 ProductScoped
+- WORKFLOW_07_TESTS_LLM / WS_02 ProductScoped
 
 Prompts optimises utilises pour PASS:
 - T3 NON TROUVE exact

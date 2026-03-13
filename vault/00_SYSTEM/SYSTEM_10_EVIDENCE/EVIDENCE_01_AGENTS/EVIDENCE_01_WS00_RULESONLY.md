@@ -7,7 +7,7 @@ status: FROZEN
 created: 12-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, ws00, rulesonly, rag]
-depends_on: [LLM_01_INGESTION_PROTOCOL, RUN_07_TESTS_LLM, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS]
+depends_on: [LLM_01_INGESTION_PROTOCOL, WORKFLOW_07_TESTS_LLM, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
@@ -32,7 +32,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 ## Evidence
 ```txt
 Prompt pack:
-- RUN_07_TESTS_LLM / WS_00 RulesOnly
+- WORKFLOW_07_TESTS_LLM / WS_00 RulesOnly
 
 Sources majeures:
 - META_00_HANDBOOK

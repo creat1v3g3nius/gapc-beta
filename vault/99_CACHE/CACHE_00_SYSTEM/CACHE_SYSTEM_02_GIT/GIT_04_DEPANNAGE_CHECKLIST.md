@@ -2,14 +2,14 @@
 id: GIT_04_DEPANNAGE_CHECKLIST
 type: GIT
 title: DepannageGitChecklist
-version: v1.0
-status: READY_TO_FREEZE
+version: v1.1
+status: DEPRECATED
 created: 06-03-2026
-updated: 08-03-2026
-tags: [git, depannage, checklist, system]
+updated: 13-03-2026
+tags: [git, depannage, checklist, cache, deprecated]
 depends_on: [GIT_01_ESSENTIEL, GIT_02_BRANCH_POLICY]
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_02_GIT
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_02_GIT
 ---
 
 # GIT_04 - Checklist Depannage Git
@@ -94,3 +94,10 @@ Vérif : `git status` ne mentionne plus merge/rebase en cours.
 ## Utilisation
 - Exécuter cette checklist avant escalade incident.
 - Si un cas sort du cadre, ouvrir incident P1 avec symptômes + commandes déjà tentées.
+
+## Statut d archivage
+- contenu utile fusionne dans `GIT_01_ESSENTIEL`
+- ne plus maintenir ce fichier comme source active
+
+## Changelog
+- v1.1 (13-03-2026) : fusionne le contenu utile dans `GIT_01_ESSENTIEL` puis archive en `CACHE_SYSTEM_02_GIT`.

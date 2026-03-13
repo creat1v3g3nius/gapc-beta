@@ -1,18 +1,18 @@
 ---
-id: RUN_05_INCIDENT
-type: RUN
+id: WORKFLOW_05_INCIDENT
+type: WORKFLOW
 title: IncidentResolutionProtocol
 version: v1.1
 status: FROZEN
 created: 27-02-2026
 updated: 02-03-2026
 tags: [workflow, incident-protocol, run, system]
-depends_on: [RUN_00_PIPELINE]
+depends_on: [WORKFLOW_00_PIPELINE]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---
 
-# RUN_05 - Incident Resolution Protocol
+# WORKFLOW_05 - Incident Resolution Protocol
 
 Protocole **anti-panique** pour diagnostiquer et résoudre un incident pendant l’exécution du workflow GAPC :
 **Obsidian (Vault) → VS Code + Git → (scripts validator/smoke) → AnythingLLM (mentor)**.
@@ -20,7 +20,7 @@ Protocole **anti-panique** pour diagnostiquer et résoudre un incident pendant l
 Contraintes :
 - **No secrets** (aucun token/PII dans les logs, tickets, commits).
 - **1 action = 1 intention** (si correctif : 1 commit atomique).
-- **Source of Truth** : Vault / règles CORE (INDEX_00/INDEX_01 + RUN_00/01/02).
+- **Source of Truth** : Vault / règles CORE (INDEX_00/INDEX_01 + WORKFLOW_00/01/02).
 
 ---
 
@@ -158,7 +158,7 @@ Actions safe :
 - [ ] Basculer sur workspace **RulesOnly**
 - [ ] Retirer la dernière couche ingérée
 
-#### D2) Tests (obligatoires) — cf RUN_01
+#### D2) Tests (obligatoires) — cf WORKFLOW_01
 - [ ] Hiérarchie des règles = OK
 - [ ] Non-invention = OK (**NON TROUVÉ**)
 - [ ] Contradictions = OK (nuancé)

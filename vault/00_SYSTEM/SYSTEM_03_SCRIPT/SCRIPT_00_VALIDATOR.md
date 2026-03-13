@@ -2,12 +2,12 @@
 id: SCRIPT_00_VALIDATOR
 type: SCRIPT
 title: VaultValidatorAndHook
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [quality, validator, hook, script, system]
-depends_on: [RUN_00_PIPELINE, GIT_00_CONFIG, GIT_03_PATCH_COMMIT]
+depends_on: [WORKFLOW_00_PIPELINE, GIT_01_ESSENTIEL, GIT_03_PATCH_COMMIT]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
@@ -56,8 +56,8 @@ Contraintes :
 ## 2) Emplacement & nommage des scripts
 
 ### Repo (exécution)
-- `repo/scripts/validate_vault.py` *(ou extension de ton `ValidateFrontmatter.py`)*
-- option : `repo/scripts/validate_naming.py` (si séparé)
+- `repo/scripts/ValidateFrontmatter.py`
+- parsing partagé : `repo/scripts/frontmatter_utils.py`
 
 ### Vault (notice)
 - `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_00_VALIDATOR.md` (ce document)
@@ -70,18 +70,18 @@ Contraintes :
 Depuis la racine `repo/` :
 
 ```bash
-python scripts/validate_vault.py --vault vault
+python scripts/ValidateFrontmatter.py --vault vault
 ```
 
 Variantes utiles :
-- cibler un arc :
+- activer les contrôles stricts :
 ```bash
-python scripts/validate_vault.py --vault vault --arc SYSTEM
+python scripts/ValidateFrontmatter.py --vault vault --strict
 ```
 
-- cibler un package :
+- vérifier aussi l unicité globale des IDs :
 ```bash
-python scripts/validate_vault.py --vault vault --package PACKAGE_02_GAPC
+python scripts/ValidateFrontmatter.py --vault vault --strict --enforce-unique-ids
 ```
 
 Attendu :
@@ -90,25 +90,14 @@ Attendu :
 
 ---
 
-## 4) Configuration (scalable, multi-package/product)
+## 4) Configuration réelle
 
-Créer un fichier de config (optionnel mais utile) :
-- `repo/scripts/validator.config.json`
+Dans l état actuel du framework, le validator ne depend pas d un fichier de config dedie.
 
-Exemple (sans secrets) :
-```json
-{
-  "vaultPath": "vault",
-  "enforceIdEqualsFilename": true,
-  "enforceUniqueIds": true,
-  "activePackage": "PACKAGE_02_GAPC",
-  "activeProduct": "PRODUCT_02_GAPCMVP",
-  "requiredFrontmatterKeys": ["id","type","title","version","status","creation","maj","scope","tags","dependances","arc"]
-}
-```
-
-Règle :
-- le validator ne doit **pas** dépendre d’une config pour fonctionner (fallback sur défauts).
+Regle :
+- le mode nominal passe par les options CLI `--vault`, `--strict`, `--enforce-unique-ids`
+- aucun package actif ou product actif n est requis pour executer le validator
+- toute extension future doit rester optionnelle et sans secret
 
 ---
 
@@ -125,7 +114,7 @@ Créer le fichier :
 Contenu (macOS/Linux) :
 ```bash
 #!/usr/bin/env bash
-python scripts/validate_vault.py --vault vault
+python scripts/ValidateFrontmatter.py --vault vault --strict
 ```
 
 Rendre exécutable :
@@ -158,7 +147,7 @@ Exemple minimal :
     {
       "label": "GAPC: Validate Vault",
       "type": "shell",
-      "command": "python scripts/validate_vault.py --vault vault",
+      "command": "python scripts/ValidateFrontmatter.py --vault vault --strict",
       "problemMatcher": []
     }
   ]
@@ -190,5 +179,7 @@ Exemple minimal :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (13-03-2026) : recale la notice sur `scripts/ValidateFrontmatter.py`, ses flags reels et `frontmatter_utils.py`.
+- v1.2 (13-03-2026) : retire la dependance au bootstrap `GIT_00_CONFIG` devenu deprecated.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

@@ -1,30 +1,37 @@
 ---
-id: EVIDENCE_02_RISK_REGISTER
+id: EVIDENCE_03_RISK_REGISTER
 type: EVIDENCE
 title: RiskRegisterFramework
-version: v1.16
+version: v1.18
 status: FROZEN
 created: 06-03-2026
-updated: 10-03-2026
+updated: 13-03-2026
 tags: [system, evidence, risk, register, framework, p0]
-depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_05_CO_DOD, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_03_ADR_FRAMEWORK_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
+depends_on: [GAPC_DISCIPLINE_04_RISK_REGISTER, OPS_SAMPLE_05_CO_DOD, WORKFLOW_06_VAULT_HEALTH_CHECK, EVIDENCE_04_ADR_FRAMEWORK_SCOPE, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 ---
 
-# EVIDENCE_02 - Risk Register
+# EVIDENCE_03 - Risk Register
 
 ## Regles
 - Max 3 risques actifs.
 - Chaque risque inclut mitigation, signal, owner, statut, liens.
 - Risque critique (score 6-9) interdit en Open sans mitigation + owner.
 
-## Etat Global (10-03-2026)
+## Etat Global (13-03-2026)
 - Risques suivis: 4
 - Risques Open: 0
 - Risques Closed: 4
 - Risques critiques Open (score 6-9): 0
 - Verdict registre: STABLE
+
+## Trace Lot 13-03-2026
+- convergence `WORKFLOW + SETUP_PRODUCT` executee en `CO_001` a `CO_005`
+- noyau `WORKFLOW` stabilise et annexes `WORKFLOW_01` / `WORKFLOW_02` declasses
+- famille `SETUP_PRODUCT_00..07` active
+- index SYSTEM raccordes
+- `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX` confirmes raccordes au cadre final
 
 ## Trace Lot 10-03-2026
 - Setup operationnel mis a jour avec references SYSTEM_04_LLM:
@@ -60,7 +67,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `OPS_05_CO_DOD`, `OPS_04_ACTION_DOC_DOD`, `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`
+- Liens: `OPS_SAMPLE_05_CO_DOD`, `OPS_SAMPLE_04_ACTION_DOC_DOD`, `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`
 
 ### R-0005
 - Titre: EvidenceThinSliceIncomplete
@@ -75,7 +82,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `OPS_01_PRD_DOD`, `EVIDENCE_01_REVIEW_FRAMEWORK`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION`
+- Liens: `OPS_SAMPLE_01_PRD_DOD`, `EVIDENCE_02_REVIEW_FRAMEWORK`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION`
 
 ### R-0009
 - Titre: DocqgGlobalVaultCoverage
@@ -90,7 +97,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 06-03-2026
-- Liens: `PIPELINE_05_RELEASE_FREEZE`, `EVIDENCE_01_REVIEW_FRAMEWORK`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION`, `EVIDENCE_03_ADR_FRAMEWORK_SCOPE`
+- Liens: `PIPELINE_05_RELEASE_FREEZE`, `EVIDENCE_02_REVIEW_FRAMEWORK`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION`, `EVIDENCE_04_ADR_FRAMEWORK_SCOPE`
 
 ### R-0011
 - Titre: BranchAheadOriginPendingSync
@@ -99,18 +106,20 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - P: P1
 - I: I1
 - Score: 2
-- Mitigation: commit du lot evidence, push vers `origin/main`, puis rerun `RUN_06_VAULT_HEALTH_CHECK`.
+- Mitigation: commit du lot evidence, push vers `origin/main`, puis rerun `WORKFLOW_06_VAULT_HEALTH_CHECK`.
 - Signal: S6 Derive CO
 - Owner: repo-maintainer
 - Statut: Closed
 - Date revue: 09-03-2026
 - Date cloture: 09-03-2026
-- Liens: `RUN_06_VAULT_HEALTH_CHECK`, `EVIDENCE_03_ADR_FRAMEWORK_SCOPE`, `EVIDENCE_00_RELEASE_NOTE_FRAMEWORK_VALIDATION`
+- Liens: `WORKFLOW_06_VAULT_HEALTH_CHECK`, `EVIDENCE_04_ADR_FRAMEWORK_SCOPE`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION`
 
 ## Next Step Unique
-- Maintenir un rerun `RUN_06_VAULT_HEALTH_CHECK` + `DocIntegrityChecker` + `SemanticNoiseChecker` a chaque lot documentaire et revalider ce registre a chaque fermeture de risque.
+- Maintenir un rerun `WORKFLOW_06_VAULT_HEALTH_CHECK` + `DocIntegrityChecker` + `SemanticNoiseChecker` a chaque lot documentaire et revalider ce registre a chaque fermeture de risque.
 
 ## Changelog
+- v1.18 (13-03-2026) : rehost dans `EVIDENCE_00_FRAMEWORK` et renumerotation `EVIDENCE_02 -> EVIDENCE_03`.
+- v1.17 (13-03-2026) : ajoute la trace du lot final `WORKFLOW + SETUP_PRODUCT` sans ouverture de nouveau risque.
 - v1.1 (06-03-2026) : aligne le registre risques sur la cible DocQG globale.
 - v1.2 (06-03-2026) : cloture R-0001, R-0005 et R-0009 apres PASS DOCQG global.
 - v1.3 (09-03-2026) : aligne les references canonique OPS/EVIDENCE et ouvre R-0011 (sync remote en attente).

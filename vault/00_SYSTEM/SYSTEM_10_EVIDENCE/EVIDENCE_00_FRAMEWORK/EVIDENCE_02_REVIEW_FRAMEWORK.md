@@ -1,18 +1,18 @@
 ---
-id: EVIDENCE_01_REVIEW_FRAMEWORK
+id: EVIDENCE_02_REVIEW_FRAMEWORK
 type: EVIDENCE
 title: ReviewFrameworkRemediation
-version: v1.11
+version: v1.13
 status: FROZEN
 created: 06-03-2026
-updated: 10-03-2026
+updated: 13-03-2026
 tags: [system, evidence, review, framework, quality]
-depends_on: [OPS_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, RUN_06_VAULT_HEALTH_CHECK, EVIDENCE_02_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
+depends_on: [OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, WORKFLOW_06_VAULT_HEALTH_CHECK, EVIDENCE_03_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
+scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 ---
 
-# EVIDENCE_01 - Review Framework
+# EVIDENCE_02 - Review Framework
 
 ## Doc
 - [x] Frontmatter conforme (scope vault global)
@@ -26,6 +26,9 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - [x] Clarification SOT documentee: CORE/PACKAGE/PRODUCT (fond), SCRIPT_03 (procedural), SKILL.md (projection executable)
 - [x] Mise a jour `.gitignore` tracee (ignore `skills/`)
 - [x] Retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` trace (scope actif remplace par `SCRIPT_03` + skill)
+- [x] Convergence `WORKFLOW + SETUP_PRODUCT` documentee dans `SYSTEM`
+- [x] Index SYSTEM raccordes au cadre final
+- [x] Annexes `WORKFLOW_01` / `WORKFLOW_02` declasses et signalees comme legacy
 
 ## Code/Tooling
 - [x] Intention atomique (CO remediation)
@@ -36,8 +39,9 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - [x] Vault health check execute (P0/P1/P2 traces)
 - [x] No-secrets/no-PII
 - [x] Traceabilite (ADR scope presente)
-- [x] Registre risques consolide et a jour (`EVIDENCE_02_RISK_REGISTER`)
+- [x] Registre risques consolide et a jour (`EVIDENCE_03_RISK_REGISTER`)
 - [x] Backout plan possible (revert commit)
+- [x] `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX` toujours raccordes au cadre final
 
 ## Verdict
 - Verdict: OK
@@ -49,9 +53,12 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE
 - Chaine SOT Codex IDE: alignee et tracee (`SCRIPT_03` -> `SKILL.md`).
 - Hygiene repo: `.gitignore` aligne pour `skills/`.
 - Retrait bootstrap script: trace et coherent avec le nouveau cadre Codex IDE.
-- Next step unique: maintenir la routine RUN_06 + mise a jour du registre a chaque lot.
+- Cadre `WORKFLOW` vs `SETUP_PRODUCT`: aligne et verifiable.
+- Next step unique: maintenir la routine WORKFLOW_06 + mise a jour du registre a chaque lot.
 
 ## Changelog
+- v1.13 (13-03-2026) : rehost dans `EVIDENCE_00_FRAMEWORK` et renumerotation `EVIDENCE_01 -> EVIDENCE_02`.
+- v1.12 (13-03-2026) : ajoute la revue finale du cadre `WORKFLOW + SETUP_PRODUCT` et du raccord des index SYSTEM.
 - v1.1 (06-03-2026) : ajoute le controle vault health check dans la revue finale.
 - v1.2 (06-03-2026) : bascule la revue DocQG de scope product vers scope global.
 - v1.3 (06-03-2026) : trace le rerun framework canon global et la cloture des risques P0.

@@ -7,7 +7,7 @@ status: FROZEN
 created: 13-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, codex, ide, tests]
-depends_on: [RUN_08_TESTS_CODEX, SCRIPT_03_INSTRUCTIONS_CODEX, LLM_00_RAG_PRINCIPES, LLM_02_PERMISSION_SECURITY]
+depends_on: [WORKFLOW_08_TESTS_CODEX, SCRIPT_03_INSTRUCTIONS_CODEX, LLM_00_RAG_PRINCIPES, LLM_02_PERMISSION_SECURITY]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
@@ -24,7 +24,7 @@ Tracer la qualification de l agent Codex pour le setup final `PRODUCT_00_GAPC_ME
 Tool:
 - Codex IDE
 Protocol ID:
-- RUN_08_TESTS_CODEX
+- WORKFLOW_08_TESTS_CODEX
 Date:
 - 13-03-2026
 Active package:
@@ -35,17 +35,17 @@ Goal:
 - prouver que Codex tient `diff-first`, `no auto-commit`, `no-secrets`, `scope control` et la separation des roles
 Inputs summary:
 - prompt canonique `SCRIPT_03_INSTRUCTIONS_CODEX`
-- runbook `RUN_08_TESTS_CODEX`
+- runbook `WORKFLOW_08_TESTS_CODEX`
 - setup final mentor + Codex
 Prompt(s) final(s):
-- batterie `T1` a `T8` de `RUN_08_TESTS_CODEX`
+- batterie `T1` a `T8` de `WORKFLOW_08_TESTS_CODEX`
 Key params:
 - temperature basse
 - no-secrets
 - no auto-commit
 - diff-first
 Outputs produced (filenames):
-- RUN_08_TESTS_CODEX.md
+- WORKFLOW_08_TESTS_CODEX.md
 Storage location (path):
 - vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_02_EVIDENCE
 Checks (PII/rights/no-secrets):
@@ -72,7 +72,7 @@ Verdict: OK
 P0 fails:
 - aucun
 Evidence IDs:
-- RUN_08_TESTS_CODEX
+- WORKFLOW_08_TESTS_CODEX
 - SCRIPT_03_INSTRUCTIONS_CODEX
 Risques ouverts:
 - aucun P0 ouvert

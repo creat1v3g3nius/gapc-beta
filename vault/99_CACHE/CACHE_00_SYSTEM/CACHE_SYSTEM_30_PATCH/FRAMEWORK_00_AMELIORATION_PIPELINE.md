@@ -1,15 +1,15 @@
 ---
-arc: SYSTEM
+arc: CACHE
 created: 05-03-2026
 depends_on: [META_02_SOP_STANDARD_LOOP, DISCIPLINE_01_GEL_RULES, DISCIPLINE_03_DOC_QG, DISCIPLINE_04_CODE_QG]
 id: FRAMEWORK_00_AMELIORATION_PIPELINE
-scope: vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_01_FRAMEWORK
-status: FROZEN
-tags: [system, pipeline, framework, improvement]
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_30_PATCH
+status: DEPRECATED
+tags: [system, pipeline, framework, improvement, cache, deprecated]
 title: FrameworkImprovementPipeline
 type: PIPELINE
-updated: 09-03-2026
-version: v1.1
+updated: 13-03-2026
+version: v1.2
 ---
 
 # FRAMEWORK_00 --- Amélioration Pipeline
@@ -22,6 +22,12 @@ Pipeline standard pour améliorer le framework GAPC vers un niveau
 Ce pipeline permet de : - détecter les améliorations architecture -
 proposer des patches structurés - appliquer les modifications
 contrôlées - revalider les gates qualité - re-geler le vault.
+
+## Statut d archivage
+
+- pipeline historique conserve pour reference
+- document sorti du scope SYSTEM actif
+- le host actif `PATCH_01_FRAMEWORK` a ete supprime apres archivage
 
 ------------------------------------------------------------------------
 
@@ -144,7 +150,7 @@ Conditions :
 
 Actions :
 
--   status: FROZEN
+-   status: DEPRECATED
 -   version bump
 -   section Amendements
 -   mise à jour Changelog.
@@ -163,11 +169,12 @@ Framework considéré **10/10** si :
 
 ------------------------------------------------------------------------
 
-## Amendements (FROZEN)
+## Amendements (DEPRECATED)
 
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
 
+-   v1.2 (13-03-2026) : archive en `CACHE_SYSTEM_30_PATCH`, passe `DEPRECATED` et supprime le host actif `PATCH_01_FRAMEWORK`.
 -   v1.0 (2026-03-05) : création pipeline amélioration framework.
 -   v1.1 (2026-03-09) : gel FROZEN, scope aligné SYSTEM_30_PATCH, structure H1/H2 normalisée.

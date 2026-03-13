@@ -2,12 +2,12 @@
 id: GIT_02_BRANCH_POLICY
 type: GIT
 title: BranchPolicy
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 06-03-2026
+updated: 13-03-2026
 tags: [boostrap, branch-policy, git, system]
-depends_on: [GIT_00_CONFIG, GIT_01_ESSENTIEL]
+depends_on: [GIT_01_ESSENTIEL, GIT_03_PATCH_COMMIT]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_02_GIT
 ---
@@ -17,9 +17,15 @@ scope: vault/00_SYSTEM/SYSTEM_02_GIT
 Permet de définir une gouvernance Git **simple, safe, scalable** pour le framework GAPC, alignée avec l’architecture :
 `00_SYSTEM/01_CORE/02_PACKAGE/03_PRODUCT/04_CACHE`.
 
+Utilite operationnelle reelle :
+- arbitrer quand une branche `work/*` est necessaire,
+- arbitrer quand un squash merge vers `main` est justifie,
+- cadrer le mode solo vs mode revue / PR,
+- fournir une policy de stabilisation, pas un guide de patch quotidien.
+
 Principes :
 - `main` = état stable (présentable / gelable)
-- `work/*` = branches de travail (1 intention, 1 CO ou 1 lot cohérent)
+- `work/*` = branches de travail quand un lot depasse un patch local simple
 - merges = contrôlés (validator + smoke)
 - tags = jalons reproductibles (freeze)
 
@@ -40,10 +46,19 @@ Contraintes :
 - Sert de base pour toutes les branches `work/*`.
 
 ### 1.2) work/* (branches de travail)
-- Toute modification se fait dans une branche `work/<topic>`.
+- Toute modification structurante ou multi-fichiers peut se faire dans une branche `work/<topic>`.
 - `topic` = intention courte (ex : `work/frontmatter-validator`, `work/runbooks-update`).
 - Une branche = idéalement **1 CO** (ou une intention claire).
 - Tu peux faire plusieurs commits sur `work/*`, tant que l’intention reste unique.
+
+Mode operationnel :
+- patch local simple, review rapide, repo solo : un commit direct peut exister si les checks pre-push restent PASS,
+- lot long, review necessaire, hotfix prepare, freeze, ou merge structurel : brancher via `work/*`.
+
+Ce document sert donc surtout a arbitrer :
+- faut-il brancher ?
+- faut-il squasher ?
+- faut-il tagger ?
 
 ### 1.3) Un seul package/product actifs par session
 Si ton travail touche un package ou un product, note :
@@ -211,6 +226,7 @@ Un merge vers `main` est acceptable si :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (13-03-2026) : recadre l utilite operationnelle reelle ; depend moins du bootstrap et davantage de `GIT_03_PATCH_COMMIT`.
 - v1.2 (06-03-2026) : ajout règle PR GitHub même solo + référence template `.github/pull_request_template.md`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

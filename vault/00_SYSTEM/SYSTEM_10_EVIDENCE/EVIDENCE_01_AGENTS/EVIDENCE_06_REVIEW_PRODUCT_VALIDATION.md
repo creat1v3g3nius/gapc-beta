@@ -28,7 +28,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 
 ## Code / Tooling
 - [x] Intention atomique sur la qualification mentor + Codex
-- [x] Contrôles requis PASS (`RUN_07_TESTS_LLM`, `RUN_08_TESTS_CODEX`)
+- [x] Contrôles requis PASS (`WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_CODEX`)
 - [x] No-secrets / no-PII
 - [x] Traçabilité (`DOD`, `OPS`, `EVIDENCE`) lisible
 - [x] Backout plan possible

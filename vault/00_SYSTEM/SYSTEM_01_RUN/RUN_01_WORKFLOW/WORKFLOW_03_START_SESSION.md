@@ -1,18 +1,18 @@
 ---
-id: RUN_03_START_SESSION
-type: RUN
+id: WORKFLOW_03_START_SESSION
+type: WORKFLOW
 title: WorkflowStartSession
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 27-02-2026
-updated: 09-03-2026
+updated: 13-03-2026
 tags: [workflow, start-session, run, system]
-depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANTS, INDEX_01_ARCHITECTURE, INDEX_04_OBSIDIAN]
+depends_on: [WORKFLOW_00_PIPELINE, INDEX_01_ARCHITECTURE, INDEX_04_OBSIDIAN, PIPELINE_03_BACKLOG_COMPOSANTS, CHECKLIST_01_START_SESSION]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---
 
-# RUN_03 - Workflow Start Session
+# WORKFLOW_03 - Workflow Start Session
 
 Ce document permet d'exécuter en **30–45 minutes** une session de production **répétable** et **sans dérive** sur **n’importe quel package** et **n’importe quel product** :
 
@@ -22,7 +22,9 @@ Règle non négociable : **1 intention = 1 session de production = 1 commit**.
 
 Références :
 - Architecture (arcs CORE → PACKAGE → PRODUCT) : `INDEX_01_ARCHITECTURE`
-- Usage Obsidian (Vault = Source of Truth) : `INDEX_04_OBSIDIAN`  
+- Usage Obsidian (Vault = Source of Truth) : `INDEX_04_OBSIDIAN`
+- Standard canonique des CO : `PIPELINE_03_BACKLOG_COMPOSANTS`
+- Checklist courte de demarrage : `CHECKLIST_01_START_SESSION`
 
 ---
 
@@ -85,6 +87,9 @@ Checklist :
 ## 5) Définir 1 composant (CO) atomique
 
 Dans le dossier du product actif, crée/complète le CO ciblé avec :
+
+La definition canonique d un CO releve de `PIPELINE_03_BACKLOG_COMPOSANTS`.
+`WORKFLOW_01_COMPOSANTS` est desormais `DEPRECATED` et ne sert plus de source active.
 
 - **Titre** : verbe + objet (court)
 - **Definition of Done** : 3 bullets max
@@ -190,7 +195,7 @@ KO si :
 Actions KO :
 - réduire le corpus
 - corriger doublons
-- renforcer `RUN_01` (ingestion + tests)
+- requalifier le mentor via `WORKFLOW_07_TESTS_LLM`
 
 ---
 
@@ -224,5 +229,6 @@ Tu dois pouvoir montrer :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (13-03-2026) : retire la dependance a `WORKFLOW_01`, recable les CO vers `PIPELINE_03_BACKLOG_COMPOSANTS`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

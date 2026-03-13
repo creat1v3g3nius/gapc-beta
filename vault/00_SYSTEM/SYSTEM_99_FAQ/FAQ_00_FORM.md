@@ -2,12 +2,12 @@
 id: FAQ_00_FORM
 type: FAQ
 title: FaqForm
-version: v1.0
+version: v1.1
 status: FROZEN
 created: 02-03-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [system, faq, form, support]
-depends_on: [INDEX_05_GLOSSARY, CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_03_SECRETS_POLICY, CONSTRAINT_05_CACHE_POLICY]
+depends_on: [INDEX_05_GLOSSARY, WORKFLOW_00_PIPELINE, WORKFLOW_06_VAULT_HEALTH_CHECK, SCRIPT_03_INSTRUCTIONS_CODEX, LLM_00_RAG_PRINCIPES, EVIDENCE_00_FRAMEWORK_INDEX, EVIDENCE_00_INDEX, CONSTRAINT_03_SECRETS_POLICY, CONSTRAINT_05_CACHE_POLICY]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_99_FAQ
 ---
@@ -23,6 +23,14 @@ Règles P0 :
 - no-secrets / no-PII
 - si manque de source : `NON TROUVÉ` + action proposée
 - toujours préciser les **actifs** (package/product) quand pertinent
+
+Références courantes :
+- runbooks quotidiens : `WORKFLOW_00_PIPELINE`
+- health check documentaire : `WORKFLOW_06_VAULT_HEALTH_CHECK`
+- cadrage Codex IDE : `SCRIPT_03_INSTRUCTIONS_CODEX`
+- mentor documentaire : `LLM_00_RAG_PRINCIPES`
+- preuves framework : `EVIDENCE_00_FRAMEWORK_INDEX`
+- preuves agents : `EVIDENCE_00_INDEX`
 
 ---
 
@@ -47,10 +55,12 @@ Définir explicitement :
 - `Active product` = `PRODUCT_XX` ou `NA`
 
 Si tu ne sais pas : mettre `Active product = NA`.
+Source utile : `WORKFLOW_00_PIPELINE`.
 
 ### A2 — Comment éviter la dérive ?
 - 1 intention = 1 livrable principal
 - si > 3 items → créer un backlog (CO atomiques)
+- rerun minimal de contrôle : `WORKFLOW_06_VAULT_HEALTH_CHECK`
 
 ---
 
@@ -61,6 +71,12 @@ Si tu ne sais pas : mettre `Active product = NA`.
 - Règle transverse → **CORE**
 - Overlay métier → **PACKAGE**
 - Preuves / DoD / logs / exemples → **PRODUCT**
+
+Repères actuels :
+- exécution quotidienne → `RUN_00_WORKFLOW`
+- setup produit → `RUN_01_SETUP_PRODUCT`
+- preuves framework SYSTEM → `EVIDENCE_00_FRAMEWORK`
+- preuves agents → `EVIDENCE_01_AGENTS`
 
 ---
 
@@ -90,15 +106,24 @@ Causes fréquentes :
 - amendements/changelog manquants
 - `depends_on` vers des IDs fantômes
 
+Contrôles utiles :
+- `WORKFLOW_06_VAULT_HEALTH_CHECK`
+- `SCRIPT_00_VALIDATOR`
+- `SCRIPT_04_DOC_INTEGRITY_CHECKER`
+
 ---
 
 ## E. RAG / Mentor
 
 ### E1 — Que faire si le mentor n’a pas la réponse ?
 Réponse attendue : `NON TROUVÉ` + proposition d’action (créer/compléter le document source).
+Source utile : `LLM_00_RAG_PRINCIPES`.
 
 ### E2 — Comment éviter “mélange de packages” ?
 Toujours préciser l’actif package/product. Refuser une réponse globale si contexte flou.
+Sources utiles :
+- `LLM_01_INGESTION_PROTOCOL`
+- `LLM_03_MENTOR_UTILITES`
 
 ---
 
@@ -110,6 +135,7 @@ Pas de refactor massif non demandé.
 
 ### F2 — Diff-first
 Toujours produire un patch ciblé (ou START/END REPLACE) avant commit.
+Source utile : `SCRIPT_03_INSTRUCTIONS_CODEX`.
 
 ---
 
@@ -117,6 +143,7 @@ Toujours produire un patch ciblé (ou START/END REPLACE) avant commit.
 
 ### G1 — À quoi sert CACHE ?
 Zone temporaire. Jamais source de vérité. À promouvoir ou supprimer (rétention courte).
+Source utile : `CONSTRAINT_05_CACHE_POLICY`.
 
 ---
 
@@ -124,6 +151,7 @@ Zone temporaire. Jamais source de vérité. À promouvoir ou supprimer (rétenti
 
 ### H1 — Comment déclarer un incident ?
 Utiliser le formulaire ci-dessous. Joindre uniquement des extraits non sensibles.
+Si incident documentaire : penser à relancer `WORKFLOW_06_VAULT_HEALTH_CHECK`.
 
 ---
 
@@ -173,4 +201,5 @@ Next step souhaité:
 ---
 
 ## Changelog
+- v1.1 (13-03-2026) : aligne la FAQ sur la structure active `WORKFLOW / SETUP_PRODUCT / EVIDENCE / LLM` et ajoute les references courantes.
 - v1.0 (02-03-2026) : création FAQ+formulaire SYSTEM (minimal, P0).

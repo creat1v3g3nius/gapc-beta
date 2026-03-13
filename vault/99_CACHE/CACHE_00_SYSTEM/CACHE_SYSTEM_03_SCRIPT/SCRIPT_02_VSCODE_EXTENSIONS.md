@@ -2,14 +2,14 @@
 id: SCRIPT_02_VSCODE_EXTENSIONS
 type: SCRIPT
 title: VsCodeExtensionsDecisionMatrix
-version: v1.0
-status: READY_TO_FREEZE
+version: v1.2
+status: DEPRECATED
 created: 06-03-2026
-updated: 08-03-2026
-tags: [vscode, extensions, script, system]
-depends_on: [GIT_00_CONFIG, RUN_00_PIPELINE]
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
+updated: 13-03-2026
+tags: [vscode, extensions, script, cache, deprecated]
+depends_on: [GIT_01_ESSENTIEL, WORKFLOW_00_PIPELINE]
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_03_SCRIPT
 ---
 
 # SCRIPT_02 - VS Code Extensions
@@ -38,3 +38,13 @@ Raison : utile si un `.editorconfig` est maintenu; sinon valeur limitée.
 ## Décision P2.1
 - Liste recommandées vs optionnelles : établie.
 - Politique de retrait “si bruit/instable -> remove” : appliquée.
+
+## Statut d archivage
+- Ce document n est plus une source SYSTEM active du framework.
+- La baseline extensions VS Code reste une aide locale et non un gate canonique.
+- Le fichier est conserve en cache pour historique de poste de travail.
+
+## Changelog
+- v1.2 (13-03-2026) : archive en `CACHE_SYSTEM_03_SCRIPT` avec `status: DEPRECATED`.
+- v1.1 (13-03-2026) : retire la dependance au bootstrap `GIT_00_CONFIG` devenu deprecated.
+- v1.0 (08-03-2026) : creation.

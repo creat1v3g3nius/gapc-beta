@@ -1,18 +1,18 @@
 ---
-id: RUN_04_END_SESSION
-type: RUN
+id: WORKFLOW_04_END_SESSION
+type: WORKFLOW
 title: EndSessionProtocol
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 13-03-2026
 tags: [workflow, end-session, run, system]
-depends_on: [RUN_00_PIPELINE, RUN_01_COMPOSANTS]
+depends_on: [WORKFLOW_00_PIPELINE, WORKFLOW_03_START_SESSION, CHECKLIST_02_END_SESSION, WORKFLOW_07_TESTS_LLM]
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN
 ---
 
-# RUN_04 - End Session Protocol
+# WORKFLOW_04 - End Session Protocol
 
 Clore chaque session avec un état **propre**, **traçable**, et **reproductible** :
 - ce qui a été fait est committé (ou expliqué),
@@ -21,6 +21,11 @@ Clore chaque session avec un état **propre**, **traçable**, et **reproductible
 - le **next step** est unique.
 
 Compatibilité : multi-package / multi-product, architecture v4.3 (CORE → PACKAGE → PRODUCT).
+
+Références :
+- demarrage de session : `WORKFLOW_03_START_SESSION`
+- checklist courte de cloture : `CHECKLIST_02_END_SESSION`
+- requalification mentor si besoin : `WORKFLOW_07_TESTS_LLM`
 
 ---
 
@@ -107,7 +112,7 @@ Test minimal :
 
 Si KO :
 - [ ] réduire corpus
-- [ ] relancer ingestion selon `RUN_01`
+- [ ] requalifier via `WORKFLOW_07_TESTS_LLM`
 
 ---
 
@@ -153,5 +158,6 @@ Règle :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (13-03-2026) : retire la dependance a `WORKFLOW_01` et recable la cloture vers `CHECKLIST_02` et `WORKFLOW_07`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.
