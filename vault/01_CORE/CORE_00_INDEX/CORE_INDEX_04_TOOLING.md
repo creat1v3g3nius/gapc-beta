@@ -2,10 +2,10 @@
 id: CORE_INDEX_04_TOOLING
 type: INDEX
 title: CoreToolingIndex
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 13-03-2026
 tags: [core, tooling, index]
 depends_on: []
 arc: CORE
@@ -42,7 +42,6 @@ Checklists pour : session, revue, gel, incident.
 
 Documents :
 
-[[CHECKLIST_00_INDEX]]  
 [[CHECKLIST_01_START_SESSION]]  
 [[CHECKLIST_02_END_SESSION]]  
 [[CHECKLIST_03_READY_TO_FREEZE]]  
@@ -53,6 +52,10 @@ Documents :
 [[CHECKLIST_08_RAG_SESSION]]  
 [[CHECKLIST_09_OPTIMIZATION]]  
 [[CHECKLIST_10_RELEASE_NOTE]]
+
+Note :
+- aucun `CHECKLIST_00_INDEX` canonique n est maintenu dans l etat courant
+- cette section fait foi pour le lot checklist actif
 
 ---
 
@@ -75,5 +78,6 @@ Protocoles d’intégration d’outils externes.
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (13-03-2026) : retire la reference non resolue a `CHECKLIST_00_INDEX` et confirme ce lot comme index actif.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index TOOLING du CORE.

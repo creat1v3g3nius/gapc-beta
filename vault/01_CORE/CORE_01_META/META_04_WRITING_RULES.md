@@ -49,7 +49,7 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 1. Obligatoires 
 
 - `id` (unique)
-- `type` (INDEX|RUN|GIT|LLM|BACKLOG|PATCH|META|FIELD|RESTRAINT|TOOLING...) -> correspond aux familles d'un arc.
+- `type` (INDEX|WORKFLOW|GIT|LLM|BACKLOG|PATCH|META|FIELD|RESTRAINT|TOOLING...) -> correspond aux familles d'un arc.
 - `title` (UpperCamelCase)
 - `version` (vX.X)
 - `status` (DRAFT|READY_TO_FREEZE|FROZEN|DEPRECATED)
