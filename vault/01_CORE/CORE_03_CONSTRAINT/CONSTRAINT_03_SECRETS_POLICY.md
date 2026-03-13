@@ -2,10 +2,10 @@
 id: CONSTRAINT_03_SECRETS_POLICY
 type: CONSTRAINT
 title: SecretsPolicy
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 01-03-2026
-updated: 09-03-2026
+updated: 10-03-2026
 tags: [limites, secrets-policy, llm, discipline, core]
 depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_01_RAG_SCOPE_POLICY, META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL, DISCIPLINE_00_RAG_PROFILE, DISCIPLINE_02_RAG_QG]
 arc: CORE
@@ -54,6 +54,11 @@ Un artefact est **KO** si :
 
 Cette contrainte prime sur toute priorité produit (toujours P0).
 
+Si un fallback API externe est utilisé :
+- aucun secret ou PII ne doit être transmis,
+- seul l’extrait strictement utile peut être envoyé,
+- l’envoi d’un corpus complet est interdit si un extrait suffit.
+
 ---
 
 ## 3) Exceptions
@@ -82,3 +87,4 @@ PACKAGE/PRODUCT peuvent renforcer (ex : exigences légales, masking), mais ne pe
 ## Changelog
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
+- v1.4 (10-03-2026) : ajoute la contrainte de minimisation et d’exclusion des secrets pour tout fallback API externe.
