@@ -2,10 +2,10 @@
 id: META_02_SOP_STANDARD_LOOP
 type: META
 title: SopStandardLoop
-version: v1.2
+version: v1.5
 status: FROZEN
 created: 28-02-2026
-updated: 04-03-2026
+updated: 10-03-2026
 tags: [governance, sop, llm, meta, core]
 depends_on: [META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL]
 arc: CORE
@@ -30,8 +30,11 @@ Cette SOP est **normative** (CORE). Les procédures utilisateur détaillées viv
 3. **Actifs uniques** : 1 package actif + (si besoin) 1 product actif ; sinon isolation.  
 4. **Sources obligatoires** : toute réponse cite ses sources (sauf `NON TROUVÉ`).  
 5. **NON TROUVÉ** : si l’info n’existe pas dans le corpus → `NON TROUVÉ` + 1 action.  
-6. **Anti-dérive** : si la demande touche 2 arcs (ex: CORE + PRODUCT) → proposer découpage en 2 sessions/CO.  
-7. **Traçabilité** : si décision structurante → proposer ADR-lite (statut PROPOSED).
+6. **Fallback API** : jamais par défaut ; seulement si le local échoue réellement, avec justification explicite, périmètre minimisé et sans secret/PII.  
+7. **Anti-dérive** : si la demande touche 2 arcs (ex: CORE + PRODUCT) → proposer découpage en 2 sessions/CO.  
+8. **Traçabilité** : si décision structurante → proposer ADR-lite (statut PROPOSED).
+9. **Conclusion avant NON TROUVÉ** : si le corpus permet de comparer, qualifier ou conclure, le mentor doit conclure et ne doit pas commencer par `NON TROUVÉ`.
+10. **Arc exact des sources** : si le mentor annote une source avec `CORE|SYSTEM|PACKAGE|PRODUCT|CACHE`, cette annotation doit correspondre au frontmatter réel du fichier.
 
 ---
 
@@ -44,6 +47,7 @@ Le mentor extrait :
 - objectif (1 phrase),
 - livrable attendu (doc / patch / audit / run plan),
 - contraintes explicites (no-secrets, timebox, scope),
+- mode de traitement attendu : local nominal ou fallback API justifié,
 - **actifs** : package / product / CO si mentionnés,
 - fichiers fournis (IDs, chemins, extraits).
 
@@ -76,6 +80,7 @@ Objectif : répondre **à partir** des sources (RAG), pas “de tête”.
 Le mentor doit :
 - identifier les fichiers/sections applicables (CORE d’abord),
 - vérifier qu’ils existent dans le corpus actuel,
+- pour une demande de comparaison ou contradiction : comparer explicitement les sources applicables,
 - refuser l’invention : si un élément n’est pas trouvable → `NON TROUVÉ`.
 
 ---
@@ -86,7 +91,7 @@ Objectif : appliquer le bon format selon `META_01_OUTPUT_PROTOCOL`.
 Le mentor choisit 1 mode :
 - **Run plan** (par défaut) : plan d’exécution + artefacts TOOLING
 - **Doc** : fichier complet ou START/END REPLACE
-- **Code** : patch minimal + commandes de validation + commit message
+- **Code** : redirection vers Codex + sources applicables + contraintes + risques
 - **Audit** : verdict OK/KO + P0/P1/P2 + correctifs
 
 Si la demande est trop large :
@@ -113,7 +118,12 @@ Checklist :
 - [ ] pas de secrets
 - [ ] pas de décision fantôme (ADR si nécessaire)
 - [ ] pas de mélange multi-packages/products
+- [ ] pas de fallback API implicite ou non minimisé
 - [ ] sources citées (sauf `NON TROUVÉ`)
+- [ ] citations exactes, sans section inventée
+- [ ] pas de `NON TROUVÉ` si une conclusion est formulée
+- [ ] pour une comparaison demandée : conclusion explicite (`contradiction explicite | écart mineur | pas de contradiction`)
+- [ ] si un arc est indiqué après une source, il correspond au frontmatter réel
 - [ ] output conforme au protocole (ordre, sections)
 - [ ] taille maîtrisée (pas de roman ; prioriser P0)
 
@@ -133,3 +143,6 @@ Si KO :
 ## Changelog
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : corrections ids `depends_on` du frontmatter + heading.
+- v1.3 (10-03-2026) : ajoute la règle SOP de fallback API explicite, minimisé et sans secret.
+- v1.4 (10-03-2026) : impose la conclusion avant `NON TROUVÉ`, les citations exactes et une sortie explicite pour les comparaisons documentaires.
+- v1.5 (10-03-2026) : ajoute le contrôle de cohérence `source -> arc` dans l auto-check du mentor.

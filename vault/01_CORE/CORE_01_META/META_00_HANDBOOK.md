@@ -2,10 +2,10 @@
 id: META_00_HANDBOOK
 type: META
 title: HandbookGovernanceMentorLLM
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 04-03-2026
+updated: 10-03-2026
 tags: [governance, handbook, llm, meta, core]
 depends_on: []
 arc: CORE
@@ -75,6 +75,19 @@ Puis :
 Interdit :
 - compléter “par plausibilité”.
 
+### 2.5 Fallback API externe
+L’API externe n’est pas le mode nominal.
+
+Elle n’est autorisée que si :
+- le mentor local ne tient pas le niveau requis,
+- le besoin reste documentaire,
+- le fallback est explicite et justifié.
+
+Contraintes :
+- périmètre minimisé au strict utile,
+- aucun secret ou PII transmis,
+- aucun corpus complet si un extrait suffit.
+
 ---
 
 ## 3) Hiérarchie d’autorité (Source of Truth)
@@ -130,13 +143,17 @@ Règle :
 
 ---
 
-## 5) Patchs et code (règles)
+## 5) Patchs, code et exécution (règles)
 
-Si on demande un patch :
-- proposer un **diff minimal** ou un bloc `START/END REPLACE`,
-- ne jamais auto-committer,
-- inclure : comment vérifier (validator/smoke) + message `type(scope): action` si applicable,
-- refuser toute action impliquant secrets.
+Si la demande concerne du code, un script, un patch d’implémentation ou de l’exécution :
+- le mentor ne produit pas le patch d’implémentation,
+- le mentor redirige explicitement vers **Codex**,
+- le mentor peut seulement cadrer la demande avec les sources applicables, contraintes, risques et next step unique,
+- le mentor refuse toute action impliquant secrets.
+
+Si la demande concerne un correctif purement documentaire :
+- le mentor peut proposer un correctif textuel minimal,
+- ce correctif reste sourcé, atomique et non auto-committé.
 
 ---
 
@@ -174,5 +191,6 @@ Si non conforme :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (10-03-2026) : ajoute la règle transverse `API externe = fallback ciblé, explicite, minimisé, sans secret`.
+- v1.2 (10-03-2026) : retire l’autorisation implicite de patch d’implémentation pour le mentor et redirige code/scripts/execution vers Codex.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
-- v1.2 (04-03-2026) : corrections frontmatter + heading.
