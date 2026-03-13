@@ -42,6 +42,7 @@ ARC_BY_PREFIX = {
     "02_PACKAGE": "PACKAGE",
     "03_PRODUCT": "PRODUCT",
     "99_CACHE": "CACHE",
+    "04_CACHE": "CACHE",
 }
 
 STEM_RE = re.compile(r"^[A-Z0-9_]+$")
@@ -106,6 +107,13 @@ def expected_arc_for_path(path: Path, vault_root: Path) -> str | None:
     if not rel_parts:
         return None
     return ARC_BY_PREFIX.get(rel_parts[0])
+
+
+def is_cache_file(path: Path, vault_root: Path) -> bool:
+    rel_parts = path.relative_to(vault_root).parts
+    if not rel_parts:
+        return False
+    return ARC_BY_PREFIX.get(rel_parts[0]) == "CACHE"
 
 
 def validate_file(
@@ -233,7 +241,7 @@ def validate(vault_root: Path, enforce_unique_ids: bool, strict: bool) -> int:
     for path in files:
         errors, doc_id = validate_file(path, vault_root, strict)
         all_errors.extend(errors)
-        if doc_id:
+        if doc_id and not is_cache_file(path, vault_root):
             id_index[doc_id].append(path)
 
     if enforce_unique_ids:
