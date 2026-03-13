@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, dod, release, freeze, frozen]
 depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, DISCIPLINE_01_GEL_RULES, GAPC_DISCIPLINE_01_GEL_RULES, CHECKLIST_03_READY_TO_FREEZE, GAPC_TOOLING_CHECKLIST_01_READY_TO_FREEZE_ADDON, TPL_10_RELEASE_NOTE]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_00_DOD
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_00_DOD
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -21,7 +21,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # DOD_SAMPLE_03 - Release Freeze
 
 ## Objet
-Poser les criteres minimaux pour declarer `PRODUCT_00_GAPC_MENTOR` :
+Poser les criteres minimaux pour declarer `PRODUCT_00_SAMPLE_GAPC_AGENTS` :
 - `READY_TO_FREEZE`
 - puis `FROZEN` quand le lot est stable et reproductible
 
@@ -83,4 +83,4 @@ Next step unique:
 - v1.3 (13-03-2026) : passe la gate de gel en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : aligne la gate de gel sur le backfill `OPS` complet et ajoute la preuve Codex.
 - v1.1 (12-03-2026) : ajoute l evidence de gel documentee et les `Evidence IDs` du pack produit.
-- v1.0 (10-03-2026) : creation de la checklist de gel pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation de la checklist de gel pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

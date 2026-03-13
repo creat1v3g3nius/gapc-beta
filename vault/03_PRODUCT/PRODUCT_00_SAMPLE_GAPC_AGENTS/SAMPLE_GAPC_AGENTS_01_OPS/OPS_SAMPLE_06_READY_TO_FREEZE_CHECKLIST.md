@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, ops, ready-to-freeze, checklist, dod]
 depends_on: [DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_00_BACKLOG_PRODUCT, OPS_SAMPLE_00_BACKLOG_CO, OPS_SAMPLE_01_PRD_DOD, OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD, OPS_SAMPLE_04_ACTION_DOC_DOD, OPS_SAMPLE_05_CO_DOD, CHECKLIST_03_READY_TO_FREEZE, GAPC_TOOLING_CHECKLIST_01_READY_TO_FREEZE_ADDON]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_01_OPS
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_01_OPS
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -21,7 +21,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # OPS_SAMPLE_06 - Ready To Freeze Checklist
 
 ## Objet
-Fournir la checklist produit de reference pour `PRODUCT_00_GAPC_MENTOR`.
+Fournir la checklist produit de reference pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.
 
 ## Checklist P0
 - [x] backlog product present
@@ -69,9 +69,9 @@ Si un item P0 est KO :
 
 ## Changelog
 - v1.5 (13-03-2026) : bascule la checklist produit de `READY_TO_FREEZE` a `FROZEN`.
-- v1.5 (13-03-2026) : remplace `RUN_08_TESTS_CODEX` par `EVIDENCE_SAMPLE_04_CODEX_IDE` dans les preuves de gel.
+- v1.5 (13-03-2026) : remplace `WORKFLOW_08_TESTS_CODEX` par `EVIDENCE_SAMPLE_04_CODEX_IDE` dans les preuves de gel.
 - v1.4 (13-03-2026) : passe la checklist de gel en `READY_TO_FREEZE`.
-- v1.3 (13-03-2026) : coche les controles `OPS_01` a `OPS_05`, passe la checklist a `Verdict: OK` et ajoute `RUN_08_TESTS_CODEX` dans la preuve.
+- v1.3 (13-03-2026) : coche les controles `OPS_01` a `OPS_05`, passe la checklist a `Verdict: OK` et ajoute `WORKFLOW_08_TESTS_CODEX` dans la preuve.
 - v1.2 (12-03-2026) : coche les items P0 deja prouves par le pack `EVIDENCE` et ajoute l evidence documentee READY_TO_FREEZE.
 - v1.1 (10-03-2026) : ajoute backlog product et backlog CO dans la checklist de gel.
-- v1.0 (10-03-2026) : creation de la checklist produit `READY_TO_FREEZE` pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation de la checklist produit `READY_TO_FREEZE` pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

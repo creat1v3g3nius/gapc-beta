@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, adr, scope, decision]
 depends_on: [TPL_02_ADR_LITE, DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_00_BACKLOG_PRODUCT, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST, EVIDENCE_SAMPLE_00_INDEX]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_02_EVIDENCE
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 # EVIDENCE_SAMPLE_07 - ADR Product Scope
@@ -23,7 +23,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - Liens : `DOD_SAMPLE_00_PRODUCT_VALIDATION`, `DOD_SAMPLE_03_RELEASE_FREEZE`, `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 
 ## 1) Contexte
-- Problème : décider si le setup `PRODUCT_00_GAPC_MENTOR` peut être considéré finalisé et `FROZEN`
+- Problème : décider si le setup `PRODUCT_00_SAMPLE_GAPC_AGENTS` peut être considéré finalisé et `FROZEN`
 - Contraintes :
   - alignement `CORE -> PACKAGE -> PRODUCT`
   - no-secrets / no-PII
@@ -55,7 +55,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
   - relâchement si le rerun n est pas appliqué après modification
 
 ## 3) Decision
-- Decision : retenir l option B et considérer `PRODUCT_00_GAPC_MENTOR` comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `RUN_07_TESTS_LLM` et `RUN_08_TESTS_CODEX`
+- Decision : retenir l option B et considérer `PRODUCT_00_SAMPLE_GAPC_AGENTS` comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`
 
 ## 4) Consequences
 - Positives :

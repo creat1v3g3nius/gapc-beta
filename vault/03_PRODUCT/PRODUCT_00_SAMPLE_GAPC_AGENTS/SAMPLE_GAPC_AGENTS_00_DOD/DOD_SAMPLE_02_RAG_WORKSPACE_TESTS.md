@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, dod, rag, workspace, tests]
 depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, DISCIPLINE_02_RAG_QG, GAPC_DISCIPLINE_02_RAG_QG, GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_00_DOD
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_00_DOD
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -21,18 +21,18 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # DOD_SAMPLE_02 - RAG Workspace Tests
 
 ## Objet
-Definir la batterie minimale de tests workspace pour `PRODUCT_00_GAPC_MENTOR`.
+Definir la batterie minimale de tests workspace pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.
 
 ## 1) Workspaces cibles
 - `WS_00 RulesOnly` : CORE + SYSTEM essentiels
 - `WS_01 PackageScoped` : CORE + PACKAGE_00_GAPC + SYSTEM
-- `WS_02 ProductScoped` : CORE + PACKAGE_00_GAPC + PRODUCT_00_GAPC_MENTOR + SYSTEM
+- `WS_02 ProductScoped` : CORE + PACKAGE_00_GAPC + PRODUCT_00_SAMPLE_GAPC_AGENTS + SYSTEM
 
 ## 2) Tests P0
 
 ### T1 - Hierarchie d autorite
 Question :
-> Quand `PACKAGE_00_GAPC` et `PRODUCT_00_GAPC_MENTOR` sont actifs, quelle est la priorite entre CORE, PACKAGE, PRODUCT, SYSTEM et CACHE ?
+> Quand `PACKAGE_00_GAPC` et `PRODUCT_00_SAMPLE_GAPC_AGENTS` sont actifs, quelle est la priorite entre CORE, PACKAGE, PRODUCT, SYSTEM et CACHE ?
 
 PASS si :
 - ordre exact cite
@@ -41,14 +41,14 @@ PASS si :
 Format attendu :
 - `CORE`
 - `PACKAGE_00_GAPC`
-- `PRODUCT_00_GAPC_MENTOR`
+- `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - `SYSTEM`
 - `CACHE`
 - `Sources utilisees :`
 
 ### T2 - Priorites de sources produit
 Question :
-> Quand `PRODUCT_00_GAPC_MENTOR` est actif, quelles sont les priorites de sources dans ce perimetre ?
+> Quand `PRODUCT_00_SAMPLE_GAPC_AGENTS` est actif, quelles sont les priorites de sources dans ce perimetre ?
 
 PASS si :
 - ordre exact cite
@@ -64,7 +64,7 @@ Format attendu :
 
 Interdit :
 - remplacer cette priorisation par la hierarchie d autorite de `T1`,
-- repondre avec les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_GAPC_MENTOR` a la place des categories de sources,
+- repondre avec les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a la place des categories de sources,
 - ajouter `CACHE`,
 - fusionner `GAPC discipline` et `autres docs package GAPC`,
 - supprimer `docs product actifs`,
@@ -138,7 +138,7 @@ Interdit :
 
 ### T7 - Contradictions
 Question :
-> Y a-t-il des contradictions entre `PACKAGE_00_GAPC` et `PRODUCT_00_GAPC_MENTOR` sur le workflow ?
+> Y a-t-il des contradictions entre `PACKAGE_00_GAPC` et `PRODUCT_00_SAMPLE_GAPC_AGENTS` sur le workflow ?
 
 PASS si :
 - reponse nuancee
@@ -189,4 +189,4 @@ Si un test P0 est KO :
 - v1.3 (10-03-2026) : impose la coherence `source -> arc` sur `T5` et ajoute un exemple valide CORE/SYSTEM.
 - v1.2 (10-03-2026) : aligne `DOD_02` sur la batterie `SYSTEM` complete avec formats attendus pour `T4/T5`.
 - v1.1 (10-03-2026) : aligne les tests workspace sur la matrice des roles `Codex / AnythingLLM local / API externe`.
-- v1.0 (10-03-2026) : creation de la batterie minimale de tests RAG pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation de la batterie minimale de tests RAG pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, ops, spec, dod]
 depends_on: [OPS_SAMPLE_00_BACKLOG_PRODUCT, OPS_SAMPLE_00_BACKLOG_CO, OPS_SAMPLE_01_PRD_DOD, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, TPL_01_SPEC_TECH]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_01_OPS
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_01_OPS
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -58,7 +58,7 @@ Interdit :
 - remplacer ce format par `CORE -> PACKAGE -> PRODUCT -> SYSTEM -> CACHE`,
 - ajouter `CACHE`,
 - supprimer `docs product actifs`,
-- ecrire `PACKAGE_00_GAPC` ou `PRODUCT_00_GAPC_MENTOR` a la place des categories de sources,
+- ecrire `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a la place des categories de sources,
 - annoter une source `PRODUCT` comme `CORE`,
 - annoter une source `PACKAGE` comme `PRODUCT`.
 
@@ -112,7 +112,7 @@ Contrats:
 - priorites de sources produit = `CORE -> GAPC discipline -> autres docs package GAPC -> docs product actifs -> SYSTEM`
 Contraintes:
 - `1 package actif` = `PACKAGE_00_GAPC`
-- `1 product actif` = `PRODUCT_00_GAPC_MENTOR`
+- `1 product actif` = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - refus explicite d un autre product
 - `no-secrets / no-PII`
 Verdict: PASS
@@ -125,4 +125,4 @@ Next step unique: conserver cette spec comme reference produit pour les reruns
 - v1.3 (11-03-2026) : renforce le format `T2` avec interdiction des arcs a la place des categories et ajoute un exemple valide package+product.
 - v1.2 (11-03-2026) : ajoute les formats critiques produit pour priorites de sources, isolation d un autre product et matrice des roles.
 - v1.1 (10-03-2026) : rattache la spec au backlog product et au backlog CO.
-- v1.0 (10-03-2026) : creation du controle spec pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du controle spec pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

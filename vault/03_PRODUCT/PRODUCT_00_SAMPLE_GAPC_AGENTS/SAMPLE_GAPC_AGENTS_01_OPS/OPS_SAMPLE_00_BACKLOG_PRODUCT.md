@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, ops, backlog, product, dod]
 depends_on: [PIPELINE_02_BACKLOG_PRODUCT, TPL_03_BACKLOG_CO, DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_01_OPS
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_01_OPS
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -21,10 +21,10 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # OPS_SAMPLE_00 - Backlog Product
 
 ## Objet
-Structurer le backlog produit minimal de `PRODUCT_00_GAPC_MENTOR` pour rendre la chaine de preuve lisible et actionnable.
+Structurer le backlog produit minimal de `PRODUCT_00_SAMPLE_GAPC_AGENTS` pour rendre la chaine de preuve lisible et actionnable.
 
 ## 1) Vision
-- Product cible : `PRODUCT_00_GAPC_MENTOR`
+- Product cible : `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - Package actif : `PACKAGE_00_GAPC`
 - But : prouver un setup nominal ou `Codex` execute, `AnythingLLM` lit et l `API externe` reste un fallback cible
 - Statut global : `FROZEN`
@@ -47,7 +47,7 @@ Structurer le backlog produit minimal de `PRODUCT_00_GAPC_MENTOR` pour rendre la
 - pas de multi-package ni multi-product
 - pas de secret ou PII
 - pas de fallback API implicite
-- pour `WS_02`, 1 product actif = `PRODUCT_00_GAPC_MENTOR`
+- pour `WS_02`, 1 product actif = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - un autre product doit etre refuse explicitement avec demande d isolation
 - les priorites de sources produit suivent `CORE -> GAPC discipline -> autres docs package GAPC -> docs product actifs -> SYSTEM`
 - la matrice des roles produit reste `1 bloc par tache`
@@ -85,8 +85,8 @@ Format attendu :
 - `Sources utilisees :`
 
 Interdit :
-- repondre avec la hierarchie d autorite `CORE -> PACKAGE_00_GAPC -> PRODUCT_00_GAPC_MENTOR -> SYSTEM -> CACHE`,
-- utiliser les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_GAPC_MENTOR` a la place des categories de sources,
+- repondre avec la hierarchie d autorite `CORE -> PACKAGE_00_GAPC -> PRODUCT_00_SAMPLE_GAPC_AGENTS -> SYSTEM -> CACHE`,
+- utiliser les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a la place des categories de sources,
 - ajouter `CACHE`.
 
 Exemple minimal valide :
@@ -105,7 +105,7 @@ Workspace status:
 - WS_02 ProductScoped: PASS
 
 Codex status:
-- Batterie RUN_08_TESTS_CODEX: PASS
+- Batterie WORKFLOW_08_TESTS_CODEX: PASS
 
 Evidence IDs:
 - EVIDENCE_SAMPLE_00_INDEX
@@ -126,4 +126,4 @@ Next step unique: conserver ce backlog comme reference gelée du produit
 - v1.3 (13-03-2026) : passe le backlog produit en `READY_TO_FREEZE candidate` apres PASS des batteries mentor et Codex.
 - v1.2 (11-03-2026) : renforce le format `T2` pour `WS_02` avec interdictions explicites et exemple minimal valide.
 - v1.1 (11-03-2026) : ajoute les regles `WS_02` sur product actif unique, priorites de sources produit et formats de controle workspace.
-- v1.0 (10-03-2026) : creation du backlog product pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du backlog product pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

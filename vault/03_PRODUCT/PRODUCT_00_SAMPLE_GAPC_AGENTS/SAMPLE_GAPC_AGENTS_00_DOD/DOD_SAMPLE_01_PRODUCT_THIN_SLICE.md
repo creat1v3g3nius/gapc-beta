@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, dod, thin-slice, mentor, validation]
 depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, PIPELINE_00_PRODUCT, PIPELINE_02_BACKLOG_PRODUCT, TPL_00_PROD_ONE_PAGER, TPL_01_SPEC_TECH, TPL_03_BACKLOG_CO, TPL_04_TEST_PLAN_SMOKE, TPL_05_ACTION_DOC, TPL_06_ACTION_CODE, GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER, OPS_SAMPLE_00_BACKLOG_PRODUCT, OPS_SAMPLE_00_BACKLOG_CO]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_00_DOD
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_00_DOD
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -21,7 +21,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # DOD_SAMPLE_01 - Product Thin Slice
 
 ## Objet
-Definir le cycle minimal que `PRODUCT_00_GAPC_MENTOR` doit demontrer sans oral.
+Definir le cycle minimal que `PRODUCT_00_SAMPLE_GAPC_AGENTS` doit demontrer sans oral.
 
 ## 1) Thin slice cible
 Le thin slice valide un scenario simple :
@@ -80,7 +80,7 @@ Redirection Codex:
 - demande technique redirigee vers Codex pour patch / execution / tests
 
 Action technique:
-- batterie `RUN_08_TESTS_CODEX` executee avec PASS
+- batterie `WORKFLOW_08_TESTS_CODEX` executee avec PASS
 
 Verdict thin slice:
 - PASS
@@ -94,4 +94,4 @@ Verdict thin slice:
 - v1.3 (13-03-2026) : passe le thin slice en `READY_TO_FREEZE` apres backfill des preuves.
 - v1.2 (13-03-2026) : backfill l evidence du thin slice a partir des reruns mentor + Codex et passe le verdict thin slice a PASS.
 - v1.1 (10-03-2026) : rattache le thin slice au backlog product et au backlog CO du lot OPS.
-- v1.0 (10-03-2026) : creation du thin slice minimal pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du thin slice minimal pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

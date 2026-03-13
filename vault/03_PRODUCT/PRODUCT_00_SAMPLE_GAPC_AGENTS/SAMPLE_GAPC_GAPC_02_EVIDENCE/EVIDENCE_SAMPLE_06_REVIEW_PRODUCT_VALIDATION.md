@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, review, quality]
 depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_01_PRD_DOD, OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD, OPS_SAMPLE_04_ACTION_DOC_DOD, OPS_SAMPLE_05_CO_DOD, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_02_EVIDENCE
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 # EVIDENCE_SAMPLE_06 - Review Product Validation
@@ -28,7 +28,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 
 ## Code / Tooling
 - [x] Intention atomique sur la qualification mentor + Codex
-- [x] Contrôles requis PASS (`RUN_07_TESTS_LLM`, `RUN_08_TESTS_CODEX`)
+- [x] Contrôles requis PASS (`WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_CODEX`)
 - [x] No-secrets / no-PII
 - [x] Traçabilité (`DOD`, `OPS`, `EVIDENCE`) lisible
 - [x] Backout plan possible

@@ -7,21 +7,21 @@ status: FROZEN
 created: 12-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, rag, workspace, frozen]
-depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST, RUN_07_TESTS_LLM, EVIDENCE_SAMPLE_01_WS00_RULESONLY, EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED, EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED, EVIDENCE_SAMPLE_04_CODEX_IDE, EVIDENCE_SAMPLE_05_RELEASE_NOTE_PRODUCT_VALIDATION, EVIDENCE_SAMPLE_06_REVIEW_PRODUCT_VALIDATION, EVIDENCE_SAMPLE_07_ADR_PRODUCT_SCOPE]
+depends_on: [DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_01_PRODUCT_THIN_SLICE, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST, WORKFLOW_07_TESTS_LLM, EVIDENCE_SAMPLE_01_WS00_RULESONLY, EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED, EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED, EVIDENCE_SAMPLE_04_CODEX_IDE, EVIDENCE_SAMPLE_05_RELEASE_NOTE_PRODUCT_VALIDATION, EVIDENCE_SAMPLE_06_REVIEW_PRODUCT_VALIDATION, EVIDENCE_SAMPLE_07_ADR_PRODUCT_SCOPE]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_02_EVIDENCE
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 # EVIDENCE_SAMPLE_00 - Index
 
 ## Objet
-Centraliser les preuves de qualification mentor + Codex pour `PRODUCT_00_GAPC_MENTOR`.
+Centraliser les preuves de qualification mentor + Codex pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.
 
 ## Target
 - `FROZEN`
-- workspace product : `PRODUCT_00_GAPC_MENTOR`
+- workspace product : `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - package actif : `PACKAGE_00_GAPC`
 - date de preuve : `13-03-2026`
 - owner : `repo-maintainer`
@@ -56,7 +56,7 @@ Centraliser les preuves de qualification mentor + Codex pour `PRODUCT_00_GAPC_ME
 
 ## Notes
 - Ce pack prouve la qualification des workspaces mentor et de l agent Codex.
-- Les prompts utilises sont traces dans `RUN_07_TESTS_LLM` et `RUN_08_TESTS_CODEX`.
+- Les prompts utilises sont traces dans `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`.
 - Le pack couvre maintenant aussi la release note, la review finale et l ADR de perimetre produit.
 
 ## Format trace
@@ -65,14 +65,14 @@ Tool:
 - AnythingLLM local
 - Codex IDE
 Protocol ID:
-- RUN_07_TESTS_LLM
-- RUN_08_TESTS_CODEX
+- WORKFLOW_07_TESTS_LLM
+- WORKFLOW_08_TESTS_CODEX
 Date:
 - 13-03-2026
 Active package:
 - PACKAGE_00_GAPC
 Active product:
-- PRODUCT_00_GAPC_MENTOR
+- PRODUCT_00_SAMPLE_GAPC_AGENTS
 Goal:
 - prouver que le setup mentor documentaire + Codex est finalise et qualifie
 Inputs summary:
@@ -85,7 +85,7 @@ Outputs produced (filenames):
 - EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED.md
 - EVIDENCE_SAMPLE_04_CODEX_IDE.md
 Storage location (path):
-- vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_02_EVIDENCE
+- vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
 Checks (PII/rights/no-secrets):
 - PASS
 Next step:

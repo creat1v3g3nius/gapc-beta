@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, dod, validation, rag, mentor]
 depends_on: [PIPELINE_00_PRODUCT, CONSTRAINT_03_SECRETS_POLICY, CONSTRAINT_01_RAG_SCOPE_POLICY, DISCIPLINE_01_GEL_RULES, DISCIPLINE_02_RAG_QG, GAPC_DISCIPLINE_01_GEL_RULES, GAPC_DISCIPLINE_02_RAG_QG, GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, SCRIPT_03_INSTRUCTIONS_CODEX]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_00_DOD
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_00_DOD
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -21,7 +21,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # DOD_SAMPLE_00 - Product Validation
 
 ## Objet
-Valider que `PRODUCT_00_GAPC_MENTOR` prouve un setup product exploitable pour :
+Valider que `PRODUCT_00_SAMPLE_GAPC_AGENTS` prouve un setup product exploitable pour :
 - `Codex` en execution, patch et diagnostic technique
 - `AnythingLLM local` en mentor documentaire read-only
 - `API externe fallback` en fallback cible, explicite et minimise
@@ -31,7 +31,7 @@ Les regles transverses restent dans `CORE`, les overlays restent dans `PACKAGE_0
 
 ## 1) Pre-conditions (P0)
 - package actif = `PACKAGE_00_GAPC`
-- product actif = `PRODUCT_00_GAPC_MENTOR`
+- product actif = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - no-secrets / no-PII
 - actifs uniques et workspace scope
 - 1 intention = 1 CO = 1 commit
@@ -52,7 +52,7 @@ KO si :
 ### 2.2 Scope et sources
 PASS si :
 - ordre d autorite = `CORE -> PACKAGE -> PRODUCT -> SYSTEM -> CACHE`
-- product scoped = `PACKAGE_00_GAPC + PRODUCT_00_GAPC_MENTOR`
+- product scoped = `PACKAGE_00_GAPC + PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - `NON TROUVE` est respecte
 
 KO si :
@@ -114,6 +114,6 @@ Next step unique:
 ## Changelog
 - v1.3 (13-03-2026) : normalise le libelle `API externe fallback` et passe le document en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : aligne le verdict final sur le lot `OPS` backfill et ajoute la preuve `EVIDENCE_SAMPLE_04_CODEX_IDE`.
-- v1.1 (12-03-2026) : ajoute le verdict documente et les `Evidence IDs` du pack `GAPC_MENTOR_02_EVIDENCE`.
+- v1.1 (12-03-2026) : ajoute le verdict documente et les `Evidence IDs` du pack `SAMPLE_GAPC_GAPC_02_EVIDENCE`.
 - v1.1 (10-03-2026) : aligne la note de cadrage sur la creation du lot `OPS_*`.
-- v1.0 (10-03-2026) : creation du document de validation produit pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du document de validation produit pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

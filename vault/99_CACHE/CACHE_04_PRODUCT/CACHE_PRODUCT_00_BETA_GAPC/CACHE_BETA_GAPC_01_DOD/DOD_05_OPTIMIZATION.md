@@ -25,6 +25,6 @@ Decision locale:
 - appliquer le processus d'optimisation uniquement depuis la source canonique ci-dessus.
 
 ## Changelog
-- v1.2 (09-03-2026) : mise a jour du chemin canonique de `RUN_07` relocalise en CACHE.
+- v1.2 (09-03-2026) : mise a jour du chemin canonique de `WORKFLOW_07` relocalise en CACHE.
 - v1.1 (06-03-2026) : remplacement du contenu duplique par une reference canonique (META_06).
 - v1.0 (01-03-2026) : DoD optimisation minimal.

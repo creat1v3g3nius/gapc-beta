@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, ops, action-doc, dod]
 depends_on: [OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD, TPL_05_ACTION_DOC, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_01_OPS
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_01_OPS
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -49,8 +49,8 @@ Next step unique:
 ## 3) Evidence documentee
 ```txt
 Fichier:
-- RUN_07_TESTS_LLM
-- RUN_08_TESTS_CODEX
+- WORKFLOW_07_TESTS_LLM
+- WORKFLOW_08_TESTS_CODEX
 - GAPC_DISCIPLINE_00_RAG_PROFILE
 - GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
 - OPS_SAMPLE_02_SPEC_DOD
@@ -82,4 +82,4 @@ Next step unique: figer ces prompts comme reference operative dans le lot produi
 - v1.3 (13-03-2026) : aligne le controle action doc sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le controle action doc en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill l action doc avec les patchs ayant stabilise la qualification mentor + Codex.
-- v1.0 (10-03-2026) : creation du controle action doc pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du controle action doc pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

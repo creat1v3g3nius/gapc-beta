@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, ops, smoke, tests, dod]
 depends_on: [OPS_SAMPLE_02_SPEC_DOD, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, TPL_04_TEST_PLAN_SMOKE]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_01_OPS
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_01_OPS
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -52,7 +52,7 @@ Verdict:
 
 ## 4) Evidence documentee
 ```txt
-TestPlan ID: RUN_07_TESTS_LLM + RUN_08_TESTS_CODEX
+TestPlan ID: WORKFLOW_07_TESTS_LLM + WORKFLOW_08_TESTS_CODEX
 Scenarios:
 - `WS_00` PASS 6/6
 - `WS_01` PASS 5/5
@@ -79,4 +79,4 @@ Verdict: PASS
 - v1.3 (13-03-2026) : aligne le smoke plan sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le smoke plan en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill le smoke plan avec les reruns mentor et Codex effectivement executes.
-- v1.0 (10-03-2026) : creation du controle smoke pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du controle smoke pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

@@ -9,9 +9,9 @@ updated: 13-03-2026
 tags: [product, gapc-mentor, ops, backlog, co, dod]
 depends_on: [OPS_SAMPLE_00_BACKLOG_PRODUCT, TPL_03_BACKLOG_CO, GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER, GAPC_DISCIPLINE_04_RISK_REGISTER]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_01_OPS
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_01_OPS
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 ## Copie locale
@@ -60,7 +60,7 @@ Lister les CO atomiques du product mentor selon le format `Backlog CO`.
 ```txt
 CO_001:
 - Verdict: PASS
-- Evidence: separation `Codex / AnythingLLM / API externe fallback` prouvee par `RUN_07_TESTS_LLM`, `RUN_08_TESTS_CODEX`, `EVIDENCE_SAMPLE_00_INDEX`
+- Evidence: separation `Codex / AnythingLLM / API externe fallback` prouvee par `WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_CODEX`, `EVIDENCE_SAMPLE_00_INDEX`
 
 CO_002:
 - Verdict: PASS
@@ -76,4 +76,4 @@ CO_003:
 - v1.3 (13-03-2026) : aligne `CO_003` sur la declaration finale `FROZEN`.
 - v1.2 (13-03-2026) : passe le backlog CO en `READY_TO_FREEZE` apres cloture des trois CO.
 - v1.1 (13-03-2026) : backfill les verdicts des CO a partir des preuves `WS_00`, `WS_01`, `WS_02` et des tests Codex.
-- v1.0 (10-03-2026) : creation du backlog CO pour `PRODUCT_00_GAPC_MENTOR`.
+- v1.0 (10-03-2026) : creation du backlog CO pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

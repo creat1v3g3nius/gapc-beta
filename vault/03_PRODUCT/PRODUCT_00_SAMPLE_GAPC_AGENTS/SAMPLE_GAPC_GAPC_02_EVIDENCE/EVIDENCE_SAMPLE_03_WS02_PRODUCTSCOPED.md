@@ -7,18 +7,18 @@ status: FROZEN
 created: 12-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, ws02, productscoped, rag]
-depends_on: [DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, RUN_07_TESTS_LLM, OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_00_BACKLOG_PRODUCT, LLM_03_MENTOR_UTILITES]
+depends_on: [DOD_SAMPLE_02_RAG_WORKSPACE_TESTS, WORKFLOW_07_TESTS_LLM, OPS_SAMPLE_02_SPEC_DOD, OPS_SAMPLE_00_BACKLOG_PRODUCT, LLM_03_MENTOR_UTILITES]
 arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_GAPC_MENTOR/GAPC_MENTOR_02_EVIDENCE
+scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
-active-product: PRODUCT_00_GAPC_MENTOR
+active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
 
 # EVIDENCE_SAMPLE_03 - WS_02 ProductScoped
 
 ## Workspace
 - workspace : `WS_02 ProductScoped`
-- corpus : `WS_01 + PRODUCT_00_GAPC_MENTOR`
+- corpus : `WS_01 + PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - date : `12-03-2026`
 
 ## Test Results
@@ -28,13 +28,13 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - `T4` isolation d un autre product : PASS
 - `T5` no-secrets : PASS
 - `T6` matrice des roles produit : PASS
-- `T7` contradictions `PACKAGE_00_GAPC vs PRODUCT_00_GAPC_MENTOR` : PASS
+- `T7` contradictions `PACKAGE_00_GAPC vs PRODUCT_00_SAMPLE_GAPC_AGENTS` : PASS
 - `T8` non-substitution a Codex et discipline fallback : PASS
 
 ## Evidence
 ```txt
 Prompt pack:
-- RUN_07_TESTS_LLM / WS_02 ProductScoped
+- WORKFLOW_07_TESTS_LLM / WS_02 ProductScoped
 
 Prompts optimises utilises pour PASS:
 - T3 NON TROUVE exact
