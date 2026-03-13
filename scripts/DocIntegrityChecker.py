@@ -51,7 +51,8 @@ ALLOWED_PREFIXES_BY_TYPE = {
     "FAQ": {"FAQ"},
     "BACKLOG": {"BACKLOG"},
     "EVIDENCE": {"EVIDENCE"},
-    "DOD": {"DOD"},
+    # PRODUCT may carry hybrid OPS_* files typed as DOD for gate/checklist controls.
+    "DOD": {"DOD", "OPS"},
     "PRD": {"OPS"},
     "SPEC": {"OPS"},
     "ACTION": {"OPS"},
