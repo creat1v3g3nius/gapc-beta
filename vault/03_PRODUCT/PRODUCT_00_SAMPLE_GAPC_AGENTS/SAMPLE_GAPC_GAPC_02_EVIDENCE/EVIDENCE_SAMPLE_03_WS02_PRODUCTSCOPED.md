@@ -56,6 +56,9 @@ Verdict:
 - Le corpus et le retrieval sont consideres suffisants ; la contrainte residuelle venait du moteur de generation.
 - Aucun secret ou PII observe.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.1 (13-03-2026) : passe la preuve `WS_02 ProductScoped` en `READY_TO_FREEZE`.
 - v1.0 (12-03-2026) : creation de la preuve `WS_02 ProductScoped` avec verdict PASS 8/8 et trace des prompts optimises.

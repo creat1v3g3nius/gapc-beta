@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 06 Incident Drills (P2 minimal) — v1.0
+# DOD_06 - INCIDENT_DRILLS
 
 - Drill 1 : frontmatter KO → stop + correction + re-validate.
 - Drill 2 : smoke KO → backout + risk update + re-run.

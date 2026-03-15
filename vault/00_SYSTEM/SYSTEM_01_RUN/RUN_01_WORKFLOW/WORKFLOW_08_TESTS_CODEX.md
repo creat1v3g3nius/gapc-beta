@@ -2,10 +2,10 @@
 id: WORKFLOW_08_TESTS_CODEX
 type: WORKFLOW
 title: ListTestsCodex
-version: v1.2
-status: DRAFT
+version: v1.3
+status: FROZEN
 created: 12-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [workflow, tests-codex, run, system, ide, agent]
 depends_on: [WORKFLOW_00_PIPELINE, WORKFLOW_03_START_SESSION, WORKFLOW_10_COMMANDES, SCRIPT_03_INSTRUCTIONS_CODEX, LLM_00_RAG_PRINCIPES, LLM_02_PERMISSION_SECURITY, SETUP_PRODUCT_03_ROUTINE_OPERATIONS, SETUP_PRODUCT_05_LIFECYCLE_POLICY, SETUP_PRODUCT_07_GOVERNANCE_RULES]
 arc: SYSTEM
@@ -190,7 +190,11 @@ Le lot est `KO` si :
 - la source canonique reste `SCRIPT_03_INSTRUCTIONS_CODEX`,
 - une reponse techniquement juste mais contraire aux invariants `diff-first / no auto-commit / no-secrets` reste `KO`.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.3 (15-03-2026) : passage en FROZEN apres validation de la batterie Codex IDE.
 - v1.2 (13-03-2026) : ajoute le raccord final `WORKFLOW` vs `SETUP_PRODUCT` dans le scope de qualification.
 - v1.1 (13-03-2026) : remplace les prompts canoniques de `T2`, `T3`, `T4`, `T6`, `T7` par leurs variantes optimisees.
 - v1.0 (12-03-2026) : creation de la batterie de tests Codex pour valider le prompt canonique IDE.

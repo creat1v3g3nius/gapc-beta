@@ -111,6 +111,9 @@ Next step unique:
 - Le lot `OPS_*` complete la chaine de preuve operatoire du product.
 - Le product sert d espace de preuve et de validation, pas de source de verite transverse.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.3 (13-03-2026) : normalise le libelle `API externe fallback` et passe le document en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : aligne le verdict final sur le lot `OPS` backfill et ajoute la preuve `EVIDENCE_SAMPLE_04_CODEX_IDE`.

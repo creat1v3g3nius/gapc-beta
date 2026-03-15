@@ -155,7 +155,7 @@ Si incident documentaire : penser à relancer `WORKFLOW_06_VAULT_HEALTH_CHECK`.
 
 ---
 
-# I. Formulaire
+## I. Formulaire
 
 > Copier/coller ce bloc, remplir, puis envoyer.
 
@@ -199,6 +199,9 @@ Next step souhaité:
 ```
 
 ---
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
 - v1.1 (13-03-2026) : aligne la FAQ sur la structure active `WORKFLOW / SETUP_PRODUCT / EVIDENCE / LLM` et ajoute les references courantes.

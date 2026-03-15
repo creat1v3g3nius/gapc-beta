@@ -51,6 +51,7 @@ TITLE_RE = re.compile(r"^[A-Z][A-Za-z0-9]*$")
 VERSION_RE = re.compile(r"^v\d+\.\d+$")
 DATE_RE = re.compile(r"^\d{2}-\d{2}-\d{4}$")
 KEY_VALUE_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*)\s*:\s*(.*)$")
+INDEX_DIR_RE = re.compile(r"^(?P<prefix>[A-Z0-9]+)_00_INDEX$")
 
 
 @dataclass(frozen=True)
@@ -116,6 +117,20 @@ def is_cache_file(path: Path, vault_root: Path) -> bool:
     return ARC_BY_PREFIX.get(rel_parts[0]) == "CACHE"
 
 
+def expected_index_prefix_for_path(path: Path, vault_root: Path) -> str | None:
+    rel_parts = path.relative_to(vault_root).parts
+    if len(rel_parts) < 2:
+        return None
+    parent_name = rel_parts[-2]
+    match = INDEX_DIR_RE.match(parent_name)
+    if not match:
+        return None
+    prefix = match.group("prefix")
+    if prefix in {"SYSTEM", "CORE"}:
+        return "INDEX_"
+    return f"{prefix}_INDEX_"
+
+
 def validate_file(
     path: Path,
     vault_root: Path,
@@ -160,6 +175,17 @@ def validate_file(
     if not STEM_RE.match(stem):
         errors.append(
             ValidationError(path, 1, "filename stem must use [A-Z0-9_]+ pattern")
+        )
+
+    expected_index_prefix = expected_index_prefix_for_path(path, vault_root)
+    if strict and expected_index_prefix and not stem.startswith(expected_index_prefix):
+        errors.append(
+            ValidationError(
+                path,
+                1,
+                "index filename must use canonical family prefix "
+                f"{expected_index_prefix}NUM_TITRE (file={stem})",
+            )
         )
 
     doc_type = metadata.get("type")

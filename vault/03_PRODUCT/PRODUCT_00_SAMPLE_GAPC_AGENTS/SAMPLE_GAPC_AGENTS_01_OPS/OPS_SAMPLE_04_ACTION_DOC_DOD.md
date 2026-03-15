@@ -78,6 +78,9 @@ Verdict: PASS
 Next step unique: figer ces prompts comme reference operative dans le lot produit
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.3 (13-03-2026) : aligne le controle action doc sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le controle action doc en `READY_TO_FREEZE`.

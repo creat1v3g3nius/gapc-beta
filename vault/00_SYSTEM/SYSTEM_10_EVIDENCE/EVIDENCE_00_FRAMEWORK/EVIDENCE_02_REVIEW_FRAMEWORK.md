@@ -70,3 +70,6 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - v1.9 (09-03-2026) : bascule de naming/ID review vers la version FRAMEWORK canon.
 - v1.10 (10-03-2026) : ajoute la revue setup SYSTEM_04_LLM, la creation des instructions verite Codex IDE et la conversion `SCRIPT_03` en skill.
 - v1.11 (10-03-2026) : ajoute la revue `.gitignore` (ignore `skills/`) et la tracabilite du retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.

@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 04 RAG Workspace Tests — v1.0 (P1)
+# DOD_04 - RAG_WORKSPACE_TESTS
 
 ## Objet
 Définir un set minimal de tests “workspace mentor” :

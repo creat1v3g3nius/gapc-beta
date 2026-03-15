@@ -2,10 +2,10 @@
 id: SCRIPT_03_INSTRUCTIONS_CODEX
 type: SCRIPT
 title: CodexIdeInstructions
-version: v1.0
-status: READY_TO_FREEZE
+version: v1.1
+status: FROZEN
 created: 10-03-2026
-updated: 10-03-2026
+updated: 15-03-2026
 tags: [codex, vscode, ide, agent, system, prompt, instructions, gapc]
 depends_on: [META_01_OUTPUT_PROTOCOL, META_02_SOP_STANDARD_LOOP, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY]
 arc: SYSTEM
@@ -283,3 +283,10 @@ Smoke tests documentaires :
 ## Next step unique
 
 Valider ce document contre les règles de frontmatter, de dépendances et de naming avant passage READY_TO_FREEZE final.
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
+## Changelog
+- v1.1 (15-03-2026) : passage en FROZEN apres validation documentaire globale du vault.
+- v1.0 (10-03-2026) : creation du cadrage operatoire Codex IDE pour GAPC.

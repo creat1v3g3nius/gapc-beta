@@ -25,7 +25,7 @@ Ce document est une **extension PACKAGE** :
 
 ---
 
-# 1) Définitions (extension PACKAGE)
+## 1) Définitions (extension PACKAGE)
 
 - **CORE gel** : définitions READY_TO_FREEZE / FROZEN (référence `DISCIPLINE_01_GEL_RULES`).
 - **GAPC_READY_TO_FREEZE** : READY_TO_FREEZE + conditions minimales GAPC (§2).
@@ -36,7 +36,7 @@ Règle : en cas de contradiction, **CORE prévaut**.
 
 ---
 
-# 2) Gate GAPC_READY_TO_FREEZE (P0) — PASS/FAIL
+## 2) Gate GAPC_READY_TO_FREEZE (P0) — PASS/FAIL
 
 PASS si **tous** les critères P0 ci-dessous sont vrais.
 
@@ -71,7 +71,7 @@ Si mentor non utilisé : NA.
 
 ---
 
-# 3) Gate GAPC_FROZEN (P0) — PASS/FAIL
+## 3) Gate GAPC_FROZEN (P0) — PASS/FAIL
 
 GAPC_FROZEN = GAPC_READY_TO_FREEZE PASS + critères ci-dessous.
 
@@ -88,7 +88,7 @@ GAPC_FROZEN = GAPC_READY_TO_FREEZE PASS + critères ci-dessous.
 
 ---
 
-# 4) Format de rapport (audit de gel GAPC)
+## 4) Format de rapport (audit de gel GAPC)
 
 ```txt
 Target: GAPC_READY_TO_FREEZE | GAPC_FROZEN
@@ -103,7 +103,7 @@ Next step unique:
 
 ---
 
-# 5) Notes d’usage (anti-dérive)
+## 5) Notes d’usage (anti-dérive)
 - Les critères “métier” (asso, financeurs, légal) ne vivent pas ici : ils vivent dans un PACKAGE dédié.
 - Si un critère implique une décision structurante → ADR-lite.
 
@@ -116,4 +116,3 @@ Next step unique:
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (01-03-2026) : passage en FROZEN (status+version bump) + amendements contrôlés + correction références.
 - v1.0 (01-03-2026) : version initiale.
-

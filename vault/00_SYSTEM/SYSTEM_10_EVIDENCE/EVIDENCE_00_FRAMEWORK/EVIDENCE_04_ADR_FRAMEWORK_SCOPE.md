@@ -112,3 +112,6 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - v1.9 (09-03-2026) : bascule de naming/ID ADR vers la version FRAMEWORK canon.
 - v1.10 (10-03-2026) : ajoute la decision SOT Codex IDE, la reference setup SYSTEM_04_LLM et la conversion `SCRIPT_03` en skill (3 fichiers `skills/`).
 - v1.11 (10-03-2026) : ajoute la decision hygiene repo (`.gitignore` -> `skills/`) et la trace du retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.

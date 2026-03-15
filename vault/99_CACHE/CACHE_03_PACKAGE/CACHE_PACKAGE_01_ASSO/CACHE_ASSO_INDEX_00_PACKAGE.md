@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 ---
 
-# ASSO_INDEX_00 - Package
+# CACHE_ASSO_INDEX_00 - PACKAGE
 
 ## Objet
 Point d’entrée du package **ASSO** (CORE transposé métier “association 1901 / gouvernance / communication / conformité”).

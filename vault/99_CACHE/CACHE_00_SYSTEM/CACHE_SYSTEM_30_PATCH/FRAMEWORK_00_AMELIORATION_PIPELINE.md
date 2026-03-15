@@ -12,7 +12,7 @@ updated: 13-03-2026
 version: v1.2
 ---
 
-# FRAMEWORK_00 --- Amélioration Pipeline
+# FRAMEWORK_00 - AMELIORATION_PIPELINE
 
 ## Objet
 

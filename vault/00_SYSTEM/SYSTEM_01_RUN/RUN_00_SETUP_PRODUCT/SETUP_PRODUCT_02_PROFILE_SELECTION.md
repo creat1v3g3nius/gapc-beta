@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_02_PROFILE_SELECTION
 type: SETUP_PRODUCT
 title: SetupProductProfileSelection
-version: v1.2
-status: DRAFT
+version: v1.3
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, profile, selection]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_01_BOOTSTRAP, DISCIPLINE_00_RAG_PROFILE, GAPC_DISCIPLINE_00_RAG_PROFILE]
 arc: SYSTEM
@@ -40,6 +40,10 @@ Pour chaque profil, documenter :
 ## Next step unique
 - formaliser la routine de maintenance d un product actif.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.3 (15-03-2026) : passage en FROZEN du protocole de selection de profil produit.
 - v1.2 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.1 (13-03-2026) : renommage `MP_02_PROFILE_SELECTION` -> `SETUP_PRODUCT_02_PROFILE_SELECTION`.

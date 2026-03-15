@@ -5,7 +5,7 @@ title: GapcSourcesPolicy
 version: v1.5
 status: FROZEN
 created: 01-03-2026
-updated: 10-03-2026
+updated: 11-03-2026
 tags: [package, gapc, constraint, sources, p1]
 depends_on: [CONSTRAINT_01_RAG_SCOPE_POLICY, CONSTRAINT_02_NON_DUPLICATION_POLICY, DISCIPLINE_00_RAG_PROFILE, GAPC_DISCIPLINE_00_RAG_PROFILE, GAPC_TOOLING_KNOWLEDGE_01_SOURCES_PRIORITY]
 arc: PACKAGE

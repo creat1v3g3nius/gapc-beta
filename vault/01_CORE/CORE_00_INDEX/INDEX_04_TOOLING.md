@@ -1,18 +1,18 @@
 ---
-id: CORE_INDEX_04_TOOLING
+id: INDEX_04_TOOLING
 type: INDEX
 title: CoreToolingIndex
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 05-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [core, tooling, index]
 depends_on: []
 arc: CORE
 scope: vault/01_CORE/CORE_00_INDEX
 ---
 
-# CORE_INDEX_04 - Tooling
+# INDEX_04 - TOOLING
 
 ## Objet
 
@@ -78,6 +78,7 @@ Protocoles d’intégration d’outils externes.
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
 - v1.2 (13-03-2026) : retire la reference non resolue a `CHECKLIST_00_INDEX` et confirme ce lot comme index actif.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index TOOLING du CORE.

@@ -1,18 +1,18 @@
 ---
-id: CORE_INDEX_02_DISCIPLINE
+id: INDEX_02_DISCIPLINE
 type: INDEX
 title: CoreDisciplineIndex
-version: v1.0
+version: v1.3
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 15-03-2026
 tags: [core, discipline, index]
 depends_on: []
 arc: CORE
 scope: vault/01_CORE/CORE_00_INDEX
 ---
 
-# CORE_INDEX_01 - Discipline
+# INDEX_02 - DISCIPLINE
 
 ## Objet
 
@@ -90,5 +90,7 @@ Registre des risques du framework.
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
+- v1.2 (15-03-2026) : corrige le H1 et réaligne la version courante avec l historique du changelog.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index DISCIPLINE du CORE.

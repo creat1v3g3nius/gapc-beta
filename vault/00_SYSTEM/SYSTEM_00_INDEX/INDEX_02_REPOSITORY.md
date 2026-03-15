@@ -12,7 +12,7 @@ arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_00_INDEX
 ---
 
-# INDEX_02_REPOSITORY — Repository Files List
+# INDEX_02 - REPOSITORY
 
 Référence canonique de la structure du repository du framework GAPC.
 
@@ -221,7 +221,7 @@ FRAMEWORK_00_AMELIORATION_PIPELINE.md
 
 ---
 
-# 2 — Règles structurelles
+## 2 — Règles structurelles
 Vault = Source of Truth  
 
 Tout ce qui est :

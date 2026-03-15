@@ -75,6 +75,9 @@ Backout:
 Verdict: PASS
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.3 (13-03-2026) : aligne le smoke plan sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le smoke plan en `READY_TO_FREEZE`.

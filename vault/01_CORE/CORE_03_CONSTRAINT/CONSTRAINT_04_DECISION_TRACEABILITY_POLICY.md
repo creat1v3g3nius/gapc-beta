@@ -2,10 +2,10 @@
 id: CONSTRAINT_04_DECISION_TRACEABILITY_POLICY
 type: CONSTRAINT
 title: DecisionTraceabilityPolicy
-version: v1.3
+version: v1.2
 status: FROZEN
 created: 01-03-2026
-updated: 09-03-2026
+updated: 04-03-2026
 tags: [limites, decision-traceability, llm, discipline, core]
 depends_on: [CONSTRAINT_00_GUARD_RAILS, META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL, DISCIPLINE_00_RAG_PROFILE, DISCIPLINE_02_RAG_QG, DISCIPLINE_01_GEL_RULES, DISCIPLINE_06_SCOPE_CLASSIFIER, DISCIPLINE_07_RISK_REGISTER]
 arc: CORE
@@ -76,5 +76,5 @@ Ils ne peuvent pas :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

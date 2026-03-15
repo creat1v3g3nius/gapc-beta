@@ -72,6 +72,9 @@ active-product: PRODUCT_00_GAPC_MENTOR
 ## 5) Next step unique
 - conserver cette ADR comme décision structurante de périmètre du lot `FROZEN`
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.0 (13-03-2026) : aligne l ADR sur la bascule finale `FROZEN`.
 - v1.0 (13-03-2026) : création de l ADR de périmètre produit après PASS complet des gates DOD.

@@ -47,6 +47,9 @@ Verdict:
 - La collision `PRODUCT actif` vs `docs product actifs` a ete levee pour ne pas contaminer `WS_01`.
 - Le format inline d AnythingLLM a ete traite en mode tolerant tant que le fond restait exact.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.1 (13-03-2026) : passe la preuve `WS_01 PackageScoped` en `READY_TO_FREEZE`.
 - v1.0 (12-03-2026) : creation de la preuve `WS_01 PackageScoped` avec verdict PASS 5/5.

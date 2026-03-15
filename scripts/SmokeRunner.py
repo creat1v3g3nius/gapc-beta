@@ -78,16 +78,16 @@ def ensure_exists(path: Path, kind: str = "path") -> None:
         raise SmokeFailure(f"missing {kind}: {path}")
 
 
-def run_validator(repo_root: Path, validator_rel: str) -> None:
+def run_validator(repo_root: Path, validator_rel: str, vault_rel: str) -> None:
     validator = (repo_root / validator_rel).resolve()
     ensure_exists(validator, "validator")
 
-    cmd = [str(validator)]
+    cmd = [str(validator), "--vault", vault_rel, "--strict"]
     try:
         result = subprocess.run(cmd, cwd=repo_root, check=False)
     except PermissionError:
         # Fallback if executable bit is missing on another machine.
-        result = subprocess.run(["python3", str(validator)], cwd=repo_root, check=False)
+        result = subprocess.run(["python3", str(validator), *cmd[1:]], cwd=repo_root, check=False)
 
     if result.returncode != 0:
         raise SmokeFailure(f"validator failed with exit code {result.returncode}")
@@ -208,14 +208,15 @@ def run() -> int:
         if args.require_path:
             _ok("extra required paths present")
 
-        run_validator(repo_root, args.validator)
+        run_validator(repo_root, args.validator, args.vault)
         _ok("validator execution")
 
         if args.check_pre_freeze:
             check_pre_freeze_status(vault_root)
             _ok("pre-freeze status gate")
 
-        if args.run_doc_integrity:
+        should_run_doc_integrity = args.run_doc_integrity or args.check_pre_freeze
+        if should_run_doc_integrity:
             doc_exit = run_doc_integrity(
                 repo_root=repo_root,
                 checker_rel=args.doc_integrity_script,

@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 03 Tooling Hardening — v1.0 (P1)
+# DOD_03 - TOOLING_HARDENING
 
 ## Objet
 Durcir l’outillage utilisé pour produire GAPC :

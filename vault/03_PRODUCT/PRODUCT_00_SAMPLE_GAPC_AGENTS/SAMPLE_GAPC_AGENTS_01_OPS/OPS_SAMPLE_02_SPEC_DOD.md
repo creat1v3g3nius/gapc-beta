@@ -119,6 +119,9 @@ Verdict: PASS
 Next step unique: conserver cette spec comme reference produit pour les reruns
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.5 (13-03-2026) : passe la spec produit en `READY_TO_FREEZE`.
 - v1.4 (13-03-2026) : backfill l evidence de spec avec les contrats finaux et le verdict PASS du setup.

@@ -72,6 +72,9 @@ CO_003:
 - Next step unique: reporter ce verdict dans la decision de gel finale
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.3 (13-03-2026) : aligne `CO_003` sur la declaration finale `FROZEN`.
 - v1.2 (13-03-2026) : passe le backlog CO en `READY_TO_FREEZE` apres cloture des trois CO.

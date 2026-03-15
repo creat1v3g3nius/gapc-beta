@@ -12,7 +12,7 @@ arc: SYSTEM
 scope: vault/00_SYSTEM/03_SCRIPT
 ---
 
-# SCRIPT_06_FRONTMATTER_UTILS
+# SCRIPT_06 - FRONTMATTER_UTILS
 
 ## Objet
 
@@ -263,6 +263,8 @@ Le process est reussi si :
 Creer la **Spec Tech** de `frontmatter_utils` avec exemples d'entree/sortie et cas limites.
 
 ## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
 
+## Changelog
 - v1.1 (09-03-2026) : passage en FROZEN.
 - v1.0 (09-03-2026) : creation du process.

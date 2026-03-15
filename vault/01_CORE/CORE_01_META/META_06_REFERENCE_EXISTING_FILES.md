@@ -2,10 +2,10 @@
 id: META_06_REFERENCE_EXISTING_FILES
 type: META
 title: ReferenceExistingFiles
-version: v1.0
-status: READY_TO_FREEZE
+version: v1.1
+status: FROZEN
 created: 06-03-2026
-updated: 06-03-2026
+updated: 15-03-2026
 tags: [governance, references, non-duplication, meta, core]
 depends_on: [META_03_NAMING_CONVENTIONS, META_05_FRONTMATTER, CONSTRAINT_02_NON_DUPLICATION_POLICY]
 arc: CORE
@@ -85,5 +85,9 @@ Decision locale:
 
 ---
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.1 (15-03-2026) : passage en FROZEN du standard `reference-first` apres validation globale du vault.
 - v1.0 (06-03-2026) : creation du standard "reference-first" pour supprimer les duplications.

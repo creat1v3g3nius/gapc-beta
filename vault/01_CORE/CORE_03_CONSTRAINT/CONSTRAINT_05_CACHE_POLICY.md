@@ -2,10 +2,10 @@
 id: CONSTRAINT_05_CACHE_POLICY
 type: CONSTRAINT
 title: CachePolicy
-version: v1.3
+version: v1.2
 status: FROZEN
 created: 01-03-2026
-updated: 09-03-2026
+updated: 04-03-2026
 tags: [limites, cache-policy, llm, discipline, core]
 depends_on: [META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL, DISCIPLINE_00_RAG_PROFILE, DISCIPLINE_02_RAG_QG, CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_01_RAG_SCOPE_POLICY]
 arc: CORE
@@ -47,5 +47,5 @@ CORE strict : pas de procédure opérateur.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

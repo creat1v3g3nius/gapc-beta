@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_03_ROUTINE_OPERATIONS
 type: SETUP_PRODUCT
 title: SetupProductRoutineOperations
-version: v1.3
-status: DRAFT
+version: v1.4
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, routine, operations]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_02_PROFILE_SELECTION, WORKFLOW_00_PIPELINE, WORKFLOW_06_VAULT_HEALTH_CHECK, WORKFLOW_07_TESTS_LLM, WORKFLOW_08_TESTS_CODEX]
 arc: SYSTEM
@@ -47,7 +47,11 @@ Definir la routine d exploitation d un product actif.
 ## Next step unique
 - cadrer la destination finale des products une fois finalises.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.4 (15-03-2026) : passage en FROZEN du protocole de routine produit.
 - v1.3 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.2 (13-03-2026) : clarifie la frontiere entre routine produit et runbooks `WORKFLOW`.
 - v1.1 (13-03-2026) : renommage `MP_03_ROUTINE_OPERATIONS` -> `SETUP_PRODUCT_03_ROUTINE_OPERATIONS`.

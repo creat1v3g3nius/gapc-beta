@@ -92,6 +92,9 @@ Next step:
 - none
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.3 (13-03-2026) : bascule le pack evidence en `FROZEN`.
 - v1.3 (13-03-2026) : ajoute `ADR + RELEASE NOTE + REVIEW` au pack `EVIDENCE`.

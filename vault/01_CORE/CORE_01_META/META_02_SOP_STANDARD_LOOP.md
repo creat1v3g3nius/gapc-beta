@@ -132,17 +132,13 @@ Si KO :
 
 ---
 
-### Changelop
--v1.0 (28-02-2026): boucle standard d'exécution du mentor LLM adapté à GAPC Beta v1.0.
-
----
-
 ## Amendements (FROZEN)
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
-- v1.2 (04-03-2026) : corrections ids `depends_on` du frontmatter + heading.
-- v1.3 (10-03-2026) : ajoute la règle SOP de fallback API explicite, minimisé et sans secret.
-- v1.4 (10-03-2026) : impose la conclusion avant `NON TROUVÉ`, les citations exactes et une sortie explicite pour les comparaisons documentaires.
 - v1.5 (10-03-2026) : ajoute le contrôle de cohérence `source -> arc` dans l auto-check du mentor.
+- v1.4 (10-03-2026) : impose la conclusion avant `NON TROUVÉ`, les citations exactes et une sortie explicite pour les comparaisons documentaires.
+- v1.3 (10-03-2026) : ajoute la règle SOP de fallback API explicite, minimisé et sans secret.
+- v1.2 (04-03-2026) : corrections ids `depends_on` du frontmatter + heading.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
+- v1.0 (28-02-2026) : boucle standard d'exécution du mentor LLM adapté à GAPC Beta v1.0.

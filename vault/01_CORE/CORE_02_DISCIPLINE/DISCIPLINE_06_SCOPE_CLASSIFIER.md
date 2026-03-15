@@ -54,5 +54,5 @@ Peuvent ajouter des critères (métier, deadlines), pas modifier les labels ni a
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.3 (04-03-2026) : corrections frontmatter + heading.
+- v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

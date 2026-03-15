@@ -1,18 +1,18 @@
 ---
-id: CORE_INDEX_01_META
+id: INDEX_01_META
 type: INDEX
 title: CoreMetaIndex
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 15-03-2026
 tags: [core, meta, index]
 depends_on: []
 arc: CORE
 scope: vault/01_CORE/CORE_00_INDEX
 ---
 
-# INDEX_01_META — META (CORE)
+# INDEX_01 - META
 
 ## Objet
 Index des documents **META** du CORE du framework GAPC.
@@ -39,5 +39,7 @@ Les META définissent le **socle méthodologique** :
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
+- v1.2 (15-03-2026) : aligne le H1 sur l identifiant canonique de l index CORE.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index META du CORE.

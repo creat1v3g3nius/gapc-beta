@@ -71,6 +71,9 @@ Verdict: PASS
 Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.3 (13-03-2026) : passe le controle CO en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : backfill les preuves des trois CO produits avec verdict PASS.

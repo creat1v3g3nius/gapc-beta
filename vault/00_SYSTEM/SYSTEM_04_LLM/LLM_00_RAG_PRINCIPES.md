@@ -5,7 +5,7 @@ title: RagPrincipes
 version: v1.4
 status: FROZEN
 created: 28-02-2026
-updated: 10-03-2026
+updated: 13-03-2026
 tags: [agent, rag-principes, llm, system, mentor, anythingllm, codex]
 depends_on: []
 arc: SYSTEM

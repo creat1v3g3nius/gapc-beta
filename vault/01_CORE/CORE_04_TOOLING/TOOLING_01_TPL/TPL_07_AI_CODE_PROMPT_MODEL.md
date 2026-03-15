@@ -5,7 +5,7 @@ title: CodeGeneratorGenericModel
 version: v1.2
 status: FROZEN
 created: 01-03-2026
-updated: 02-03-2026
+updated: 04-03-2026
 tags: [tooling, code-generator, prompt, core]
 depends_on: [META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL, META_02_SOP_STANDARD_LOOP, DISCIPLINE_06_SCOPE_CLASSIFIER, DISCIPLINE_07_RISK_REGISTER, CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_02_NON_DUPLICATION_POLICY, CONSTRAINT_03_SECRETS_POLICY, DISCIPLINE_04_CODE_QG]
 arc: CORE
@@ -55,4 +55,3 @@ Validation required (smoke/validator):
 - v1.2 (04-03-2026) : correction heading.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : version initiale READY_TO_FREEZE.
-

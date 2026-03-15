@@ -65,6 +65,9 @@ Verdict: PASS
 Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.2 (13-03-2026) : passe le controle PRD en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill l evidence PRD avec le but, le perimetre et le verdict PASS du setup finalise.

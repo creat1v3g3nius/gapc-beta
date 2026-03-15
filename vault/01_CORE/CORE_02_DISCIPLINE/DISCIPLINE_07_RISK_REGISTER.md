@@ -2,7 +2,7 @@
 id: DISCIPLINE_07_RISK_REGISTER
 type: DISCIPLINE
 title: RiskRegister
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 01-03-2026
 updated: 04-03-2026
@@ -62,5 +62,5 @@ Liens:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.3 (04-03-2026) : corrections frontmatter + heading.
+- v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

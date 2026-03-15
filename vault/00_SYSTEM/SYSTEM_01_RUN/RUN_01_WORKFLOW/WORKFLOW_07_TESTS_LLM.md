@@ -2,10 +2,10 @@
 id: WORKFLOW_07_TESTS_LLM
 type: WORKFLOW
 title: ListTestsLLM
-version: v1.4
-status: DRAFT
+version: v1.5
+status: FROZEN
 created: 11-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [workflow, tests-llm, run, system, rag, mentor]
 depends_on: [WORKFLOW_00_PIPELINE, WORKFLOW_03_START_SESSION, WORKFLOW_10_COMMANDES, LLM_01_INGESTION_PROTOCOL, LLM_03_MENTOR_UTILITES, SETUP_PRODUCT_03_ROUTINE_OPERATIONS, SETUP_PRODUCT_05_LIFECYCLE_POLICY, SETUP_PRODUCT_07_GOVERNANCE_RULES]
 arc: SYSTEM
@@ -362,7 +362,11 @@ Le test `T6` est `KO` si :
 - source canonique `WS_00` : `LLM_01_INGESTION_PROTOCOL`
 - source canonique `WS_02` : `DOD_02_RAG_WORKSPACE_TESTS`
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.5 (15-03-2026) : passage en FROZEN apres validation des batteries `WS_00`, `WS_01` et `WS_02`.
 - v1.4 (13-03-2026) : ajoute le raccord final `WORKFLOW` vs `SETUP_PRODUCT` dans la regle d usage.
 - v1.3 (13-03-2026) : canonise les prompts optimises de `WS_00` et `WS_01`, supprime les doublons canonique/optimise, et garde `WS_02` en prompts finals.
 - v1.2 (12-03-2026) : ajoute la batterie complete `WS_00`, `WS_01`, `WS_02` avec prompts canoniques et variantes optimisees.

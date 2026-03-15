@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 01 Product Thin Slice — v1.0 (P0)
+# DOD_01 - BETA_PRODUCT_THIN_SLICE
 
 ## Objet
 Définir le **cycle minimal** qui prouve l’exécutabilité de GAPC :

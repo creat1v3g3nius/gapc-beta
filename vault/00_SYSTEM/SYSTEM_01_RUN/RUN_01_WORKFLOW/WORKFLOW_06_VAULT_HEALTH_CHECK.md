@@ -2,10 +2,10 @@
 id: WORKFLOW_06_VAULT_HEALTH_CHECK
 type: WORKFLOW
 title: VaultHealthCheckRunbook
-version: v1.1
-status: READY_TO_FREEZE
+version: v1.2
+status: FROZEN
 created: 06-03-2026
-updated: 08-03-2026
+updated: 15-03-2026
 tags: [vault, audit, health-check, gapc, checklist, run, system]
 depends_on: [META_03_NAMING_CONVENTIONS, META_04_WRITING_RULES, META_05_FRONTMATTER, DISCIPLINE_03_DOC_QG, DISCIPLINE_01_GEL_RULES, CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_02_NON_DUPLICATION_POLICY, CONSTRAINT_04_DECISION_TRACEABILITY_POLICY, PIPELINE_00_PRODUCT, PIPELINE_03_BACKLOG_COMPOSANTS]
 arc: SYSTEM
@@ -290,3 +290,10 @@ Après exécution du health check :
 - le statut du vault est explicite
 - les défauts critiques sont visibles immédiatement
 - le passage à READY_TO_FREEZE ou FROZEN est plus sûr
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
+## Changelog
+- v1.2 (15-03-2026) : passage en FROZEN apres validation du workflow dans le smoke repo.
+- v1.1 (08-03-2026) : stabilise le protocole de health check du vault.

@@ -108,5 +108,5 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 - v1.0 (01-03-2026) : création pipeline product CORE (P0).
 
 ## Changelog
-- v1.2 (02-03-2026) : normalisation frontmatter.
 - v1.3 (04-03-2026) : corrections des ids `depends_on` + heading.
+- v1.2 (02-03-2026) : normalisation frontmatter.

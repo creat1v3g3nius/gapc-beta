@@ -59,5 +59,5 @@ Peuvent renforcer, ne peuvent pas affaiblir les P0 CORE.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

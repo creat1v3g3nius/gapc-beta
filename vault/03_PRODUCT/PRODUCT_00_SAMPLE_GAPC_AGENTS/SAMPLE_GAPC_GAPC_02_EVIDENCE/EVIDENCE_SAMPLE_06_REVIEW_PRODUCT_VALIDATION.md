@@ -41,6 +41,9 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Gate `FROZEN` : PASS
 - Next step unique : rerun complet obligatoire avant toute future modification significative du lot
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.1 (13-03-2026) : aligne la review finale sur l etat `FROZEN`.
 - v1.0 (13-03-2026) : création de la review finale de validation produit.

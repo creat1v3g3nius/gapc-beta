@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_00_INDEX
 type: SETUP_PRODUCT
 title: SetupProductIndex
-version: v1.3
-status: DRAFT
+version: v1.4
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, composition, index]
 depends_on: [INDEX_01_ARCHITECTURE, INDEX_02_REPOSITORY, SETUP_PRODUCT_01_BOOTSTRAP, SETUP_PRODUCT_02_PROFILE_SELECTION, SETUP_PRODUCT_03_ROUTINE_OPERATIONS, SETUP_PRODUCT_04_DESTINATION_POLICY, SETUP_PRODUCT_05_LIFECYCLE_POLICY, SETUP_PRODUCT_06_MERGE_OUT_POLICY, SETUP_PRODUCT_07_GOVERNANCE_RULES]
 arc: SYSTEM
@@ -52,7 +52,11 @@ Cadrer la gestion multi-products dans GAPC sans dupliquer `CORE`, `SYSTEM`, `PAC
 ## Next step unique
 - formaliser la doctrine d integration `WORKFLOW` vs `SETUP_PRODUCT`.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.4 (15-03-2026) : passage en FROZEN du lot `SETUP_PRODUCT` apres validation des protocoles de composition.
 - v1.3 (13-03-2026) : rehoste la famille sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.2 (13-03-2026) : renommage effectif de la famille en `SETUP_PRODUCT_*` avec arbitrage `00_INDEX`.
 - v1.1 (13-03-2026) : cartographie de transition `MP_* -> SETUP_PRODUCT_*` ajoutee sans renommage effectif.

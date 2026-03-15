@@ -47,6 +47,9 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ## 6) Next step unique
 - conserver ce release note comme pièce de référence du lot `FROZEN`
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.0 (13-03-2026) : aligne la note de release sur l etat `FROZEN`.
 - v1.0 (13-03-2026) : création de la release note de validation produit après PASS complet `DOD_00` à `DOD_03`.

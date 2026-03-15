@@ -133,15 +133,10 @@ flowchart TD
 ### 8.2 Règle
 - tout document visuel “critique” doit avoir un **companion** `.md` (résumé + points d’action) pour l’indexation RAG.
 
-## 9. Changelog
-
-- v1.0 (28-02-2026): Définition des formats de rédaction/conception et leurs règles d'usage pour le mentor LLM - GAPC Beta v1.0
-
----
-
 ## Amendements (FROZEN)
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
+- v1.0 (28-02-2026) : définition des formats de rédaction/conception et leurs règles d'usage pour le mentor LLM - GAPC Beta v1.0.

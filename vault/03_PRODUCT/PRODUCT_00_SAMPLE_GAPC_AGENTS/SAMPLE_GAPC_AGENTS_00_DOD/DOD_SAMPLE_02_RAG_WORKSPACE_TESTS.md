@@ -182,6 +182,9 @@ Si un test P0 est KO :
 - re-indexer si necessaire
 - relancer la batterie complete
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.6 (13-03-2026) : passe la batterie `WS_02` en `READY_TO_FREEZE` apres PASS complet des reruns.
 - v1.5 (11-03-2026) : renforce `T2` avec interdiction des arcs a la place des categories de sources et ajoute un exemple minimal valide package+product.

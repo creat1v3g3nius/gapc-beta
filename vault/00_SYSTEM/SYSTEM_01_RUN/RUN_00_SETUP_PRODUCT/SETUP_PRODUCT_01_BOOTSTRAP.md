@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_01_BOOTSTRAP
 type: SETUP_PRODUCT
 title: SetupProductBootstrap
-version: v1.2
-status: DRAFT
+version: v1.3
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, bootstrap, product]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_02_PROFILE_SELECTION, SETUP_PRODUCT_07_GOVERNANCE_RULES, META_03_NAMING_CONVENTIONS, META_05_FRONTMATTER]
 arc: SYSTEM
@@ -43,6 +43,10 @@ Definir l ouverture d un nouveau product dans le repo.
 ## Next step unique
 - selectionner le profil de composition avant toute instanciation documentaire.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.3 (15-03-2026) : passage en FROZEN du protocole bootstrap produit.
 - v1.2 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.1 (13-03-2026) : renommage `MP_01_PRODUCT_BOOTSTRAP` -> `SETUP_PRODUCT_01_BOOTSTRAP`.

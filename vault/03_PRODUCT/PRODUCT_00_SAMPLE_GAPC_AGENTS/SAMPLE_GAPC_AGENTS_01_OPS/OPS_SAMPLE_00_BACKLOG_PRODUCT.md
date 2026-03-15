@@ -119,6 +119,9 @@ Risques: aucun P0 ouvert sur la configuration mentor + Codex
 Next step unique: conserver ce backlog comme reference gelée du produit
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.5 (13-03-2026) : aligne `CO_003` sur l etat final `FROZEN`.
 - v1.4 (13-03-2026) : bascule le backlog produit en `FROZEN`.

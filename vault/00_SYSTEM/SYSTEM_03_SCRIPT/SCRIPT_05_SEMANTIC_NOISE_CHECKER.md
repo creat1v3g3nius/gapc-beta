@@ -12,7 +12,7 @@ arc: SYSTEM
 scope: vault/00_SYSTEM/03_SCRIPT
 ---
 
-# SCRIPT_05_SEMANTIC_NOISE_CHECKER
+# SCRIPT_05 - SEMANTIC_NOISE_CHECKER
 
 ## Objet
 
@@ -294,6 +294,8 @@ Le process est reussi si :
 Creer la **Spec Tech** du CLI `SemanticNoiseChecker` avant extension des regles semantiques.
 
 ## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
 
+## Changelog
 - v1.1 (09-03-2026) : passage en FROZEN.
 - v1.0 (09-03-2026) : creation du process.

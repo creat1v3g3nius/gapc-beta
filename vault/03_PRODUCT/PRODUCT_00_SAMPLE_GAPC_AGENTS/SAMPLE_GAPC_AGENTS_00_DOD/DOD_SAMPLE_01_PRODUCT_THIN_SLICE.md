@@ -89,6 +89,9 @@ Verdict thin slice:
 ## 5) Next step standard
 - conserver ce thin slice comme preuve du lot gele si tous les P0 restent PASS
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.4 (13-03-2026) : aligne le next step du thin slice sur l etat `FROZEN`.
 - v1.3 (13-03-2026) : passe le thin slice en `READY_TO_FREEZE` apres backfill des preuves.

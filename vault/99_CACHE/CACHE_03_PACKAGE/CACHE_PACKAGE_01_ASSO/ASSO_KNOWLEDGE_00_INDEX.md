@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 ---
 
-# ASSO_KNOWLEDGE_0O - Index
+# ASSO_KNOWLEDGE_00 - INDEX
 
 - [[ASSO_KNOWLEDGE_01_GLOSSARY]]
 
@@ -26,4 +26,3 @@ scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 - v1.2 (01-03-2026) : passage en FROZEN v1.2 + normalisation metadata.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation ids/depends_on.
 - v1.0 (01-03-2026) : index knowledge ASSO.
-

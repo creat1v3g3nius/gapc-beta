@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_04_DESTINATION_POLICY
 type: SETUP_PRODUCT
 title: SetupProductDestinationPolicy
-version: v1.2
-status: DRAFT
+version: v1.3
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, destination, policy]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_03_ROUTINE_OPERATIONS, SETUP_PRODUCT_05_LIFECYCLE_POLICY]
 arc: SYSTEM
@@ -35,6 +35,10 @@ Definir la destination normale d un product une fois son usage operationnel term
 ## Next step unique
 - formaliser les etats de cycle de vie et leurs criteres de passage.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.3 (15-03-2026) : passage en FROZEN de la politique de destination produit.
 - v1.2 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.1 (13-03-2026) : renommage `MP_04_PRODUCT_DESTINATION_POLICY` -> `SETUP_PRODUCT_04_DESTINATION_POLICY`.

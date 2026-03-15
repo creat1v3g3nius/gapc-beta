@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_07_GOVERNANCE_RULES
 type: SETUP_PRODUCT
 title: SetupProductGovernanceRules
-version: v1.3
-status: DRAFT
+version: v1.4
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, governance, rules]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_01_BOOTSTRAP, SETUP_PRODUCT_05_LIFECYCLE_POLICY, CONSTRAINT_01_RAG_SCOPE_POLICY, CONSTRAINT_03_SECRETS_POLICY, WORKFLOW_03_START_SESSION, WORKFLOW_04_END_SESSION, WORKFLOW_05_INCIDENT]
 arc: SYSTEM
@@ -48,7 +48,11 @@ Definir la gouvernance de products multiples dans le repo.
 ## Next step unique
 - valider cette couche de composition avant d ouvrir un nouveau product hors sample.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.4 (15-03-2026) : passage en FROZEN des regles de gouvernance `SETUP_PRODUCT`.
 - v1.3 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.2 (13-03-2026) : clarifie la frontiere gouvernance vs runbooks `WORKFLOW` et derive les obligations operatoires minimales.
 - v1.1 (13-03-2026) : renommage `MP_07_GOVERNANCE_RULES` -> `SETUP_PRODUCT_07_GOVERNANCE_RULES`.

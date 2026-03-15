@@ -54,6 +54,9 @@ Verdict:
 - `WS_00` est gelable comme noyau mentor `CORE + SYSTEM`.
 - Aucun secret ou PII observe.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.1 (13-03-2026) : passe la preuve `WS_00 RulesOnly` en `READY_TO_FREEZE`.
 - v1.0 (12-03-2026) : creation de la preuve `WS_00 RulesOnly` avec verdict PASS 6/6.

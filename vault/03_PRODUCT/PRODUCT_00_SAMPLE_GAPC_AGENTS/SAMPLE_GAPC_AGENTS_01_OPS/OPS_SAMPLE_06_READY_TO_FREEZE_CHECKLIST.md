@@ -67,6 +67,9 @@ Si un item P0 est KO :
 - ne pas declarer `FROZEN`
 - corriger la source ou la preuve manquante
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.5 (13-03-2026) : bascule la checklist produit de `READY_TO_FREEZE` a `FROZEN`.
 - v1.5 (13-03-2026) : remplace `WORKFLOW_08_TESTS_CODEX` par `EVIDENCE_SAMPLE_04_CODEX_IDE` dans les preuves de gel.

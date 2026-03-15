@@ -30,5 +30,8 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - utiliser `EVIDENCE_01_AGENTS` pour les preuves de qualification agents
 - conserver les references par ID, pas par chemin
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.0 (13-03-2026) : creation du sous-lot `EVIDENCE_00_FRAMEWORK` et indexation des preuves framework.

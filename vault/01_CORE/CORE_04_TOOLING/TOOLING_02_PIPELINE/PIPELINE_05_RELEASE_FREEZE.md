@@ -60,5 +60,5 @@ Output :
 - v1.0 (01-03-2026) : création pipeline gel/release CORE.
 
 ## Changelog
-- v1.2 (02-03-2026) : normalisation frontmatter.
 - v1.3 (04-03-2026) : correction heading.
+- v1.2 (02-03-2026) : normalisation frontmatter.

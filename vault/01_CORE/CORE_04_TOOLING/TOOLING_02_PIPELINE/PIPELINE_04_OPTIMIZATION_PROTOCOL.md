@@ -65,5 +65,5 @@ Tout travail d’optimisation doit déclarer :
 - v1.0 (01-03-2026) : création protocole d’optimisation CORE.
 
 ## Changelog
-- v1.2 (02-03-2026) : normalisation frontmatter.
 - v1.3 (04-03-2026) : correction heading.
+- v1.2 (02-03-2026) : normalisation frontmatter.

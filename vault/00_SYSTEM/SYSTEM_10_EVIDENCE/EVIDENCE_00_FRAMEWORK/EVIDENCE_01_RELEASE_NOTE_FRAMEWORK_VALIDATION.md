@@ -87,3 +87,6 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - v1.10 (09-03-2026) : bascule de naming/ID EVIDENCE vers la version FRAMEWORK canon.
 - v1.11 (10-03-2026) : trace la mise a jour setup SYSTEM_04_LLM, la creation des instructions verite Codex IDE (`SCRIPT_03`) et la conversion en skill (3 fichiers `skills/`).
 - v1.12 (10-03-2026) : ajoute la tracabilite `.gitignore` (ignore `skills/`) et le retrait du script bootstrap Git remplace par `SCRIPT_03` + skill.
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.

@@ -80,6 +80,9 @@ Next step unique:
 - relier cette preuve aux gates `DOD_00` et `DOD_03`
 ```
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.1 (13-03-2026) : passe la preuve Codex IDE en `READY_TO_FREEZE`.
 - v1.0 (13-03-2026) : creation de la preuve Codex IDE a partir du modele `EXTENSION_04_EVIDENCE_PACK`.

@@ -1,18 +1,18 @@
 ---
-id: CORE_INDEX_03_CONSTRAINT
+id: INDEX_03_CONSTRAINT
 type: INDEX
 title: CoreConstraintIndex
-version: v1.1
+version: v1.3
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 15-03-2026
 tags: [core, constraint, index]
 depends_on: []
 arc: CORE
 scope: vault/01_CORE/CORE_00_INDEX
 ---
 
-# CORE_INDEX_02 - Constraint
+# INDEX_03 - CONSTRAINT
 
 ## Objet
 
@@ -72,5 +72,7 @@ Règles de gestion du cache : temporaire, jamais source de vérité.
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
+- v1.2 (15-03-2026) : aligne le H1 sur l identifiant canonique de l index CORE.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index CONSTRAINT du CORE.

@@ -34,7 +34,7 @@ Axes analysés :
 
 ------------------------------------------------------------------------
 
-# 2. Synthèse exécutive
+## 2. Synthèse exécutive
 
   Version   Score global   Commentaire
   --------- -------------- ------------------------------------------------------
@@ -47,11 +47,11 @@ v4.3 est la version la plus équilibrée à ce stade.
 
 ------------------------------------------------------------------------
 
-# 3. Évolution détaillée
+## 3. Évolution détaillée
 
 ------------------------------------------------------------------------
 
-## 3.1 Pureté du CORE
+### 3.1 Pureté du CORE
 
 ### v4
 
@@ -73,7 +73,7 @@ Score évolution : ++
 
 ------------------------------------------------------------------------
 
-## 3.2 Hiérarchie d'autorité
+### 3.2 Hiérarchie d'autorité
 
 ### v4
 
@@ -95,7 +95,7 @@ Score évolution : ++
 
 ------------------------------------------------------------------------
 
-## 3.3 Discipline & Gouvernance
+### 3.3 Discipline & Gouvernance
 
 ### v4
 
@@ -117,7 +117,7 @@ Meilleur équilibre obtenu.
 
 ------------------------------------------------------------------------
 
-## 3.4 Robustesse RAG
+### 3.4 Robustesse RAG
 
 ### v4
 
@@ -139,7 +139,7 @@ Score évolution : ++
 
 ------------------------------------------------------------------------
 
-## 3.5 Modularité multi-packages
+### 3.5 Modularité multi-packages
 
 ### v4
 
@@ -159,7 +159,7 @@ Isolation + discipline générique = robuste.
 
 ------------------------------------------------------------------------
 
-## 3.6 Maintenabilité long terme
+### 3.6 Maintenabilité long terme
 
 ### v4
 
@@ -179,7 +179,7 @@ Architecture stable si ADR respectées.
 
 ------------------------------------------------------------------------
 
-# 4. Risques résiduels v4.3
+## 4. Risques résiduels v4.3
 
 R1 -- Explosion des extensions métier si packages nombreux\
 R2 -- Dépendance forte au respect RAG Scope Policy\
@@ -187,7 +187,7 @@ R3 -- Complexité cognitive si \> 8 packages actifs
 
 ------------------------------------------------------------------------
 
-# 5. Verdict stratégique
+## 5. Verdict stratégique
 
 v4.3 marque la stabilisation réelle de l'écosystème.
 
@@ -205,7 +205,7 @@ des premiers tests terrain.
 
 ------------------------------------------------------------------------
 
-# 6. Conclusion
+## 6. Conclusion
 
 La trajectoire globale est cohérente.
 

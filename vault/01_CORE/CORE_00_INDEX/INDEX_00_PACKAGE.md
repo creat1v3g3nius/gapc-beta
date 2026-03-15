@@ -1,18 +1,18 @@
 ---
-id: CORE_INDEX_00_PACKAGE
+id: INDEX_00_PACKAGE
 type: INDEX
 title: CorePackageNavigationIndex
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 05-03-2026
-updated: 05-03-2026
+updated: 15-03-2026
 tags: [core, index, navigation]
 depends_on: []
 arc: CORE
 scope: vault/01_CORE/CORE_00_INDEX
 ---
 
-# CORE_INDEX_00 - CORE Navigation Package
+# INDEX_00 - PACKAGE
 
 ## Objet
 
@@ -33,7 +33,7 @@ Le CORE ne contient pas :
 ## Navigation
 
 ### INDEX
-[[CORE_INDEX_01_META]] · [[CORE_INDEX_02_DISCIPLINE]] · [[CORE_INDEX_03_CONSTRAINT]] · [[CORE_INDEX_04_TOOLING]]
+[[INDEX_01_META]] · [[INDEX_02_DISCIPLINE]] · [[INDEX_03_CONSTRAINT]] · [[INDEX_04_TOOLING]]
 
 ---
 
@@ -47,21 +47,21 @@ Le CORE ne contient pas :
 
 
 ### DISCIPLINE
-[[DISCIPLINE_00_RAG_PROFILE]] ·  
-[[DISCIPLINE_01_GEL_RULES]] ·  
-[[DISCIPLINE_02_RAG_QG]] ·  
-[[DISCIPLINE_03_DOC_QG]] ·  
-[[DISCIPLINE_04_CODE_QG]] ·  
-[[DISCIPLINE_06_SCOPE_CLASSIFIER]] ·  
+[[DISCIPLINE_00_RAG_PROFILE]] ·
+[[DISCIPLINE_01_GEL_RULES]] ·
+[[DISCIPLINE_02_RAG_QG]] ·
+[[DISCIPLINE_03_DOC_QG]] ·
+[[DISCIPLINE_04_CODE_QG]] ·
+[[DISCIPLINE_06_SCOPE_CLASSIFIER]] ·
 [[DISCIPLINE_07_RISK_REGISTER]]
 
 ---
 
 ### CONSTRAINT
-[[CONSTRAINT_00_GUARD_RAILS]] ·  
-[[CONSTRAINT_01_RAG_SCOPE_POLICY]] ·  
-[[CONSTRAINT_02_NON_DUPLICATION_POLICY]] ·  
-[[CONSTRAINT_04_DECISION_TRACEABILITY_POLICY]] ·  
+[[CONSTRAINT_00_GUARD_RAILS]] ·
+[[CONSTRAINT_01_RAG_SCOPE_POLICY]] ·
+[[CONSTRAINT_02_NON_DUPLICATION_POLICY]] ·
+[[CONSTRAINT_04_DECISION_TRACEABILITY_POLICY]] ·
 [[CONSTRAINT_05_CACHE_POLICY]]
 
 ---
@@ -77,5 +77,6 @@ KNOWLEDGE · CHECKLIST · EXTENSION
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+- v1.2 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index PACKAGE du CORE.

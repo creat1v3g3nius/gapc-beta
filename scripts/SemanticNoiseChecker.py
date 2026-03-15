@@ -243,6 +243,23 @@ def add_issue(
     )
 
 
+def collect_repo_ids(repo_root: Path) -> set[str]:
+    vault_root = repo_root / "vault"
+    if not vault_root.exists():
+        return set()
+
+    repo_ids: set[str] = set()
+    for path in vault_root.rglob("*.md"):
+        result = parse_frontmatter_file(path, KEY_VALUE_RE)
+        if result.error_code is not None:
+            continue
+        doc_id = result.metadata.get("id", "").strip()
+        if doc_id:
+            repo_ids.add(doc_id)
+
+    return repo_ids
+
+
 def run_checker(args: argparse.Namespace) -> tuple[int, str]:
     repo_root = Path(args.repo_root).resolve()
     scope_root = (repo_root / args.scope).resolve()
@@ -300,7 +317,8 @@ def run_checker(args: argparse.Namespace) -> tuple[int, str]:
                 "keep one unique ID per file across scope",
             )
 
-    known_ids = sorted(id_index.keys())
+    repo_ids = collect_repo_ids(repo_root)
+    known_ids = sorted(repo_ids or set(id_index.keys()))
     id_semantic_keys = {doc_id: semantic_key_for_id(doc_id) for doc_id in known_ids}
 
     # Depends_on semantic and structural checks.
@@ -334,7 +352,7 @@ def run_checker(args: argparse.Namespace) -> tuple[int, str]:
                 )
                 continue
 
-            if dep in id_index:
+            if dep in repo_ids or dep in id_index:
                 continue
 
             suggestions = suggest_similar_ids(dep, known_ids, id_semantic_keys, args.max_suggestions)

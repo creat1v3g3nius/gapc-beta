@@ -2,17 +2,17 @@
 id: SCRIPT_04_DOC_INTEGRITY_CHECKER
 type: SCRIPTS
 title: DocIntegrityCheckerProcess
-version: v1.0
-status: READY_TO_FREEZE
+version: v1.1
+status: FROZEN
 created: 09-03-2026
-updated: 09-03-2026
+updated: 15-03-2026
 tags: [system, script, doc, integrity, validator, process]
 depends_on: [META_01_OUTPUT_PROTOCOL, META_02_SOP_STANDARD_LOOP, META_05_FRONTMATTER, DISCIPLINE_01_GEL_RULES, DISCIPLINE_03_DOC_QG, FRAMEWORK_00_AMELIORATION_PIPELINE]
 arc: SYSTEM
 scope: vault/00_SYSTEM/03_SCRIPT
 ---
 
-# SCRIPT_04_DOC_INTEGRITY_CHECKER
+# SCRIPT_04 - DOC_INTEGRITY_CHECKER
 
 ## Objet
 
@@ -325,3 +325,10 @@ Le process est réussi si :
 ## Next step unique
 
 Créer la **Spec Tech** du binaire/CLI `DocIntegrityChecker` à partir de ce process avant toute implémentation.
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
+## Changelog
+- v1.1 (15-03-2026) : passage en FROZEN apres implementation et validation du checker dans le repo.
+- v1.0 (09-03-2026) : creation du process `DocIntegrityChecker`.

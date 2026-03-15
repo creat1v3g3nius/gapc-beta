@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Check transverse document integrity across a markdown scope.
 
-DocIntegrityChecker focuses on structural cross-file consistency:
+DocIntegrityChecker focuses on transverse consistency:
 - id == filename
 - id uniqueness
 - depends_on validity and ghost references
 - naming harmony checks (title/type/prefix/scope coherence)
+- editorial governance checks (H1, changelog, FROZEN amendment section)
 """
 
 from __future__ import annotations
@@ -34,6 +35,9 @@ ARC_BY_FOLDER = {
 ID_RE = re.compile(r"^[A-Z0-9_]+$")
 TITLE_RE = re.compile(r"^[A-Z][A-Za-z0-9]*$")
 KEY_VALUE_RE = re.compile(r"^([A-Za-z_][A-Za-z0-9_-]*)\s*:\s*(.*)$")
+INDEX_DIR_RE = re.compile(r"^(?P<prefix>[A-Z0-9]+)_00_INDEX$")
+HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
+CHANGELOG_ENTRY_RE = re.compile(r"^- v(?P<version>\d+\.\d+) \((?P<date>\d{2}-\d{2}-\d{4})\)")
 
 # Allowed ID prefixes by frontmatter type for harmony checks.
 # This avoids over-flagging package-specific families (GAPC_*, ASSO_*, HOSTING_*).
@@ -93,6 +97,14 @@ class ParsedDoc:
     metadata: dict[str, str]
     line_map: dict[str, int]
     frontmatter_raw: str
+    text: str
+
+
+@dataclass(frozen=True)
+class Heading:
+    line: int
+    level: int
+    text: str
 
 
 def parse_args() -> argparse.Namespace:
@@ -161,6 +173,7 @@ def _line_for(line_map: dict[str, int], key: str) -> int:
 
 def parse_frontmatter(path: Path, repo_root: Path) -> tuple[ParsedDoc | None, list[Issue]]:
     rel_path = str(path.relative_to(repo_root))
+    text = path.read_text(encoding="utf-8", errors="replace")
     result = parse_frontmatter_file(path, KEY_VALUE_RE)
     if result.error_code == "missing_opening":
         return None, [
@@ -191,6 +204,7 @@ def parse_frontmatter(path: Path, repo_root: Path) -> tuple[ParsedDoc | None, li
         metadata=result.metadata,
         line_map=result.line_map,
         frontmatter_raw=result.raw,
+        text=text,
     )
     return parsed, []
 
@@ -218,6 +232,72 @@ def parse_depends_list(raw: str) -> list[str] | None:
     if not inner:
         return []
     return [chunk.strip() for chunk in inner.split(",") if chunk.strip()]
+
+
+def expected_index_prefix_for_doc(doc: ParsedDoc) -> str | None:
+    parent_name = doc.path.parent.name
+    match = INDEX_DIR_RE.match(parent_name)
+    if not match:
+        return None
+    prefix = match.group("prefix")
+    if prefix in {"SYSTEM", "CORE"}:
+        return "INDEX_"
+    return f"{prefix}_INDEX_"
+
+
+def expected_h1_prefix(doc_id: str) -> str | None:
+    parts = [part for part in doc_id.split("_") if part]
+    prefix_parts: list[str] = []
+    for part in parts:
+        prefix_parts.append(part)
+        if part.isdigit():
+            return "_".join(prefix_parts)
+    return None
+
+
+def parse_headings(text: str) -> list[Heading]:
+    headings: list[Heading] = []
+    in_code_fence = False
+
+    for line_no, raw_line in enumerate(text.splitlines(), start=1):
+        stripped = raw_line.rstrip()
+        if stripped.startswith("```"):
+            in_code_fence = not in_code_fence
+            continue
+        if in_code_fence:
+            continue
+        match = HEADING_RE.match(stripped)
+        if not match:
+            continue
+        headings.append(Heading(line=line_no, level=len(match.group(1)), text=match.group(2).strip()))
+
+    return headings
+
+
+def find_first_changelog_entry(text: str, headings: list[Heading]) -> tuple[int, str, str] | None:
+    changelog_heading: Heading | None = None
+    changelog_index = -1
+    for idx, heading in enumerate(headings):
+        if heading.text == "Changelog":
+            changelog_heading = heading
+            changelog_index = idx
+
+    if changelog_heading is None:
+        return None
+
+    lines = text.splitlines()
+    end_line = len(lines) + 1
+    for heading in headings[changelog_index + 1 :]:
+        if heading.level <= changelog_heading.level:
+            end_line = heading.line
+            break
+
+    for line_no in range(changelog_heading.line + 1, end_line):
+        match = CHANGELOG_ENTRY_RE.match(lines[line_no - 1].strip())
+        if match:
+            return line_no, f"v{match.group('version')}", match.group("date")
+
+    return None
 
 
 def in_scope(path: Path, scope_root: Path) -> bool:
@@ -265,6 +345,23 @@ def add_issue(
     )
 
 
+def collect_repo_ids(repo_root: Path) -> set[str]:
+    vault_root = repo_root / "vault"
+    if not vault_root.exists():
+        return set()
+
+    repo_ids: set[str] = set()
+    for path in vault_root.rglob("*.md"):
+        result = parse_frontmatter_file(path, KEY_VALUE_RE)
+        if result.error_code is not None:
+            continue
+        doc_id = result.metadata.get("id", "").strip()
+        if doc_id:
+            repo_ids.add(doc_id)
+
+    return repo_ids
+
+
 def run_checker(args: argparse.Namespace) -> tuple[int, str]:
     repo_root = Path(args.repo_root).resolve()
     scope_root = (repo_root / args.scope).resolve()
@@ -275,6 +372,7 @@ def run_checker(args: argparse.Namespace) -> tuple[int, str]:
 
     allowlist_ids = set(args.allow_id)
     allowlist_ids |= load_allowlist(args.allowlist_file)
+    repo_ids = collect_repo_ids(repo_root)
 
     files = collect_markdown_files(repo_root, scope_root, args.glob, args.file)
     parsed_docs: list[ParsedDoc] = []
@@ -406,6 +504,21 @@ def run_checker(args: argparse.Namespace) -> tuple[int, str]:
                 "align type and ID family or expand checker policy if this family is valid",
             )
 
+        expected_index_prefix = expected_index_prefix_for_doc(doc)
+        if doc_type == "INDEX" and expected_index_prefix and doc_id and not doc_id.startswith(
+            expected_index_prefix
+        ):
+            add_issue(
+                issues,
+                "P1",
+                doc,
+                _line_for(doc.line_map, "id"),
+                "index_family_naming",
+                "index file should use canonical family prefix "
+                f"{expected_index_prefix}NUM_TITRE, got {doc_id}",
+                f"rename file/id to start with {expected_index_prefix}",
+            )
+
         # P1 harmony: scope should include file path parent.
         if scope.startswith("vault/"):
             scope_path = (repo_root / scope).resolve()
@@ -419,6 +532,100 @@ def run_checker(args: argparse.Namespace) -> tuple[int, str]:
                     "file is outside declared scope directory",
                     "align scope with actual file directory",
                 )
+
+        headings = parse_headings(doc.text)
+        h1_headings = [heading for heading in headings if heading.level == 1]
+        if len(h1_headings) != 1:
+            add_issue(
+                issues,
+                "P0",
+                doc,
+                h1_headings[0].line if h1_headings else 1,
+                "h1_unique",
+                f"document must contain exactly one H1, found {len(h1_headings)}",
+                "keep a single H1 in the markdown body",
+            )
+        elif doc_id:
+            expected_prefix = expected_h1_prefix(doc_id)
+            h1_text = h1_headings[0].text
+            if expected_prefix and not (
+                h1_text.startswith(f"{expected_prefix} - ")
+                or h1_text.startswith(f"{expected_prefix} — ")
+            ):
+                add_issue(
+                    issues,
+                    "P1",
+                    doc,
+                    h1_headings[0].line,
+                    "h1_naming",
+                    f"H1 should start with `{expected_prefix} - `, got `{h1_text}`",
+                    f"rename H1 to start with `{expected_prefix} - `",
+                )
+
+        status = doc.metadata.get("status", "").strip()
+        if status == "FROZEN":
+            amend_heading = next(
+                (heading for heading in headings if heading.text == "Amendements (FROZEN)"),
+                None,
+            )
+            if amend_heading is None:
+                add_issue(
+                    issues,
+                    "P0",
+                    doc,
+                    1,
+                    "frozen_amendments_section",
+                    "FROZEN document must include `## Amendements (FROZEN)`",
+                    "add the controlled amendment section for FROZEN documents",
+                )
+
+            changelog_heading = next((heading for heading in headings if heading.text == "Changelog"), None)
+            if changelog_heading is None:
+                add_issue(
+                    issues,
+                    "P1",
+                    doc,
+                    1,
+                    "frozen_changelog_section",
+                    "FROZEN document should include a `Changelog` section for traceability",
+                    "add a changelog section with dated version entries",
+                )
+            else:
+                first_entry = find_first_changelog_entry(doc.text, headings)
+                if first_entry is None:
+                    add_issue(
+                        issues,
+                        "P1",
+                        doc,
+                        changelog_heading.line,
+                        "frozen_changelog_entry",
+                        "Changelog section should start with a dated `- vX.Y (JJ-MM-AAAA)` entry",
+                        "add a dated version entry under the changelog section",
+                    )
+                else:
+                    entry_line, latest_version, latest_date = first_entry
+                    version = doc.metadata.get("version", "").strip()
+                    updated = doc.metadata.get("updated", "").strip()
+                    if version and version != latest_version:
+                        add_issue(
+                            issues,
+                            "P1",
+                            doc,
+                            entry_line,
+                            "version_changelog_harmony",
+                            f"frontmatter version `{version}` does not match latest changelog entry `{latest_version}`",
+                            "align frontmatter version with the latest changelog entry",
+                        )
+                    if updated and updated != latest_date:
+                        add_issue(
+                            issues,
+                            "P1",
+                            doc,
+                            entry_line,
+                            "updated_changelog_harmony",
+                            f"frontmatter updated `{updated}` does not match latest changelog date `{latest_date}`",
+                            "align frontmatter updated with the latest changelog date",
+                        )
 
     # Step 3: global ID index and duplicates.
     id_index: dict[str, list[ParsedDoc]] = {}
@@ -485,7 +692,7 @@ def run_checker(args: argparse.Namespace) -> tuple[int, str]:
                     "normalize dependency ID naming",
                 )
 
-            if dep not in id_index and dep not in allowlist_ids:
+            if dep not in id_index and dep not in repo_ids and dep not in allowlist_ids:
                 add_issue(
                     issues,
                     "P0",

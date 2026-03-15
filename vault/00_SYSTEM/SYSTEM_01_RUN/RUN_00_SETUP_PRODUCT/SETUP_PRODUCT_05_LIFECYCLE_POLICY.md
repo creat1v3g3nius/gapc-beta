@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_05_LIFECYCLE_POLICY
 type: SETUP_PRODUCT
 title: SetupProductLifecyclePolicy
-version: v1.3
-status: DRAFT
+version: v1.4
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, lifecycle, policy]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_04_DESTINATION_POLICY, DISCIPLINE_01_GEL_RULES, CHECKLIST_03_READY_TO_FREEZE, WORKFLOW_06_VAULT_HEALTH_CHECK, WORKFLOW_07_TESTS_LLM, WORKFLOW_08_TESTS_CODEX]
 arc: SYSTEM
@@ -48,7 +48,11 @@ Definir les etats d un product et les criteres de passage.
 ## Next step unique
 - formaliser le protocole de merge-out et d extraction.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.4 (15-03-2026) : passage en FROZEN de la politique de cycle de vie produit.
 - v1.3 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.2 (13-03-2026) : clarifie la frontiere lifecycle vs execution `WORKFLOW` et ajoute les garde-fous de rerun.
 - v1.1 (13-03-2026) : renommage `MP_05_LIFECYCLE_POLICY` -> `SETUP_PRODUCT_05_LIFECYCLE_POLICY`.

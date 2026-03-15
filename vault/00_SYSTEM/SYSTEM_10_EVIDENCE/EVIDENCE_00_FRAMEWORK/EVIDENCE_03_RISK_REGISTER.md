@@ -136,3 +136,6 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - v1.14 (09-03-2026) : bascule semantique EVIDENCE vers FRAMEWORK canon + alignement des liens.
 - v1.15 (10-03-2026) : trace lot setup SYSTEM_04_LLM + creation instructions verite Codex IDE + conversion `SCRIPT_03` en skill avec projection executable.
 - v1.16 (10-03-2026) : ajoute la trace hygiene repo (`.gitignore` -> `skills/`) et le retrait de `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.
+
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.

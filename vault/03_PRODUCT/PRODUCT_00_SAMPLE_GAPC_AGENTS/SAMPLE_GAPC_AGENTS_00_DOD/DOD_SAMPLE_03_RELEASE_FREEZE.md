@@ -77,6 +77,9 @@ Next step unique:
 - pas de secret ni PII
 - pas de multi-package ou multi-product
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
 - v1.4 (13-03-2026) : bascule le gate final produit en `FROZEN`.
 - v1.4 (13-03-2026) : raccorde la release note produit au gate `READY_TO_FREEZE`.

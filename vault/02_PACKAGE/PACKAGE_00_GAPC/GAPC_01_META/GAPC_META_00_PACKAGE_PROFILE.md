@@ -12,7 +12,7 @@ arc: PACKAGE
 scope: vault/02_PACKAGE/PACKAGE_00_GAPC/GAPC_01_META
 ---
 
-# GAPC_00_META - Package Profile (P1) 
+# GAPC_META_00 - PACKAGE_PROFILE (P1)
 
 ## Objet
 Définir le **profil du package** `PACKAGE_00_GAPC` (vérité de base), sans dupliquer la gouvernance CORE :

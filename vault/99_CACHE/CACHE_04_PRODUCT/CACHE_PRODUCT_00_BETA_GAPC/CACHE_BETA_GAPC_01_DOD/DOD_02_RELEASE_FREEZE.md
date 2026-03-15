@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 02 Release / Freeze — v1.0 (P0)
+# DOD_02 - RELEASE_FREEZE
 
 ## Objet
 Définir la DoD “gel” appliquée dans le workspace product :

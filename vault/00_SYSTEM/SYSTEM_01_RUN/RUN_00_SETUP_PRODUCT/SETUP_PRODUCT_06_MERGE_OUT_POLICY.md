@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_06_MERGE_OUT_POLICY
 type: SETUP_PRODUCT
 title: SetupProductMergeOutPolicy
-version: v1.2
-status: DRAFT
+version: v1.3
+status: FROZEN
 created: 13-03-2026
-updated: 13-03-2026
+updated: 15-03-2026
 tags: [system, multi-product, merge-out, extraction]
 depends_on: [SETUP_PRODUCT_00_INDEX, SETUP_PRODUCT_04_DESTINATION_POLICY, SETUP_PRODUCT_05_LIFECYCLE_POLICY]
 arc: SYSTEM
@@ -38,6 +38,10 @@ Definir comment un product finalise sort du framework.
 ## Next step unique
 - cadrer la gouvernance multi-products pour eviter les collisions d usage.
 
+## Amendements (FROZEN)
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+- v1.3 (15-03-2026) : passage en FROZEN de la politique de merge-out produit.
 - v1.2 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
 - v1.1 (13-03-2026) : renommage `MP_06_MERGE_OUT_POLICY` -> `SETUP_PRODUCT_06_MERGE_OUT_POLICY`.

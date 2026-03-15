@@ -12,7 +12,7 @@ arc: CACHE
 scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_BETA_GAPC/CACHE_BETA_GAPC_01_DOD
 ---
 
-# GAPCBETA DoD — 00 Beta Validation — v1.0 (P0)
+# DOD_00 - BETA_VALIDATION
 
 ## Objet
 Valider que **PRODUCT_00_GAPCBETA** prouve que le package **GAPC** est utilisable pour produire un premier product :
