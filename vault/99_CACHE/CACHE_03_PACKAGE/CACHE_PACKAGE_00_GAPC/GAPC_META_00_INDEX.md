@@ -15,12 +15,16 @@ scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_00_GAPC/
 # GAPC_META_00 — Index
 
 ## Objet
-Index des fichiers **META/CONSTRAINT** propres au package GAPC (overlays), sans duplication des SOT CORE.
+
+Index des fichiers **META/CONSTRAINT** propres au package GAPC (overlays), sans
+duplication des SOT CORE.
 
 ## META
+
 - [[GAPC_META_01_PACKAGE_PROFILE]]
 
 ## DISCIPLINE
+
 - [[GAPC_DISCIPLINE_00_RAG_PROFILE]]
 - [[GAPC_DISCIPLINE_01_GEL_RULES]]
 - [[GAPC_DISCIPLINE_02_RAG_QG]]
@@ -28,6 +32,7 @@ Index des fichiers **META/CONSTRAINT** propres au package GAPC (overlays), sans 
 - [[GAPC_DISCIPLINE_04_RISK_REGISTER]]
 
 ## CONSTRAINT
+
 - [[GAPC_CONSTRAINT_00_ALLOW_LIST]]
 - [[GAPC_CONSTRAINT_01_SOURCES_POLICY]]
 - [[GAPC_CONSTRAINT_02_EXCEPTION_POLICY]]
@@ -35,37 +40,46 @@ Index des fichiers **META/CONSTRAINT** propres au package GAPC (overlays), sans 
 ## TOOLING
 
 ### KNOWLEDGE
+
 - [[GAPC_TOOLING_KNOWLEDGE_00_INDEX]]
 - [[GAPC_TOOLING_KNOWLEDGE_00_ALLOWED_TOOLS]]
 - [[GAPC_TOOLING_KNOWLEDGE_01_SOURCES_PRIORITY]]
 
 ### TPL
+
 - [[GAPC_TOOLING_TPL_00_BACKLOG_CO_ADDON]]
 - [[GAPC_TOOLING_TPL_01_RELEASE_NOTE_ADDON]]
 - [[GAPC_TOOLING_TPL_02_BETA_EVIDENCE_PACK]]
 - [[GAPC_TOOLING_TPL_03_RAG_SESSION_LOG]]
 
 ### PIPELINE
+
 - [[GAPC_INDEX_04_TOOLING]]
 - [[GAPC_TOOLING_PIPELINE_00_PACKAGE]]
 - [[GAPC_TOOLING_PIPELINE_02_WORKSPACE_RULES]]
 
 ### CHECKLIST
+
 - [[GAPC_TOOLING_CHECKLIST_00_INDEX]]
 - [[GAPC_TOOLING_CHECKLIST_01_START_SESSION_ADDON]]
 - [[GAPC_TOOLING_CHECKLIST_02_READY_TO_FREEZE_ADDON]]
 
 ### EXTENSION
+
 - [[GAPC_TOOLING_EXTENSION_00_INDEX]]
 - [[GAPC_TOOLING_EXTENSION_00_ALLOW_LIST]]
 - [[GAPC_TOOLING_CHECKLIST_02_EVIDENCE_REQUIREMENTS]]
 
 ## Changelog
-- v1.2 (04-03-2026) : correction `scope` du frontmatter + déplacement dans CACHE.
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/depends_on.
+
+- v1.2 (04-03-2026) : correction `scope` du frontmatter + déplacement dans
+  CACHE.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation
+  frontmatter/id/depends_on.
 - v1.0 (01-03-2026) : création index.
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.

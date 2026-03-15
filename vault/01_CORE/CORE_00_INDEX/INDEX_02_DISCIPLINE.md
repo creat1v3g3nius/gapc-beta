@@ -19,6 +19,7 @@ scope: vault/01_CORE/CORE_00_INDEX
 Index des **disciplines génériques du framework GAPC**.
 
 Les disciplines définissent :
+
 - standards de qualité
 - règles d’exécution
 - gouvernance documentaire
@@ -32,7 +33,8 @@ Les disciplines définissent :
 
 [[DISCIPLINE_00_RAG_PROFILE]]
 
-Définit le profil RAG du framework, la logique d’ingestion, l’isolation package/product.
+Définit le profil RAG du framework,
+la logique d’ingestion, l’isolation package/product.
 
 ---
 
@@ -87,10 +89,13 @@ Registre des risques du framework.
 ---
 
 ## Amendements (FROZEN)
+
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
-- v1.2 (15-03-2026) : corrige le H1 et réaligne la version courante avec l historique du changelog.
+- v1.2 (15-03-2026) : corrige le H1
+  et réaligne la version courante avec l historique du changelog.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index DISCIPLINE du CORE.

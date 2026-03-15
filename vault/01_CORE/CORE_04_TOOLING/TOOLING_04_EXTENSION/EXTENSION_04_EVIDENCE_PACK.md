@@ -15,7 +15,9 @@ scope: vault/01_CORE/CORE_04_TOOLING/TOOLING_04_EXTENSION
 # EXTENSION_04 - Evidence Pack (CORE)
 
 ## Objet
-Standardiser la **preuve minimale** d’une production via une extension (outil externe), pour traçabilité et reproductibilité.
+
+Standardiser la **preuve minimale** d’une production via une extension (outil
+externe), pour traçabilité et reproductibilité.
 
 CORE strict : pas de secrets, pas de données perso.
 
@@ -45,10 +47,12 @@ Règle : sans evidence pack, un asset ne peut pas être déclaré “livrable fi
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection heading.
+
+- v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection
+  heading.
 - v1.1 (01-03-2026) : correction erreurs.
 - v1.0 (01-03-2026) : version initiale.
-

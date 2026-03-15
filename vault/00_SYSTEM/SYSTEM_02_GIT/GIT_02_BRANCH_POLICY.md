@@ -14,22 +14,26 @@ scope: vault/00_SYSTEM/SYSTEM_02_GIT
 
 # GIT_02 - Branch Policy (main/work + merge + tags)
 
-Permet de définir une gouvernance Git **simple, safe, scalable** pour le framework GAPC, alignée avec l’architecture :
+Permet de définir une gouvernance Git **simple, safe, scalable**
+pour le framework GAPC, alignée avec l’architecture :
 `00_SYSTEM/01_CORE/02_PACKAGE/03_PRODUCT/04_CACHE`.
 
 Utilite operationnelle reelle :
+
 - arbitrer quand une branche `work/*` est necessaire,
 - arbitrer quand un squash merge vers `main` est justifie,
 - cadrer le mode solo vs mode revue / PR,
 - fournir une policy de stabilisation, pas un guide de patch quotidien.
 
 Principes :
+
 - `main` = état stable (présentable / gelable)
 - `work/*` = branches de travail quand un lot depasse un patch local simple
 - merges = contrôlés (validator + smoke)
 - tags = jalons reproductibles (freeze)
 
 Contraintes :
+
 - **No secrets**
 - **1 intention = 1 commit** (ou squash merge sur `main`)
 - pas de commit direct sur `main` (sauf hotfix)
@@ -39,6 +43,7 @@ Contraintes :
 ## 1) Règles (P0)
 
 ### 1.1) main (stable)
+
 - Interdit : commit direct (sauf **hotfix** documenté).
 - Doit rester “green” :
   - validator frontmatter/naming OK
@@ -46,24 +51,43 @@ Contraintes :
 - Sert de base pour toutes les branches `work/*`.
 
 ### 1.2) work/* (branches de travail)
-- Toute modification structurante ou multi-fichiers peut se faire dans une branche `work/<topic>`.
-- `topic` = intention courte (ex : `work/frontmatter-validator`, `work/runbooks-update`).
+
+- Toute modification structurante ou multi-fichiers peut se faire
+
+  dans une branche `work/<topic>`.
+
+- `topic` = intention courte
+
+  (ex : `work/frontmatter-validator`, `work/runbooks-update`).
+
 - Une branche = idéalement **1 CO** (ou une intention claire).
-- Tu peux faire plusieurs commits sur `work/*`, tant que l’intention reste unique.
+- Tu peux faire plusieurs commits sur `work/*`,
+
+  tant que l’intention reste unique.
 
 Mode operationnel :
-- patch local simple, review rapide, repo solo : un commit direct peut exister si les checks pre-push restent PASS,
-- lot long, review necessaire, hotfix prepare, freeze, ou merge structurel : brancher via `work/*`.
+
+- patch local simple, review rapide, repo solo :
+
+  un commit direct peut exister si les checks pre-push restent PASS,
+
+- lot long, review necessaire, hotfix prepare, freeze,
+
+  ou merge structurel : brancher via `work/*`.
 
 Ce document sert donc surtout a arbitrer :
+
 - faut-il brancher ?
 - faut-il squasher ?
 - faut-il tagger ?
 
 ### 1.3) Un seul package/product actifs par session
+
 Si ton travail touche un package ou un product, note :
+
 - package actif
 - product actif
+
 dans le CO / note de session.
 But : éviter les mélanges (RAG + docs).
 
@@ -79,6 +103,7 @@ git push -u origin main
 ```
 
 Créer ta première branche :
+
 ```bash
 git switch -c work/bootstrap
 git push -u origin work/bootstrap
@@ -89,6 +114,7 @@ git push -u origin work/bootstrap
 ## 3) Cycle de travail standard
 
 ### 3.1) Démarrer une intention
+
 ```bash
 git switch main
 git pull --rebase
@@ -96,6 +122,7 @@ git switch -c work/<topic>
 ```
 
 ### 3.2) Travailler (commits sur work)
+
 - Lire diff → stage sélectif → (validator/smoke) → commit → push
 
 ```bash
@@ -111,15 +138,18 @@ git push -u origin work/<topic>
 ### 3.3) Intégrer dans main (safe)
 
 #### Option recommandée : squash merge
+
 Objectif : garder `main` propre (1 intention = 1 commit).
 
 Checklist avant merge :
+
 - [ ] diff relu
 - [ ] validator OK
 - [ ] smoke OK (si applicable)
 - [ ] pas de secrets (check `.env` / `.gitignore`)
 
 Merge (selon ton environnement) :
+
 - via PR GitHub (recommandé, même solo)
 - ou local :
 
@@ -132,21 +162,31 @@ git push
 ```
 
 #### Nettoyage (option)
+
 ```bash
 git branch -d work/<topic>
 git push origin --delete work/<topic>
 ```
 
 ### 3.4) Règle PR GitHub (même solo)
-Objectif : conserver une trace de revue et une porte d’entrée scalable équipe.
+
+Objectif : conserver une trace de revue
+et une porte d’entrée scalable équipe.
 
 Règle :
-- toute branche `work/*` destinée à `main` passe par une PR GitHub (même en solo)
+
+- toute branche `work/*` destinée à `main`
+
+  passe par une PR GitHub (même en solo)
+
 - stratégie de merge : **Squash and merge**
 - titre PR aligné sur le commit squash final (1 intention)
-- checklist obligatoire : validator, smoke (si applicable), no-secrets, diff relu
+- checklist obligatoire :
+
+  validator, smoke (si applicable), no-secrets, diff relu
 
 Template :
+
 - utiliser `.github/pull_request_template.md` comme trame standard
 
 ---
@@ -154,10 +194,13 @@ Template :
 ## 4) Hotfix (exception)
 
 Quand `main` est cassée (P0) :
+
 - créer une branche dédiée :
+
 ```bash
 git switch -c work/hotfix-<topic>
 ```
+
 - appliquer fix minimal + validator/smoke
 - squash merge dans `main`
 - tag si nécessaire
@@ -167,11 +210,14 @@ git switch -c work/hotfix-<topic>
 ## 5) Tags (jalons “freeze”)
 
 ### 5.1) Quand tagger
+
 Tagger quand :
+
 - `main` est stable et reproductible
 - l’architecture ou une release est “READY_TO_FREEZE/FROZEN”
 
 ### 5.2) Format recommandé
+
 - `v0.1`, `v0.2`, `v1.0` (jalons framework)
 - option : suffixe `-beta` si besoin
 
@@ -187,18 +233,22 @@ Règle : **1 tag = 1 état reproductible**.
 ## 6) Cas fréquents / erreurs
 
 ### 6.1) Mauvaise branche
+
 ```bash
 git branch --show-current
 git switch work/<topic>
 ```
 
 ### 6.2) Detached HEAD
+
 ```bash
 git switch -c work/recover-detached
 ```
 
 ### 6.3) Merge/Rebase bloqué
+
 Abort (si nécessaire) :
+
 ```bash
 git merge --abort
 git rebase --abort
@@ -209,6 +259,7 @@ git rebase --abort
 ## 7) DoD (Definition of Done) d’un merge
 
 Un merge vers `main` est acceptable si :
+
 - [ ] 1 intention (ou squash)
 - [ ] validator OK
 - [ ] smoke OK (si applicable)
@@ -218,15 +269,23 @@ Un merge vers `main` est acceptable si :
 ---
 
 ## 8) Changelog
+
 - v1.0 (28-02-2026) : version multi-branch work/*, squash merge, tags freeze.
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.3 (13-03-2026) : recadre l utilite operationnelle reelle ; depend moins du bootstrap et davantage de `GIT_03_PATCH_COMMIT`.
-- v1.2 (06-03-2026) : ajout règle PR GitHub même solo + référence template `.github/pull_request_template.md`.
+
+- v1.3 (13-03-2026) : recadre l utilite operationnelle reelle ;
+
+  depend moins du bootstrap
+  et davantage de `GIT_03_PATCH_COMMIT`.
+
+- v1.2 (06-03-2026) : ajout règle PR GitHub même solo
+  + référence template `.github/pull_request_template.md`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

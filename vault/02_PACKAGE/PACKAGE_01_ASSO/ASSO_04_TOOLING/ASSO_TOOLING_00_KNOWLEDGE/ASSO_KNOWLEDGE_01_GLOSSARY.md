@@ -13,7 +13,9 @@ scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_04_TOOLING/ASSO_TOOLING_00_KNOWLEDG
 ---
 
 # ASSO_KNOWLEDGE_01 - Glossary
+
 ## Termes
+
 - Objet social
 - Gouvernance
 - Convention
@@ -21,15 +23,18 @@ scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_04_TOOLING/ASSO_TOOLING_00_KNOWLEDG
 - Livrable canon (FROZEN)
 
 ## Règles
+
 - 1 concept = 1 terme
 - si doute : ajouter au glossaire (référence > copie)
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.4 (06-03-2026) : alignement `id==filename` et heading.
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (01-03-2026) : passage en FROZEN v1.2 + normalisation metadata.

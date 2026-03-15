@@ -14,16 +14,20 @@ scope: vault/01_CORE/CORE_02_DISCIPLINE
 
 # DISCIPLINE_04 - Quality Gates Code (règles transversales)
 
-Gates binaires (PASS/FAIL) pour qualifier un **changement exécutable** au moment :
+Gates binaires (PASS/FAIL) pour qualifier un **changement exécutable** au moment
+:
+
 - MERGE (intégration),
 - RELEASE (gel reproductible).
 
-CORE strict : aucune procédure opérateur, aucun outil nommé, aucune cible spécifique.  
+CORE strict : aucune procédure opérateur, aucun outil nommé, aucune cible
+spécifique.
 Contrôles concrets : SYSTEM.
 
 ---
 
 ## 1) Invariants CORE (P0)
+
 - No-secrets
 - Traçabilité (ADR-lite si décision structurante)
 - Non‑régression (conventions + hiérarchie d’autorité)
@@ -32,7 +36,9 @@ Contrôles concrets : SYSTEM.
 ---
 
 ## 2) Gate MERGE — PASS/FAIL (P0)
+
 PASS si :
+
 - intention atomique (ou lot cohérent justifié),
 - contrôles d’exécution requis (SYSTEM) passent,
 - no-secrets respecté,
@@ -44,7 +50,9 @@ FAIL sinon.
 ---
 
 ## 3) Gate RELEASE — PASS/FAIL (P0)
+
 RELEASE = MERGE PASS + :
+
 - reproductibilité documentée (SYSTEM),
 - observabilité minimale,
 - rollback/backout défini,
@@ -53,19 +61,24 @@ RELEASE = MERGE PASS + :
 ---
 
 ## 4) Extensions PACKAGE/PRODUCT
+
 Peuvent renforcer, ne peuvent pas affaiblir.
 
 ---
 
 ### Changelog
-- v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE strict.
+
+- v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE
+  strict.
 - v1.0 (01-03-2026) : version initiale.
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (04-03-2026) : corrections frontmatter + heading.
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

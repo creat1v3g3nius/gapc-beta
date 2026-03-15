@@ -7,7 +7,12 @@ status: FROZEN
 created: 01-03-2026
 updated: 10-03-2026
 tags: [package, gapc, tooling, tpl, addon, evidence, p1]
-depends_on: [TPL_10_RELEASE_NOTE, DISCIPLINE_01_GEL_RULES, GAPC_DISCIPLINE_01_GEL_RULES, GAPC_DISCIPLINE_04_RISK_REGISTER, GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER]
+depends_on:
+  - TPL_10_RELEASE_NOTE
+  - DISCIPLINE_01_GEL_RULES
+  - GAPC_DISCIPLINE_01_GEL_RULES
+  - GAPC_DISCIPLINE_04_RISK_REGISTER
+  - GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER
 arc: PACKAGE
 scope: vault/02_PACKAGE/PACKAGE_00_GAPC/GAPC_04_TOOLING/GAPC_TOOLING_01_TPL
 ---
@@ -15,8 +20,11 @@ scope: vault/02_PACKAGE/PACKAGE_00_GAPC/GAPC_04_TOOLING/GAPC_TOOLING_01_TPL
 # GAPC_TOOLING_TPL_02 - Beta Evidence Pack
 
 ## Objet
-Standardiser la **preuve minimale** que GAPC est “product-ready” dans un workspace product (ex : `PRODUCT_XX`).
-Ce template **complète** les TPL CORE (Release Note / Backlog CO) sans les dupliquer.
+
+Standardiser la **preuve minimale** que GAPC est “product-ready” dans un
+workspace product (ex : `PRODUCT_XX`).
+Ce template **complète** les TPL CORE (Release Note / Backlog CO) sans les
+dupliquer.
 
 CORE strict : no-secrets / no-PII.
 
@@ -68,16 +76,21 @@ Package version:
 ```
 
 ### Notes
+
 - Sans evidence pack, ne pas déclarer “GAPC ready”.
 - Ne pas coller de secrets/tokens/PII dans ce document.
 
 ## Changelog
-- v1.3 (10-03-2026) : remplace les exemples de produit legacy par un placeholder generique `PRODUCT_XX`.
+
+- v1.3 (10-03-2026) : remplace les exemples de produit legacy par un placeholder
+  generique `PRODUCT_XX`.
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
-- v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/depends_on.
+- v1.1 (02-03-2026) : passage en FROZEN + normalisation
+  frontmatter/id/depends_on.
 - v1.0 (01-03-2026) : création template Evidence Pack GAPC (P1).
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.

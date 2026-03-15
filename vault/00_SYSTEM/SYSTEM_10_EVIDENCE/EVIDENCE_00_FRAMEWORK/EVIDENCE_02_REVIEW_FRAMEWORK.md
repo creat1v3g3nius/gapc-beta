@@ -7,7 +7,19 @@ status: FROZEN
 created: 06-03-2026
 updated: 13-03-2026
 tags: [system, evidence, review, framework, quality]
-depends_on: [OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD, TPL_09_REVIEW_CHECK, WORKFLOW_06_VAULT_HEALTH_CHECK, EVIDENCE_03_RISK_REGISTER, SCRIPT_04_DOC_INTEGRITY_CHECKER, SCRIPT_05_SEMANTIC_NOISE_CHECKER, SCRIPT_06_FRONTMATTER_UTILS, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY, LLM_03_MENTOR_UTILITES, SCRIPT_03_INSTRUCTIONS_CODEX]
+depends_on:
+  - OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD
+  - TPL_09_REVIEW_CHECK
+  - WORKFLOW_06_VAULT_HEALTH_CHECK
+  - EVIDENCE_03_RISK_REGISTER
+  - SCRIPT_04_DOC_INTEGRITY_CHECKER
+  - SCRIPT_05_SEMANTIC_NOISE_CHECKER
+  - SCRIPT_06_FRONTMATTER_UTILS
+  - LLM_00_RAG_PRINCIPES
+  - LLM_01_INGESTION_PROTOCOL
+  - LLM_02_PERMISSION_SECURITY
+  - LLM_03_MENTOR_UTILITES
+  - SCRIPT_03_INSTRUCTIONS_CODEX
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 ---
@@ -15,6 +27,7 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 # EVIDENCE_02 - Review Framework
 
 ## Doc
+
 - [x] Frontmatter conforme (scope vault global)
 - [x] H1 unique + sections coherentes
 - [x] Non-duplication sur evidence product
@@ -22,15 +35,19 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - [x] No-secrets/no-PII
 - [x] Setup operationnel mis a jour avec references SYSTEM_04_LLM
 - [x] Instructions verite Codex IDE creees via `SCRIPT_03_INSTRUCTIONS_CODEX`
-- [x] Conversion `SCRIPT_03` en skill + 3 fichiers `skills/codex-ide-instructions/*` traces
-- [x] Clarification SOT documentee: CORE/PACKAGE/PRODUCT (fond), SCRIPT_03 (procedural), SKILL.md (projection executable)
+- [x] Conversion `SCRIPT_03` en skill + 3 fichiers
+  `skills/codex-ide-instructions/*` traces
+- [x] Clarification SOT documentee: CORE/PACKAGE/PRODUCT (fond), SCRIPT_03
+  (procedural), SKILL.md (projection executable)
 - [x] Mise a jour `.gitignore` tracee (ignore `skills/`)
-- [x] Retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` trace (scope actif remplace par `SCRIPT_03` + skill)
+- [x] Retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md` trace (scope actif remplace par
+  `SCRIPT_03` + skill)
 - [x] Convergence `WORKFLOW + SETUP_PRODUCT` documentee dans `SYSTEM`
 - [x] Index SYSTEM raccordes au cadre final
 - [x] Annexes `WORKFLOW_01` / `WORKFLOW_02` declasses et signalees comme legacy
 
 ## Code/Tooling
+
 - [x] Intention atomique (CO remediation)
 - [x] Controles requis PASS (strict global + smoke)
 - [x] DocIntegrityChecker PASS (`P0=0`, `P1=0`, `P2=0`)
@@ -41,35 +58,52 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 - [x] Traceabilite (ADR scope presente)
 - [x] Registre risques consolide et a jour (`EVIDENCE_03_RISK_REGISTER`)
 - [x] Backout plan possible (revert commit)
-- [x] `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX` toujours raccordes au cadre final
+- [x] `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX` toujours raccordes au
+  cadre final
 
 ## Verdict
+
 - Verdict: OK
 - P0 fails: aucun sur le scope global cible.
 - DocIntegrity: PASS (aucun ecart P0/P1).
 - Risques clotures: R-0001, R-0005, R-0009, R-0011.
-- Tracabilite R-0001: archive en cache/deprecated `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
+- Tracabilite R-0001: archive en cache/deprecated
+  `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
 - Setup operationnel SYSTEM_04_LLM: aligne.
 - Chaine SOT Codex IDE: alignee et tracee (`SCRIPT_03` -> `SKILL.md`).
 - Hygiene repo: `.gitignore` aligne pour `skills/`.
 - Retrait bootstrap script: trace et coherent avec le nouveau cadre Codex IDE.
 - Cadre `WORKFLOW` vs `SETUP_PRODUCT`: aligne et verifiable.
-- Next step unique: maintenir la routine WORKFLOW_06 + mise a jour du registre a chaque lot.
+- Next step unique: maintenir la routine WORKFLOW_06 + mise a jour du registre a
+  chaque lot.
 
 ## Changelog
-- v1.13 (13-03-2026) : rehost dans `EVIDENCE_00_FRAMEWORK` et renumerotation `EVIDENCE_01 -> EVIDENCE_02`.
-- v1.12 (13-03-2026) : ajoute la revue finale du cadre `WORKFLOW + SETUP_PRODUCT` et du raccord des index SYSTEM.
-- v1.1 (06-03-2026) : ajoute le controle vault health check dans la revue finale.
+
+- v1.13 (13-03-2026) : rehost dans `EVIDENCE_00_FRAMEWORK` et renumerotation
+  `EVIDENCE_01 -> EVIDENCE_02`.
+- v1.12 (13-03-2026) : ajoute la revue finale du cadre `WORKFLOW +
+  SETUP_PRODUCT` et du raccord des index SYSTEM.
+- v1.1 (06-03-2026) : ajoute le controle vault health check dans la revue
+  finale.
 - v1.2 (06-03-2026) : bascule la revue DocQG de scope product vers scope global.
-- v1.3 (06-03-2026) : trace le rerun framework canon global et la cloture des risques P0.
+- v1.3 (06-03-2026) : trace le rerun framework canon global et la cloture des
+  risques P0.
 - v1.4 (09-03-2026) : ajoute la reference de tracabilite consolidee pour R-0001.
-- v1.5 (09-03-2026) : aligne la revue avec le registre consolide et la cloture de R-0011.
-- v1.6 (09-03-2026) : retire la dependance active a `EVIDENCE_04` (archivee en CACHE/DEPRECATED).
-- v1.7 (09-03-2026) : ajoute la revue explicite `DocIntegrityChecker` et confirme PASS P0/P1.
-- v1.8 (09-03-2026) : passage en FROZEN + revue explicite `SemanticNoiseChecker` et `frontmatter_utils`.
-- v1.9 (09-03-2026) : bascule de naming/ID review vers la version FRAMEWORK canon.
-- v1.10 (10-03-2026) : ajoute la revue setup SYSTEM_04_LLM, la creation des instructions verite Codex IDE et la conversion `SCRIPT_03` en skill.
-- v1.11 (10-03-2026) : ajoute la revue `.gitignore` (ignore `skills/`) et la tracabilite du retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.
+- v1.5 (09-03-2026) : aligne la revue avec le registre consolide et la cloture
+  de R-0011.
+- v1.6 (09-03-2026) : retire la dependance active a `EVIDENCE_04` (archivee en
+  CACHE/DEPRECATED).
+- v1.7 (09-03-2026) : ajoute la revue explicite `DocIntegrityChecker` et
+  confirme PASS P0/P1.
+- v1.8 (09-03-2026) : passage en FROZEN + revue explicite `SemanticNoiseChecker`
+  et `frontmatter_utils`.
+- v1.9 (09-03-2026) : bascule de naming/ID review vers la version FRAMEWORK
+  canon.
+- v1.10 (10-03-2026) : ajoute la revue setup SYSTEM_04_LLM, la creation des
+  instructions verite Codex IDE et la conversion `SCRIPT_03` en skill.
+- v1.11 (10-03-2026) : ajoute la revue `.gitignore` (ignore `skills/`) et la
+  tracabilite du retrait `SCRIPT_03_GIT_BOOTSTRAP_AGENT.md`.
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.

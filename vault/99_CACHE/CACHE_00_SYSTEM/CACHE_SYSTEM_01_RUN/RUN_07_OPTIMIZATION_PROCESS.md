@@ -7,7 +7,14 @@ status: DEPRECATED
 created: 06-03-2026
 updated: 08-03-2026
 tags: [run, system, optimization, process, vault]
-depends_on: [DOD_03_TOOLING_HARDENING, DOD_04_RAG_WORKSPACE_TESTS, PIPELINE_03_BACKLOG_COMPOSANTS, META_06_REFERENCE_EXISTING_FILES, META_03_NAMING_CONVENTIONS, META_05_FRONTMATTER, GIT_02_BRANCH_POLICY]
+depends_on:
+  - DOD_03_TOOLING_HARDENING
+  - DOD_04_RAG_WORKSPACE_TESTS
+  - PIPELINE_03_BACKLOG_COMPOSANTS
+  - META_06_REFERENCE_EXISTING_FILES
+  - META_03_NAMING_CONVENTIONS
+  - META_05_FRONTMATTER
+  - GIT_02_BRANCH_POLICY
 arc: CACHE
 scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 ---
@@ -16,7 +23,8 @@ scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 
 ## Objectif
 
-Définir un **processus reproductible d’optimisation de l’architecture documentaire** du vault GAPC sans casser le framework.
+Définir un **processus reproductible d’optimisation de l’architecture
+documentaire** du vault GAPC sans casser le framework.
 
 Ce processus garantit :
 
@@ -38,7 +46,8 @@ vault/
  ├─ 02_PACKAGE
  └─ 03_PRODUCT
 
-L’objectif est d’améliorer la **cohérence structurelle**, pas d’introduire de nouvelles fonctionnalités.
+L’objectif est d’améliorer la **cohérence structurelle**, pas d’introduire de
+nouvelles fonctionnalités.
 
 ---
 
@@ -48,15 +57,19 @@ Ce DoD ne redéfinit pas les règles. Il applique des références existantes :
 
 | Sujet | Source canonique |
 |---|---|
-| Anti-duplication / référence obligatoire | `META_06_REFERENCE_EXISTING_FILES`, `CONSTRAINT_02_NON_DUPLICATION_POLICY` |
+| Anti-duplication / référence obligatoire | `META_06_REFERENCE_EXISTING_FILES`,
+`CONSTRAINT_02_NON_DUPLICATION_POLICY` |
 | Naming + `id==filename` | `META_03_NAMING_CONVENTIONS` |
 | Frontmatter standard | `META_05_FRONTMATTER` |
 | Hiérarchie d’autorité des arcs | `INDEX_02_REPOSITORY` |
 | Discipline Git (intention/commit) | `GIT_02_BRANCH_POLICY` |
-| Chaîne de preuve produit | `PIPELINE_03_BACKLOG_COMPOSANTS`, `DOD_00_BETA_VALIDATION`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION` |
+| Chaîne de preuve produit | `PIPELINE_03_BACKLOG_COMPOSANTS`,
+`DOD_00_BETA_VALIDATION`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION` |
 
 Règle locale :
-- si une règle existe déjà dans une source canonique, ce document pointe vers cette source au lieu de recopier son contenu.
+
+- si une règle existe déjà dans une source canonique, ce document pointe vers
+  cette source au lieu de recopier son contenu.
 
 ---
 
@@ -66,13 +79,17 @@ L’optimisation se déroule en **4 passes successives**.
 
 ## Duplications Traitees (Reference-First)
 
-Les duplications documentaires listees sur DOD_05 sont traitees via `META_06_REFERENCE_EXISTING_FILES` :
+Les duplications documentaires listees sur DOD_05 sont traitees via
+`META_06_REFERENCE_EXISTING_FILES` :
 
 | Duplication detectee | Action appliquee | Reference canonique |
 |---|---|---|
-| `DOD_05_OPTIMIZATION` vs process d’optimisation | contenu miroir retire, fichier converti en pointeur | `RUN_07_OPTIMIZATION_PROCESS` |
-| Regles anti-duplication recopiees localement | bloc remplace par references | `META_06_REFERENCE_EXISTING_FILES`, `CONSTRAINT_02_NON_DUPLICATION_POLICY` |
-| Rappels naming/frontmatter recopiees | bloc remplace par references | `META_03_NAMING_CONVENTIONS`, `META_05_FRONTMATTER` |
+| `DOD_05_OPTIMIZATION` vs process d’optimisation | contenu miroir retire,
+fichier converti en pointeur | `RUN_07_OPTIMIZATION_PROCESS` |
+| Regles anti-duplication recopiees localement | bloc remplace par references |
+`META_06_REFERENCE_EXISTING_FILES`, `CONSTRAINT_02_NON_DUPLICATION_POLICY` |
+| Rappels naming/frontmatter recopiees | bloc remplace par references |
+`META_03_NAMING_CONVENTIONS`, `META_05_FRONTMATTER` |
 
 ### PASS 1 — Audit structurel
 
@@ -109,7 +126,8 @@ vault search
 Action :
 
 - conserver la règle canonique
-- remplacer les duplications par des références d’ID (cf. `META_06_REFERENCE_EXISTING_FILES`)
+- remplacer les duplications par des références d’ID (cf.
+  `META_06_REFERENCE_EXISTING_FILES`)
 
 ---
 
@@ -182,5 +200,8 @@ Cela garantit que le framework GAPC reste **stable et évolutif**.
 ---
 
 ## Changelog
-- v1.1 (06-03-2026) : remplace les blocs dupliqués par des références canoniques (anti-duplication).
-- v1.2 (06-03-2026) : ajoute la liste des duplications traitees + mapping vers references canoniques.
+
+- v1.1 (06-03-2026) : remplace les blocs dupliqués par des références canoniques
+  (anti-duplication).
+- v1.2 (06-03-2026) : ajoute la liste des duplications traitees + mapping vers
+  references canoniques.

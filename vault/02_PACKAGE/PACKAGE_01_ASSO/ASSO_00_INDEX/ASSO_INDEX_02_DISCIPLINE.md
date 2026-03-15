@@ -20,12 +20,18 @@ Index des **disciplines** appliquées dans le PACKAGE_01_ASSO.
 
 ## Documents
 
-[[ASSO_DISCIPLINE_00_RAG_PROFILE]] — Profil RAG métier association (priorités, garde-fous, anti-invention).
-[[ASSO_DISCIPLINE_01_GEL_RULES]] — Règles de gel (READY_TO_FREEZE / FROZEN), versioning, amendements pour ASSO.
-[[ASSO_DISCIPLINE_02_RAG_QG]] — Quality gates RAG (P0/P1/P2) spécialisés pour les livrables ASSO.
-[[ASSO_DISCIPLINE_03_LEXICAL_QG]] — Quality gates lexicaux : ton, vocabulaire, clarté, neutralité, conformité rédactionnelle.
-[[ASSO_DISCIPLINE_04_SCOPE_CLASSIFIER]] — Classifieur de scope (CORE/SYSTEM/PACKAGE/PRODUCT/CACHE) + priorisation NOW/NEXT/LATER.
-[[ASSO_DISCIPLINE_05_RISK_REGISTER]] — Registre de risques : identification, mitigations, contrôles, owners.
+[[ASSO_DISCIPLINE_00_RAG_PROFILE]] — Profil RAG métier association (priorités,
+garde-fous, anti-invention).
+[[ASSO_DISCIPLINE_01_GEL_RULES]] — Règles de gel (READY_TO_FREEZE / FROZEN),
+versioning, amendements pour ASSO.
+[[ASSO_DISCIPLINE_02_RAG_QG]] — Quality gates RAG (P0/P1/P2) spécialisés pour
+les livrables ASSO.
+[[ASSO_DISCIPLINE_03_LEXICAL_QG]] — Quality gates lexicaux : ton, vocabulaire,
+clarté, neutralité, conformité rédactionnelle.
+[[ASSO_DISCIPLINE_04_SCOPE_CLASSIFIER]] — Classifieur de scope
+(CORE/SYSTEM/PACKAGE/PRODUCT/CACHE) + priorisation NOW/NEXT/LATER.
+[[ASSO_DISCIPLINE_05_RISK_REGISTER]] — Registre de risques : identification,
+mitigations, contrôles, owners.
 
 ---
 
@@ -34,5 +40,6 @@ Index des **disciplines** appliquées dans le PACKAGE_01_ASSO.
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index DISCIPLINE du PACKAGE_01_ASSO.

@@ -7,7 +7,11 @@ status: FROZEN
 created: 01-03-2026
 updated: 04-03-2026
 tags: [package, asso, discipline, risk, p0]
-depends_on: [DISCIPLINE_07_RISK_REGISTER, ASSO_CONSTRAINT_01_LEGAL_BASELINE_1901, ASSO_CONSTRAINT_02_PUBLIC_MESSAGING_POLICY, CONSTRAINT_03_SECRETS_POLICY]
+depends_on:
+  - DISCIPLINE_07_RISK_REGISTER
+  - ASSO_CONSTRAINT_01_LEGAL_BASELINE_1901
+  - ASSO_CONSTRAINT_02_PUBLIC_MESSAGING_POLICY
+  - CONSTRAINT_03_SECRETS_POLICY
 arc: PACKAGE
 scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_02_DISCIPLINE
 ---
@@ -15,14 +19,17 @@ scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_02_DISCIPLINE
 # ASSO_DISCIPLINE_05 - Risk Register
 
 ## Règles P0
+
 - mitigation + signal + owner + statut + liens
 - risque critique (6–9) jamais Open sans mitigation+owner
 - no-secrets/no-PII
 
 ## Catégories
+
 Legal · Gouvernance · Réputation · Data/Privacy · Delivery
 
 ## Format
+
 ```txt
 RISK_ID: R-0001
 Titre:
@@ -38,12 +45,15 @@ Statut:
 Date revue:
 Liens:
 ```
+
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (01-03-2026) : passage en FROZEN v1.2 + correction depends_on.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation ids/depends_on.

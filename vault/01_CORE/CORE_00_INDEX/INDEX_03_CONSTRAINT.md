@@ -19,6 +19,7 @@ scope: vault/01_CORE/CORE_00_INDEX
 Index des **contraintes structurelles du framework GAPC**.
 
 Les contraintes définissent les **règles non négociables** :
+
 - sécurité
 - architecture
 - gouvernance
@@ -50,7 +51,7 @@ Règles d’ingestion et périmètre RAG.
 
 Principe : référence > copie
 
---- 
+---
 
 ### Decision Traceability Policy
 
@@ -69,9 +70,11 @@ Règles de gestion du cache : temporaire, jamais source de vérité.
 ---
 
 ## Amendements (FROZEN)
+
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
 - v1.2 (15-03-2026) : aligne le H1 sur l identifiant canonique de l index CORE.
 - v1.1 (05-03-2026) : passage en FROZEN.

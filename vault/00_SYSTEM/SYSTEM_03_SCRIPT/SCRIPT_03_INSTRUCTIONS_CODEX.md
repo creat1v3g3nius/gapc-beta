@@ -7,7 +7,12 @@ status: FROZEN
 created: 10-03-2026
 updated: 15-03-2026
 tags: [codex, vscode, ide, agent, system, prompt, instructions, gapc]
-depends_on: [META_01_OUTPUT_PROTOCOL, META_02_SOP_STANDARD_LOOP, LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL, LLM_02_PERMISSION_SECURITY]
+depends_on:
+  - META_01_OUTPUT_PROTOCOL
+  - META_02_SOP_STANDARD_LOOP
+  - LLM_00_RAG_PRINCIPES
+  - LLM_01_INGESTION_PROTOCOL
+  - LLM_02_PERMISSION_SECURITY
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
@@ -16,7 +21,8 @@ scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 
 ## Objet
 
-Définir le **prompt system canonique** de l’agent IDE **Codex** dans le nouveau setup GAPC :
+Définir le **prompt system canonique** de l’agent IDE **Codex** dans le nouveau
+setup GAPC :
 
 - **Codex** = code / patch / exécution
 - **AnythingLLM local** = mentor documentaire standard
@@ -25,7 +31,8 @@ Définir le **prompt system canonique** de l’agent IDE **Codex** dans le nouve
 - **CORE** = première référence documentaire
 - **PACKAGE actif** = seconde référence documentaire si nécessaire
 
-Ce document remplace un cadrage “bootstrap Git seulement” par un cadrage **IDE généraliste contrôlé**, adapté à la séparation actuelle des rôles.
+Ce document remplace un cadrage “bootstrap Git seulement” par un cadrage **IDE
+généraliste contrôlé**, adapté à la séparation actuelle des rôles.
 
 ---
 
@@ -194,7 +201,9 @@ Recourir à une API externe seulement si :
 
 ## Différences clés avec la version précédente
 
-Par rapport au document de bootstrap Git centré gates et hooks, cette nouvelle version :
+Par rapport au document de bootstrap Git centré gates et hooks, cette nouvelle
+version :
+
 - élargit le rôle de Codex à l’ensemble du travail IDE
 - clarifie la séparation **Codex / AnythingLLM / API**
 - autorise Codex à se référer d’abord au **CORE**, puis au **PACKAGE actif**
@@ -204,20 +213,26 @@ Par rapport au document de bootstrap Git centré gates et hooks, cette nouvelle 
   - no-secrets
   - scope control
   - patch atomique
-- ajoute une politique de redirection vers le mentor documentaire quand la demande n’exige pas d’action IDE
+- ajoute une politique de redirection vers le mentor documentaire quand la
+  demande n’exige pas d’action IDE
 
 ---
 
 ## Recommandations d’usage
 
 ### P0
+
 Utiliser ce prompt system comme base canonique de l’agent Codex dans VS Code.
 
 ### P1
-Conserver `SCRIPT_03_GIT_BOOTSTRAP_AGENT` comme procédure spécialisée d’un use case particulier, et non plus comme définition générale de l’agent.
+
+Conserver `SCRIPT_03_GIT_BOOTSTRAP_AGENT` comme procédure spécialisée d’un use
+case particulier, et non plus comme définition générale de l’agent.
 
 ### P2
+
 Créer plus tard un document compagnon :
+
 - exemples de tâches que Codex doit garder
 - exemples de tâches à rediriger vers le Mentor documentaire
 
@@ -226,6 +241,7 @@ Créer plus tard un document compagnon :
 ## Doc QG
 
 ### READY_TO_FREEZE — PASS si :
+
 - séparation des rôles explicite
 - ordre CORE puis PACKAGE défini
 - contraintes P0 présentes
@@ -234,6 +250,7 @@ Créer plus tard un document compagnon :
 - aucune ambiguïté sur Codex = code/patch/exécution
 
 ### FAIL si :
+
 - confusion entre rôle IDE et rôle mentor documentaire
 - absence de hiérarchie documentaire
 - absence de stop conditions
@@ -244,9 +261,11 @@ Créer plus tard un document compagnon :
 ## Actions Doc
 
 Fichier cible :
+
 - `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_03_INSTRUCTIONS_CODEX.md`
 
 Mode d’intégration :
+
 - fichier complet
 
 ---
@@ -256,12 +275,15 @@ Mode d’intégration :
 N/A
 
 Commit recommandé :
+
 - `docs(system): add codex ide instructions for codex-rag-api setup`
 
 Smoke tests documentaires :
+
 - vérifier que le prompt n’autorise pas d’auto-commit
 - vérifier qu’il cite bien CORE puis PACKAGE
-- vérifier qu’il redirige les tâches purement documentaires vers AnythingLLM local
+- vérifier qu’il redirige les tâches purement documentaires vers AnythingLLM
+  local
 - vérifier qu’il maintient Codex sur code / patch / exécution
 
 ---
@@ -269,11 +291,13 @@ Smoke tests documentaires :
 ## Risques & contrôles
 
 ### Risques
+
 - confusion entre assistant documentaire et agent IDE
 - duplication inutile avec les documents LLM
 - dérive de Codex vers des réponses trop générales et non actionnables
 
 ### Contrôles
+
 - garder ce document dans SYSTEM comme procédure opérateur
 - conserver LLM_00/01/02 comme documents de configuration du dispositif LLM
 - vérifier la cohérence d’arc via ValidatorYaml et DocIntegrityChecker
@@ -282,11 +306,15 @@ Smoke tests documentaires :
 
 ## Next step unique
 
-Valider ce document contre les règles de frontmatter, de dépendances et de naming avant passage READY_TO_FREEZE final.
+Valider ce document contre les règles de frontmatter, de dépendances et de
+naming avant passage READY_TO_FREEZE final.
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (15-03-2026) : passage en FROZEN apres validation documentaire globale du vault.
+
+- v1.1 (15-03-2026) : passage en FROZEN apres validation documentaire globale du
+  vault.
 - v1.0 (10-03-2026) : creation du cadrage operatoire Codex IDE pour GAPC.

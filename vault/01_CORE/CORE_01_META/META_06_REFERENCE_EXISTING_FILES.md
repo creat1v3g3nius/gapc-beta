@@ -7,7 +7,10 @@ status: FROZEN
 created: 06-03-2026
 updated: 15-03-2026
 tags: [governance, references, non-duplication, meta, core]
-depends_on: [META_03_NAMING_CONVENTIONS, META_05_FRONTMATTER, CONSTRAINT_02_NON_DUPLICATION_POLICY]
+depends_on:
+  - META_03_NAMING_CONVENTIONS
+  - META_05_FRONTMATTER
+  - CONSTRAINT_02_NON_DUPLICATION_POLICY
 arc: CORE
 scope: vault/01_CORE/CORE_01_META
 ---
@@ -15,7 +18,9 @@ scope: vault/01_CORE/CORE_01_META
 # META_06 - Reference Existing Files
 
 ## Objet
+
 Standardiser la methode "reference-first" dans le vault:
+
 - ne pas recopier une regle qui existe deja,
 - pointer vers la source canonique par `id`,
 - conserver un seul point de verite.
@@ -25,12 +30,16 @@ Standardiser la methode "reference-first" dans le vault:
 ## Regles P0
 
 ### 1) Reference avant duplication
+
 Si un contenu normatif existe deja, le document consommateur doit:
+
 - citer l'`id` canonique,
 - appliquer la regle sans la re-ecrire.
 
 ### 2) Format minimal de reference
+
 Chaque reference normative doit contenir:
+
 - `id` de la source (obligatoire),
 - chemin de fichier (recommande),
 - decision locale (pourquoi la regle est utilisee ici).
@@ -44,14 +53,18 @@ Decision: ce document applique le schema frontmatter sans le dupliquer.
 ```
 
 ### 3) Exception controlee
+
 Une copie partielle est autorisee uniquement si:
+
 - l'extrait est necessaire a la comprehension locale,
 - la source canonique est citee explicitement,
 - le texte copie reste court et non divergent.
 
 ### 4) Contradiction interdite
+
 Une regle locale qui contredit la source canonique est `KO`.
 Correction requise:
+
 - corriger le document local, ou
 - amender la source canonique via le process de gouvernance.
 
@@ -86,8 +99,12 @@ Decision locale:
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.1 (15-03-2026) : passage en FROZEN du standard `reference-first` apres validation globale du vault.
-- v1.0 (06-03-2026) : creation du standard "reference-first" pour supprimer les duplications.
+
+- v1.1 (15-03-2026) : passage en FROZEN du standard `reference-first` apres
+  validation globale du vault.
+- v1.0 (06-03-2026) : creation du standard "reference-first" pour supprimer les
+  duplications.

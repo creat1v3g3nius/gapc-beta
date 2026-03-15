@@ -15,18 +15,23 @@ scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_01_META
 # ASSO_META_01 - Domain Definitions
 
 ## Entités (définitions courtes)
-- Association, Statuts, Règlement intérieur, CA, Bureau, Adhérent, Partenaire, Projet, Convention.
+
+- Association, Statuts, Règlement intérieur, CA, Bureau, Adhérent, Partenaire,
+  Projet, Convention.
 
 ## Termes réservés
+
 - CANON : document gelé (FROZEN) servant de référence.
 - PUBLIC : communication externe (soumise à policy).
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (01-03-2026) : passage en FROZEN (v1.2) + mise à jour metadata.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation ids/depends_on.

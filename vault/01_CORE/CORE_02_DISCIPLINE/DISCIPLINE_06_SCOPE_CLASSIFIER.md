@@ -15,6 +15,7 @@ scope: vault/01_CORE/CORE_02_DISCIPLINE
 # DISCIPLINE_06 - Scope Classifier (générique)
 
 Classifier toute demande / feature / idée / composant (CO) pour :
+
 - empêcher la dérive (scope creep),
 - garder une beta **product-ready**,
 - décider vite et de façon reproductible,
@@ -23,36 +24,45 @@ Classifier toute demande / feature / idée / composant (CO) pour :
 ---
 
 ## 1) Labels (P0)
-NOW / NEXT / LATER / REJECT  
+
+NOW / NEXT / LATER / REJECT
 Règle : si doute → NEXT.
 
 ---
 
 ## 2) Règles (P0)
+
 NOW si :
+
 - indispensable au happy path **ou** réduit un risque critique,
 - effort maîtrisé,
 - ne dépend pas d’une décision non prise (sinon NEXT + ADR).
 
-LATER si valeur faible/non mesurable/effort non maîtrisé.  
+LATER si valeur faible/non mesurable/effort non maîtrisé.
 REJECT si hors-scope/disproportion.
 
 ---
 
 ## 3) Extensions PACKAGE/PRODUCT
-Peuvent ajouter des critères (métier, deadlines), pas modifier les labels ni assouplir les règles P0.
+
+Peuvent ajouter des critères (métier, deadlines), pas modifier les labels ni
+assouplir les règles P0.
 
 ---
 
 ### Changelog
-- v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE strict.
+
+- v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE
+  strict.
 - v1.0 (28-02-2026) : version initiale.
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (04-03-2026) : corrections frontmatter + heading.
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

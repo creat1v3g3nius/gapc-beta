@@ -13,12 +13,15 @@ scope: vault/01_CORE/CORE_02_DISCIPLINE
 ---
 
 # DISCIPLINE_05 - Compliance Doc (règles transversales)
-Invariants transversaux de conformité documentaire : métadonnées, structure minimale, non‑duplication, “sans oral”, no‑secrets.  
+
+Invariants transversaux de conformité documentaire : métadonnées, structure
+minimale, non‑duplication, “sans oral”, no‑secrets.
 CORE strict : aucune procédure opérateur.
 
 ---
 
 ## 1) Invariants CORE (P0)
+
 - frontmatter conforme + `id==filename`
 - H1 unique + sections cohérentes
 - objectif explicite + hypothèses marquées si besoin
@@ -30,19 +33,23 @@ CORE strict : aucune procédure opérateur.
 ---
 
 ## 2) Extensions PACKAGE/PRODUCT
+
 Peuvent renforcer, ne peuvent pas affaiblir.
 
 ---
 
 ### Changelog
+
 - v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE.
 - v1.0 (01-03-2026) : version initiale.
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (04-03-2026) : corrections frontmatter + heading.
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

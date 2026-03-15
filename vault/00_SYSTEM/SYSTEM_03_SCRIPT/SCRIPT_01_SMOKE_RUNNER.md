@@ -7,14 +7,19 @@ status: FROZEN
 created: 28-02-2026
 updated: 13-03-2026
 tags: [quality, smoke-runner, script, system]
-depends_on: [SCRIPT_00_VALIDATOR, WORKFLOW_00_PIPELINE, GIT_02_BRANCH_POLICY, GIT_03_PATCH_COMMIT]
+depends_on:
+  - SCRIPT_00_VALIDATOR
+  - WORKFLOW_00_PIPELINE
+  - GIT_02_BRANCH_POLICY
+  - GIT_03_PATCH_COMMIT
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
 
 # SCRIPT_01 - Smoke runner (notice & mise en place)
 
-Permet de disposer d’un test “happy path” exécutable en **1 commande** pour vérifier que le repo GAPC est **sain** :
+Permet de disposer d’un test “happy path” exécutable en **1 commande** pour
+vérifier que le repo GAPC est **sain** :
 
 - Git OK (racine repo détectée)
 - Vault OK (structure présente)
@@ -25,6 +30,7 @@ Permet de disposer d’un test “happy path” exécutable en **1 commande** po
   - `!=0` = KO
 
 Contraintes :
+
 - **No secrets**
 - **Rapide** (< 30 secondes idéal)
 - **Cross-platform** (Python recommandé)
@@ -34,9 +40,11 @@ Contraintes :
 ## 1) Emplacement recommandé
 
 ### Script (repo)
+
 - `repo/scripts/SmokeRunner.py` *(Python, cross-platform)*
 
 ### Notice (vault)
+
 - `vault/00_SYSTEM/SYSTEM_03_SCRIPT/SCRIPT_01_SMOKE_RUNNER.md` (ce document)
 
 ---
@@ -44,6 +52,7 @@ Contraintes :
 ## 2) Ce que le smoke doit vérifier (V1)
 
 ### P0 (obligatoire)
+
 1. **Racine repo** : présence `.git/` (ou `git status` OK)
 2. **Vault présent** : `vault/` existe
 3. **Arcs présents** :
@@ -52,12 +61,17 @@ Contraintes :
    - `vault/02_PACKAGE/`
    - `vault/03_PRODUCT/`
    - `vault/99_CACHE/` *(ou legacy `vault/04_CACHE/`)*
-4. **Validator exécutable** : appelle `scripts/ValidateFrontmatter.py` et lit le code retour
-5. **DocIntegrity optionnel** : peut appeler `scripts/DocIntegrityChecker.py` sur le scope cible
+4. **Validator exécutable** : appelle `scripts/ValidateFrontmatter.py` et lit le
+   code retour
+5. **DocIntegrity optionnel** : peut appeler `scripts/DocIntegrityChecker.py`
+   sur le scope cible
 
 ### P1 (recommandé)
-6. **Package actif** : si explicitement demandé, vérifier existence dans `vault/02_PACKAGE/`
-7. **Product actif** : si explicitement demandé, vérifier existence dans `vault/03_PRODUCT/`
+
+6. **Package actif** : si explicitement demandé, vérifier existence dans
+   `vault/02_PACKAGE/`
+7. **Product actif** : si explicitement demandé, vérifier existence dans
+   `vault/03_PRODUCT/`
 8. **Typo traps** : détecter patterns connus (ex: `SpechTech`)
 
 ---
@@ -71,11 +85,13 @@ python scripts/SmokeRunner.py
 ```
 
 Option utile avec integrite documentaire :
+
 ```bash
 python scripts/SmokeRunner.py --run-doc-integrity --doc-integrity-scope vault
 ```
 
 Option pre-freeze :
+
 ```bash
 python scripts/SmokeRunner.py --run-doc-integrity --doc-integrity-scope vault --check-pre-freeze
 ```
@@ -115,6 +131,7 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
 ---
 
 ## 6) Règles d’usage
+
 - Smoke à exécuter :
   - avant merge vers `main`
   - après modification scripts/outillage/config
@@ -124,14 +141,18 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
 ---
 
 ## 8) Changelog
+
 -v1.0 (28-02-2026) :  Notice et mis en place Smoke runner GAPC
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.2 (13-03-2026) : recale la notice sur `scripts/SmokeRunner.py`, `ValidateFrontmatter.py` et l option `DocIntegrityChecker`.
+
+- v1.2 (13-03-2026) : recale la notice sur `scripts/SmokeRunner.py`,
+  `ValidateFrontmatter.py` et l option `DocIntegrityChecker`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

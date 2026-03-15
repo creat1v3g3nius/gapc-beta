@@ -15,6 +15,7 @@ scope: vault/01_CORE/CORE_04_TOOLING/TOOLING_04_EXTENSION
 # EXTENSION_07 - Rights & Attribution (minimal) (CORE)
 
 ## Objet
+
 Rappel minimal : droits/licences/crédits pour assets générés.
 
 - Vérifier l’usage autorisé (licence/conditions) dans PACKAGE/PRODUCT.
@@ -24,9 +25,12 @@ Rappel minimal : droits/licences/crédits pour assets générés.
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection heading.
+
+- v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection
+  heading.
 - v1.1 (01-03-2026) : correction erreurs.
 - v1.0 (01-03-2026) : version initiale.

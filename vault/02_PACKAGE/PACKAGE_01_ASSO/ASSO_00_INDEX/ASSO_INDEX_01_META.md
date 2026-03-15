@@ -20,8 +20,10 @@ Index des documents **META** du PACKAGE_01_ASSO.
 
 ## Documents
 
-[[ASSO_META_00_PACKAGE_PROFILE]] — Profil du package : périmètre, overlays, add-ons, invariants P0.
-[[ASSO_META_01_DOMAIN_DEFINITIONS]] — Définitions métier et lexique de base (association, CA, bureau, adhérents…).
+[[ASSO_META_00_PACKAGE_PROFILE]] — Profil du package : périmètre, overlays,
+add-ons, invariants P0.
+[[ASSO_META_01_DOMAIN_DEFINITIONS]] — Définitions métier et lexique de base
+(association, CA, bureau, adhérents…).
 
 ---
 
@@ -30,5 +32,6 @@ Index des documents **META** du PACKAGE_01_ASSO.
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index META du PACKAGE_01_ASSO.

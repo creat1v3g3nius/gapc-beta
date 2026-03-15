@@ -15,6 +15,7 @@ scope: vault/01_CORE/CORE_04_TOOLING/TOOLING_04_EXTENSION
 # EXTENSION_06 - Cost Limits (minimal) (CORE)
 
 ## Objet
+
 Garde-fou minimal pour éviter la dérive coûts/temps sur outils externes.
 
 - Définir un budget/temps maximal par CO (dans PRODUCT/PACKAGE).
@@ -24,9 +25,12 @@ Garde-fou minimal pour éviter la dérive coûts/temps sur outils externes.
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection heading.
+
+- v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection
+  heading.
 - v1.1 (01-03-2026) : correction erreurs.
 - v1.0 (01-03-2026) : version initiale.

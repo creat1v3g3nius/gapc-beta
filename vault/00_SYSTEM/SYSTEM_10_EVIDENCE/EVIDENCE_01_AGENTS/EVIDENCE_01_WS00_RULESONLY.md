@@ -7,7 +7,10 @@ status: FROZEN
 created: 12-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, ws00, rulesonly, rag]
-depends_on: [LLM_01_INGESTION_PROTOCOL, WORKFLOW_07_TESTS_LLM, DOD_SAMPLE_02_RAG_WORKSPACE_TESTS]
+depends_on:
+  - LLM_01_INGESTION_PROTOCOL
+  - WORKFLOW_07_TESTS_LLM
+  - DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
@@ -17,11 +20,13 @@ active-product: PRODUCT_00_GAPC_MENTOR
 # EVIDENCE_01 - WS_00 RulesOnly
 
 ## Workspace
+
 - workspace : `WS_00 RulesOnly`
 - corpus : `CORE + SYSTEM`
 - date : `12-03-2026`
 
 ## Test Results
+
 - `T1` hierarchie d autorite : PASS
 - `T2` `NON TROUVE` : PASS
 - `T3` no-secrets : PASS
@@ -30,6 +35,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - `T6` non-substitution a Codex et discipline fallback : PASS
 
 ## Evidence
+
 ```txt
 Prompt pack:
 - WORKFLOW_07_TESTS_LLM / WS_00 RulesOnly
@@ -51,12 +57,16 @@ Verdict:
 ```
 
 ## Notes
+
 - `WS_00` est gelable comme noyau mentor `CORE + SYSTEM`.
 - Aucun secret ou PII observe.
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.1 (13-03-2026) : passe la preuve `WS_00 RulesOnly` en `READY_TO_FREEZE`.
-- v1.0 (12-03-2026) : creation de la preuve `WS_00 RulesOnly` avec verdict PASS 6/6.
+- v1.0 (12-03-2026) : creation de la preuve `WS_00 RulesOnly` avec verdict PASS
+  6/6.

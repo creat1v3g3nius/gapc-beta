@@ -18,7 +18,7 @@ Ce document formalise l'architecture officielle du framework GAPC.
 
 Il respecte strictement : - Les règles de naming (META_00) - Les règles
 de frontmatter YAML (META_01) - La hiérarchie contractuelle CORE →
-PACKAGE → PRODUCT. 
+PACKAGE → PRODUCT.
 
 ------------------------------------------------------------------------
 
@@ -61,6 +61,7 @@ Aucune règle produit ne doit exister dans cet arc.
 ### 3.1 WORKFLOW
 
 `WORKFLOW_*` porte les runbooks d execution quotidienne :
+
 - demarrage et cloture de session
 - incident
 - health check
@@ -68,6 +69,7 @@ Aucune règle produit ne doit exister dans cet arc.
 - commandes operatoires
 
 Noyau `WORKFLOW` actif :
+
 - `WORKFLOW_00_PIPELINE`
 - `WORKFLOW_03_START_SESSION`
 - `WORKFLOW_04_END_SESSION`
@@ -78,12 +80,14 @@ Noyau `WORKFLOW` actif :
 - `WORKFLOW_10_COMMANDES`
 
 Annexes legacy archivees hors scope actif :
+
 - `WORKFLOW_01_COMPOSANTS` : deplace en `CACHE_SYSTEM_01_RUN`
 - `WORKFLOW_02_CHECKLISTS` : deplace en `CACHE_SYSTEM_01_RUN`
 
 ### 3.2 RUN_01_SETUP_PRODUCT
 
 `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT` porte la composition multi-products :
+
 - bootstrap
 - selection de profil
 - routine du product actif
@@ -93,6 +97,7 @@ Annexes legacy archivees hors scope actif :
 - gouvernance
 
 La nomenclature active des documents de cette famille est :
+
 - `SETUP_PRODUCT_00_INDEX`
 - `SETUP_PRODUCT_01_BOOTSTRAP`
 - `SETUP_PRODUCT_02_PROFILE_SELECTION`
@@ -103,6 +108,7 @@ La nomenclature active des documents de cette famille est :
 - `SETUP_PRODUCT_07_GOVERNANCE_RULES`
 
 Frontiere d integration :
+
 - `WORKFLOW_*` execute la session, les checks et les reruns
 - `SETUP_PRODUCT_*` declare ce qui doit etre maintenu, revalide ou promu
 - `RUN_01_SETUP_PRODUCT` ne remplace pas les runbooks quotidiens
@@ -110,11 +116,13 @@ Frontiere d integration :
 ### 3.3 FAQ
 
 `SYSTEM_99_FAQ` porte un support operatoire leger :
+
 - formulaire de question / incident
 - reponses rapides aux cas frequents
 - point d entree secondaire, non canonique face aux index et runbooks
 
-Le point d entree principal de `00_SYSTEM` reste `README.md`, puis `INDEX_01` et `INDEX_02`.
+Le point d entree principal de `00_SYSTEM` reste `README.md`, puis `INDEX_01` et
+`INDEX_02`.
 
 ------------------------------------------------------------------------
 
@@ -153,10 +161,21 @@ Aucun élément métier spécifique ne doit exister dans le CORE.
 
 Rôle : Extension métier d'un domaine spécifique.
 
-Familles possibles : - RUBRIC - SOT - REF - TPL - PIPELINE - CHECKLIST
+Familles possibles :
 
-Un package peut : - Étendre le classifier générique (FIELD -> RUBRIC) - Ajouter des règles
-de priorisation spécifiques (SOT) - Adapter les templates (TPL) - Ajouter des références de connaissances (REF)
+- RUBRIC
+- SOT
+- REF
+- TPL
+- PIPELINE
+- CHECKLIST
+
+Un package peut :
+
+- Étendre le classifier générique (`FIELD -> RUBRIC`)
+- Ajouter des règles de priorisation spécifiques (`SOT`)
+- Adapter les templates (`TPL`)
+- Ajouter des références de connaissances (`REF`)
 
 Il ne peut modifier le CORE sans ADR.
 
@@ -185,7 +204,8 @@ Rôle : Stockage temporaire non conventionnel.
 
 Ne contient aucune source de vérité.
 
-Compatibilité legacy : certains documents historiques peuvent encore mentionner `04_CACHE`.
+Compatibilité legacy : certains documents historiques peuvent encore mentionner
+`04_CACHE`.
 
 ------------------------------------------------------------------------
 
@@ -219,16 +239,36 @@ version.
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
-- v1.10 (13-03-2026) : ajoute la famille `FAQ`, raccorde `SYSTEM_99_FAQ` et clarifie `README.md` comme point d entree principal de `00_SYSTEM`.
-- v1.9 (13-03-2026) : retire `WORKFLOW_01` et `WORKFLOW_02` du scope SYSTEM actif et les archive en `CACHE`.
-- v1.8 (13-03-2026) : renomme la famille documentaire `RUN_*` en `WORKFLOW_*` et recable l architecture SYSTEM.
-- v1.7 (13-03-2026) : rehoste `SETUP_PRODUCT_*` sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT` et retire `MULTI_PRODUCT` comme famille separee.
-- v1.6 (13-03-2026) : raccorde l architecture au cadre final `WORKFLOW` vs `SETUP_PRODUCT`, avec noyau `WORKFLOW` et annexes legacy explicites.
+
+- v1.10 (13-03-2026) : ajoute la famille `FAQ`, raccorde `SYSTEM_99_FAQ`
+
+  et clarifie `README.md` comme point d entree principal de `00_SYSTEM`.
+
+- v1.9 (13-03-2026) : retire `WORKFLOW_01` et `WORKFLOW_02` du scope
+
+  SYSTEM actif et les archive en `CACHE`.
+
+- v1.8 (13-03-2026) : renomme la famille documentaire `RUN_*` en
+
+  `WORKFLOW_*` et recable l architecture SYSTEM.
+
+- v1.7 (13-03-2026) : rehoste `SETUP_PRODUCT_*` sous
+
+  `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT` et retire `MULTI_PRODUCT` comme
+  famille separee.
+
+- v1.6 (13-03-2026) : raccorde l architecture au cadre final `WORKFLOW`
+
+  vs `SETUP_PRODUCT`, avec noyau `WORKFLOW` et annexes legacy explicites.
+
 - v1.5 (13-03-2026) : applique la nomenclature active `SETUP_PRODUCT_00..07`.
-- v1.4 (13-03-2026) : ajout de la famille `MULTI_PRODUCT` et doctrine `WORKFLOW` vs `SETUP_PRODUCT`.
-- v1.3 (09-03-2026) : alignement architecture sur la version FRAMEWORK canon (`99_CACHE` explicite).
+- v1.4 (13-03-2026) : ajout de la famille `MULTI_PRODUCT` et doctrine `WORKFLOW`
+  vs `SETUP_PRODUCT`.
+- v1.3 (09-03-2026) : alignement architecture sur la version FRAMEWORK canon
+  (`99_CACHE` explicite).
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.1 : READY_TO_FREEZE.

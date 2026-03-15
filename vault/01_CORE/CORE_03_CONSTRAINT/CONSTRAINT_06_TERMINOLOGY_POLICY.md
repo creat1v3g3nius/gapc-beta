@@ -15,7 +15,10 @@ scope: vault/01_CORE/CORE_03_CONSTRAINT
 # CONSTRAINT_06 - Terminology Policy (contraintes transversales)
 
 ## Objet
-Réduire l’ambiguïté et les contradictions en imposant une contrainte CORE minimale :
+
+Réduire l’ambiguïté et les contradictions en imposant une contrainte CORE
+minimale :
+
 - termes stables,
 - statuts/labels réservés,
 - cohérence inter-arcs.
@@ -25,15 +28,19 @@ CORE strict : pas de procédure opérateur.
 ---
 
 ## 1) Règles P0
-1) Les termes “contractuels” doivent être **stables** et utilisés de façon cohérente :
+
+1) Les termes “contractuels” doivent être **stables** et utilisés de façon
+   cohérente :
 - arcs : SYSTEM/CORE/PACKAGE/PRODUCT/CACHE
 - statuts : DRAFT/PROPOSED/READY_TO_FREEZE/FROZEN/DEPRECATED
 - décisions : ADR-lite
 - réponse : `NON TROUVÉ`
 
-2) Interdit d’introduire des synonymes concurrents pour les mêmes concepts sans décision traçable.
+2) Interdit d’introduire des synonymes concurrents pour les mêmes concepts sans
+   décision traçable.
 
 ## 2) Règles P1
+
 3) Toute nouvelle notion transversale doit être :
 - définie dans un doc CORE (ou index/glossary),
 - référencée (non dupliquée).
@@ -41,13 +48,16 @@ CORE strict : pas de procédure opérateur.
 ---
 
 ### Changelog
+
 - v1.0 (01-03-2026) : version minimale de la contrainte terminologie.
 
 ---
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

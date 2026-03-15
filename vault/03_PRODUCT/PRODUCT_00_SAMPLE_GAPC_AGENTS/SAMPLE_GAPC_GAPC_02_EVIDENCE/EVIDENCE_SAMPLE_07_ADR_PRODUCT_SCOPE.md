@@ -7,7 +7,13 @@ status: FROZEN
 created: 13-03-2026
 updated: 13-03-2026
 tags: [product, gapc-mentor, evidence, adr, scope, decision]
-depends_on: [TPL_02_ADR_LITE, DOD_SAMPLE_00_PRODUCT_VALIDATION, DOD_SAMPLE_03_RELEASE_FREEZE, OPS_SAMPLE_00_BACKLOG_PRODUCT, OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST, EVIDENCE_SAMPLE_00_INDEX]
+depends_on:
+  - TPL_02_ADR_LITE
+  - DOD_SAMPLE_00_PRODUCT_VALIDATION
+  - DOD_SAMPLE_03_RELEASE_FREEZE
+  - OPS_SAMPLE_00_BACKLOG_PRODUCT
+  - OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
+  - EVIDENCE_SAMPLE_00_INDEX
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
@@ -17,13 +23,17 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 # EVIDENCE_SAMPLE_07 - ADR Product Scope
 
 ## 0) Statut
+
 - Status : ACCEPTED
 - Date : 13-03-2026
 - Owner : repo-maintainer
-- Liens : `DOD_SAMPLE_00_PRODUCT_VALIDATION`, `DOD_SAMPLE_03_RELEASE_FREEZE`, `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
+- Liens : `DOD_SAMPLE_00_PRODUCT_VALIDATION`, `DOD_SAMPLE_03_RELEASE_FREEZE`,
+  `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 
 ## 1) Contexte
-- Problème : décider si le setup `PRODUCT_00_SAMPLE_GAPC_AGENTS` peut être considéré finalisé et `FROZEN`
+
+- Problème : décider si le setup `PRODUCT_00_SAMPLE_GAPC_AGENTS` peut être
+  considéré finalisé et `FROZEN`
 - Contraintes :
   - alignement `CORE -> PACKAGE -> PRODUCT`
   - no-secrets / no-PII
@@ -34,7 +44,9 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
   - nécessité de fixer la chaîne de vérité `DOD -> OPS -> EVIDENCE`
 
 ## 2) Options considerees
+
 ### Option A
+
 - Description : maintenir le lot en `DRAFT` malgré les PASS
 - Pros :
   - prudence maximale
@@ -45,6 +57,7 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
   - dérive entre contenu et statut
 
 ### Option B
+
 - Description : passer le lot en `FROZEN` après backfill complet des preuves
 - Pros :
   - cohérence entre gates, statuts et evidence pack
@@ -55,9 +68,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
   - relâchement si le rerun n est pas appliqué après modification
 
 ## 3) Decision
-- Decision : retenir l option B et considérer `PRODUCT_00_SAMPLE_GAPC_AGENTS` comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`
+
+- Decision : retenir l option B et considérer `PRODUCT_00_SAMPLE_GAPC_AGENTS`
+  comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `WORKFLOW_07_TESTS_LLM` et
+  `WORKFLOW_08_TESTS_CODEX`
 
 ## 4) Consequences
+
 - Positives :
   - statut produit cohérent avec les preuves
   - chaîne `DOD -> OPS -> EVIDENCE` stabilisée
@@ -67,14 +84,19 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Dette créée :
   - aucune dette P0 ; dette opérationnelle limitée au rerun périodique
 - Backout plan :
-  - repasser les fichiers concernés en `DRAFT` si une gate `DOD` ou une batterie de tests redevient `KO`
+  - repasser les fichiers concernés en `DRAFT` si une gate `DOD` ou une batterie
+    de tests redevient `KO`
 
 ## 5) Next step unique
+
 - conserver cette ADR comme décision structurante de périmètre du lot `FROZEN`
 
 ## Amendements (FROZEN)
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.0 (13-03-2026) : aligne l ADR sur la bascule finale `FROZEN`.
-- v1.0 (13-03-2026) : création de l ADR de périmètre produit après PASS complet des gates DOD.
+- v1.0 (13-03-2026) : création de l ADR de périmètre produit après PASS complet
+  des gates DOD.

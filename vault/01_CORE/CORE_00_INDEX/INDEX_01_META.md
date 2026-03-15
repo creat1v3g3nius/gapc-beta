@@ -15,9 +15,11 @@ scope: vault/01_CORE/CORE_00_INDEX
 # INDEX_01 - META
 
 ## Objet
+
 Index des documents **META** du CORE du framework GAPC.
 
 Les META définissent le **socle méthodologique** :
+
 - conventions de nommage
 - règles d’écriture
 - protocole de sortie
@@ -36,9 +38,11 @@ Les META définissent le **socle méthodologique** :
 ---
 
 ## Amendements (FROZEN)
+
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
 - v1.2 (15-03-2026) : aligne le H1 sur l identifiant canonique de l index CORE.
 - v1.1 (05-03-2026) : passage en FROZEN.

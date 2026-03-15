@@ -19,11 +19,13 @@ scope: vault/01_CORE/CORE_00_INDEX
 Point d’entrée du **CORE du framework GAPC**.
 
 Le CORE contient :
+
 - les **disciplines génériques**
 - les **contraintes structurelles**
 - les **outils génériques du framework**
 
 Le CORE ne contient pas :
+
 - procédures opérateur (SYSTEM)
 - overlay métier (PACKAGE)
 - preuves produit (PRODUCT)
@@ -33,11 +35,14 @@ Le CORE ne contient pas :
 ## Navigation
 
 ### INDEX
-[[INDEX_01_META]] · [[INDEX_02_DISCIPLINE]] · [[INDEX_03_CONSTRAINT]] · [[INDEX_04_TOOLING]]
+
+[[INDEX_01_META]] · [[INDEX_02_DISCIPLINE]] ·
+[[INDEX_03_CONSTRAINT]] · [[INDEX_04_TOOLING]]
 
 ---
 
 ### META
+
 [[META_00_HANDBOOK]]
 [[META_01_OUTPUT_PROTOCOL]]
 [[META_02_SOP_STANDARD_LOOP]]
@@ -45,8 +50,8 @@ Le CORE ne contient pas :
 [[META_04_WRITING_RULES]]
 [[META_05_FRONTMATTER]]
 
-
 ### DISCIPLINE
+
 [[DISCIPLINE_00_RAG_PROFILE]] ·
 [[DISCIPLINE_01_GEL_RULES]] ·
 [[DISCIPLINE_02_RAG_QG]] ·
@@ -58,6 +63,7 @@ Le CORE ne contient pas :
 ---
 
 ### CONSTRAINT
+
 [[CONSTRAINT_00_GUARD_RAILS]] ·
 [[CONSTRAINT_01_RAG_SCOPE_POLICY]] ·
 [[CONSTRAINT_02_NON_DUPLICATION_POLICY]] ·
@@ -77,6 +83,7 @@ KNOWLEDGE · CHECKLIST · EXTENSION
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
 - v1.2 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index PACKAGE du CORE.
