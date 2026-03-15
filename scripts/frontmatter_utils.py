@@ -57,17 +57,50 @@ def parse_frontmatter_file(
 
     metadata: dict[str, str] = {}
     line_map: dict[str, int] = {}
-    for line_no, raw_line in body_lines:
+    index = 0
+    while index < len(body_lines):
+        line_no, raw_line = body_lines[index]
         line = raw_line.strip()
         if not line or line.startswith("#"):
+            index += 1
             continue
         match = key_value_re.match(raw_line)
         if not match:
+            index += 1
             continue
+
         key = match.group(1).strip()
         value = match.group(2).strip()
-        metadata[key] = value
         line_map[key] = line_no
+
+        if value:
+            metadata[key] = value
+            index += 1
+            continue
+
+        continuation_items: list[str] = []
+        look_ahead = index + 1
+        while look_ahead < len(body_lines):
+            _, next_raw_line = body_lines[look_ahead]
+            next_line = next_raw_line.strip()
+            if not next_line or next_line.startswith("#"):
+                look_ahead += 1
+                continue
+            if key_value_re.match(next_raw_line):
+                break
+            if next_raw_line.startswith((" ", "\t")):
+                continuation_items.append(next_line)
+            look_ahead += 1
+
+        if continuation_items and all(item.startswith("- ") for item in continuation_items):
+            values = [item[2:].strip() for item in continuation_items]
+            metadata[key] = "[" + ", ".join(values) + "]"
+        elif continuation_items:
+            metadata[key] = "\n".join(continuation_items)
+        else:
+            metadata[key] = value
+
+        index = look_ahead
 
     return FrontmatterResult(
         metadata=metadata,
