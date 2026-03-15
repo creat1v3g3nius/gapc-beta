@@ -50,10 +50,12 @@ assouplir les règles P0.
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE
+
   strict.
+
 - v1.0 (28-02-2026) : version initiale.
 
 ---

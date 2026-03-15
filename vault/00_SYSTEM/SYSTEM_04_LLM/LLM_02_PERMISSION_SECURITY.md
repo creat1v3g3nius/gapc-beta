@@ -20,6 +20,7 @@ Garantir que le dispositif LLM documentaire GAPC reste **utile** mais
 - **Codex** opère sur code / patch / exécution dans son espace de travail
 - **AnythingLLM local** reste en **lecture seule** sur le vault documentaire
 - **API externe** reste un fallback limité, sans envoi de secrets ni données
+
   sensibles non autorisées
 
 ---
@@ -52,12 +53,12 @@ Garantir que le dispositif LLM documentaire GAPC reste **utile** mais
 ## 2) Principes non négociables
 
 1. **AnythingLLM local = read-only** sur le Vault.
-2. **Compte service dédié** sans sudo pour AnythingLLM.
-3. **No-secrets** dans repo / vault / logs / prompts.
-4. **Droits minimaux** par workspace actif.
-5. **Codex et mentor documentaire ont des rôles distincts**.
-6. **API externe = fallback**, jamais mode nominal.
-7. **Minimisation de données** avant tout envoi au fallback API.
+1. **Compte service dédié** sans sudo pour AnythingLLM.
+1. **No-secrets** dans repo / vault / logs / prompts.
+1. **Droits minimaux** par workspace actif.
+1. **Codex et mentor documentaire ont des rôles distincts**.
+1. **API externe = fallback**, jamais mode nominal.
+1. **Minimisation de données** avant tout envoi au fallback API.
 
 ---
 
@@ -236,7 +237,9 @@ Attendu :
 ## Amendements (FROZEN)
 
 - v1.2 : ajout de la séparation de rôles Codex / AnythingLLM / API fallback +
+
   minimisation de données pour fallback externe.
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog

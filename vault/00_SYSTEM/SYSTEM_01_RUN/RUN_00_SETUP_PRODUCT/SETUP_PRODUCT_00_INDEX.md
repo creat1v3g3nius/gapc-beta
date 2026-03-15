@@ -34,6 +34,7 @@ Cadrer la gestion multi-products dans GAPC sans dupliquer `CORE`, `SYSTEM`,
 - `SYSTEM` porte les protocoles operatoires et la composition.
 - `PACKAGE` adapte les regles utiles a un domaine.
 - `PRODUCT` instancie les outils de production et les preuves pendant la phase
+
   active.
 
 ## Principe directeur
@@ -81,7 +82,9 @@ Cadrer la gestion multi-products dans GAPC sans dupliquer `CORE`, `SYSTEM`,
   apres validation des protocoles de composition.
 
 - v1.3 (13-03-2026) : rehoste la famille sous
+
   `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+
 - v1.2 (13-03-2026) : renommage effectif de la famille en
 
   `SETUP_PRODUCT_*` avec arbitrage `00_INDEX`.

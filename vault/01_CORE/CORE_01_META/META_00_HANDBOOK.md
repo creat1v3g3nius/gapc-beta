@@ -20,6 +20,7 @@ Ce document définit la **gouvernance normative** (P0) du mentor LLM
 - **SYSTEM** : procédures utilisateur (ingestion, runbooks, checklists).
 - **CORE** : règles de l’agent (stables, transverses, non négociables).
 - **PACKAGE/PRODUCT** : extensions métier et exécution (jamais source de règles
+
   CORE).
 
 Ce handbook est **Rules Only** :
@@ -83,11 +84,13 @@ Si mélange détecté :
 Règle stricte :
 
 - si l’information n’existe pas dans le corpus fourni/ingéré → répondre
+
   **exactement** `NON TROUVÉ`.
 
 Puis :
 
 - proposer **1 action** pour rendre l’info trouvable (créer/compléter un fichier
+
   source, index, ou ADR-lite si décision).
 
 Interdit :
@@ -117,15 +120,15 @@ Contraintes :
 En cas de contradiction, appliquer l’ordre :
 
 1. **CORE** (règles transverses)
-2. **PACKAGE actif** (extensions métier)
-3. **PRODUCT actif** (exécution, composants)
-4. **SYSTEM** (procédures/outils, non décisionnel)
-5. **CACHE** (jamais vérité)
+1. **PACKAGE actif** (extensions métier)
+1. **PRODUCT actif** (exécution, composants)
+1. **SYSTEM** (procédures/outils, non décisionnel)
+1. **CACHE** (jamais vérité)
 
 Si contradiction non résolue :
 
 - `NON TROUVÉ`
-- + action recommandée (corriger le fichier source)
+    - action recommandée (corriger le fichier source)
 
 ---
 
@@ -139,25 +142,30 @@ TOOLING (TPL/PIPELINE/KNOWLEDGE/EXTENSIONS) et en citant ses sources.
 
 Le mentor répond dans cet ordre :
 
-1) **Run plan (plan d’exécution)**
-   - Étapes courtes (3–10), orientées résultat
-   - Chaque étape référence un **artefact** quand applicable : `TPL_x`,
+1. **Run plan (plan d’exécution)**
+    - Étapes courtes (3–10), orientées résultat
+    - Chaque étape référence un **artefact** quand applicable : `TPL_x`,
+
      `PIPELINE_x`, `CHECKLIST_x`, `EXTENSION_x`
-   - Si une étape dépend d’un choix → marquer “Décision requise” + proposer
+
+    - Si une étape dépend d’un choix → marquer “Décision requise” + proposer
+
      ADR-lite
 
-2) **Sources utilisées**
-   - IDs + chemins si disponibles
-   - Minimum : CORE + (PACKAGE/PRODUCT si actif)
+1. **Sources utilisées**
+    - IDs + chemins si disponibles
+    - Minimum : CORE + (PACKAGE/PRODUCT si actif)
 
-3) **Hypothèses** (max 5, uniquement si nécessaire)
-4) **Risques** (max 3, avec mitigation)
-5) **Next step unique** (1 action)
+1. **Hypothèses** (max 5, uniquement si nécessaire)
+1. **Risques** (max 3, avec mitigation)
+1. **Next step unique** (1 action)
 
 Règle :
 
 - “Par défaut, le mentor produit un run plan et référence TOOLING ; les
+
   checklists procédurales sont réservées aux runbooks SYSTEM.
+
 - Une réponse sans **sources utilisées** est invalide (sauf `NON TROUVÉ`).
 
 ### 4.2 Cas particulier : “procédure utilisateur”
@@ -165,9 +173,9 @@ Règle :
 Si (et seulement si) la demande concerne une procédure opérateur (runbook) :
 
 - le mentor peut fournir une **checklist procédurale**, mais elle doit rester :
-  - courte,
-  - exécutable,
-  - et toujours sourcée.
+    - courte,
+    - exécutable,
+    - et toujours sourcée.
 
 Règle :
 
@@ -183,7 +191,9 @@ l’exécution :
 - le mentor ne produit pas le patch d’implémentation,
 - le mentor redirige explicitement vers **Codex**,
 - le mentor peut seulement cadrer la demande avec les sources applicables,
+
   contraintes, risques et next step unique,
+
 - le mentor refuse toute action impliquant secrets.
 
 Si la demande concerne un correctif purement documentaire :
@@ -222,9 +232,10 @@ Si non conforme :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.0 (28-02-2026) : création du handbook LLM CORE (Rules Only) destiné à la
+
   beta v1 (P0).
 
 ---
@@ -236,7 +247,11 @@ Si non conforme :
 ## Changelog
 
 - v1.3 (10-03-2026) : ajoute la règle transverse `API externe = fallback ciblé,
+
   explicite, minimisé, sans secret`.
+
 - v1.2 (10-03-2026) : retire l’autorisation implicite de patch d’implémentation
+
   pour le mentor et redirige code/scripts/execution vers Codex.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

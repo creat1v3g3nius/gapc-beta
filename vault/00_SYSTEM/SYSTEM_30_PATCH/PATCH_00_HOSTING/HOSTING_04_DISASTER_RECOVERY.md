@@ -30,9 +30,9 @@ Définitions :
 
 ## 1) Scénario A — fichier supprimé sur D1
 
-1) Identifier le chemin dans le miroir D2
-2) Copier vers D1
-3) Si repo Git : commit “restore”
+1. Identifier le chemin dans le miroir D2
+1. Copier vers D1
+1. Si repo Git : commit “restore”
 
 ```bash
 cp /mnt/d2/gapc_backup/srv_gapc_mirror/srv/gapc/repo/vault/path/to/doc.md    /srv/gapc/repo/vault/path/to/doc.md
@@ -42,15 +42,16 @@ cp /mnt/d2/gapc_backup/srv_gapc_mirror/srv/gapc/repo/vault/path/to/doc.md    /sr
 
 ## 2) Scénario B — D1 perdu (disque HS)
 
-1) Remplacer D1 + monter `/srv/gapc`
-2) Restaurer depuis D2 :
+1. Remplacer D1 + monter `/srv/gapc`
+1. Restaurer depuis D2 :
 
 ```bash
 rsync -aHAX /mnt/d2/gapc_backup/srv_gapc_mirror/ /srv/gapc/
 ```
 
-3) Reconfigurer services (AnythingLLM, timers)
-4) Vérifier :
+1. Reconfigurer services (AnythingLLM, timers)
+1. Vérifier :
+
 - `git status` dans `/srv/gapc/repo`
 - smoke/validator
 
@@ -58,14 +59,14 @@ rsync -aHAX /mnt/d2/gapc_backup/srv_gapc_mirror/ /srv/gapc/
 
 ## 3) Scénario C — D2 perdu (backup HS)
 
-1) Remplacer D2 + remonter `/mnt/d2`
-2) Recréer dossier :
+1. Remplacer D2 + remonter `/mnt/d2`
+1. Recréer dossier :
 
 ```bash
 mkdir -p /mnt/d2/gapc_backup/srv_gapc_mirror
 ```
 
-3) Lancer rsync manuel :
+1. Lancer rsync manuel :
 
 ```bash
 /srv/gapc/scripts/backup_d1_to_d2.sh

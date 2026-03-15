@@ -68,11 +68,15 @@ Next step unique:
 PRD ID: OPS_SAMPLE_00_BACKLOG_PRODUCT
 Goal: prouver un setup nominal ou `Codex` execute, `AnythingLLM` lit et l `API externe` reste un fallback cible
 In/Out:
+
 - IN: configuration mentor documentaire, separation des roles, workspaces `WS_00`, `WS_01`, `WS_02`, discipline no-secrets
 - OUT: implementation applicative hors setup mentor/Codex
+
 Risques:
+
 - derive moteur AnythingLLM sur des sorties trop implicites
 - confusion residuale entre consultation documentaire et action IDE
+
 Verdict: PASS
 Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
@@ -85,6 +89,9 @@ Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
 
 - v1.2 (13-03-2026) : passe le controle PRD en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill l evidence PRD avec le but, le perimetre et le
+
   verdict PASS du setup finalise.
+
 - v1.0 (10-03-2026) : creation du controle PRD pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

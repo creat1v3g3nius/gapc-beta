@@ -88,7 +88,9 @@ Clarification de scope :
 
 - pour `WS_01 PackageScoped`, conserver `PRODUCT actif`,
 - pour `WS_02 ProductScoped`, appliquer la regle `PRODUCT` plus specifique et
+
   restituer `docs product actifs`,
+
 - ne pas reutiliser le format `WS_01` dans un workspace produit.
 
 Format de sortie attendu pour une question simple sur les priorités de sources :
@@ -102,6 +104,7 @@ Interdit :
 - fusionner `GAPC discipline` avec tout le package,
 - annoter un fichier `PACKAGE` comme `CORE` ou `SYSTEM`,
 - ajouter `Matrice de rôles`, `Rôle nominal`, `Justification`, `Conclusion`,
+
   `Audit` ou `Next step unique`.
 
 Exemple minimal valide :
@@ -112,6 +115,7 @@ Exemple minimal valide :
 - `PRODUCT actif`
 - `SYSTEM`
 - `Sources utilisées : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
+
   GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md`
 
 Pour une question simple sur la hiérarchie d autorité, le mentor doit produire
@@ -123,7 +127,9 @@ seulement :
 Interdit :
 
 - ajouter `Audit`, `Comparaison`, `Run plan` ou `Next step unique` si non
+
   demandés,
+
 - annoter une source `PACKAGE` avec plusieurs arcs.
 
 ---
@@ -133,7 +139,9 @@ Interdit :
 - sources obligatoires (IDs) ou `NON TROUVÉ`
 - no-secrets/no-PII
 - fallback API éventuel : explicite, justifié, minimisé, sans secret/PII (hérité
+
   CORE)
+
 - > 3 actions → backlog CO (pas liste vague)
 - décision structurante → ADR-lite
 
@@ -167,8 +175,11 @@ Exemple minimal valide :
 - `Tâche : produire une checklist documentaire GAPC`
 - `Rôle nominal : AnythingLLM local`
 - `Justification : la checklist documentaire relève du mentor documentaire dans
+
   le périmètre GAPC.`
+
 - `Sources utilisées : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
+
   GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md`
 
 Pour un refus de package non actif :
@@ -176,6 +187,7 @@ Pour un refus de package non actif :
 - refuser explicitement
 - demander isolation
 - ne pas répondre `NON TROUVE` si la source existe mais que l actif est
+
   incorrect
 
 ---
@@ -183,21 +195,35 @@ Pour un refus de package non actif :
 ## Changelog
 
 - v1.8 (12-03-2026) : clarifie la difference de sortie entre `WS_01` (`PRODUCT
-  actif`) et `WS_02` (`docs product actifs`) pour eviter la derive `T2`.
+
+  actif`) et`WS_02`(`docs product actifs`) pour eviter la derive`T2`.
+
 - v1.7 (11-03-2026) : ajoute le format de sortie exact pour une question simple
+
   sur les priorités de sources et interdit les blocs parasites de type `Matrice
   de rôles` ou `Audit`.
+
 - v1.6 (11-03-2026) : ajoute le format bloc-par-bloc obligatoire pour la matrice
+
   des rôles et interdit les listes condensées et blocs parasites.
+
 - v1.5 (11-03-2026) : ajoute les formats simples attendus pour hiérarchie et
+
   refus d isolation, et réduit le bruit des réponses package-scoped.
+
 - v1.4 (10-03-2026) : ajoute le format attendu pour l ordre des sources GAPC et
+
   verrouille les règles `source -> arc` et `role -> tache`.
+
 - v1.3 (10-03-2026) : réaligne les priorités de sources sur le CORE et rappelle
+
   la contrainte de fallback API héritée.
+
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création règles workspace GAPC (P1).
 
 ---

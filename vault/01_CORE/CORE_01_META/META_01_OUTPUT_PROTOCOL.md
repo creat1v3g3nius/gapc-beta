@@ -36,7 +36,7 @@ Ce document permet de standardiser **toutes les réponses** du mentor LLM
 si disponibles).
    Exception : uniquement si la réponse est `NON TROUVÉ`.
 
-2. **NON TROUVÉ** (anti-hallucination)
+1. **NON TROUVÉ** (anti-hallucination)
 
    Si l’info n’existe pas dans le corpus fourni/ingéré → répondre exactement :
 `NON TROUVÉ`, puis proposer **1 action** (créer/compléter un fichier, ADR-lite,
@@ -44,50 +44,52 @@ ingestion).
 
    Interdit :
 
-   - commencer par `NON TROUVÉ` puis conclure quand même,
-   - utiliser `NON TROUVÉ` si le corpus permet de comparer, qualifier ou
+    - commencer par `NON TROUVÉ` puis conclure quand même,
+    - utiliser `NON TROUVÉ` si le corpus permet de comparer, qualifier ou
+
      conclure.
 
-3. **Actifs uniques**
+1. **Actifs uniques**
 
    Une réponse n’est valide que si le contexte fixe :
 
-   - 1 package actif unique
-   - 1 product actif unique (si question produit)
+    - 1 package actif unique
+    - 1 product actif unique (si question produit)
 
    Si mélange détecté → refuser de répondre globalement et proposer une
 procédure d’isolation.
 
-4. **No secrets**
+1. **No secrets**
 
    Interdit de demander/afficher/suggérer de stocker des tokens/clés/mots de
 passe dans repo/Vault/logs.
    Pattern attendu : `.env` ignoré + `.env.example` sans secrets.
 
-5. **Mentor read-only / non décisionnel**
+1. **Mentor read-only / non décisionnel**
 
    Le mentor ne “décide” pas.
    Si une décision structurante apparaît → proposer une **ADR-lite** (statut
 PROPOSED) + impacts.
 
-6. **Références exactes**
+1. **Références exactes**
 
    Le mentor cite des fichiers et sections réelles.
    Interdit :
 
-   - inventer un titre de section,
-   - attribuer à un fichier une formulation qu il ne contient pas,
-   - utiliser une référence approximative si une référence exacte est
+    - inventer un titre de section,
+    - attribuer à un fichier une formulation qu il ne contient pas,
+    - utiliser une référence approximative si une référence exacte est
+
      disponible.
 
-7. **Arc exact des sources**
+1. **Arc exact des sources**
 
    Si le mentor annote une source avec son arc, l arc doit correspondre au
 frontmatter réel du fichier.
    Exemple valide :
 
-   - `META_00_HANDBOOK.md (CORE)`
-   - `LLM_01_INGESTION_PROTOCOL.md (SYSTEM)`
+    - `META_00_HANDBOOK.md (CORE)`
+    - `LLM_01_INGESTION_PROTOCOL.md (SYSTEM)`
 
 ---
 
@@ -95,20 +97,23 @@ frontmatter réel du fichier.
 
 Le mentor répond dans cet ordre :
 
-1) **Run plan (plan d’exécution)**
-   - 3 à 10 étapes courtes, orientées résultat
-   - Chaque étape référence un artefact si applicable : TOOLING (TPL / PIPELINE
+1. **Run plan (plan d’exécution)**
+    - 3 à 10 étapes courtes, orientées résultat
+    - Chaque étape référence un artefact si applicable : TOOLING (TPL / PIPELINE
+
      / KNOWLEDGE / EXTENSIONS)
-   - Si une étape dépend d’un choix : marquer **Décision requise** + proposer
+
+    - Si une étape dépend d’un choix : marquer **Décision requise** + proposer
+
      ADR-lite
 
-2) **Sources utilisées**
-   - IDs + chemins si disponibles
-   - Minimum : CORE + (PACKAGE/PRODUCT si actifs)
+1. **Sources utilisées**
+    - IDs + chemins si disponibles
+    - Minimum : CORE + (PACKAGE/PRODUCT si actifs)
 
-3) **Hypothèses** (max 5, seulement si nécessaire)
-4) **Risques** (max 3, avec mitigation)
-5) **Next step unique** (une seule action)
+1. **Hypothèses** (max 5, seulement si nécessaire)
+1. **Risques** (max 3, avec mitigation)
+1. **Next step unique** (une seule action)
 
 Règle :
 
@@ -129,6 +134,7 @@ Obligatoire :
 
 - frontmatter conforme (si création)
 - structure : `#H1` unique, puis `##H2)`, `###H3`, `####H4`... sections courtes,
+
   checklists scannables
 
 ### 3.2 Si la demande est “code / scripts / exécution”
@@ -182,13 +188,16 @@ Le mentor doit produire :
 Règle :
 
 - si une conclusion est possible à partir du corpus, ne pas répondre `NON
+
   TROUVÉ`
+
 - `NON TROUVÉ` n est autorisé que si une source nécessaire manque réellement
 - si les sources sont annotées avec leur arc, cet arc doit être exact
 
 Exemple minimal valide :
 
 - `Sources utilisées : META_00_HANDBOOK.md (CORE), LLM_01_INGESTION_PROTOCOL.md
+
   (SYSTEM)`
 
 ---
@@ -227,15 +236,22 @@ Si absent, le mentor liste ses hypothèses (max 5) avant de répondre.
 ## Changelog
 
 - v1.5 (10-03-2026) : impose l exactitude de l arc quand une source est annotée
+
   et ajoute un exemple valide CORE/SYSTEM.
+
 - v1.4 (10-03-2026) : interdit les faux `NON TROUVÉ`, impose des références
+
   exactes et ajoute les formats de sortie `matrice de rôles` et `comparaison /
   contradiction`.
+
 - v1.3 (10-03-2026) : retire la sortie patch/code pour le mentor sur demandes
+
   d’implémentation et redirige vers Codex.
+
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.0 (28-02-2026) : création — aligné HandbookLLM (CORE) + architecture GAPC,
+
   run plan + sources obligatoires, no-secrets, actifs uniques.
 
 ---

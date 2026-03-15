@@ -81,7 +81,9 @@ Modifications uniquement via patch ciblé + validation + version bump.
 ## Changelog
 
 - v1.4 (06-03-2026) : lien extension evidence aligné vers
+
   `GAPC_TOOLING_EXTENSION_02_EVIDENCE_REQUIREMENTS`.
+
 - v1.3 (05-03-2026) : passage en FROZEN.
 - v1.2 (05-03-2026) : ajout descriptions + chemins complets par famille.
 - v1.1 (05-03-2026) : ajout des chemins complets par famille (tooling).

@@ -29,7 +29,9 @@ scope: vault/02_PACKAGE/PACKAGE_00_GAPC/GAPC_02_DISCIPLINE
 Définir le **profil RAG spécifique au package GAPC** (extension PACKAGE) :
 
 - priorités de sources **dans** le périmètre GAPC, après application des règles
+
   CORE,
+
 - règles d’usage du mentor quand GAPC est le package actif,
 - garde-fous anti-mélange “GAPC-only”,
 - compatibilité CORE→PACKAGE→PRODUCT→SYSTEM.
@@ -37,6 +39,7 @@ Définir le **profil RAG spécifique au package GAPC** (extension PACKAGE) :
 Ce document **n’affaiblit pas** les invariants CORE :
 
 - read-only, no-secrets/no-PII, `NON TROUVÉ`, actifs uniques, sources
+
   obligatoires.
 
 ---
@@ -48,7 +51,9 @@ Référence : `DISCIPLINE_00_RAG_PROFILE` / `DISCIPLINE_02_RAG_QG`.
 - Read-only / non décisionnel
 - No-secrets / no-PII
 - Hiérarchie d’autorité : CORE → GAPC (PACKAGE actif) → PRODUCT actif → SYSTEM →
+
   CACHE
+
 - `NON TROUVÉ` obligatoire si absence de source
 - Actifs uniques (1 package actif, 1 product actif si contexte product)
 - Sources obligatoires (IDs + chemins si disponibles)
@@ -93,8 +98,11 @@ Clarification de scope :
 
 - en `WS_01 PackageScoped`, la sortie attendue reste `PRODUCT actif`,
 - en `WS_02 ProductScoped`, le niveau `PRODUCT` specialise prevaut et la sortie
+
   attendue devient `docs product actifs`,
+
 - un workspace produit ne doit pas recycler le libelle `PRODUCT actif` s il
+
   existe une regle `PRODUCT` plus specifique.
 
 Interdit :
@@ -102,6 +110,7 @@ Interdit :
 - fusionner `GAPC discipline` et `autres docs package GAPC` dans un bloc unique,
 - supprimer `PRODUCT actif` au motif qu il est hors scope nominal,
 - reformuler `CACHE` comme "interdit" ; `CACHE` reste non prioritaire et jamais
+
   vérité.
 
 Exemple minimal valide :
@@ -112,6 +121,7 @@ Exemple minimal valide :
 - `PRODUCT actif`
 - `SYSTEM`
 - `Sources utilisées : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
+
   GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md`
 
 Interdit pour cette sortie simple :
@@ -138,7 +148,9 @@ Interdit :
 
 - annoter un fichier `PACKAGE` comme s il etait `CORE`, `PRODUCT` ou `SYSTEM`,
 - ajouter des blocs `Audit`, `Comparaison`, `Run plan` ou `Next step unique` si
+
   la demande porte uniquement sur la hiérarchie,
+
 - remplacer la hiérarchie par un commentaire general sur les packages.
 
 ---
@@ -172,13 +184,17 @@ Corpus attendu :
 ## 4) Règles d’usage (P0)
 
 - Si la question implique une **décision structurante** → proposer une ADR-lite
+
   (ne pas trancher).
+
 - Si la question manque de contexte “actifs” → refuser la réponse globale et
+
   demander isolation (package/product).
+
 - Toute recommandation d’exécution doit produire :
-  - 1 action doc (fichier + patch),
-  - 1 action code (si pertinent),
-  - ou expliciter N/A.
+    - 1 action doc (fichier + patch),
+    - 1 action code (si pertinent),
+    - ou expliciter N/A.
 
 ### 4.1 Matrice des rôles inchangée par GAPC
 
@@ -205,6 +221,7 @@ Si le mentor compare `CORE` et `PACKAGE_00_GAPC`, il doit :
 Exemple minimal valide :
 
 - `Sources utilisées : META_00_HANDBOOK.md (CORE),
+
   GAPC_DISCIPLINE_00_RAG_PROFILE.md (PACKAGE)`
 
 ### 4.3 Refus d un autre package actif
@@ -219,15 +236,20 @@ mentor doit :
 Interdit :
 
 - répondre `NON TROUVE` si le probleme est un conflit d actif et non une absence
+
   de source,
+
 - produire plusieurs blocs de sortie si un refus simple suffit.
 
 Exemple minimal valide :
 
 - `Refus : PACKAGE_01 n est pas le package actif.`
 - `Isolation requise : repondre uniquement dans le perimetre PACKAGE_00_GAPC ou
+
   activer explicitement un autre package.`
+
 - `Sources utilisees : GAPC_META_00_PACKAGE_PROFILE.md,
+
   GAPC_DISCIPLINE_00_RAG_PROFILE.md`
 
 ---
@@ -235,10 +257,10 @@ Exemple minimal valide :
 ## 5) Garde-fous spécifiques GAPC (P1)
 
 - Préférer des réponses qui renvoient vers :
-  - `GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER` pour classer,
-  - `GAPC_DISCIPLINE_04_RISK_REGISTER` pour risques/signaux,
-  - `GAPC_DISCIPLINE_01_GEL_RULES` pour gel,
-  - plutôt que d’inventer des “règles implicites”.
+    - `GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER` pour classer,
+    - `GAPC_DISCIPLINE_04_RISK_REGISTER` pour risques/signaux,
+    - `GAPC_DISCIPLINE_01_GEL_RULES` pour gel,
+    - plutôt que d’inventer des “règles implicites”.
 
 ---
 
@@ -283,22 +305,39 @@ Interdit :
 ## Changelog
 
 - v1.8 (12-03-2026) : clarifie la bascule `WS_01 = PRODUCT actif` vers `WS_02 =
+
   docs product actifs` pour eviter la collision package/product sur `T2`.
+
 - v1.7 (11-03-2026) : ajoute un exemple exact de sortie simple pour `T2` et
+
   interdit les blocs parasites.
+
 - v1.6 (11-03-2026) : remplace le rappel générique de format par les formats
+
   package critiques `T4/T5`.
+
 - v1.5 (11-03-2026) : ajoute le format attendu pour la hiérarchie d autorité et
+
   le refus simple d un autre package actif afin de réduire le bruit des
   réponses.
+
 - v1.4 (10-03-2026) : verrouille l ordre exact des sources GAPC, rappelle que la
+
   matrice des rôles n est pas modifiée par le package et impose `CORE + PACKAGE`
   pour les comparaisons.
+
 - v1.3 (10-03-2026) : réaligne l’ordre des sources sur `CORE -> PACKAGE ->
+
   PRODUCT -> SYSTEM -> CACHE`.
+
 - v1.2 (04-03-2026) : corrections chemins + ids `depends_on` du frontmatter +
+
   `scope`.
+
 - v1.1 (01-03-2026) : passage en FROZEN (status+version bump) + amendements
+
   contrôlés + correction références.
+
 - v1.0 (01-03-2026) : création profil RAG GAPC (priorités sources + profils
+
   R0/R1/R2), extension PACKAGE sans affaiblir CORE.

@@ -53,6 +53,7 @@ Si une décision est structurante :
 Interdit :
 
 - introduire une décision structurante “implicitement” dans un document de
+
   règle.
 
 ---
@@ -82,9 +83,10 @@ Ils ne peuvent pas :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.0 (01-03-2026) : création de la contrainte CORE de traçabilité des
+
   décisions structurantes.
 
 ---

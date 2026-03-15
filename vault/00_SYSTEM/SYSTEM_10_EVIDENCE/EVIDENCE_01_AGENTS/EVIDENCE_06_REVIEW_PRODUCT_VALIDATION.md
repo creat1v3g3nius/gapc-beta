@@ -34,7 +34,9 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - [x] Sans oral
 - [x] No-secrets / no-PII
 - [x] Hiérarchie d autorité alignée `CORE -> PACKAGE -> PRODUCT -> SYSTEM ->
+
   CACHE`
+
 - [x] Priorités de sources package et produit distinctes et cohérentes
 - [x] Séparation `Codex / AnythingLLM / API externe fallback` lisible
 
@@ -54,6 +56,7 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - Setup Codex : PASS
 - Gate `FROZEN` : PASS
 - Next step unique : rerun complet obligatoire avant toute future modification
+
   significative du lot
 
 ## Amendements (FROZEN)

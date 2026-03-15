@@ -46,8 +46,8 @@ Contraintes :
 
 - Interdit : commit direct (sauf **hotfix** documenté).
 - Doit rester “green” :
-  - validator frontmatter/naming OK
-  - smoke runner OK (si applicable)
+    - validator frontmatter/naming OK
+    - smoke runner OK (si applicable)
 - Sert de base pour toutes les branches `work/*`.
 
 ### 1.2) work/* (branches de travail)
@@ -286,6 +286,6 @@ Un merge vers `main` est acceptable si :
   et davantage de `GIT_03_PATCH_COMMIT`.
 
 - v1.2 (06-03-2026) : ajout règle PR GitHub même solo
-  + référence template `.github/pull_request_template.md`.
+    - référence template `.github/pull_request_template.md`.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

@@ -29,38 +29,66 @@ Tracer la qualification de l agent Codex pour le setup final
 
 ```txt
 Tool:
+
 - Codex IDE
+
 Protocol ID:
+
 - WORKFLOW_08_TESTS_CODEX
+
 Date:
+
 - 13-03-2026
+
 Active package:
+
 - PACKAGE_00_GAPC
+
 Active product:
+
 - PRODUCT_00_SAMPLE_GAPC_AGENTS
+
 Goal:
+
 - prouver que Codex tient `diff-first`, `no auto-commit`, `no-secrets`, `scope control` et la separation des roles
+
 Inputs summary:
+
 - prompt canonique `SCRIPT_03_INSTRUCTIONS_CODEX`
 - runbook `WORKFLOW_08_TESTS_CODEX`
 - setup final mentor + Codex
+
 Prompt(s) final(s):
+
 - batterie `T1` a `T8` de `WORKFLOW_08_TESTS_CODEX`
+
 Key params:
+
 - temperature basse
 - no-secrets
 - no auto-commit
 - diff-first
+
 Outputs produced (filenames):
+
 - WORKFLOW_08_TESTS_CODEX.md
+
 Storage location (path):
+
 - vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
+
 Checks (PII/rights/no-secrets):
+
 - PASS
+
 Notes:
+
 - `T2` valide via prompt strict `Diagnostic / Actions Code / Checks / Commit recommande / Next step unique`
+
 Next step:
+
 - conserver ce runbook pour les reruns Codex
+
 ```
 
 ## Test Results
@@ -79,14 +107,22 @@ Next step:
 ```txt
 Verdict: OK
 P0 fails:
+
 - aucun
+
 Evidence IDs:
+
 - WORKFLOW_08_TESTS_CODEX
 - SCRIPT_03_INSTRUCTIONS_CODEX
+
 Risques ouverts:
+
 - aucun P0 ouvert
+
 Next step unique:
+
 - relier cette preuve aux gates `DOD_00` et `DOD_03`
+
 ```
 
 ## Amendements (FROZEN)
@@ -97,4 +133,5 @@ Next step unique:
 
 - v1.1 (13-03-2026) : passe la preuve Codex IDE en `READY_TO_FREEZE`.
 - v1.0 (13-03-2026) : creation de la preuve Codex IDE a partir du modele
+
   `EXTENSION_04_EVIDENCE_PACK`.

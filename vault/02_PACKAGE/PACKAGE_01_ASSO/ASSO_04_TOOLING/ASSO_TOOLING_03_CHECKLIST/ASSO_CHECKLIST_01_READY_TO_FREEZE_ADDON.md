@@ -42,4 +42,5 @@ scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_04_TOOLING/ASSO_TOOLING_03_CHECKLIS
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (01-03-2026) : passage en FROZEN v1.2 + normalisation metadata.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.

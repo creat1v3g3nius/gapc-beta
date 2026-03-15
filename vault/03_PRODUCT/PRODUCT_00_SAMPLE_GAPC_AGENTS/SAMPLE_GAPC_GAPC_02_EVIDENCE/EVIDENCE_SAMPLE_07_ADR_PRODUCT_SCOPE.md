@@ -28,20 +28,23 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Date : 13-03-2026
 - Owner : repo-maintainer
 - Liens : `DOD_SAMPLE_00_PRODUCT_VALIDATION`, `DOD_SAMPLE_03_RELEASE_FREEZE`,
+
   `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 
 ## 1) Contexte
 
 - Problème : décider si le setup `PRODUCT_00_SAMPLE_GAPC_AGENTS` peut être
+
   considéré finalisé et `FROZEN`
+
 - Contraintes :
-  - alignement `CORE -> PACKAGE -> PRODUCT`
-  - no-secrets / no-PII
-  - séparation `Codex / AnythingLLM / API externe fallback`
-  - workspaces mentor et agent Codex qualifiés
+    - alignement `CORE -> PACKAGE -> PRODUCT`
+    - no-secrets / no-PII
+    - séparation `Codex / AnythingLLM / API externe fallback`
+    - workspaces mentor et agent Codex qualifiés
 - Drivers :
-  - besoin d une preuve stable et réutilisable sans oral
-  - nécessité de fixer la chaîne de vérité `DOD -> OPS -> EVIDENCE`
+    - besoin d une preuve stable et réutilisable sans oral
+    - nécessité de fixer la chaîne de vérité `DOD -> OPS -> EVIDENCE`
 
 ## 2) Options considerees
 
@@ -49,42 +52,44 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 - Description : maintenir le lot en `DRAFT` malgré les PASS
 - Pros :
-  - prudence maximale
+    - prudence maximale
 - Cons :
-  - statut incohérent avec les preuves
-  - gel documentaire retardé sans raison P0
+    - statut incohérent avec les preuves
+    - gel documentaire retardé sans raison P0
 - Risques :
-  - dérive entre contenu et statut
+    - dérive entre contenu et statut
 
 ### Option B
 
 - Description : passer le lot en `FROZEN` après backfill complet des preuves
 - Pros :
-  - cohérence entre gates, statuts et evidence pack
-  - lot exploitable sans oral
+    - cohérence entre gates, statuts et evidence pack
+    - lot exploitable sans oral
 - Cons :
-  - nécessite discipline de rerun à chaque changement significatif
+    - nécessite discipline de rerun à chaque changement significatif
 - Risques :
-  - relâchement si le rerun n est pas appliqué après modification
+    - relâchement si le rerun n est pas appliqué après modification
 
 ## 3) Decision
 
 - Decision : retenir l option B et considérer `PRODUCT_00_SAMPLE_GAPC_AGENTS`
+
   comme `FROZEN` après PASS de `DOD_00` à `DOD_03`, `WORKFLOW_07_TESTS_LLM` et
   `WORKFLOW_08_TESTS_CODEX`
 
 ## 4) Consequences
 
 - Positives :
-  - statut produit cohérent avec les preuves
-  - chaîne `DOD -> OPS -> EVIDENCE` stabilisée
-  - setup mentor + Codex finalisé
+    - statut produit cohérent avec les preuves
+    - chaîne `DOD -> OPS -> EVIDENCE` stabilisée
+    - setup mentor + Codex finalisé
 - Négatives :
-  - obligation de rerun en cas d évolution documentaire ou prompt
+    - obligation de rerun en cas d évolution documentaire ou prompt
 - Dette créée :
-  - aucune dette P0 ; dette opérationnelle limitée au rerun périodique
+    - aucune dette P0 ; dette opérationnelle limitée au rerun périodique
 - Backout plan :
-  - repasser les fichiers concernés en `DRAFT` si une gate `DOD` ou une batterie
+    - repasser les fichiers concernés en `DRAFT` si une gate `DOD` ou une batterie
+
     de tests redevient `KO`
 
 ## 5) Next step unique
@@ -99,4 +104,5 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 - v1.0 (13-03-2026) : aligne l ADR sur la bascule finale `FROZEN`.
 - v1.0 (13-03-2026) : création de l ADR de périmètre produit après PASS complet
+
   des gates DOD.

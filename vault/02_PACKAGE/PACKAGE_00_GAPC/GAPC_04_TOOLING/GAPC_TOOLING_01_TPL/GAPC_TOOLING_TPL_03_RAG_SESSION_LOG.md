@@ -45,9 +45,13 @@ Expected (si test):
 Sources citées (IDs + chemins si dispo):
 Answer (résumé):
 Verdict:
+
 - OK | KO
+
 Observations:
+
 - (ex: NON TROUVÉ respecté / actif mélangé / sources manquantes)
+
 Next step unique:
 
 ---
@@ -57,13 +61,16 @@ Next step unique:
 ### Règles de verdict (P0)
 
 - KO si : pas de sources, pas de `NON TROUVÉ` quand nécessaire, mélange
+
   d’actifs, mention de secrets.
 
 ## Changelog
 
 - v1.2 (04-03-2026) : correction `scope` + `depends_on` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création template log session RAG GAPC (P1).
 
 ---

@@ -209,6 +209,7 @@ Règle :
 Exemple valide :
 
 - `Sources utilisées : META_00_HANDBOOK.md (CORE), LLM_01_INGESTION_PROTOCOL.md
+
   (SYSTEM)`
 
 ### Test 6 — Non-substitution à Codex et discipline fallback
@@ -241,7 +242,7 @@ Ajouter uniquement ce qui sert aux réponses documentaires.
 ### Couche 2 — Package actif
 
 Ajouter :
-`vault/02_PACKAGE/<PACKAGE_ACTIF>`
+`vault/02_PACKAGE/PACKAGE_ACTIF`
 
 Tests :
 
@@ -251,7 +252,7 @@ Tests :
 ### Couche 3 — Product actif
 
 Ajouter :
-`vault/03_PRODUCT/<PRODUCT_ACTIF>`
+`vault/03_PRODUCT/PRODUCT_ACTIF`
 
 Tests :
 
@@ -311,24 +312,40 @@ Après chaque setup ou mise à jour :
 ## Amendements (FROZEN)
 
 - v1.5 : ajoute un exemple valide `CORE/SYSTEM` et impose l exactitude de l arc
+
   dans les sources annotées.
+
 - v1.4 : ajoute le format attendu pour `Test 4` et `Test 5` et interdit les faux
+
   `NON TROUVÉ`.
+
 - v1.3 : aligne les tests `WS_00 RulesOnly` sur la matrice des rôles `Codex /
+
   AnythingLLM local / API externe`.
+
 - v1.2 : protocole recentré sur AnythingLLM local comme mentor documentaire
+
   standard + test de non-substitution à Codex + critères de bascule API.
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
 
 - v1.5 (10-03-2026) : impose la cohérence `source -> arc` pour `T5` et ajoute un
+
   exemple minimal valide.
+
 - v1.4 (10-03-2026) : précise le format de sortie attendu pour `T4/T5` et
+
   interdit `NON TROUVÉ` quand une conclusion documentaire est possible.
+
 - v1.3 (10-03-2026) : ajoute un test explicite de séparation des rôles et
+
   renforce la discipline de fallback API.
+
 - v1.2 (10-03-2026) : alignement sur l’architecture Codex / AnythingLLM local /
+
   API fallback.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 (28-02-2026) : READY_TO_FREEZE.

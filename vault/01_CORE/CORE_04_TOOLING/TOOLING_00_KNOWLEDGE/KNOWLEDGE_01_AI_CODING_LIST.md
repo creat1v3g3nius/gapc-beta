@@ -75,7 +75,7 @@ Référentiel d’outils et de patterns pour coder avec assistance IA en respect
 
 ---
 
-## Changelog
+## Historique initial
 
 - v1.0 (01-03-2026) : version minimale.
 

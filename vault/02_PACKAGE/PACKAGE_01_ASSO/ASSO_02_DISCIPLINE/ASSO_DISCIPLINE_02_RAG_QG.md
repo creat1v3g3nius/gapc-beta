@@ -44,7 +44,9 @@ sans mitigation+owner.
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (02-03-2026) : passage en FROZEN v1.2 + correction depends_on.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création gates RAG ASSO (P1).
 
 ---

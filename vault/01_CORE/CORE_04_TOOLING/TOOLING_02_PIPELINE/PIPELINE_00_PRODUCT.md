@@ -65,7 +65,9 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 
 - Produire un PRD via `TPL_00_PRDONEPAGER`.
 - Classifier les items majeurs via `DISCIPLINE_06_SCOPECLASSIFIER`
+
   (NOW/NEXT/LATER/REJECT).
+
 - Si décision structurante détectée → ADR via `TPL_02_ADRLITE`.
 
 **Gate** : DocQG READY_TO_FREEZE (sur le PRD).
@@ -119,6 +121,7 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 - Déclarer READY_TO_FREEZE via `DISCIPLINE_01_GEL_RULES`.
 - Produire Release Note via `TPL_10_RELEASENOTE` si gel/release.
 - Passer FROZEN si critères de gel satisfaits (amendements contrôlés,
+
   reproductibilité, zéro P0 ouvert).
 
 ---
@@ -138,7 +141,7 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : création pipeline product CORE (P0).

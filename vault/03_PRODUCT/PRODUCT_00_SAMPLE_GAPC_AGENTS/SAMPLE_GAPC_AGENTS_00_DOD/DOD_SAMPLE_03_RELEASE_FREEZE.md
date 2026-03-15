@@ -72,8 +72,11 @@ Next step unique:
 Target: FROZEN
 Verdict: OK
 P0 fails:
+
 - aucun
+
 Evidence IDs:
+
 - DOD_SAMPLE_00_PRODUCT_VALIDATION
 - DOD_SAMPLE_01_PRODUCT_THIN_SLICE
 - EVIDENCE_SAMPLE_00_INDEX
@@ -82,10 +85,15 @@ Evidence IDs:
 - EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
 - EVIDENCE_SAMPLE_04_CODEX_IDE
 - OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
+
 Release note:
+
 - EVIDENCE_SAMPLE_05_RELEASE_NOTE_PRODUCT_VALIDATION
+
 Next step unique:
+
 - conserver le lot `FROZEN`
+
 ```
 
 ## 4) Anti-derive
@@ -103,11 +111,18 @@ Next step unique:
 
 - v1.4 (13-03-2026) : bascule le gate final produit en `FROZEN`.
 - v1.4 (13-03-2026) : raccorde la release note produit au gate
+
   `READY_TO_FREEZE`.
+
 - v1.3 (13-03-2026) : passe la gate de gel en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : aligne la gate de gel sur le backfill `OPS` complet et
+
   ajoute la preuve Codex.
+
 - v1.1 (12-03-2026) : ajoute l evidence de gel documentee et les `Evidence IDs`
+
   du pack produit.
+
 - v1.0 (10-03-2026) : creation de la checklist de gel pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

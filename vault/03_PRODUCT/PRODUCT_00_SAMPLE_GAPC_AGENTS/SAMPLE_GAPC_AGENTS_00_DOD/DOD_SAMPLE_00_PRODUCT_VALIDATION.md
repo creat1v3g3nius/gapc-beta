@@ -126,23 +126,32 @@ Next step unique:
 ```txt
 Verdict: OK
 P0 fails:
+
 - aucun
+
 Evidence IDs:
+
 - EVIDENCE_SAMPLE_00_INDEX
 - EVIDENCE_SAMPLE_01_WS00_RULESONLY
 - EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
 - EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
 - EVIDENCE_SAMPLE_04_CODEX_IDE
+
 Risques ouverts:
+
 - aucun P0 ouvert sur le setup mentor + Codex
+
 Next step unique:
+
 - consolider ce verdict dans `DOD_SAMPLE_03_RELEASE_FREEZE`
+
 ```
 
 ## 4) Notes de cadrage
 
 - Le lot `OPS_*` complete la chaine de preuve operatoire du product.
 - Le product sert d espace de preuve et de validation, pas de source de verite
+
   transverse.
 
 ## Amendements (FROZEN)
@@ -152,11 +161,18 @@ Next step unique:
 ## Changelog
 
 - v1.3 (13-03-2026) : normalise le libelle `API externe fallback` et passe le
+
   document en `READY_TO_FREEZE`.
+
 - v1.2 (13-03-2026) : aligne le verdict final sur le lot `OPS` backfill et
+
   ajoute la preuve `EVIDENCE_SAMPLE_04_CODEX_IDE`.
+
 - v1.1 (12-03-2026) : ajoute le verdict documente et les `Evidence IDs` du pack
+
   `SAMPLE_GAPC_GAPC_02_EVIDENCE`.
+
 - v1.1 (10-03-2026) : aligne la note de cadrage sur la creation du lot `OPS_*`.
 - v1.0 (10-03-2026) : creation du document de validation produit pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

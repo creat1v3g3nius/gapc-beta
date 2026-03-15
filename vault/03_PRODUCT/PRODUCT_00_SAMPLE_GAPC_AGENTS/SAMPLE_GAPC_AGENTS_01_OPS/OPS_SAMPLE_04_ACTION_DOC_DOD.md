@@ -61,6 +61,7 @@ Next step unique:
 
 ```txt
 Fichier:
+
 - WORKFLOW_07_TESTS_LLM
 - WORKFLOW_08_TESTS_CODEX
 - GAPC_DISCIPLINE_00_RAG_PROFILE
@@ -68,19 +69,23 @@ Fichier:
 - OPS_SAMPLE_02_SPEC_DOD
 
 Section:
+
 - prompts de qualification canonises
 - formats critiques `T1/T2/T4/T6`
 - priorites de sources package et produit
 
 Intention:
+
 - stabiliser la qualification mentor AnythingLLM et agent Codex
 
 Patch:
+
 - canonisation des prompts optimises
 - backfill des preuves produit
 - suppression des collisions documentaires sur les formats critiques
 
 Validation:
+
 - `WS_00` PASS
 - `WS_01` PASS
 - `WS_02` PASS
@@ -99,6 +104,9 @@ Next step unique: figer ces prompts comme reference operative dans le lot produi
 - v1.3 (13-03-2026) : aligne le controle action doc sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le controle action doc en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill l action doc avec les patchs ayant stabilise la
+
   qualification mentor + Codex.
+
 - v1.0 (10-03-2026) : creation du controle action doc pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

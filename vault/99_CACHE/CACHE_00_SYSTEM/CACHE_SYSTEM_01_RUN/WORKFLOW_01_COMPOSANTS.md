@@ -40,13 +40,17 @@ scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 
 - le pilotage backlog ne vit plus dans `SYSTEM_01_RUN`
 - les CO doivent etre decrits et qualifies dans les pipelines et templates du
+
   `CORE`
+
 - les runbooks `WORKFLOW_*` coeur consomment les CO, mais ne definissent plus
+
   leur standard documentaire
 
 ## Next step unique
 
 - utiliser `PIPELINE_03_BACKLOG_COMPOSANTS` pour tout nouveau CO et ne plus
+
   etendre `WORKFLOW_01`.
 
 ## Amendements (DEPRECATED)
@@ -56,8 +60,12 @@ scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 ## Changelog
 
 - v1.4 (13-03-2026) : archive en `CACHE_SYSTEM_01_RUN` pour sortir du scope
+
   SYSTEM actif.
+
 - v1.3 (13-03-2026) : passe en `DEPRECATED` et redirige vers
+
   `PIPELINE_00_PRODUCT` et `PIPELINE_03_BACKLOG_COMPOSANTS`.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

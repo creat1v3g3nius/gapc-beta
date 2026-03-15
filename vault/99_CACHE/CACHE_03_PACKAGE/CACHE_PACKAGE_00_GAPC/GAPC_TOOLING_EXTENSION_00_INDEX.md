@@ -29,9 +29,13 @@ Index des extensions **autorisées** dans le cadre GAPC (PACKAGE).
 ## Changelog
 
 - v1.2 (04-03-2026) : correction `scope` du frontmatter + déplacement dans
+
   CACHE.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création index extensions GAPC.
 
 ---

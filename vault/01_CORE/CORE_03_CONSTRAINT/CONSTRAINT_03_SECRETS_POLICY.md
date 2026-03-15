@@ -93,7 +93,7 @@ peuvent pas :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.0 (01-03-2026) : création de la contrainte CORE no-secrets/no-PII.
 
@@ -106,6 +106,8 @@ peuvent pas :
 ## Changelog
 
 - v1.4 (10-03-2026) : ajoute la contrainte de minimisation et d’exclusion des
+
   secrets pour tout fallback API externe.
+
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

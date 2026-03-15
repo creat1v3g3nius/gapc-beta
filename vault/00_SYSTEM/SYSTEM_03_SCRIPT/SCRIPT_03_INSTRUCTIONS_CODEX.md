@@ -208,12 +208,13 @@ version :
 - clarifie la séparation **Codex / AnythingLLM / API**
 - autorise Codex à se référer d’abord au **CORE**, puis au **PACKAGE actif**
 - conserve les invariants :
-  - diff-first
-  - no auto-commit
-  - no-secrets
-  - scope control
-  - patch atomique
+    - diff-first
+    - no auto-commit
+    - no-secrets
+    - scope control
+    - patch atomique
 - ajoute une politique de redirection vers le mentor documentaire quand la
+
   demande n’exige pas d’action IDE
 
 ---
@@ -240,7 +241,7 @@ Créer plus tard un document compagnon :
 
 ## Doc QG
 
-### READY_TO_FREEZE — PASS si :
+### READY_TO_FREEZE — PASS si
 
 - séparation des rôles explicite
 - ordre CORE puis PACKAGE défini
@@ -249,7 +250,7 @@ Créer plus tard un document compagnon :
 - no-secrets respecté
 - aucune ambiguïté sur Codex = code/patch/exécution
 
-### FAIL si :
+### FAIL si
 
 - confusion entre rôle IDE et rôle mentor documentaire
 - absence de hiérarchie documentaire
@@ -283,7 +284,9 @@ Smoke tests documentaires :
 - vérifier que le prompt n’autorise pas d’auto-commit
 - vérifier qu’il cite bien CORE puis PACKAGE
 - vérifier qu’il redirige les tâches purement documentaires vers AnythingLLM
+
   local
+
 - vérifier qu’il maintient Codex sur code / patch / exécution
 
 ---
@@ -316,5 +319,7 @@ naming avant passage READY_TO_FREEZE final.
 ## Changelog
 
 - v1.1 (15-03-2026) : passage en FROZEN apres validation documentaire globale du
+
   vault.
+
 - v1.0 (10-03-2026) : creation du cadrage operatoire Codex IDE pour GAPC.

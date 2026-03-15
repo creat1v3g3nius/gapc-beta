@@ -67,7 +67,7 @@ rapidement, avec garde-fous no-secrets.
 
 ---
 
-## Changelog
+## Historique initial
 
 - v1.0 (01-03-2026) : version minimale.
 

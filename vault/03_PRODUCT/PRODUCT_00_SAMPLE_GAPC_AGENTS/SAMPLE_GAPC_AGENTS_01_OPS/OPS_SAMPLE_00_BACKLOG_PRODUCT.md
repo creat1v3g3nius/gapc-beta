@@ -35,7 +35,9 @@ rendre la chaine de preuve lisible et actionnable.
 - Product cible : `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - Package actif : `PACKAGE_00_GAPC`
 - But : prouver un setup nominal ou `Codex` execute, `AnythingLLM` lit et l `API
+
   externe` reste un fallback cible
+
 - Statut global : `FROZEN`
 
 ## 2) CO actifs
@@ -62,7 +64,9 @@ rendre la chaine de preuve lisible et actionnable.
 - pour `WS_02`, 1 product actif = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - un autre product doit etre refuse explicitement avec demande d isolation
 - les priorites de sources produit suivent `CORE -> GAPC discipline -> autres
+
   docs package GAPC -> docs product actifs -> SYSTEM`
+
 - la matrice des roles produit reste `1 bloc par tache`
 
 ## 5) Sortie attendue
@@ -107,9 +111,13 @@ Format attendu :
 Interdit :
 
 - repondre avec la hierarchie d autorite `CORE -> PACKAGE_00_GAPC ->
+
   PRODUCT_00_SAMPLE_GAPC_AGENTS -> SYSTEM -> CACHE`,
+
 - utiliser les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a la
+
   place des categories de sources,
+
 - ajouter `CACHE`.
 
 Exemple minimal valide :
@@ -120,20 +128,24 @@ Exemple minimal valide :
 - `docs product actifs`
 - `SYSTEM`
 - `Sources utilisees : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
+
   GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md, OPS_SAMPLE_02_SPEC_DOD.md`
 
 ## 7) Evidence documentee
 
 ```txt
 Workspace status:
+
 - WS_00 RulesOnly: PASS
 - WS_01 PackageScoped: PASS
 - WS_02 ProductScoped: PASS
 
 Codex status:
+
 - Batterie WORKFLOW_08_TESTS_CODEX: PASS
 
 Evidence IDs:
+
 - EVIDENCE_SAMPLE_00_INDEX
 - EVIDENCE_SAMPLE_01_WS00_RULESONLY
 - EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
@@ -155,10 +167,17 @@ Next step unique: conserver ce backlog comme reference gelée du produit
 - v1.4 (13-03-2026) : bascule le backlog produit en `FROZEN`.
 - v1.4 (13-03-2026) : passe le backlog produit en `READY_TO_FREEZE`.
 - v1.3 (13-03-2026) : passe le backlog produit en `READY_TO_FREEZE candidate`
+
   apres PASS des batteries mentor et Codex.
+
 - v1.2 (11-03-2026) : renforce le format `T2` pour `WS_02` avec interdictions
+
   explicites et exemple minimal valide.
+
 - v1.1 (11-03-2026) : ajoute les regles `WS_02` sur product actif unique,
+
   priorites de sources produit et formats de controle workspace.
+
 - v1.0 (10-03-2026) : creation du backlog product pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

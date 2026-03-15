@@ -104,11 +104,17 @@ Catégories recommandées (tu peux en ajouter, pas en retirer côté CORE) :
 Signaux minimaux à utiliser dans les risques :
 
 - **S1 Frontmatter KO** : validator détecte `updated` manquant / `id!=filename`
+
   / `scope` incohérent.
+
 - **S2 Duplications** : contradictions entre docs CORE/SYSTEM sur une même
+
   règle.
+
 - **S3 RAG KO** : le mentor ne cite pas les sources ou n’utilise pas `NON
+
   TROUVÉ`.
+
 - **S4 Smoke KO** : smoke tests échouent (ou non reproductibles).
 - **S5 Secrets risk** : présence de tokens/keys dans diff, docs, logs.
 - **S6 Dérive CO** : un CO touche > 1 intention ou > 1 arc sans découpage.
@@ -183,9 +189,9 @@ Liens: (CO/ADR/doc/issue/commit)
 ## 7) Utilisation (règle)
 
 - Le registre est **mis à jour** :
-  - en fin de session (si nouveau signal),
-  - avant READY_TO_FREEZE,
-  - avant FROZEN.
+    - en fin de session (si nouveau signal),
+    - avant READY_TO_FREEZE,
+    - avant FROZEN.
 - Si un risque critique apparaît : créer un **CO P0** dédié.
 
 ---
@@ -198,5 +204,7 @@ Liens: (CO/ADR/doc/issue/commit)
 
 - v1.2 (04-03-2026) : correction du `scope` du frontmatter.
 - v1.1 (01-03-2026) : passage en FROZEN (status+version bump) + amendements
+
   contrôlés + correction références.
+
 - v1.0 (01-03-2026) : version initiale.

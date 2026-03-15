@@ -67,12 +67,14 @@ Références :
 Stop condition :
 
 - Si tu touches à **2 arcs** dans la même session → **STOP** et scinde en 2
+
   sessions.
 
 ### 3.2) Règle “package actif unique”
 
 - Un seul package actif doit être considéré pendant la session.
 - Le mentor (si utilisé) ne doit ingérer que : **CORE + package actif + product
+
   actif**.
 
 ---
@@ -166,6 +168,7 @@ Lancer le smoke runner si :
 Attendu :
 
 - smoke détecte : dossiers manquants, fichiers invariants absents, validator
+
   indisponible
 
 ---
@@ -188,6 +191,7 @@ Exemples :
 Stop condition :
 
 - Si tu hésites sur le message → c’est souvent que la session contient **2
+
   intentions**.
 
 ---
@@ -197,8 +201,7 @@ Stop condition :
 - [ ] Mettre à jour le statut du CO (Draft/Ready/In progress/Done)
 - [ ] Ajouter 1 lien vers le commit (hash ou message)
 - [ ] Ajouter 1 risque max si nouveau
-- [ ] Mettre à jour l’index du product si nécessaire (pas obligatoire à chaque
-      session)
+- [ ] Mettre à jour l’index du product si nécessaire (pas obligatoire à chaque session)
 
 ---
 

@@ -26,8 +26,8 @@ vérifier que le repo GAPC est **sain** :
 - Validator OK (frontmatter/naming)
 - Aucun invariant manquant (dossiers clés)
 - Code de retour standard :
-  - `0` = OK
-  - `!=0` = KO
+    - `0` = OK
+    - `!=0` = KO
 
 Contraintes :
 
@@ -54,25 +54,32 @@ Contraintes :
 ### P0 (obligatoire)
 
 1. **Racine repo** : présence `.git/` (ou `git status` OK)
-2. **Vault présent** : `vault/` existe
-3. **Arcs présents** :
-   - `vault/00_SYSTEM/`
-   - `vault/01_CORE/`
-   - `vault/02_PACKAGE/`
-   - `vault/03_PRODUCT/`
-   - `vault/99_CACHE/` *(ou legacy `vault/04_CACHE/`)*
-4. **Validator exécutable** : appelle `scripts/ValidateFrontmatter.py` et lit le
+1. **Vault présent** : `vault/` existe
+1. **Arcs présents** :
+    - `vault/00_SYSTEM/`
+    - `vault/01_CORE/`
+    - `vault/02_PACKAGE/`
+    - `vault/03_PRODUCT/`
+    - `vault/99_CACHE/` *(ou legacy `vault/04_CACHE/`)*
+1. **Validator exécutable** : appelle `scripts/ValidateFrontmatter.py` et lit le
+
    code retour
-5. **DocIntegrity optionnel** : peut appeler `scripts/DocIntegrityChecker.py`
+
+1. **DocIntegrity optionnel** : peut appeler `scripts/DocIntegrityChecker.py`
+
    sur le scope cible
 
 ### P1 (recommandé)
 
-6. **Package actif** : si explicitement demandé, vérifier existence dans
+1. **Package actif** : si explicitement demandé, vérifier existence dans
+
    `vault/02_PACKAGE/`
-7. **Product actif** : si explicitement demandé, vérifier existence dans
+
+1. **Product actif** : si explicitement demandé, vérifier existence dans
+
    `vault/03_PRODUCT/`
-8. **Typo traps** : détecter patterns connus (ex: `SpechTech`)
+
+1. **Typo traps** : détecter patterns connus (ex: `SpechTech`)
 
 ---
 
@@ -121,7 +128,7 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
 ## 5) Interpréter un KO (table rapide)
 
 | KO | Cause probable | Fix minimal |
-|---|---|---|
+| --- | --- | --- |
 | Git KO | mauvais dossier ouvert | ouvrir `repo/` |
 | Vault KO | mauvais chemin | vérifier `vault/` |
 | Arcs KO | arbo incomplète | créer dossiers manquants |
@@ -133,9 +140,9 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
 ## 6) Règles d’usage
 
 - Smoke à exécuter :
-  - avant merge vers `main`
-  - après modification scripts/outillage/config
-  - après gros ajout de docs structurants
+    - avant merge vers `main`
+    - après modification scripts/outillage/config
+    - après gros ajout de docs structurants
 - Interdit : ignorer un KO sans note (CO/incident)
 
 ---
@@ -153,6 +160,8 @@ Ajouter/mettre à jour `repo/.vscode/tasks.json` :
 ## Changelog
 
 - v1.2 (13-03-2026) : recale la notice sur `scripts/SmokeRunner.py`,
+
   `ValidateFrontmatter.py` et l option `DocIntegrityChecker`.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

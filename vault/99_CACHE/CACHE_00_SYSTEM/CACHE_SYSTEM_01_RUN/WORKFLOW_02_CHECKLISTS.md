@@ -47,15 +47,21 @@ scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 ## Note de migration
 
 - la mention historique `CHECKLIST_00_INDEX` n est plus une source canonique
+
   exploitable dans l etat courant
+
 - les checklists actives vivent dans
+
   `vault/01_CORE/CORE_04_TOOLING/TOOLING_03_CHECKLIST/`
+
 - quand une checklist devient un protocole operatoire durable, la logique
+
   detaillee doit vivre dans `SYSTEM_01_RUN`
 
 ## Next step unique
 
 - utiliser directement les `CHECKLIST_*` du `CORE` et ne plus etendre
+
   `WORKFLOW_02`.
 
 ## Amendements (DEPRECATED)
@@ -65,8 +71,12 @@ scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 ## Changelog
 
 - v1.3 (13-03-2026) : archive en `CACHE_SYSTEM_01_RUN` pour sortir du scope
+
   SYSTEM actif.
+
 - v1.2 (13-03-2026) : passe en `DEPRECATED` et redirige vers les `CHECKLIST_*`
+
   du `CORE`.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

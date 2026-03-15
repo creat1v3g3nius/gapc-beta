@@ -94,10 +94,10 @@ Exemple :
 
 Produire :
 
--   patch document
--   patch code si nécessaire
--   mise à jour index
--   mise à jour dépendances.
+- patch document
+- patch code si nécessaire
+- mise à jour index
+- mise à jour dépendances.
 
 Format recommandé :
 
@@ -112,16 +112,16 @@ Validation obligatoire :
 
 DocQG
 
--   H1 unique
--   sections courtes
--   frontmatter conforme
--   dépendances cohérentes
+- H1 unique
+- sections courtes
+- frontmatter conforme
+- dépendances cohérentes
 
 CodeQG
 
--   lisibilité
--   tests smoke
--   pas de secrets.
+- lisibilité
+- tests smoke
+- pas de secrets.
 
 ------------------------------------------------------------------------
 
@@ -129,9 +129,9 @@ CodeQG
 
 Contrôles :
 
--   respect Source Of Truth
--   pas de duplication CORE
--   cohérence arcs
+- respect Source Of Truth
+- pas de duplication CORE
+- cohérence arcs
 
 Hiérarchie :
 
@@ -143,10 +143,10 @@ Hiérarchie :
 
 Conditions :
 
--   conformité DocQG
--   conformité CodeQG
--   dépendances validées
--   patch documenté.
+- conformité DocQG
+- conformité CodeQG
+- dépendances validées
+- patch documenté.
 
 ------------------------------------------------------------------------
 
@@ -154,10 +154,10 @@ Conditions :
 
 Actions :
 
--   status: DEPRECATED
--   version bump
--   section Amendements
--   mise à jour Changelog.
+- status: DEPRECATED
+- version bump
+- section Amendements
+- mise à jour Changelog.
 
 ------------------------------------------------------------------------
 
@@ -165,11 +165,11 @@ Actions :
 
 Framework considéré **10/10** si :
 
--   architecture stable
--   navigation complète
--   dépendances traçables
--   qualité documentaire élevée
--   pipeline d'amélioration reproductible.
+- architecture stable
+- navigation complète
+- dépendances traçables
+- qualité documentaire élevée
+- pipeline d'amélioration reproductible.
 
 ------------------------------------------------------------------------
 
@@ -179,8 +179,11 @@ Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
 
--   v1.2 (13-03-2026) : archive en `CACHE_SYSTEM_30_PATCH`, passe `DEPRECATED`
+- v1.2 (13-03-2026) : archive en `CACHE_SYSTEM_30_PATCH`, passe `DEPRECATED`
+
     et supprime le host actif `PATCH_01_FRAMEWORK`.
--   v1.0 (2026-03-05) : création pipeline amélioration framework.
--   v1.1 (2026-03-09) : gel FROZEN, scope aligné SYSTEM_30_PATCH, structure
+
+- v1.0 (2026-03-05) : création pipeline amélioration framework.
+- v1.1 (2026-03-09) : gel FROZEN, scope aligné SYSTEM_30_PATCH, structure
+
     H1/H2 normalisée.

@@ -25,8 +25,11 @@ squash merge reproductible.
 ## Raison de dépréciation
 
 - la DoD de merge et la procédure squash merge vivent maintenant dans
+
   `GIT_03_PATCH_COMMIT`,
+
 - maintenir deux fichiers actifs sur le meme sujet creait un doublon de
+
   doctrine.
 
 ## Action
@@ -37,6 +40,9 @@ squash merge reproductible.
 ## Changelog
 
 - v1.2 (13-03-2026) : archive en `CACHE_SYSTEM_02_GIT` apres fusion de la source
+
   active dans `GIT_03_PATCH_COMMIT`.
+
 - v1.1 (13-03-2026) : fichier deprecate ; contenu fusionne dans
+
   `GIT_03_PATCH_COMMIT`.

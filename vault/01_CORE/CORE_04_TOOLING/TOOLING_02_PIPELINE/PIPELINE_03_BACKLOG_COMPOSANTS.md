@@ -79,7 +79,7 @@ dérive.
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : création standard backlog CO CORE.

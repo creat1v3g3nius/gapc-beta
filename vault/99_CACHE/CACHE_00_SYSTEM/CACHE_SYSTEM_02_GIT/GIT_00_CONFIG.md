@@ -23,6 +23,7 @@ scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_02_GIT
 - `DEPRECATED`
 - bootstrap historique uniquement
 - obsolete en routine si la configuration effective est deja tracee dans
+
   `EVIDENCE`
 
 ## Regle operationnelle
@@ -44,8 +45,11 @@ Mode d’emploi **unique** (simple, sûr, répétable) pour :
 
 - configurer VS Code pour travailler dans le framework GAPC (Vault → Repo),
 - configurer Git et exécuter un workflow quotidien (**diff → stage → commit
+
   atomique → validate/smoke → push**),
+
 - éviter les erreurs débutant (mauvaise racine, commits “fourre‑tout”, secrets
+
   accidentels, conflits).
 
 Ce guide est **adapté à l’architecture du framework** (arcs
@@ -268,9 +272,11 @@ git log --oneline -10
 3) Sauvegarder
 4) `git add <fichier>`
 5) Terminer :
+
 - merge : `git commit`
 - rebase : `git rebase --continue`
-6) Relancer validator/smoke si nécessaire
+
+1) Relancer validator/smoke si nécessaire
 
 ### 9.2) Abort (si panique)
 
@@ -370,8 +376,12 @@ Exemple minimal (à adapter aux scripts existants) :
 ## Changelog
 
 - v1.3 (13-03-2026) : archive en `CACHE_SYSTEM_02_GIT` car la configuration
+
   effective est deja tracee dans `EVIDENCE`.
+
 - v1.2 (13-03-2026) : passe en `DEPRECATED` ; obsolete si la configuration est
+
   deja tracee dans `EVIDENCE`.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

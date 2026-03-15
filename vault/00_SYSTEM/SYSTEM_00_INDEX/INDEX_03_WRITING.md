@@ -38,6 +38,7 @@ Un format n'existe que s'il a une utilité.
 - Hiérarchie claire : `##` puis `###`
 - Blocs copiables : checklists, tableaux courts, code fences
 - Éviter les séparateurs `---` en cascade
+
   (1 seul pour gros blocs si nécessaire)
 
 ---
@@ -74,6 +75,7 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 
 - Des métadonnées trop longues (elles deviennent du contenu)
 - Des champs “esthétiques”
+
   (couleurs, emojis, etc.) comme dépendance système
 
 ## 3. Champ supplémentaire unique YAML
@@ -81,6 +83,7 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 ## 3.1 Usage
 
 - **State** pour la production PACKAGE<->PRODUCT (pointeurs : `Active`,
+
   `Unactive`)
 
 ## 3.2 Règle
@@ -161,6 +164,7 @@ flowchart TD
 ## 9. Changelog
 
 - v1.0 (27-02-2026): Définition des formats de rédaction/conception et leurs
+
   règles d'usage.
 
 ---

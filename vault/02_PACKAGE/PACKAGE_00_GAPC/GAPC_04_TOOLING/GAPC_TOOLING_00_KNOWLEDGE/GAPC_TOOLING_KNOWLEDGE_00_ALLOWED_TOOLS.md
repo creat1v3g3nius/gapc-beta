@@ -39,7 +39,7 @@ Définir une **allowlist** d’outils autorisés/recommandés pour exécuter GAP
 - Git (CLI)
 - Cursor (si workflow diff-first)
 
-### Interdits (par défaut)
+### Interdits RAG (par défaut)
 
 - auto-commit / auto-push
 - outils qui imposent l’écriture automatique dans le repo
@@ -73,8 +73,12 @@ Définir une **allowlist** d’outils autorisés/recommandés pour exécuter GAP
 ## Changelog
 
 - v1.3 (09-03-2026) : remplace la dependance deprecated `EXTENSION_00_INDEX` par
+
   `EXTENSION_04_EVIDENCE_PACK`.
+
 - v1.2 (04-03-2026) : correction `scope` du frontmatter
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : version initiale READY_TO_FREEZE.

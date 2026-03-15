@@ -30,7 +30,9 @@ Ce script controle le **bruit semantique** du corpus documentaire.
 Controles cibles :
 
 - variations lexicales d'IDs (`GUARDRAILS` vs `GUARD_RAILS`, `COMPOSANT` vs
+
   `COMPOSANTS`)
+
 - references `depends_on` inconnues mais proches d'un ID canonique
 - references `depends_on` fantomes ou de type chemin
 - collisions semantiques sur les `title`
@@ -224,6 +226,7 @@ Le `SemanticNoiseChecker` doit executer les etapes suivantes dans l'ordre :
 - confirmer l'arc : `SYSTEM`
 - confirmer le scope : `vault/00_SYSTEM/03_SCRIPT`
 - confirmer le positionnement : bruit semantique, pas validation structurelle
+
   brute
 
 ### 2. Specification

@@ -56,7 +56,9 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 
 - `id` (unique)
 - `type` (INDEX|WORKFLOW|GIT|LLM|BACKLOG|PATCH|META|FIELD|RESTRAINT|TOOLING...)
+
   -> correspond aux familles d'un arc.
+
 - `title` (UpperCamelCase)
 - `version` (vX.X)
 - `status` (DRAFT|READY_TO_FREEZE|FROZEN|DEPRECATED)
@@ -67,7 +69,7 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 - arc: (SYSTEM|CORE|PACKAGE|PRODUCT|CACHE)
 - `scope` : (docs, script, vault)
 
-2. En fonction du type de fichier
+1. En fonction du type de fichier
 
 ```yaml
 active-package: PACKAGE_NUM_TITRE
@@ -84,6 +86,7 @@ active-product: PRODUCT_NUM_TITRE
 ## 3.1 Usage
 
 - **State** pour la production PACKAGE<->PRODUCT (pointeurs : `Active`,
+
   `Unactive`)
 
 ## 3.2 Règle
@@ -158,6 +161,7 @@ flowchart TD
 ### 8.2 Règle
 
 - tout document visuel “critique” doit avoir un **companion** `.md` (résumé +
+
   points d’action) pour l’indexation RAG.
 
 ## Amendements (FROZEN)
@@ -169,4 +173,5 @@ flowchart TD
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.0 (28-02-2026) : définition des formats de rédaction/conception et leurs
+
   règles d'usage pour le mentor LLM - GAPC Beta v1.0.

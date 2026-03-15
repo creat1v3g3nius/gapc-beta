@@ -64,9 +64,12 @@ Centraliser les preuves de qualification mentor + Codex pour
 ## Delta
 
 - added : pack `EVIDENCE_*` produit pour tracer les reruns de qualification
+
   mentor + Codex
+
 - changed : aucun
 - fixed : absence de preuves explicites de qualification workspace et Codex dans
+
   le lot produit
 
 ## Verdict
@@ -80,8 +83,11 @@ Centraliser les preuves de qualification mentor + Codex pour
 
 - Ce pack prouve la qualification des workspaces mentor et de l agent Codex.
 - Les prompts utilises sont traces dans `WORKFLOW_07_TESTS_LLM` et
+
   `WORKFLOW_08_TESTS_CODEX`.
+
 - Le pack couvre maintenant aussi la release note, la review finale et l ADR de
+
   perimetre produit.
 
 ## Format trace
@@ -128,7 +134,10 @@ Next step:
 - v1.3 (13-03-2026) : ajoute `ADR + RELEASE NOTE + REVIEW` au pack `EVIDENCE`.
 - v1.2 (13-03-2026) : passe l index evidence en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : etend l index evidence a Codex, ajoute le format trace
+
   issu du modele `EXTENSION_04_EVIDENCE_PACK`, et passe le target a
   `READY_TO_FREEZE`.
+
 - v1.0 (12-03-2026) : creation de l index evidence produit pour la qualification
+
   `WS_00`, `WS_01` et `WS_02`.

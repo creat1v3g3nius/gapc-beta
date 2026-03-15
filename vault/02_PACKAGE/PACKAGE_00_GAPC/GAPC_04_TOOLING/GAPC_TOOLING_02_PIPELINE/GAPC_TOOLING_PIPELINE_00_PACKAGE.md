@@ -41,7 +41,9 @@ procédures “beta” dans le PACKAGE.
 
 - CORE fournit : phases, gates, gel générique.
 - GAPC ajoute : priorisation (ScopeClassifier GAPC), risques/signaux GAPC,
+
   critères de gel GAPC.
+
 - PRODUCT (workspace) contient : preuves, DoD, cycles réels.
 
 ---
@@ -123,7 +125,9 @@ Ajouts GAPC :
 
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création pipeline PACKAGE GAPC (pont CORE→GAPC, P0).
 
 ---

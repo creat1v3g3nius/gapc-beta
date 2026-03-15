@@ -43,10 +43,10 @@ oral.
 Le thin slice valide un scenario simple :
 
 1. une question documentaire ciblee est posee au mentor
-2. le mentor repond avec sources, hypothese et next step unique
-3. une demande d implementation est redirigee vers `Codex`
-4. `Codex` produit le patch ou l action technique correspondante
-5. les checks documentaires et de scope restent PASS
+1. le mentor repond avec sources, hypothese et next step unique
+1. une demande d implementation est redirigee vers `Codex`
+1. `Codex` produit le patch ou l action technique correspondante
+1. les checks documentaires et de scope restent PASS
 
 ## 2) Artefacts minimaux
 
@@ -89,24 +89,31 @@ Verdict thin slice:
 
 ```txt
 Question:
+
 - question documentaire ciblee dans `WS_02 ProductScoped` sur le setup mentor / product
 
 Sources:
+
 - DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 - OPS_SAMPLE_02_SPEC_DOD
 - LLM_03_MENTOR_UTILITES
 
 Reponse mentor:
+
 - reponse sourcee, read-only, sans patch ni execution
 
 Redirection Codex:
+
 - demande technique redirigee vers Codex pour patch / execution / tests
 
 Action technique:
+
 - batterie `WORKFLOW_08_TESTS_CODEX` executee avec PASS
 
 Verdict thin slice:
+
 - PASS
+
 ```
 
 ## 5) Next step standard
@@ -121,10 +128,17 @@ Verdict thin slice:
 
 - v1.4 (13-03-2026) : aligne le next step du thin slice sur l etat `FROZEN`.
 - v1.3 (13-03-2026) : passe le thin slice en `READY_TO_FREEZE` apres backfill
+
   des preuves.
+
 - v1.2 (13-03-2026) : backfill l evidence du thin slice a partir des reruns
+
   mentor + Codex et passe le verdict thin slice a PASS.
+
 - v1.1 (10-03-2026) : rattache le thin slice au backlog product et au backlog CO
+
   du lot OPS.
+
 - v1.0 (10-03-2026) : creation du thin slice minimal pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

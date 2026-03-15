@@ -20,8 +20,11 @@ GAPC, aligné avec l’architecture cible :
 - **Obsidian (Vault)** = Source of Truth documentaire
 - **VS Code + Codex** = code / patch / exécution / scripts
 - **AnythingLLM local** = mentor documentaire standard (lecture / extraction /
+
   contrôle)
+
 - **API externe** = fallback, uniquement si le mentor local atteint une limite
+
   réelle
 
 Ce document vise : **utilité maximale**, **zéro dérive**, **zéro ghost
@@ -34,21 +37,21 @@ decision**, **séparation stricte des rôles**.
 ### 1.1) Répartition des rôles
 
 - **Codex** traite :
-  - code
-  - patchs
-  - scripts
-  - exécution
-  - aides de mise en oeuvre
+    - code
+    - patchs
+    - scripts
+    - exécution
+    - aides de mise en oeuvre
 - **AnythingLLM local** traite :
-  - lecture documentaire
-  - extraction de règles
-  - navigation dans le corpus
-  - synthèses et checklists documentaires
-  - contrôle documentaire standard
+    - lecture documentaire
+    - extraction de règles
+    - navigation dans le corpus
+    - synthèses et checklists documentaires
+    - contrôle documentaire standard
 - **API externe** traite :
-  - cas complexes en fallback
-  - corpus volumineux ou réponses locales instables
-  - analyses documentaires nécessitant plus de robustesse
+    - cas complexes en fallback
+    - corpus volumineux ou réponses locales instables
+    - analyses documentaires nécessitant plus de robustesse
 
 ### 1.2) Principe directeur
 
@@ -80,7 +83,9 @@ attendu.
 - dire **NON TROUVÉ** si l’information n’existe pas
 - respecter le package actif et le product actif
 - si un product actif expose une checklist de gel explicite, l utiliser comme
+
   checklist product de reference
+
 - rester en lecture seule
 
 ### 2.2) Ce que le mentor NE DOIT PAS faire
@@ -99,10 +104,10 @@ attendu.
 Le mentor applique l’ordre suivant en cas de contradiction :
 
 1. **CORE**
-2. **PACKAGE actif**
-3. **PRODUCT actif**
-4. **SYSTEM**
-5. **CACHE**
+1. **PACKAGE actif**
+1. **PRODUCT actif**
+1. **SYSTEM**
+1. **CACHE**
 
 Règle :
 
@@ -156,17 +161,17 @@ Toujours démarrer avec un corpus minimal :
 Ajouter progressivement :
 
 1. règles utiles
-2. package actif
-3. product actif
+1. package actif
+1. product actif
 
 ### 5.3) Sortie attendue
 
 Le mentor documentaire doit répondre avec :
 
 1. checklist actionnable
-2. fichiers utilisés
-3. next step unique
-4. hypothèses si nécessaire
+1. fichiers utilisés
+1. next step unique
+1. hypothèses si nécessaire
 
 ---
 
@@ -234,15 +239,21 @@ Ce découpage est le mode nominal du système LLM documentaire.
 ## Amendements (FROZEN)
 
 - v1.2 : séparation explicite des rôles Codex / AnythingLLM local / API externe
+
   fallback.
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
 
 - v1.4 (13-03-2026) : remplace la reference explicite a `PRODUCT_00_BETA_GAPC`
+
   par une regle generique compatible avec le sample actif.
+
 - v1.3 (10-03-2026) : ajoute la reference explicite a
+
   `OPS_06_READY_TO_FREEZE_CHECKLIST` pour `PRODUCT_00_BETA_GAPC`.
+
 - v1.2 (10-03-2026) : alignement sur la nouvelle architecture LLM cible.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 (28-02-2026) : READY_TO_FREEZE.

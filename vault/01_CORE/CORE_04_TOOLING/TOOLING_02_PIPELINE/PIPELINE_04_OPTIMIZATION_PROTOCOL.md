@@ -92,7 +92,7 @@ Tout travail d’optimisation doit déclarer :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : création protocole d’optimisation CORE.

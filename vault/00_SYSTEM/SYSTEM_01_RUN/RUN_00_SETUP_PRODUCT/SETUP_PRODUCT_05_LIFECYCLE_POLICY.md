@@ -50,13 +50,16 @@ Definir les etats d un product et les criteres de passage.
 ## Garde-fous d integration
 
 - passage `ACTIVE -> READY_TO_FREEZE` seulement si les reruns applicables sont a
+
   jour
+
 - passage `READY_TO_FREEZE -> FROZEN` seulement si les preuves restent
 
   coherentes apres `WORKFLOW_06`, `WORKFLOW_07` et `WORKFLOW_08` quand ils
   s appliquent
 
 - un incident traite via `WORKFLOW_05_INCIDENT` peut faire revenir un product a
+
   un etat precedent
 
 ## Regle de rollback
@@ -76,10 +79,13 @@ Definir les etats d un product et les criteres de passage.
 
 - v1.4 (15-03-2026) : passage en FROZEN de la politique de cycle de vie produit.
 - v1.3 (13-03-2026) : rehoste le protocole sous
+
   `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+
 - v1.2 (13-03-2026) : clarifie la frontiere lifecycle vs execution
 
   `WORKFLOW` et ajoute les garde-fous de rerun.
 
 - v1.1 (13-03-2026) : renommage `MP_05_LIFECYCLE_POLICY` ->
+
   `SETUP_PRODUCT_05_LIFECYCLE_POLICY`.

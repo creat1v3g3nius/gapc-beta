@@ -29,18 +29,27 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Version : v1.0
 - Date : 13-03-2026
 - Perimetre : qualification finale du setup `PRODUCT_00_SAMPLE_GAPC_AGENTS` sur
+
   `AnythingLLM + Codex`
 
 ## 2) Changements
 
 - Added : pack `EVIDENCE_SAMPLE_*` produit complet avec preuves `WS_00`,
+
   `WS_01`, `WS_02` et `Codex IDE`
+
 - Added : runbook `WORKFLOW_08_TESTS_CODEX` pour la qualification de l agent
+
   Codex
+
 - Changed : prompts de test canonises dans `WORKFLOW_07_TESTS_LLM` et
+
   `WORKFLOW_08_TESTS_CODEX`
+
 - Fixed : alignement `CORE -> PACKAGE -> PRODUCT` sur hiérarchie, priorités de
+
   sources, rôles et no-secrets
+
 - Deprecated : aucun
 
 ## 3) Tests / validations
@@ -51,18 +60,22 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - `Codex IDE` : PASS 8/8
 - `FROZEN` decision : PASS
 - Notes : aucun secret, aucune confusion de rôle P0, aucune collision de scope
+
   active
 
 ## 4) Risques connus
 
 - R-XXXX : aucun risque P0 ouvert sur le setup mentor + Codex
 - Mitigations : rerun `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX` à
+
   toute modification de prompt, corpus ou gate DOD
 
 ## 5) Backout plan
 
 - revert du lot `PRODUCT_00_SAMPLE_GAPC_AGENTS` vers le commit antérieur à la
+
   qualification
+
 - rerun des batteries `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`
 
 ## 6) Next step unique
@@ -77,4 +90,5 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 - v1.0 (13-03-2026) : aligne la note de release sur l etat `FROZEN`.
 - v1.0 (13-03-2026) : création de la release note de validation produit après
+
   PASS complet `DOD_00` à `DOD_03`.

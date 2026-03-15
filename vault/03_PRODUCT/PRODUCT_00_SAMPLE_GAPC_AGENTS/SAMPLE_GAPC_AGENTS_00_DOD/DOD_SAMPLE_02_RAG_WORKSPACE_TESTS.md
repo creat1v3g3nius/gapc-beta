@@ -37,7 +37,7 @@ Definir la batterie minimale de tests workspace pour
 - `WS_00 RulesOnly` : CORE + SYSTEM essentiels
 - `WS_01 PackageScoped` : CORE + PACKAGE_00_GAPC + SYSTEM
 - `WS_02 ProductScoped` : CORE + PACKAGE_00_GAPC + PRODUCT_00_SAMPLE_GAPC_AGENTS
-  + SYSTEM
+    - SYSTEM
 
 ## 2) Tests P0
 
@@ -85,7 +85,9 @@ Interdit :
 
 - remplacer cette priorisation par la hierarchie d autorite de `T1`,
 - repondre avec les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a
+
   la place des categories de sources,
+
 - ajouter `CACHE`,
 - fusionner `GAPC discipline` et `autres docs package GAPC`,
 - supprimer `docs product actifs`,
@@ -100,6 +102,7 @@ Exemple minimal valide :
 - `docs product actifs`
 - `SYSTEM`
 - `Sources utilisees : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
+
   GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md, OPS_SAMPLE_02_SPEC_DOD.md`
 
 ### T3 - NON TROUVE
@@ -201,6 +204,7 @@ Regle :
 Exemple valide :
 
 - `Sources utilisees : GAPC_DISCIPLINE_00_RAG_PROFILE.md (PACKAGE),
+
   OPS_SAMPLE_05_CO_DOD.md (PRODUCT)`
 
 ### T8 - Non-substitution a Codex et fallback
@@ -239,17 +243,30 @@ Si un test P0 est KO :
 ## Changelog
 
 - v1.6 (13-03-2026) : passe la batterie `WS_02` en `READY_TO_FREEZE` apres PASS
+
   complet des reruns.
+
 - v1.5 (11-03-2026) : renforce `T2` avec interdiction des arcs a la place des
+
   categories de sources et ajoute un exemple minimal valide package+product.
+
 - v1.4 (11-03-2026) : specialise la batterie `WS_02` pour le niveau produit avec
+
   `T2` priorites de sources produit, `T4` isolation d un autre product, `T6`
   bloc par tache obligatoire et `T7` compare `PACKAGE` vs `PRODUCT`.
+
 - v1.3 (10-03-2026) : impose la coherence `source -> arc` sur `T5` et ajoute un
+
   exemple valide CORE/SYSTEM.
+
 - v1.2 (10-03-2026) : aligne `DOD_02` sur la batterie `SYSTEM` complete avec
+
   formats attendus pour `T4/T5`.
+
 - v1.1 (10-03-2026) : aligne les tests workspace sur la matrice des roles `Codex
+
   / AnythingLLM local / API externe`.
+
 - v1.0 (10-03-2026) : creation de la batterie minimale de tests RAG pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

@@ -42,29 +42,38 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 ```txt
 Prompt pack:
+
 - WORKFLOW_07_TESTS_LLM / WS_02 ProductScoped
 
 Prompts optimises utilises pour PASS:
+
 - T3 NON TROUVE exact
 - T4 refus structure `Refus / Isolation requise / Sources utilisees`
 - T6 matrice des roles bloc-par-bloc
 
 Sources majeures:
+
 - DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 - OPS_SAMPLE_02_SPEC_DOD
 - OPS_SAMPLE_00_BACKLOG_PRODUCT
 - LLM_03_MENTOR_UTILITES
 
 Verdict:
+
 - PASS 8/8
+
 ```
 
 ## Notes
 
 - `T4` et `T6` ont necessite des prompts de test optimises pour contourner la
+
   derive du moteur AnythingLLM sur les sorties trop implicites.
+
 - Le corpus et le retrieval sont consideres suffisants ; la contrainte
+
   residuelle venait du moteur de generation.
+
 - Aucun secret ou PII observe.
 
 ## Amendements (FROZEN)
@@ -74,6 +83,9 @@ Verdict:
 ## Changelog
 
 - v1.1 (13-03-2026) : passe la preuve `WS_02 ProductScoped` en
+
   `READY_TO_FREEZE`.
+
 - v1.0 (12-03-2026) : creation de la preuve `WS_02 ProductScoped` avec verdict
+
   PASS 8/8 et trace des prompts optimises.

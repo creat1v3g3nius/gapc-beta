@@ -36,9 +36,13 @@ Vérifier qu’un artefact peut passer en **READY_TO_FREEZE** (sans procédure).
 
 - [ ] Conformité doc : frontmatter + structure + non-duplication (DocQG)
 - [ ] Conformité code : intention atomique + contrôles requis définis en SYSTEM
+
       (CodeQG)
+
 - [ ] Conformité RAG (si applicable) : NON TROUVÉ + sources + actifs uniques
+
       (RagQG)
+
 - [ ] Risques critiques connus mitigés (Risk Register)
 - [ ] No-secrets / no-PII
 - [ ] Traçabilité : ADR si décision structurante

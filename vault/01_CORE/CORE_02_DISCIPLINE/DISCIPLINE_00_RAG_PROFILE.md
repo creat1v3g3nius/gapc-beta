@@ -50,11 +50,11 @@ suggérer leur stockage en clair.
 
 En cas de contradiction :
 
-1) CORE
-2) PACKAGE actif
-3) PRODUCT actif
-4) SYSTEM (procédures/outils)
-5) CACHE (jamais vérité)
+1. CORE
+1. PACKAGE actif
+1. PRODUCT actif
+1. SYSTEM (procédures/outils)
+1. CACHE (jamais vérité)
 
 ### 1.4 Politique `NON TROUVÉ`
 
@@ -103,10 +103,12 @@ locales), mais ne peut pas :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : normalisation frontmatter (`created/updated/depends_on`) +
+
   statut READY_TO_FREEZE + CORE strict (sans procédure/cible).
+
 - v1.0 (01-03-2026) : version initiale.
 
 ---

@@ -52,7 +52,9 @@ termine.
 
 - v1.3 (15-03-2026) : passage en FROZEN de la politique de destination produit.
 - v1.2 (13-03-2026) : rehoste le protocole sous
+
   `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+
 - v1.1 (13-03-2026) : renommage `MP_04_PRODUCT_DESTINATION_POLICY`
 
   -> `SETUP_PRODUCT_04_DESTINATION_POLICY`.

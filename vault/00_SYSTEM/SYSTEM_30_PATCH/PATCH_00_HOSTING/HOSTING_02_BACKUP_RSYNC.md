@@ -27,8 +27,8 @@ MVP P1 : rsync quotidien + logs + code retour (sans complexité).
 
 - D2 monté (ex: `/mnt/d2`)
 - Dossiers présents :
-  - `/srv/gapc/`
-  - `/mnt/d2/gapc_backup/`
+    - `/srv/gapc/`
+    - `/mnt/d2/gapc_backup/`
 
 Créer si absent :
 
@@ -139,15 +139,15 @@ cp /mnt/d2/gapc_backup/srv_gapc_mirror/path/to/file /srv/gapc/path/to/file
 
 ### Tout `/srv/gapc` (attention)
 
-1) Stop services (AnythingLLM, timers si besoin)
-2) rsync inverse :
+1. Stop services (AnythingLLM, timers si besoin)
+1. rsync inverse :
 
 ```bash
 rsync -aHAX --delete /mnt/d2/gapc_backup/srv_gapc_mirror/ /srv/gapc/
 ```
 
-3) Relancer services
-4) Relancer smoke/validator côté repo
+1. Relancer services
+1. Relancer smoke/validator côté repo
 
 ---
 

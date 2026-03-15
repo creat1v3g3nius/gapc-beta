@@ -38,9 +38,11 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 ```txt
 Prompt pack:
+
 - WORKFLOW_07_TESTS_LLM / WS_00 RulesOnly
 
 Sources majeures:
+
 - META_00_HANDBOOK
 - META_01_OUTPUT_PROTOCOL
 - META_02_SOP_STANDARD_LOOP
@@ -53,7 +55,9 @@ Sources majeures:
 - LLM_03_MENTOR_UTILITES
 
 Verdict:
+
 - PASS 6/6
+
 ```
 
 ## Notes
@@ -69,4 +73,5 @@ Verdict:
 
 - v1.1 (13-03-2026) : passe la preuve `WS_00 RulesOnly` en `READY_TO_FREEZE`.
 - v1.0 (12-03-2026) : creation de la preuve `WS_00 RulesOnly` avec verdict PASS
+
   6/6.

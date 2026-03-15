@@ -27,8 +27,9 @@ scope: vault/00_SYSTEM/SYSTEM_99_FAQ
 
 Fichier unique pour :
 
-1) **consulter les réponses courantes** (FAQ),
-2) **déclarer une question/problème** via un formulaire standardisé,
+1. **consulter les réponses courantes** (FAQ),
+1. **déclarer une question/problème** via un formulaire standardisé,
+
    exploitable par un agent/mentor.
 
 Règles P0 :
@@ -122,6 +123,7 @@ Liste dédupliquée d’IDs ; référence > copie.
 
 - READY_TO_FREEZE : conforme + validable
 - FROZEN : gelé, amendements contrôlés
+
   (patch + validation + version bump + changelog)
 
 ### D2 — Pourquoi mon gel est KO ?
@@ -247,6 +249,8 @@ Next step souhaité:
 ## Changelog
 
 - v1.1 (13-03-2026) : aligne la FAQ sur la structure active
+
   `WORKFLOW / SETUP_PRODUCT / EVIDENCE / LLM`
   et ajoute les references courantes.
+
 - v1.0 (02-03-2026) : création FAQ+formulaire SYSTEM (minimal, P0).

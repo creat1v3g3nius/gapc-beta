@@ -257,13 +257,19 @@ Il n est pas conçu pour :
 ## Amendements (FROZEN)
 
 - v1.1 : ajout d une séparation explicite des tâches par rôle et d une matrice
+
   rapide tâche -> rôle.
+
 - v1.0 : canonisation du document avec frontmatter conforme et alignement sur la
+
   séparation des rôles Codex / AnythingLLM local / API fallback.
+
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
 
 - v1.1 (10-03-2026) : sépare explicitement les tâches entre Codex, AnythingLLM
+
   local et API externe fallback.
+
 - v1.0 (10-03-2026) : création FROZEN du document canonique.

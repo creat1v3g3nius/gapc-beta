@@ -52,7 +52,9 @@ posture “sobre”, anti-invention.
 - v1.3 (04-03-2026) : correction `scope` du frontmatter.
 - v1.2 (01-03-2026) : passage en FROZEN v1.2 + correction depends_on.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création profil RAG ASSO (P1).
 
 ---

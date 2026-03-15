@@ -43,7 +43,7 @@ Définir un **smoke test** P0 reproductible :
 
 ## 2) Scénarios P0
 
-### S1 — <Nom>
+### S1 — `Nom`
 
 - Steps :
 
@@ -53,7 +53,7 @@ Définir un **smoke test** P0 reproductible :
 - Expected :
 - PASS/FAIL :
 
-### S2 — <Nom>
+### S2 — `Nom`
 
 - ...
 

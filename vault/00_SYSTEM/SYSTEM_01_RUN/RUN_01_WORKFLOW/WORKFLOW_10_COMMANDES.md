@@ -276,19 +276,23 @@ Output: P0/P1/P2 + fixes.
 ## 10) Prompts “mini” (copiables)
 
 - **NON TROUVÉ**
-  - `Si l’info n’existe pas dans les fichiers fournis: réponds exactement "NON
+    - `Si l’info n’existe pas dans les fichiers fournis: réponds exactement "NON
+
     TROUVÉ".`
 
 - **Hypothèses**
-  - `Si une info manque: liste max 5 hypothèses, puis propose une version
+    - `Si une info manque: liste max 5 hypothèses, puis propose une version
+
     best-effort.`
 
 - **Anti-scope creep**
-  - `Si c’est trop large: découpe en CO atomiques et propose l’ordre
+    - `Si c’est trop large: découpe en CO atomiques et propose l’ordre
+
     d’exécution.`
 
 - **No secrets**
-  - `Ne demande ni n’affiche jamais de token/clé. Propose .env + .gitignore si
+    - `Ne demande ni n’affiche jamais de token/clé. Propose .env + .gitignore si
+
     nécessaire.`
 
 ---
@@ -312,6 +316,8 @@ Output: P0/P1/P2 + fixes.
   et recable les commandes sur `WORKFLOW_03/04/05/06` et `PIPELINE_03`.
 
 - v1.2 (12-03-2026) : ajoute les renvois vers `WORKFLOW_07_TESTS_LLM` et
+
   `WORKFLOW_08_TESTS_CODEX`.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

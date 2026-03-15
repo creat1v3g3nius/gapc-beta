@@ -40,7 +40,9 @@ Démarrer une session de production **sans dérive**.
 - [ ] Intention fixée : 1 CO / 1 livrable principal
 - [ ] Sources fixées : corpus/scopes cohérents (pas “all vault”)
 - [ ] Contraintes rappelées : no-secrets, actifs uniques, NON TROUVÉ,
+
       non-duplication
+
 - [ ] Gate cible connue : DRAFT → READY_TO_FREEZE (ou autre)
 - [ ] Next step unique défini (action immédiate)
 

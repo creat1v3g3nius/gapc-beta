@@ -31,7 +31,9 @@ Classifier toute demande / feature / idée / tâche dans une catégorie
 Ce classifier est une **extension PACKAGE** (GAPC) :
 
 - il **ne contredit pas** les règles CORE (ScopeClassifier, RiskRegister,
+
   Guardrails),
+
 - il ajoute une **priorisation product-ready** et des critères GAPC.
 
 ---
@@ -71,6 +73,7 @@ Un item est candidat **NOW** si au moins un critère est vrai :
 ### V1 — Parcours minimal exécutable
 
 - permet de réaliser un cycle complet : cadrage → exécution → validation →
+
   traçabilité → gel.
 
 ### V2 — Qualité / conformité bloquante
@@ -162,5 +165,7 @@ Next step unique:
 
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (01-03-2026) : passage en FROZEN (status+version bump) + amendements
+
   contrôlés + correction références.
+
 - v1.0 (01-03-2026) : version initiale.

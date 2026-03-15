@@ -21,7 +21,9 @@ Index des **disciplines** appliquées dans le PACKAGE_00_GAPC.
 Note :
 
 - ces documents sont des **spécialisations** ou **sélections** adaptées au
+
   métier
+
 - éviter la duplication : référencer le CORE lorsque possible
 
 ---

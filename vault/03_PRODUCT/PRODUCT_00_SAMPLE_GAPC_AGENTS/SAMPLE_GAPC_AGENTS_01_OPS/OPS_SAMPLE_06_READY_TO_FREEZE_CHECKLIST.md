@@ -66,15 +66,21 @@ Next step unique:
 Target: FROZEN
 Verdict: OK
 P0 fails:
+
 - aucun
+
 Evidence IDs:
+
 - EVIDENCE_SAMPLE_00_INDEX
 - EVIDENCE_SAMPLE_01_WS00_RULESONLY
 - EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
 - EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
 - EVIDENCE_SAMPLE_04_CODEX_IDE
+
 Next step unique:
+
 - conserver cette checklist comme preuve du gel produit
+
 ```
 
 ## Regle
@@ -91,15 +97,26 @@ Si un item P0 est KO :
 ## Changelog
 
 - v1.5 (13-03-2026) : bascule la checklist produit de `READY_TO_FREEZE` a
+
   `FROZEN`.
+
 - v1.5 (13-03-2026) : remplace `WORKFLOW_08_TESTS_CODEX` par
+
   `EVIDENCE_SAMPLE_04_CODEX_IDE` dans les preuves de gel.
+
 - v1.4 (13-03-2026) : passe la checklist de gel en `READY_TO_FREEZE`.
 - v1.3 (13-03-2026) : coche les controles `OPS_01` a `OPS_05`, passe la
+
   checklist a `Verdict: OK` et ajoute `WORKFLOW_08_TESTS_CODEX` dans la preuve.
+
 - v1.2 (12-03-2026) : coche les items P0 deja prouves par le pack `EVIDENCE` et
+
   ajoute l evidence documentee READY_TO_FREEZE.
+
 - v1.1 (10-03-2026) : ajoute backlog product et backlog CO dans la checklist de
+
   gel.
+
 - v1.0 (10-03-2026) : creation de la checklist produit `READY_TO_FREEZE` pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

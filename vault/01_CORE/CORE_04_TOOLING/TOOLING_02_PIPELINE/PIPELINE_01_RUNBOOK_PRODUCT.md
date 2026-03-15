@@ -56,7 +56,9 @@ CORE strict : renvoie vers SYSTEM pour “comment faire”.
 - Fixer actifs (package/product).
 - Fixer l’intention (1 CO).
 - Sélectionner les sources (RulesOnly → couches) selon
+
   `CONSTRAINT_01_RAG_SCOPE_POLICY`.
+
 - Choisir le livrable (PRD/Spec/ADR/Doc/Code).
 
 **Output** : CO actif + plan.
@@ -67,6 +69,7 @@ CORE strict : renvoie vers SYSTEM pour “comment faire”.
 
 - Exécuter selon `PIPELINE_00_PRODUCT`.
 - Appliquer guardrails : no-secrets, non-duplication, non-invention, actifs
+
   uniques.
 
 **Output** : artefacts + patchs.
@@ -102,7 +105,7 @@ Si dérive / contradiction / fuite / mélange :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : création runbook product CORE (cadre).

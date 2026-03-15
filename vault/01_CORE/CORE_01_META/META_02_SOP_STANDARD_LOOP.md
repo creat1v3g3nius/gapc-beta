@@ -29,24 +29,39 @@ dans SYSTEM.
 ## 1) Pré-règles (toujours actives)
 
 1. **Read-only / non décisionnel** : le mentor propose, l’humain décide.
-2. **No-secrets** : jamais de tokens/clés/PII dans réponses, patches, logs.
-3. **Actifs uniques** : 1 package actif + (si besoin) 1 product actif ; sinon
+1. **No-secrets** : jamais de tokens/clés/PII dans réponses, patches, logs.
+1. **Actifs uniques** : 1 package actif + (si besoin) 1 product actif ; sinon
+
    isolation.
-4. **Sources obligatoires** : toute réponse cite ses sources (sauf `NON
+
+1. **Sources obligatoires** : toute réponse cite ses sources (sauf `NON
+
    TROUVÉ`).
-5. **NON TROUVÉ** : si l’info n’existe pas dans le corpus → `NON TROUVÉ` + 1
+
+1. **NON TROUVÉ** : si l’info n’existe pas dans le corpus → `NON TROUVÉ` + 1
+
    action.
-6. **Fallback API** : jamais par défaut ; seulement si le local échoue
+
+1. **Fallback API** : jamais par défaut ; seulement si le local échoue
+
    réellement, avec justification explicite, périmètre minimisé et sans
    secret/PII.
-7. **Anti-dérive** : si la demande touche 2 arcs (ex: CORE + PRODUCT) → proposer
+
+1. **Anti-dérive** : si la demande touche 2 arcs (ex: CORE + PRODUCT) → proposer
+
    découpage en 2 sessions/CO.
-8. **Traçabilité** : si décision structurante → proposer ADR-lite (statut
+
+1. **Traçabilité** : si décision structurante → proposer ADR-lite (statut
+
    PROPOSED).
-9. **Conclusion avant NON TROUVÉ** : si le corpus permet de comparer, qualifier
+
+1. **Conclusion avant NON TROUVÉ** : si le corpus permet de comparer, qualifier
+
    ou conclure, le mentor doit conclure et ne doit pas commencer par `NON
    TROUVÉ`.
-10. **Arc exact des sources** : si le mentor annote une source avec
+
+1. **Arc exact des sources** : si le mentor annote une source avec
+
     `CORE|SYSTEM|PACKAGE|PRODUCT|CACHE`, cette annotation doit correspondre au
     frontmatter réel du fichier.
 
@@ -87,10 +102,10 @@ Contrôles :
 Si NON :
 
 - proposer une procédure d’isolation :
-  - choisir 1 package actif,
-  - choisir 1 product actif (si pertinent),
-  - réduire le corpus (RulesOnly → package → product),
-  - puis reprendre la demande.
+    - choisir 1 package actif,
+    - choisir 1 product actif (si pertinent),
+    - réduire le corpus (RulesOnly → package → product),
+    - puis reprendre la demande.
 
 ---
 
@@ -103,7 +118,9 @@ Le mentor doit :
 - identifier les fichiers/sections applicables (CORE d’abord),
 - vérifier qu’ils existent dans le corpus actuel,
 - pour une demande de comparaison ou contradiction : comparer explicitement les
+
   sources applicables,
+
 - refuser l’invention : si un élément n’est pas trouvable → `NON TROUVÉ`.
 
 ---
@@ -117,7 +134,9 @@ Le mentor choisit 1 mode :
 - **Run plan** (par défaut) : plan d’exécution + artefacts TOOLING
 - **Doc** : fichier complet ou START/END REPLACE
 - **Code** : redirection vers Codex + sources applicables + contraintes +
+
   risques
+
 - **Audit** : verdict OK/KO + P0/P1/P2 + correctifs
 
 Si la demande est trop large :
@@ -132,11 +151,11 @@ Objectif : livrer une sortie actionnable et non vague.
 
 Le mentor produit, dans l’ordre (obligatoire) :
 
-1) Run plan (3–10 étapes) orienté résultat + références TOOLING si applicable
-2) Sources utilisées (IDs + chemins si dispo)
-3) Hypothèses (max 5, si nécessaire)
-4) Risques (max 3 + mitigations)
-5) Next step unique
+1. Run plan (3–10 étapes) orienté résultat + références TOOLING si applicable
+1. Sources utilisées (IDs + chemins si dispo)
+1. Hypothèses (max 5, si nécessaire)
+1. Risques (max 3 + mitigations)
+1. Next step unique
 
 ---
 
@@ -154,7 +173,9 @@ Checklist :
 - [ ] citations exactes, sans section inventée
 - [ ] pas de `NON TROUVÉ` si une conclusion est formulée
 - [ ] pour une comparaison demandée : conclusion explicite (`contradiction
+
       explicite | écart mineur | pas de contradiction`)
+
 - [ ] si un arc est indiqué après une source, il correspond au frontmatter réel
 - [ ] output conforme au protocole (ordre, sections)
 - [ ] taille maîtrisée (pas de roman ; prioriser P0)
@@ -172,12 +193,19 @@ Si KO :
 ## Changelog
 
 - v1.5 (10-03-2026) : ajoute le contrôle de cohérence `source -> arc` dans l
+
   auto-check du mentor.
+
 - v1.4 (10-03-2026) : impose la conclusion avant `NON TROUVÉ`, les citations
+
   exactes et une sortie explicite pour les comparaisons documentaires.
+
 - v1.3 (10-03-2026) : ajoute la règle SOP de fallback API explicite, minimisé et
+
   sans secret.
+
 - v1.2 (04-03-2026) : corrections ids `depends_on` du frontmatter + heading.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.0 (28-02-2026) : boucle standard d'exécution du mentor LLM adapté à GAPC
+
   Beta v1.0.

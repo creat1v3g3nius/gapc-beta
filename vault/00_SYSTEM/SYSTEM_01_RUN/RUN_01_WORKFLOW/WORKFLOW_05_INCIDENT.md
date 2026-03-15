@@ -24,6 +24,7 @@ Contraintes :
 - **No secrets** (aucun token/PII dans les logs, tickets, commits).
 - **1 action = 1 intention** (si correctif : 1 commit atomique).
 - **Source of Truth** : Vault / règles CORE (INDEX_00/INDEX_01 +
+
   WORKFLOW_00/01/02).
 
 ---
@@ -42,9 +43,13 @@ Si **P0**, fais immédiatement :
 
 - [ ] **STOP** : ne pas committer “au hasard”.
 - [ ] **Snapshot** : copier/coller 10 lignes max de logs, `git status`, message
+
       d’erreur.
+
 - [ ] **Isoler le scope** : quel arc est touché ? `SYSTEM | CORE | PACKAGE |
+
       PRODUCT`.
+
 - [ ] **Geler l’écriture** : pas d’édition simultanée Obsidian + VS Code
 
   sur les mêmes fichiers tant que l’origine n’est pas identifiée.
@@ -132,8 +137,8 @@ Actions safe :
 - [ ] Créer branche : `work/incident-<date>`
 - [ ] Sauvegarder un diff local : `git diff > /tmp/diff.patch`
 - [ ] Revenir à un état sain :
-  - `git revert <sha>` (préféré)
-  - ou `git restore .` (annuler changements locaux)
+    - `git revert <sha>` (préféré)
+    - ou `git restore .` (annuler changements locaux)
 
 **Commit type** : `fix(incident): revert to last known good state`
 

@@ -25,19 +25,25 @@ Glossaire opérationnel (SYSTEM) pour harmoniser le vocabulaire du framework.
 - **Amendements (FROZEN)** : règle de modification contrôlée.
 - **CHECKLIST** : vérification binaire (CORE générique, PACKAGE add-on).
 - **CACHE** : arc temporaire non source de vérité, canon `99_CACHE` (legacy
+
   `04_CACHE`).
+
 - **CO** : composant atomique (1 intention = 1 CO = 1 commit).
 - **CORE** : règles transversales (SOT).
 - **depends_on** : références d’IDs (valides, dédupliquées).
 - **diff-first** : patch minimal avant commit.
 - **Evidence pack** : preuve minimale pour outils externes.
 - **EVIDENCE FRAMEWORK** : artefacts canons `EVIDENCE_*_FRAMEWORK*` pour
+
   release/review/adr système.
+
 - **EXTENSION** : protocoles d’outils externes.
 - **FROZEN** : gelé (patch + validation + version bump + changelog).
 - **Frontmatter** : YAML contractuel.
 - **FRAMEWORK canon** : état de référence système (naming, IDs, dépendances)
+
   validé globalement.
+
 - **Gate/QG** : PASS/FAIL (DocQG/CodeQG/RagQG/GelRules).
 - **Hiérarchie** : CORE > PACKAGE > PRODUCT > SYSTEM > CACHE.
 - **ID** : `id == filename`.
@@ -55,7 +61,9 @@ Glossaire opérationnel (SYSTEM) pour harmoniser le vocabulaire du framework.
 ## Changelog
 
 - v1.3 (09-03-2026) : ajout des termes `CACHE` canon (`99_CACHE`) et `EVIDENCE
+
   FRAMEWORK`.
+
 - v1.2 (02-03-2026) : rédaction glossaire + nettoyage depends_on.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 

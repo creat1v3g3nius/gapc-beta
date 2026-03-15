@@ -117,6 +117,7 @@ Vérif : `git status` ne mentionne plus merge/rebase en cours.
 
 - Exécuter cette checklist avant escalade incident.
 - Si un cas sort du cadre, ouvrir incident P1 avec symptômes + commandes déjà
+
   tentées.
 
 ## Statut d archivage
@@ -127,4 +128,5 @@ Vérif : `git status` ne mentionne plus merge/rebase en cours.
 ## Changelog
 
 - v1.1 (13-03-2026) : fusionne le contenu utile dans `GIT_01_ESSENTIEL` puis
+
   archive en `CACHE_SYSTEM_02_GIT`.

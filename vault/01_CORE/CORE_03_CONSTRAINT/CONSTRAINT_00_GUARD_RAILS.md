@@ -44,11 +44,11 @@ dans docs, code, configs, logs, exemples, commits.
 
 En cas de contradiction :
 
-1) CORE
-2) PACKAGE actif
-3) PRODUCT actif
-4) SYSTEM
-5) CACHE (jamais vérité)
+1. CORE
+1. PACKAGE actif
+1. PRODUCT actif
+1. SYSTEM
+1. CACHE (jamais vérité)
 
 ### 1.3 Actifs uniques
 
@@ -63,9 +63,9 @@ Tout mélange doit être isolé (réduction de scope/corpus) avant production.
 
 Si une information n’existe pas dans les sources applicables :
 
-- réponse/état = `NON TROUVÉ`,
-- + 1 action pour rendre l’information trouvable (créer/compléter un doc, tracer
-  une ADR).
+- réponse/état = `NON TROUVÉ`
+- 1 action pour rendre l’information trouvable
+  (créer/compléter un doc, tracer une ADR).
 
 ### 1.5 Une intention = une unité de changement
 

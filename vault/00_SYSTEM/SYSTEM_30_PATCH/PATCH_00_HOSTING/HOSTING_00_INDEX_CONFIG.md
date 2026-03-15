@@ -30,11 +30,11 @@ d’un **serveur d’hébergement externe** pour le framework GAPC :
 
 ## 1) Documents (ordre recommandé)
 
-1) `HOSTING_01_TARGET_ARCHITECTURE` — architecture cible (chemins + rôles)
-2) `HOSTING_02_BACKUP_RSYNC` — rsync quotidien + logs + vérifs
-3) `HOSTING_03_OPERATION_MONITORING` — routine monitoring/maintenance
-4) `HOSTING_04_DISASTER_RECOVERY` — scénarios + restauration
-5) `HOSTING_05_SERVER_BACKUP` — checklist santé backup
+1. `HOSTING_01_TARGET_ARCHITECTURE` — architecture cible (chemins + rôles)
+1. `HOSTING_02_BACKUP_RSYNC` — rsync quotidien + logs + vérifs
+1. `HOSTING_03_OPERATION_MONITORING` — routine monitoring/maintenance
+1. `HOSTING_04_DISASTER_RECOVERY` — scénarios + restauration
+1. `HOSTING_05_SERVER_BACKUP` — checklist santé backup
 
 ---
 

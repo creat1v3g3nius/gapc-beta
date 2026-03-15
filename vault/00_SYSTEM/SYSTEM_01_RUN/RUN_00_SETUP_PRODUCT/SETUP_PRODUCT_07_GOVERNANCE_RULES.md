@@ -46,6 +46,7 @@ Definir la gouvernance de products multiples dans le repo.
 ## Compatibilite
 
 - un product gele doit tracer les versions de `CORE`, `SYSTEM` et `PACKAGE` sur
+
   lesquelles il repose
 
 ## Regle de verite
@@ -60,22 +61,27 @@ Definir la gouvernance de products multiples dans le repo.
   actif impose une revalidation
 
 - toute modification locale stable dans `PRODUCT` appelle une decision de
+
   merge-out
 
 ## Obligations operatoires derivees
 
 - tout changement de perimetre actif doit etre explicite des l ouverture de
+
   session
+
 - toute chaine de preuve mixte ou ambiguite de perimetre declenche un
 
   traitement via `WORKFLOW_05_INCIDENT`
 
 - toute cloture de session doit laisser un next step unique et un etat de
+
   product explicite
 
 ## Next step unique
 
 - valider cette couche de composition avant d ouvrir un nouveau product hors
+
   sample.
 
 ## Amendements (FROZEN)
@@ -85,12 +91,17 @@ Definir la gouvernance de products multiples dans le repo.
 ## Changelog
 
 - v1.4 (15-03-2026) : passage en FROZEN des regles de gouvernance
+
   `SETUP_PRODUCT`.
+
 - v1.3 (13-03-2026) : rehoste le protocole sous
+
   `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+
 - v1.2 (13-03-2026) : clarifie la frontiere gouvernance vs runbooks
 
   `WORKFLOW` et derive les obligations operatoires minimales.
 
 - v1.1 (13-03-2026) : renommage `MP_07_GOVERNANCE_RULES` ->
+
   `SETUP_PRODUCT_07_GOVERNANCE_RULES`.

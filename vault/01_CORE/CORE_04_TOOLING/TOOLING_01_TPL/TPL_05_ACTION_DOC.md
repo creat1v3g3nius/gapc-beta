@@ -42,12 +42,12 @@ Standardiser une action documentaire (diff-first) :
 - Section : `<H2/H3>`
 - Intention (1 phrase) :
 - Patch :
-  - `--- START REPLACE ---`
-  - ...
-  - `--- END REPLACE ---`
+    - `--- START REPLACE ---`
+    - ...
+    - `--- END REPLACE ---`
 - Validation (P0) :
-  - frontmatter conforme
-  - cohérence hiérarchique CORE→PACKAGE→PRODUCT→SYSTEM
+    - frontmatter conforme
+    - cohérence hiérarchique CORE→PACKAGE→PRODUCT→SYSTEM
 - Next step unique :
 
 ---

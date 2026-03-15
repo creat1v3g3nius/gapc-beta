@@ -96,6 +96,8 @@ Modifications uniquement via patch ciblé + validation + version bump.
 
 - v1.3 (15-03-2026) : renomme le fichier et l id en prefixe canonique `INDEX_`.
 - v1.2 (15-03-2026) : corrige le H1
+
   et réaligne la version courante avec l historique du changelog.
+
 - v1.1 (05-03-2026) : passage en FROZEN.
 - v1.0 (05-03-2026) : création index DISCIPLINE du CORE.

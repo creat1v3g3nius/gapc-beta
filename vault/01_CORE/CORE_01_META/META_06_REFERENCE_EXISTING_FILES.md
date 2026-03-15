@@ -73,10 +73,10 @@ Correction requise:
 ## Procedure d'application
 
 1. Identifier le contenu duplique (regex/recherche textuelle).
-2. Trouver la source canonique (ID de reference).
-3. Supprimer la duplication.
-4. Remplacer par un bloc de reference.
-5. Valider frontmatter + smoke runner.
+1. Trouver la source canonique (ID de reference).
+1. Supprimer la duplication.
+1. Remplacer par un bloc de reference.
+1. Valider frontmatter + smoke runner.
 
 Bloc recommande:
 
@@ -105,6 +105,9 @@ Decision locale:
 ## Changelog
 
 - v1.1 (15-03-2026) : passage en FROZEN du standard `reference-first` apres
+
   validation globale du vault.
+
 - v1.0 (06-03-2026) : creation du standard "reference-first" pour supprimer les
+
   duplications.

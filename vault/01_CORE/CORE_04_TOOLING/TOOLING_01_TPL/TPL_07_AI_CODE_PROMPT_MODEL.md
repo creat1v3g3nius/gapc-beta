@@ -45,12 +45,12 @@ Validation required (smoke/validator):
 
 ## Output attendu
 
-1) Plan d’exécution (3–10 étapes)
-2) Patch minimal (diff)
-3) Tests/validations
-4) Commit message proposé
-5) Risques + backout
-6) Next step unique
+1. Plan d’exécution (3–10 étapes)
+1. Patch minimal (diff)
+1. Tests/validations
+1. Commit message proposé
+1. Risques + backout
+1. Next step unique
 
 ## Stop conditions
 

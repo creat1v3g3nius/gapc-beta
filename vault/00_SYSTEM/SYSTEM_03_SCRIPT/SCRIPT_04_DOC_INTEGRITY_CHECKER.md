@@ -89,6 +89,7 @@ Cas `P0` :
 - `arc` invalide
 - document hors convention minimale empêchant READY_TO_FREEZE
 - présence de secret ou donnée sensible détectable dans les métadonnées ou
+
   sorties
 
 Effet :
@@ -229,7 +230,9 @@ Le `DocIntegrityChecker` doit exécuter les étapes suivantes dans l’ordre :
 ### Étape 6 — Contrôle harmonie naming
 
 - vérifier la cohérence de famille : ex. `META_`, `DISCIPLINE_`, `CONSTRAINT_`,
+
   `SCRIPT_`
+
 - vérifier la cohérence entre préfixe, type, arc et scope
 - classer les écarts selon impact réel
 
@@ -246,6 +249,7 @@ Le `DocIntegrityChecker` doit exécuter les étapes suivantes dans l’ordre :
 - confirmer l’arc : `SYSTEM`
 - confirmer le scope : `vault/00_SYSTEM/03_SCRIPT`
 - confirmer que le script complète le validator YAML et le smoke runner sans
+
   dupliquer leur rôle
 
 ### 2. Spécification
@@ -275,9 +279,9 @@ Le `DocIntegrityChecker` doit exécuter les étapes suivantes dans l’ordre :
 
 - brancher le script au `SmokeRunner`
 - conserver la séparation des rôles :
-  - `ValidatorYaml` = schéma local
-  - `DocIntegrityChecker` = cohérence transverse
-  - `SmokeRunner` = orchestration
+    - `ValidatorYaml` = schéma local
+    - `DocIntegrityChecker` = cohérence transverse
+    - `SmokeRunner` = orchestration
 
 ### 6. Documentation
 
@@ -392,5 +396,7 @@ process avant toute implémentation.
 ## Changelog
 
 - v1.1 (15-03-2026) : passage en FROZEN apres implementation et validation du
+
   checker dans le repo.
+
 - v1.0 (09-03-2026) : creation du process `DocIntegrityChecker`.

@@ -42,6 +42,7 @@ GAPC fournit :
 - une architecture de production (Vault + repo + mentor read-only),
 - une discipline (scope/risk/gel/rag) appliquée à la production,
 - un outillage (TPL/PIPELINE/CHECKLIST/EXTENSION/KNOWLEDGE) **défini en CORE**
+
   et **spécialisé par add-ons** en PACKAGE.
 
 Le package ne contient pas :
@@ -85,8 +86,11 @@ Le package ne contient pas :
 Règle explicite :
 
 - `PACKAGE_00_GAPC` étend `CORE` mais ne remplace ni la hiérarchie d autorité,
+
   ni la séparation des rôles `AnythingLLM local / Codex / API externe fallback`.
+
 - toute comparaison `CORE vs PACKAGE_00_GAPC` doit donc conclure sur l extension
+
   ou l écart, jamais sur une substitution de rôle.
 
 ---
@@ -94,7 +98,9 @@ Règle explicite :
 ## 5) Liens de navigation (IDs)
 
 - Discipline GAPC : `GAPC_DISCIPLINE_01_GEL_RULES`,
+
   `GAPC_DISCIPLINE_03_SCOPE_CLASSIFIER`, `GAPC_DISCIPLINE_04_RISK_REGISTER`,
+
 - Pipelines GAPC : `GAPC_TOOLING_PIPELINE_00_PACKAGE`
 - DoD workspace : `PRODUCT actif` (référence workspace, si applicable)
 
@@ -107,11 +113,17 @@ Modifications uniquement via patch ciblé + validation + version bump.
 ## Changelog
 
 - v1.5 (10-03-2026) : explicite que GAPC étend CORE sans remplacer ni la
+
   hiérarchie d autorité ni la séparation des rôles.
+
 - v1.4 (10-03-2026) : supprime les references produit legacy et aligne les
+
   invariants setup sur `mentor read-only` + `API fallback`.
+
 - v1.3 (05-03-2026) : ajout amendements.
 - v1.2 (04-03-2026) : corrections chemins + `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création package profile GAPC (P1, sans duplication CORE).

@@ -34,7 +34,7 @@ Lister les **CO** (unités de livraison) selon :
 
 ## Format (à dupliquer par item)
 
-### CO_XXX — <Titre>
+### CO_XXX — [Titre]
 
 - Arc principal : SYSTEM | CORE | PACKAGE | PRODUCT
 - Goal (1 phrase) :
@@ -50,9 +50,9 @@ Lister les **CO** (unités de livraison) selon :
 
 ## Tableau (option)
 
-| CO | Goal | Output | Scope | Prio | Risque | Owner |
-|---|---|---|---|---|---|---|
-| CO_001 |  |  |  |  |  |  |
+| CO     | Goal   | Output | Scope | Prio | Risque | Owner |
+|------- |--------|--------|-------|------|--------|-------|
+| CO_001 |        |        |       |      |        |       |
 
 ---
 
@@ -63,7 +63,9 @@ Lister les **CO** (unités de livraison) selon :
 ## Changelog
 
 - v1.3 (09-03-2026) : debruitage title pour eviter collision semantique avec
+
   `PIPELINE_03_BACKLOG_COMPOSANTS`.
+
 - v1.2 (04-03-2026) : correction heading.
 - v1.1 (01-03-2026) : passage en FROZEN + normalisation depends_on.
 - v1.0 (01-03-2026) : version initiale READY_TO_FREEZE.

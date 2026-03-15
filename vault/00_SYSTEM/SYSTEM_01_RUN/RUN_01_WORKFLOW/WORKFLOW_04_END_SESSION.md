@@ -43,6 +43,7 @@ Références :
 - **1 intention = 1 commit** (sinon, séparer).
 - **Aucun secret / PII** dans le repo (diff, logs, docs).
 - Si tu as touché **2 arcs** → noter l’écart + créer 2 CO (correction prochaine
+
   session).
 
 ---
@@ -82,7 +83,7 @@ Références :
 - [ ] Push/sync effectué (ou justification si offline).
 - [ ] `git status` = clean
 
-**Stop condition**
+Stop condition :
 Si tu ne peux pas commit :
 
 - [ ] écrire “Pourquoi pas de commit”
@@ -95,7 +96,9 @@ Si tu ne peux pas commit :
 
 - [ ] La doc (Vault) reflète la réalité (pas de promesses non tenues).
 - [ ] Si une **décision structurante** est apparue → ADR-lite créée (même
+
       courte).
+
 - [ ] Les commandes/chemins ajoutés sont testés (copier-coller).
 - [ ] Les liens Obsidian critiques ne sont pas cassés (ou fixés).
 
@@ -176,6 +179,7 @@ Règle :
 ## 10) Changelog
 
 - v1.0 (27-02-2026) : version générique, alignée naming/frontmatter,
+
   multi-package/multi-product.
 
 ---

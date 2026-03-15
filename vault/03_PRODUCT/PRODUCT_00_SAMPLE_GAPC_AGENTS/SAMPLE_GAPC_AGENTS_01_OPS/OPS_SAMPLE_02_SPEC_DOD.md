@@ -42,7 +42,9 @@ PASS si :
 - le mentor reste read-only
 - les permissions et no-secrets sont mentionnes
 - la priorisation produit distingue `GAPC discipline`, `autres docs package
+
   GAPC` et `docs product actifs`
+
 - la spec impose `1 product actif` et un refus explicite d un autre product
 - la matrice des roles produit reste au format `1 bloc par tache`
 
@@ -74,7 +76,9 @@ Interdit :
 - ajouter `CACHE`,
 - supprimer `docs product actifs`,
 - ecrire `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a la place des
+
   categories de sources,
+
 - annoter une source `PRODUCT` comme `CORE`,
 - annoter une source `PACKAGE` comme `PRODUCT`.
 
@@ -86,6 +90,7 @@ Exemple minimal valide :
 - `docs product actifs`
 - `SYSTEM`
 - `Sources utilisees : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
+
   GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md, OPS_SAMPLE_02_SPEC_DOD.md`
 
 ### 2.2 Isolation d un autre product
@@ -132,15 +137,19 @@ Next step unique:
 Spec ID: OPS_SAMPLE_02_SPEC_DOD
 PRD reference: OPS_SAMPLE_00_BACKLOG_PRODUCT
 Contrats:
+
 - `Codex` = implementation, patch, execution, tests
 - `AnythingLLM local` = mentor documentaire read-only
 - `API externe fallback` = fallback cible, jamais nominal
 - priorites de sources produit = `CORE -> GAPC discipline -> autres docs package GAPC -> docs product actifs -> SYSTEM`
+
 Contraintes:
+
 - `1 package actif` = `PACKAGE_00_GAPC`
 - `1 product actif` = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - refus explicite d un autre product
 - `no-secrets / no-PII`
+
 Verdict: PASS
 Next step unique: conserver cette spec comme reference produit pour les reruns
 ```
@@ -153,11 +162,18 @@ Next step unique: conserver cette spec comme reference produit pour les reruns
 
 - v1.5 (13-03-2026) : passe la spec produit en `READY_TO_FREEZE`.
 - v1.4 (13-03-2026) : backfill l evidence de spec avec les contrats finaux et le
+
   verdict PASS du setup.
+
 - v1.3 (11-03-2026) : renforce le format `T2` avec interdiction des arcs a la
+
   place des categories et ajoute un exemple valide package+product.
+
 - v1.2 (11-03-2026) : ajoute les formats critiques produit pour priorites de
+
   sources, isolation d un autre product et matrice des roles.
+
 - v1.1 (10-03-2026) : rattache la spec au backlog product et au backlog CO.
 - v1.0 (10-03-2026) : creation du controle spec pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

@@ -42,8 +42,11 @@ Imposer, au niveau PACKAGE GAPC, la **politique de sources** (RAG / production)
 Règle de sortie :
 
 - si la demande porte sur l ordre de priorité package-scoped, le mentor s arrête
+
   a `SYSTEM`
+
 - `CACHE` reste une règle de fond, mais ne fait pas partie du format de sortie
+
   attendu pour `T2`
 
 ## 2) Règles P0
@@ -79,7 +82,9 @@ demandés.
 Interdit :
 
 - ajouter `Audit`, `Comparaison`, `Run plan` ou `Next step unique` si non
+
   demandés
+
 - transformer une réponse simple en multi-blocs
 
 ---
@@ -87,14 +92,22 @@ Interdit :
 ## Changelog
 
 - v1.5 (11-03-2026) : précise que `CACHE` reste une règle de fond et ne doit pas
+
   apparaitre dans la sortie attendue de `T2`.
+
 - v1.4 (11-03-2026) : ajoute la discipline de citation et la règle anti-bruit
+
   pour les réponses simples.
+
 - v1.3 (10-03-2026) : réaligne la priorité des sources sur `CORE -> PACKAGE ->
+
   PRODUCT -> SYSTEM -> CACHE`.
+
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création policy sources GAPC (P1).
 
 ---

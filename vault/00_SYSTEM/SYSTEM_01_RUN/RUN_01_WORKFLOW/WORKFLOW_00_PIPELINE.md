@@ -23,22 +23,22 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 
 ## 1. Principes
 
-1) **Doc et/ou Code** : toute évolution technique produit :
+1. **Doc et/ou Code** : toute évolution technique produit :
 
 - une action documentaire (Vault)
 - une action code (repo + commit + tests)
 
-2) **Tooling-first** : dès qu’un livrable correspond à un TOOLING
+1. **Tooling-first** : dès qu’un livrable correspond à un TOOLING
 
    (TPL/CHECKLIST//KNOWLEDGE/PIPELINE/EXTENSION), utiliser le modèle.
 
-3) **Patch explicite** : pas de suggestions vagues.
+1. **Patch explicite** : pas de suggestions vagues.
 
 - soit fichier complet,
 - soit bloc START/END REPLACE,
 - soit diff/patch Git.
 
-4) **No secrets** : aucune clé/token/PII en clair.
+1. **No secrets** : aucune clé/token/PII en clair.
 
 - `.env` ignoré, `.env.example` commit.
 
@@ -54,9 +54,13 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 
 - `WORKFLOW_*` ne decide pas de la structure cible d un product.
 - `SETUP_PRODUCT_*` ne detaille pas les gestes operatoires pas-a-pas de la
+
   session.
+
 - si une tache demande `quoi maintenir` ou `quand revalider`, regarder
+
   `SETUP_PRODUCT_*`.
+
 - si une tache demande `quoi executer maintenant`, regarder `WORKFLOW_*`.
 
 ---
@@ -67,6 +71,7 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 - Vérité secondaire (TOOLING/PACKAGE) : fichiers KNOWLEDGE ET SOT
 - Exécution : repo Git (VS Code + Git)
 - Aide au raisonnement : AnythingLLM (lecture/extraction), jamais décision
+
   autonome
 
 ---
@@ -76,7 +81,9 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 - **Diff-first** : demander un diff avant application.
 - **No auto-commit** : tu valides le diff, puis tu commits.
 - **Scope atomique** : 1 patch = 1 intention = 1 composant (CO) (autant que
+
   possible).
+
 - **Élements actifs** : 1 product actif = 1 package actif.
 - **Tests minimum** : smoke runner obligatoire sur toute modif non-triviale.
 - Si changement structurant → ADR-lite.

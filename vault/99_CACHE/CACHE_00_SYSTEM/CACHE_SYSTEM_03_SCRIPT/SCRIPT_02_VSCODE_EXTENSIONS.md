@@ -20,8 +20,11 @@ avec règle de retrait si bruit/instabilité.
 Hypothèse d'exécution :
 
 - `code --list-extensions` indisponible dans cet environnement (`code-cli:
+
   absent`).
+
 - Baseline définie selon les besoins réels du pipeline GAPC (validator, smoke,
+
   YAML/frontmatter, Git propre).
 
 ## Recommandées (MVP)
@@ -46,6 +49,7 @@ Raison : utile si un `.editorconfig` est maintenu; sinon valeur limitée.
 - Installer une extension à la fois.
 - Vérifier impact sur : édition docs, flux Git, tâches Validate/Smoke.
 - Si bruit, instabilité, latence ou comportement destructeur : retirer
+
   immédiatement.
 
 ## Décision P2.1
@@ -62,7 +66,11 @@ Raison : utile si un `.editorconfig` est maintenu; sinon valeur limitée.
 ## Changelog
 
 - v1.2 (13-03-2026) : archive en `CACHE_SYSTEM_03_SCRIPT` avec `status:
+
   DEPRECATED`.
+
 - v1.1 (13-03-2026) : retire la dependance au bootstrap `GIT_00_CONFIG` devenu
+
   deprecated.
+
 - v1.0 (08-03-2026) : creation.

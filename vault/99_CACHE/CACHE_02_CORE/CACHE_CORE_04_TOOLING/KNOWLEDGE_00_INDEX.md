@@ -30,7 +30,9 @@ production.
 - [[KNOWLEDGE_01_AI_CODING_LIST]] — outils et patterns de dev assisté IA
 - [[KNOWLEDGE_02_AI_GENERATOR_LIST]] — générateurs (image/vidéo/audio/3D/docs)
 - [[KNOWLEDGE_03_LLM_PLATFORM_LIST]] — plateformes LLM/RAG (workspaces,
+
   ingestion)
+
 - [[KNOWLEDGE_04_DATA_SOURCE_LIST]] — sources d’ingestion + typologies
 - [[KNOWLEDGE_05_MOVIE_FESTIVAL_LIST]] — festivals (typologie)
 - [[KNOWLEDGE_06_STARTUP_STACK_LIST]] — stack produit (par catégories)
@@ -46,7 +48,7 @@ Chaque liste contient :
 - **Red flags** (3–7)
 - **Extensions** (ce qu’un PACKAGE/PRODUCT peut ajouter)
 
-### Changelog
+### Historique initial
 
 - v1.0 (01-03-2026) : création index KNOWLEDGE (P0+P1).
 
@@ -56,8 +58,9 @@ Chaque liste contient :
 
 - Modifications uniquement via patch ciblé + validation + version bump.
 
-## Changelog
+### Changelog
 
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.
 - v1.2 (04-03-2026) : correction heading + `depends_on` du frontmatter +
+
   déplacement du fichier dans CACHE.

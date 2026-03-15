@@ -27,6 +27,7 @@ Les META du PACKAGE définissent le **profil métier** (overlay) :
 ## Documents
 
 - [[GAPC_META_00_PACKAGE_PROFILE]] — profil du PACKAGE (règles et périmètre
+
   métier)
 
 ---

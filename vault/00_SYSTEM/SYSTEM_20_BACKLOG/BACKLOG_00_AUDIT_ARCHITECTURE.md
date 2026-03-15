@@ -18,19 +18,19 @@ scope: vault/00_SYSTEM/SYSTEM_10_BACKLOG
 
 Évaluer l'évolution structurelle de l'architecture entre :
 
--   v4 (décentralisation initiale)
--   v4.1 (renforcement normatif)
--   v4.2 (introduction DISCIPLINE dans CORE)
--   v4.3 (classifier 100% générique + extension package)
+- v4 (décentralisation initiale)
+- v4.1 (renforcement normatif)
+- v4.2 (introduction DISCIPLINE dans CORE)
+- v4.3 (classifier 100% générique + extension package)
 
 Axes analysés :
 
-1.  Pureté du CORE
-2.  Cohérence hiérarchique
-3.  Discipline & gouvernance
-4.  Robustesse RAG
-5.  Modularité multi-packages
-6.  Maintenabilité long terme
+1. Pureté du CORE
+1. Cohérence hiérarchique
+1. Discipline & gouvernance
+1. Robustesse RAG
+1. Modularité multi-packages
+1. Maintenabilité long terme
 
 ---
 
@@ -51,19 +51,19 @@ v4.3 est la version la plus équilibrée à ce stade.
 
 ### 3.1 Pureté du CORE
 
-### v4
+- `v4`
 
 CORE encore hybride.
 
-### v4.1
+- `v4.1`
 
 Discipline MVP dans CORE → trop prescriptif.
 
-### v4.2
+- `v4.2`
 
 Ajout DISCIPLINE mais ambiguïté générique/métier.
 
-### v4.3
+- `v4.3`
 
 Classifier 100% générique. Extension uniquement dans PACKAGE.
 
@@ -73,19 +73,19 @@ Score évolution : ++
 
 ### 3.2 Hiérarchie d'autorité
 
-### v4
+- `v4`
 
 Peu formalisée.
 
-### v4.1
+- `v4.1`
 
 Formalisée mais incomplète.
 
-### v4.2
+- `v4.2`
 
 Correction partielle.
 
-### v4.3
+- `v4.3`
 
 Hiérarchie claire, contractuelle, sans ambiguïté.
 
@@ -95,19 +95,19 @@ Score évolution : ++
 
 ### 3.3 Discipline & Gouvernance
 
-### v4
+- `v4`
 
 Discipline faible, risque scope creep.
 
-### v4.1
+- `v4.1`
 
 Discipline trop centrale.
 
-### v4.2
+- `v4.2`
 
 Structure hybride.
 
-### v4.3
+- `v4.3`
 
 Discipline générique universelle + extension métier contrôlée.
 
@@ -117,19 +117,19 @@ Meilleur équilibre obtenu.
 
 ### 3.4 Robustesse RAG
 
-### v4
+- `v4`
 
 Risque bruit inter-package.
 
-### v4.1
+- `v4.1`
 
 Amélioration priorisation lecture.
 
-### v4.2
+- `v4.2`
 
 Policy plus explicite.
 
-### v4.3
+- `v4.3`
 
 Séparation CORE générique / PACKAGE actif renforce cohérence mentor.
 
@@ -139,19 +139,19 @@ Score évolution : ++
 
 ### 3.5 Modularité multi-packages
 
-### v4
+- `v4`
 
 Modularité forte mais fragile.
 
-### v4.1
+- `v4.1`
 
 Structure plus stable.
 
-### v4.2
+- `v4.2`
 
 Bonne isolation.
 
-### v4.3
+- `v4.3`
 
 Isolation + discipline générique = robuste.
 
@@ -191,10 +191,10 @@ v4.3 marque la stabilisation réelle de l'écosystème.
 
 Elle réussit à :
 
--   Purifier le CORE
--   Encadrer la discipline sans rigidifier
--   Maintenir la flexibilité multi-produits
--   Renforcer la cohérence RAG
+- Purifier le CORE
+- Encadrer la discipline sans rigidifier
+- Maintenir la flexibilité multi-produits
+- Renforcer la cohérence RAG
 
 Recommandation :
 

@@ -63,7 +63,9 @@ Next step unique:
 ## 3) Notes
 
 - Utiliser ce fichier comme point d entree des preuves liees a un lot de
+
   modifications.
+
 - Le CO verifie ici doit exister en amont dans `OPS_SAMPLE_00_BACKLOG_CO`.
 
 ## 4) Evidence documentee
@@ -71,19 +73,27 @@ Next step unique:
 ```txt
 CO: CO_001 / CO_002 / CO_003
 Goal:
+
 - CO_001: verifier la separation des roles
 - CO_002: prouver les workspaces RAG
 - CO_003: formaliser le gel produit
+
 Output:
+
 - separation mentor / Codex / API prouvee
 - batteries workspace `WS_00`, `WS_01`, `WS_02` PASS
 - checklist `READY_TO_FREEZE` backfill et formulable sans oral
+
 PASS/FAIL:
+
 - CO_001: PASS
 - CO_002: PASS
 - CO_003: PASS
+
 Risque:
+
 - pas de P0 restant sur le setup mentor + Codex
+
 Verdict: PASS
 Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
@@ -96,8 +106,13 @@ Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKL
 
 - v1.3 (13-03-2026) : passe le controle CO en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : backfill les preuves des trois CO produits avec verdict
+
   PASS.
+
 - v1.1 (10-03-2026) : rattache le controle CO au backlog product et au backlog
+
   CO.
+
 - v1.0 (10-03-2026) : creation du controle CO pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

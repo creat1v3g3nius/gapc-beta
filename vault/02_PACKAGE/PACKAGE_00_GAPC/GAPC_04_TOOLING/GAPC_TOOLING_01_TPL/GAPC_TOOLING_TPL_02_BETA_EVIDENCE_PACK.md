@@ -34,16 +34,22 @@ CORE strict : no-secrets / no-PII.
 
 ```txt
 Target:
+
 - GAPC_READY_TO_FREEZE | GAPC_FROZEN
+
 Workspace product:
+
 - PRODUCT_XX
+
 Date:
 Owner:
 
 Package version:
+
 - PACKAGE_00_GAPC @ <tag/commit si dispo>
 
 1) Evidence — Artefacts (IDs)
+
 - PRD:
 - Backlog CO:
 - Spec Tech (si applicable):
@@ -53,6 +59,7 @@ Package version:
 - Autres:
 
 2) Gates (PASS/FAIL)
+
 - DocQG:
 - CodeQG: (si applicable)
 - RagQG: (si applicable)
@@ -60,19 +67,23 @@ Package version:
 - GelRules GAPC:
 
 3) Risques (top)
+
 - Risques critiques ouverts (score 6–9): (NONE | list)
 - Mitigations + owner:
 - Liens (CO/ADR):
 
 4) Delta depuis dernière preuve
+
 - Added:
 - Changed:
 - Fixed:
 
 5) Verdict
+
 - Verdict: OK | KO
 - P0 fails:
 - Next step unique:
+
 ```
 
 ### Notes
@@ -83,10 +94,14 @@ Package version:
 ## Changelog
 
 - v1.3 (10-03-2026) : remplace les exemples de produit legacy par un placeholder
+
   generique `PRODUCT_XX`.
+
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création template Evidence Pack GAPC (P1).
 
 ---

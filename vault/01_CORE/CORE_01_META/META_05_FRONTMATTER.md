@@ -86,7 +86,9 @@ scope: vault/<ARC_PATH>/<FAMILY_PATH>
 
 - `depends_on` contient **des IDs** (pas des chemins).
 - `scope` est un **chemin logique de rattachement** (dossier), pas
+
   nécessairement le fichier complet.
+
 - `title` : UpperCamelCase (sans accents/espaces).
 
 ---
@@ -147,12 +149,18 @@ Le validator doit au minimum vérifier :
 ## Changelog
 
 - v1.4 (09-03-2026) : debruitage de l'exemple `title` pour eviter collision avec
+
   un frontmatter reel.
+
 - v1.3 (09-03-2026) : aligne les exemples sur les IDs canoniques
+
   (`*_TERMINOLOGY_POLICY`, `*_NON_DUPLICATION_POLICY`).
+
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (01-03-2026) : standardisation `created/updated/depends_on`, correction
+
   des typos, clarification `scope`, exemple CONSTRAINT.
+
 - v1.0 (28-02-2026) : version initiale fileciteturn43file0.
 
 ---

@@ -46,7 +46,9 @@ GAPC_Evidence: (IDs attendus + lien evidence pack si applicable)
 
 - `GAPC_Scope` obligatoire (si doute → NEXT)
 - si `GAPC_RiskID` critique (score 6–9) → mitigation + owner obligatoires (dans
+
   Risk Register)
+
 - si `GAPC_GateTarget` ≠ NA → evidence pack GAPC requis
 
 ---
@@ -67,7 +69,9 @@ GAPC_Evidence: GAPC_TPL_00_BETA_EVIDENCEPACK (rempli)
 
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 (01-03-2026) : création addon Backlog CO (P0) pour GAPC.
 
 ---

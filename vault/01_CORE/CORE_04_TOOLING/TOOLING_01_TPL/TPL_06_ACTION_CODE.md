@@ -42,8 +42,8 @@ Standardiser une action engineering (diff-first) :
 - Patch (diff) :
 - Commit message : `type(scope): action`
 - Validations (P0) :
-  - smoke
-  - validator (si vault touché)
+    - smoke
+    - validator (si vault touché)
 - Risques (max 3) :
 - Backout plan :
 - Next step unique :

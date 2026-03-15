@@ -56,7 +56,7 @@ git pull --rebase          # récupérer + aligner proprement (si policy rebase)
 git push                   # envoyer sur le remote
 ```
 
-**Stop condition**
+Stop condition :
 
 - Si `git status` montre “detached HEAD” ou “merge in progress”
 
@@ -68,14 +68,14 @@ git push                   # envoyer sur le remote
 
 ### 3.1) Mini-cycle (le plus fréquent)
 
-1) Vérifier :
+1. Vérifier :
 
 ```bash
 git status
 git diff
 ```
 
-2) Stage **ciblé** :
+1. Stage **ciblé** :
 
 ```bash
 git add path/to/file
@@ -83,20 +83,20 @@ git add path/to/file
 git add -p
 ```
 
-3) (Option) lancer validator/smoke si le framework l’impose :
+1. (Option) lancer validator/smoke si le framework l’impose :
 
 ```bash
 python scripts/ValidateFrontmatter.py
 # python scripts/SmokeRunner.py
 ```
 
-4) Commit :
+1. Commit :
 
 ```bash
 git commit -m "docs(system): update quickstart runbook"
 ```
 
-5) Push :
+1. Push :
 
 ```bash
 git push

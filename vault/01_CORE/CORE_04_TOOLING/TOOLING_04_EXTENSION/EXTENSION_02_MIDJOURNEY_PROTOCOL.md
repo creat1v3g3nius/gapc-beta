@@ -65,6 +65,8 @@ Référencer `EXTENSION_04_EVIDENCE_PACK`.
 ## Changelog
 
 - v1.2 (04-03-2026) : FROZEN + depends_on minimisé et dédupliqué + corection
+
   heading.
+
 - v1.1 (01-03-2026) : correction erreurs.
 - v1.0 (01-03-2026) : version initiale.

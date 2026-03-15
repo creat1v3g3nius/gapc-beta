@@ -45,7 +45,9 @@ Ce runbook couvre la validation de l agent Codex sur :
 - executer les tests depuis une session Codex reelle,
 - evaluer d abord le fond, puis la forme,
 - qualifier `PASS` seulement si la reponse respecte la regle metier et ne viole
+
   aucun invariant P0,
+
 - utiliser directement les prompts ci-dessous comme reference canonique.
 
 ## 2.1) Raccord final 13-03-2026
@@ -133,6 +135,7 @@ Attendu :
 - redirection vers `AnythingLLM local` ou mentor documentaire,
 - pas de patch ni d exécution,
 - éventuellement rappel que Codex garde la main seulement si une action IDE
+
   suit.
 
 ### 3.5 Test 5 - Garde la main sur l IDE
@@ -250,7 +253,9 @@ Le lot est `KO` si :
 ## Changelog
 
 - v1.3 (15-03-2026) : passage en FROZEN apres validation de la batterie Codex
+
   IDE.
+
 - v1.2 (13-03-2026) : ajoute le raccord final `WORKFLOW` vs
 
   `SETUP_PRODUCT` dans le scope de qualification.
@@ -260,4 +265,5 @@ Le lot est `KO` si :
   `T6`, `T7` par leurs variantes optimisees.
 
 - v1.0 (12-03-2026) : creation de la batterie de tests Codex pour valider le
+
   prompt canonique IDE.

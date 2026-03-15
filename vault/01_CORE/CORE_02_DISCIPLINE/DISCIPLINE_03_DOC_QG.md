@@ -54,10 +54,12 @@ Peuvent renforcer, ne peuvent pas affaiblir.
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE
+
   strict.
+
 - v1.0 (01-03-2026) : version initiale.
 
 ---

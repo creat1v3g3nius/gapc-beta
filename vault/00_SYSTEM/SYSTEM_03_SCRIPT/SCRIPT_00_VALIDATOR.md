@@ -18,9 +18,13 @@ Permet de mettre en place une qualité **bloquante mais simple** pour le
 framework GAPC :
 
 - un **validator** qui vérifie les fichiers du Vault (`repo/vault/`) :
+
   frontmatter YAML + naming + invariants,
+
 - un **hook Git pre-commit** (optionnel mais recommandé) qui empêche de
+
   committer si le validator est KO,
+
 - une intégration **VS Code Tasks** (1 clic).
 
 Contraintes :
@@ -28,6 +32,7 @@ Contraintes :
 - **No secrets** : aucun token/clé/PII dans repo/docs/logs.
 - **Fail fast** : si KO → code de sortie non-zéro.
 - **Scalable** : multi-package / multi-product (package actif unique par
+
   session).
 
 ---
@@ -37,31 +42,38 @@ Contraintes :
 ### P0 (obligatoire)
 
 1. **Frontmatter YAML présent** sur tous les fichiers “structurants” (au minimum
+
    SYSTEM/CORE/PACKAGE/PRODUCT).
-2. Champs requis :
-   - `id`, `type`, `title`, `version`, `status`, `created`, `updated`, `scope`,
+
+1. Champs requis :
+    - `id`, `type`, `title`, `version`, `status`, `created`, `updated`, `scope`,
+
      `tags`, `depends_on`, `arc`
-3. **Alignement** : `id` = **nom du fichier sans extension** *(règle
+
+1. **Alignement** : `id` = **nom du fichier sans extension** *(règle
+
    contractuelle)*.
-4. Enum :
-   - `type` ∈ set familles
-   - `status` ∈ `DRAFT|PROPOSED|READY_TO_FREEZE|FROZEN|DEPRECATED`
-   - `arc` ∈ `SYSTEM|CORE|PACKAGE|PRODUCT|CACHE`
-5. **Naming** : fichier conforme au pattern de famille (`<FAMILLE_NUM_...>.md`)
+
+1. Enum :
+    - `type` ∈ set familles
+    - `status` ∈ `DRAFT|PROPOSED|READY_TO_FREEZE|FROZEN|DEPRECATED`
+    - `arc` ∈ `SYSTEM|CORE|PACKAGE|PRODUCT|CACHE`
+1. **Naming** : fichier conforme au pattern de famille (`<FAMILLE_NUM_...>.md`)
+
    et `UpperCamelCase` pour `title` (frontmatter).
 
 ### P1 (recommandé)
 
-6. Unicité :
-   - `id` **unique** sur le corpus analysé.
-7. Cohérence :
-   - `scope` correspond au chemin du fichier (préfixe cohérent).
-8. Anti-duplication (simple) :
-   - détecter collisions “quasi-doublons” (ex: `SpecTech` vs `SpechTech`).
+1. Unicité :
+    - `id` **unique** sur le corpus analysé.
+1. Cohérence :
+    - `scope` correspond au chemin du fichier (préfixe cohérent).
+1. Anti-duplication (simple) :
+    - détecter collisions “quasi-doublons” (ex: `SpecTech` vs `SpechTech`).
 
 ### P2 (option)
 
-9. Vérifier “package actif unique” via une variable de config (voir §4).
+1. Vérifier “package actif unique” via une variable de config (voir §4).
 
 ---
 
@@ -117,7 +129,9 @@ config dedie.
 Regle :
 
 - le mode nominal passe par les options CLI `--vault`, `--strict`,
+
   `--enforce-unique-ids`
+
 - aucun package actif ou product actif n est requis pour executer le validator
 - toute extension future doit rester optionnelle et sans secret
 
@@ -219,8 +233,12 @@ Exemple minimal :
 ## Changelog
 
 - v1.3 (13-03-2026) : recale la notice sur `scripts/ValidateFrontmatter.py`, ses
+
   flags reels et `frontmatter_utils.py`.
+
 - v1.2 (13-03-2026) : retire la dependance au bootstrap `GIT_00_CONFIG` devenu
+
   deprecated.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

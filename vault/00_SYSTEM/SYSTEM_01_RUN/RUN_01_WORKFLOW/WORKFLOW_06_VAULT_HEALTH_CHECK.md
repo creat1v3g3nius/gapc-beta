@@ -348,5 +348,7 @@ Après exécution du health check :
 ## Changelog
 
 - v1.2 (15-03-2026) : passage en FROZEN apres validation du workflow dans le
+
   smoke repo.
+
 - v1.1 (08-03-2026) : stabilise le protocole de health check du vault.

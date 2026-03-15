@@ -17,6 +17,7 @@ scope: vault/02_PACKAGE/PACKAGE_01_ASSO/ASSO_01_META
 ## Entités (définitions courtes)
 
 - Association, Statuts, Règlement intérieur, CA, Bureau, Adhérent, Partenaire,
+
   Projet, Convention.
 
 ## Termes réservés

@@ -65,7 +65,7 @@ recommander de secrets ni de workflows non traçables.
 
 ---
 
-## Changelog
+## Historique initial
 
 - v1.0 (01-03-2026) : version minimale.
 

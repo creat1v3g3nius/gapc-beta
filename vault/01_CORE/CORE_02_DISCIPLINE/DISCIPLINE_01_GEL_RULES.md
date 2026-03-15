@@ -28,9 +28,13 @@ Procédures/preuves : SYSTEM. Exigences spécifiques : PACKAGE/PRODUCT.
 
 - **No-secrets** (repo/vault/patches/logs/exemples).
 - **Traçabilité** : tout statut doit être justifiable par preuves consultables
+
   (définies en SYSTEM).
+
 - **Amendements contrôlés** (FROZEN) : modification contrôlée, tracée,
+
   versionnée (modalités en SYSTEM).
+
 - **Extensions non régressives** : PACKAGE/PRODUCT ne font qu’ajouter.
 
 ---
@@ -58,10 +62,12 @@ FROZEN = READY_TO_FREEZE + :
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE +
+
   formulation CORE strict (sans procédure/cible).
+
 - v1.0 (01-03-2026) : version initiale.
 
 ---

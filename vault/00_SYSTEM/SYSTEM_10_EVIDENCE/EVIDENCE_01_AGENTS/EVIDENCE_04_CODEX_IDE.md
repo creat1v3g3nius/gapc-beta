@@ -97,4 +97,5 @@ Next step unique:
 
 - v1.1 (13-03-2026) : passe la preuve Codex IDE en `READY_TO_FREEZE`.
 - v1.0 (13-03-2026) : creation de la preuve Codex IDE a partir du modele
+
   `EXTENSION_04_EVIDENCE_PACK`.

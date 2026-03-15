@@ -115,86 +115,86 @@ A rule is implemented as an `Object`:
 
   parameters:
 
-  - `params` is an `Object` with properties that describe the content being
+    - `params` is an `Object` with properties that describe the content being
 
     analyzed:
 
-    - `name` is a `String` that identifies the input file/string.
-    - `parsers` is an `Object` with properties corresponding to the value of
+        - `name` is a `String` that identifies the input file/string.
+        - `parsers` is an `Object` with properties corresponding to the value of
 
       `parser` in the rule definition (see above).
 
-      - `markdownit` is an `Object` that provides access to output from the
+            - `markdownit` is an `Object` that provides access to output from the
 
         [`markdown-it`][markdown-it] parser.
 
-        - `tokens` is an `Array` of [`markdown-it` `Token`s][markdown-it-token]
+                - `tokens` is an `Array` of [`markdown-it` `Token`s][markdown-it-token]
 
           with added `line` and `lineNumber` properties. (This property was
           previously on the `params` object.)
 
-      - `micromark` is an `Object` that provides access to output from the
+            - `micromark` is an `Object` that provides access to output from the
 
         [`micromark`][micromark] parser.
 
-        - `tokens` is an `Array` of [`MicromarkToken`][micromark-token] objects.
-      - Samples for both `tokens` are available via [test snapshots][tokens].
-    - `lines` is an `Array` of `String` values corresponding to the lines of the
+                - `tokens` is an `Array` of [`MicromarkToken`][micromark-token] objects.
+            - Samples for both `tokens` are available via [test snapshots][tokens].
+        - `lines` is an `Array` of `String` values corresponding to the lines of the
 
       input file/string.
 
-    - `frontMatterLines` is an `Array` of `String` values corresponding to any
+        - `frontMatterLines` is an `Array` of `String` values corresponding to any
 
       front matter (not present in `lines`).
 
-    - `config` is an `Object` corresponding to the rule's entry in
+        - `config` is an `Object` corresponding to the rule's entry in
 
       `options.config` (if present).
 
-    - `version` is a `String` that corresponds to the version of `markdownlint`
-  - `onError` is a function that takes a single `Object` parameter with one
+        - `version` is a `String` that corresponds to the version of `markdownlint`
+    - `onError` is a function that takes a single `Object` parameter with one
 
     required and four optional properties:
 
-    - `lineNumber` is a required `Number` specifying the 1-based line number of
+        - `lineNumber` is a required `Number` specifying the 1-based line number of
 
       the error.
 
-    - `detail` is an optional `String` with information about what caused the
+        - `detail` is an optional `String` with information about what caused the
 
       error.
 
-    - `context` is an optional `String` with relevant text surrounding the error
+        - `context` is an optional `String` with relevant text surrounding the error
 
       location.
 
-    - `information` is an optional (absolute) `URL` of a link to override the
+        - `information` is an optional (absolute) `URL` of a link to override the
 
       same-named value provided by the rule definition. (Uncommon)
 
-    - `range` is an optional `Array` with two `Number` values identifying the
+        - `range` is an optional `Array` with two `Number` values identifying the
 
       1-based column and length of the error.
 
-    - `fixInfo` is an optional `Object` with information about how to fix the
+        - `fixInfo` is an optional `Object` with information about how to fix the
 
       error (all properties are optional, but at least one of `deleteCount` and
       `insertText` should be present; when applying a fix, the delete should be
       performed before the insert):
 
-      - `lineNumber` is an optional `Number` specifying the 1-based line number
+            - `lineNumber` is an optional `Number` specifying the 1-based line number
 
         of the edit.
 
-      - `editColumn` is an optional `Number` specifying the 1-based column
+            - `editColumn` is an optional `Number` specifying the 1-based column
 
         number of the edit.
 
-      - `deleteCount` is an optional `Number` specifying the number of
+            - `deleteCount` is an optional `Number` specifying the number of
 
         characters to delete (the value `-1` is used to delete the line).
 
-      - `insertText` is an optional `String` specifying the text to insert. `\n`
+            - `insertText` is an optional `String` specifying the text to insert. `\n`
 
         is the platform-independent way to add a line break; line breaks should
         be added at the beginning of a line instead of at the end.
@@ -237,11 +237,8 @@ https://github.com/github/docs/tree/main/src/content-linter/lib/linting-rules
 [hint]: https://github.com/webhintio/hint/blob/main/scripts/lint-markdown.js
 [lib]: ../lib
 [markdown-it]: https://github.com/markdown-it/markdown-it
-[markdown-it-token]: https://markdown-it.github.io/markdown-it/#Token
 [markdownlint-rule]: https://www.npmjs.com/search?q=keywords:markdownlint-rule
 [micromark]: https://github.com/micromark/micromark
-[micromark-token]: ../lib/markdownlint.d.mts
 [rule-helpers]: https://www.npmjs.com/package/markdownlint-rule-helpers
 [options-custom-rules]: ../README.md#optionscustomrules
 [test-rules]: ../test/rules
-[tokens]: ../test/snapshots/markdownlint-test-custom-rules.mjs.md

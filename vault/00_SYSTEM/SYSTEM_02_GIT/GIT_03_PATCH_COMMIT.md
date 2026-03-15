@@ -64,12 +64,12 @@ Stop condition :
 
 - [ ] J’applique le patch dans VS Code (pas dans un export).
 - [ ] Je relis le diff :
-  - VS Code Source Control **et/ou** `git diff`
+    - VS Code Source Control **et/ou** `git diff`
 - [ ] Je supprime les fichiers parasites :
-  - exports, caches, logs, fichiers temporaires
+    - exports, caches, logs, fichiers temporaires
 - [ ] **No-secrets** :
-  - pas de token/clé/PII dans le diff
-  - `.env` non tracké (gitignore)
+    - pas de token/clé/PII dans le diff
+    - `.env` non tracké (gitignore)
 
 Commande utile :
 

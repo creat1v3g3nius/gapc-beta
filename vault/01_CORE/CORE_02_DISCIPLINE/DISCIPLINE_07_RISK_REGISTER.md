@@ -25,7 +25,9 @@ CORE strict : aucune routine opérateur.
 - no-secrets/no-PII
 - traçabilité (lien vers artefact)
 - structure minimale : id, titre, description, catégorie, P, I, score,
+
   mitigation, signal, owner, statut
+
 - score = P×I, critique si 6–9
 - un risque critique ne reste pas ouvert sans mitigation + owner
 
@@ -57,10 +59,12 @@ Liens:
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.1 (01-03-2026) : normalisation frontmatter + statut READY_TO_FREEZE + CORE
+
   strict.
+
 - v1.0 (01-03-2026) : version initiale.
 
 ---

@@ -44,4 +44,5 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 ## Changelog
 
 - v1.0 (13-03-2026) : creation du sous-lot `EVIDENCE_00_FRAMEWORK` et indexation
+
   des preuves framework.

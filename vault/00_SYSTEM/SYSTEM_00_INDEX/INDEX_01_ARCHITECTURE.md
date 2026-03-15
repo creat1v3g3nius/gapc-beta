@@ -20,7 +20,7 @@ Il respecte strictement : - Les règles de naming (META_00) - Les règles
 de frontmatter YAML (META_01) - La hiérarchie contractuelle CORE →
 PACKAGE → PRODUCT.
 
-------------------------------------------------------------------------
+---
 
 ## 1. Structure Générale du Repository
 
@@ -28,7 +28,7 @@ repo/ docs/ scripts/ vault/
 
 Le Vault constitue la base de données.
 
-------------------------------------------------------------------------
+---
 
 ## 2. Arcs du Système
 
@@ -38,20 +38,20 @@ Le système est structuré en 5 arcs principaux :
 
 Chaque arc contient uniquement les familles nécessaires à sa fonction.
 
-------------------------------------------------------------------------
+---
 
 ## 3. 00_SYSTEM
 
 Familles autorisées :
 
--   INDEX
--   WORKFLOW
--   GIT
--   SCRIPT
--   LLM
--   BACKLOG
--   PATCH
--   FAQ
+- INDEX
+- WORKFLOW
+- GIT
+- SCRIPT
+- LLM
+- BACKLOG
+- PATCH
+- FAQ
 
 Rôle : Documentation d'usage, procédures d'exécution, setup produit,
 configuration Git, scripts de validation et protocole RAG.
@@ -124,16 +124,16 @@ Frontiere d integration :
 Le point d entree principal de `00_SYSTEM` reste `README.md`, puis `INDEX_01` et
 `INDEX_02`.
 
-------------------------------------------------------------------------
+---
 
 ## 4. 01_CORE
 
 Familles autorisées :
 
--   META
--   DISCIPLINE
--   CONSTRAINT
--   TOOLING
+- META
+- DISCIPLINE
+- CONSTRAINT
+- TOOLING
 
 Rôle : Définir les règles transverses universelles.
 
@@ -155,7 +155,7 @@ Templates génériques, pipelines, checklists, extensions.
 
 Aucun élément métier spécifique ne doit exister dans le CORE.
 
-------------------------------------------------------------------------
+---
 
 ## 5. 02_PACKAGE
 
@@ -181,7 +181,7 @@ Il ne peut modifier le CORE sans ADR.
 
 Un seul package actif par produit.
 
-------------------------------------------------------------------------
+---
 
 ## 6. 03_PRODUCT
 
@@ -196,7 +196,7 @@ PRODUCT_X/ PRODUCT_X\_DOD/ PRODUCT_X\_CO_000/ PRODUCT_X\_CO_001/
 Chaque fichier PRODUCT doit respecter : - Naming - Frontmatter -
 FIELD générique - FIELD spécifique si package actif
 
-------------------------------------------------------------------------
+---
 
 ## 7. 99_CACHE
 
@@ -207,21 +207,21 @@ Ne contient aucune source de vérité.
 Compatibilité legacy : certains documents historiques peuvent encore mentionner
 `04_CACHE`.
 
-------------------------------------------------------------------------
+---
 
 ## 8. Règles de Cohérence Globale
 
-1.  CORE prime sur PACKAGE.
-2.  PACKAGE actif prime sur PRODUCT.
-3.  SYSTEM documente, ne décide pas.
-4.  Toute modification structurelle nécessite ADR + passage en DRAFT.
-5.  Tout fichier doit respecter :
-    -   NamingRules
-    -   Frontmatter YAML obligatoire
-    -   Alignement id = nom de fichier
-    -   Discipline des formats
+1. CORE prime sur PACKAGE.
+1. PACKAGE actif prime sur PRODUCT.
+1. SYSTEM documente, ne décide pas.
+1. Toute modification structurelle nécessite ADR + passage en DRAFT.
+1. Tout fichier doit respecter :
+    - NamingRules
+    - Frontmatter YAML obligatoire
+    - Alignement id = nom de fichier
+    - Discipline des formats
 
-------------------------------------------------------------------------
+---
 
 ## 9. Statut
 
@@ -230,7 +230,7 @@ Cette architecture constitue la base stable du framework GAPC (version canon).
 Toute évolution ultérieure nécessite : - Audit - ADR - Mise à jour de
 version.
 
-------------------------------------------------------------------------
+---
 
 ## 10. Changelog
 
@@ -267,8 +267,12 @@ version.
 
 - v1.5 (13-03-2026) : applique la nomenclature active `SETUP_PRODUCT_00..07`.
 - v1.4 (13-03-2026) : ajout de la famille `MULTI_PRODUCT` et doctrine `WORKFLOW`
+
   vs `SETUP_PRODUCT`.
+
 - v1.3 (09-03-2026) : alignement architecture sur la version FRAMEWORK canon
+
   (`99_CACHE` explicite).
+
 - v1.2 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.1 : READY_TO_FREEZE.

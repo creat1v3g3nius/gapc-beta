@@ -117,6 +117,7 @@ Next step unique:
 ## 4) Trace issue R-0001
 
 - Consolidation des fichiers touches archivee dans
+
   `vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/EVIDENCE_04_R0001_TOUCHED_FILES.md`.
 
 ---
@@ -126,4 +127,5 @@ Next step unique:
 - v1.0 (01-03-2026) : création DoD beta validation (product workspace).
 - v1.1 (09-03-2026) : ajout de la tracabilite centralisee R-0001.
 - v1.2 (09-03-2026) : retrait de la dependance active vers `EVIDENCE_04`
+
   (archive CACHE/DEPRECATED).

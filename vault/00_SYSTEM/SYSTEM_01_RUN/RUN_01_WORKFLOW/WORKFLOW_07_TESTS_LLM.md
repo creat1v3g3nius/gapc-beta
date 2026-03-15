@@ -39,7 +39,9 @@ Rationale :
 
 - certains moteurs AnythingLLM derivent sur les sorties trop implicites,
 - les prompts cibles ci-dessous reduisent le bruit et fiabilisent les tests les
+
   plus fragiles,
+
 - les prompts listes ci-dessous sont la reference canonique de rerun.
 
 ## 2) Regle d usage
@@ -55,8 +57,8 @@ Rationale :
   `WORKFLOW_*` et `SETUP_PRODUCT_*`.
 
 - attendu final :
-  - `WORKFLOW_*` = execution quotidienne
-  - `SETUP_PRODUCT_*` = maintien, cycle de vie, gouvernance
+    - `WORKFLOW_*` = execution quotidienne
+    - `SETUP_PRODUCT_*` = maintien, cycle de vie, gouvernance
 - un workspace qui melange les deux couches sans nuance est `KO`.
 
 ## 3) WS_00 RulesOnly
@@ -437,7 +439,9 @@ Le test `T6` est `KO` si :
 - `WS_02` : surveiller surtout `T4` et `T6`
 - temperature recommandee : `0.0`
 - si le moteur derive encore sur `T6`, utiliser les prompts unitaires de la
+
   section 6
+
 - source canonique `WS_00` : `LLM_01_INGESTION_PROTOCOL`
 - source canonique `WS_02` : `DOD_02_RAG_WORKSPACE_TESTS`
 
@@ -448,9 +452,13 @@ Le test `T6` est `KO` si :
 ## Changelog
 
 - v1.5 (15-03-2026) : passage en FROZEN apres validation des batteries `WS_00`,
+
   `WS_01` et `WS_02`.
+
 - v1.4 (13-03-2026) : ajoute le raccord final `WORKFLOW` vs `SETUP_PRODUCT` dans
+
   la regle d usage.
+
 - v1.3 (13-03-2026) : canonise les prompts optimises de `WS_00` et
 
   `WS_01`, supprime les doublons canonique/optimise, et garde `WS_02`

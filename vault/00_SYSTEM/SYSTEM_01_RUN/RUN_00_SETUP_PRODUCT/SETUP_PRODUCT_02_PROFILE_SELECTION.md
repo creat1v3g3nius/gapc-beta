@@ -59,8 +59,13 @@ Pour chaque profil, documenter :
 ## Changelog
 
 - v1.3 (15-03-2026) : passage en FROZEN du protocole de selection de profil
+
   produit.
+
 - v1.2 (13-03-2026) : rehoste le protocole sous
+
   `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.
+
 - v1.1 (13-03-2026) : renommage `MP_02_PROFILE_SELECTION` ->
+
   `SETUP_PRODUCT_02_PROFILE_SELECTION`.

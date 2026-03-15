@@ -56,19 +56,18 @@ nouvelles fonctionnalités.
 Ce DoD ne redéfinit pas les règles. Il applique des références existantes :
 
 | Sujet | Source canonique |
-|---|---|
-| Anti-duplication / référence obligatoire | `META_06_REFERENCE_EXISTING_FILES`,
-`CONSTRAINT_02_NON_DUPLICATION_POLICY` |
+| --- | --- |
+| Anti-duplication / référence obligatoire | `META_06_REFERENCE_EXISTING_FILES`, `CONSTRAINT_02_NON_DUPLICATION_POLICY` |
 | Naming + `id==filename` | `META_03_NAMING_CONVENTIONS` |
 | Frontmatter standard | `META_05_FRONTMATTER` |
 | Hiérarchie d’autorité des arcs | `INDEX_02_REPOSITORY` |
 | Discipline Git (intention/commit) | `GIT_02_BRANCH_POLICY` |
-| Chaîne de preuve produit | `PIPELINE_03_BACKLOG_COMPOSANTS`,
-`DOD_00_BETA_VALIDATION`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION` |
+| Chaîne de preuve produit | `PIPELINE_03_BACKLOG_COMPOSANTS`, `DOD_00_BETA_VALIDATION`, `EVIDENCE_01_RELEASE_NOTE_FRAMEWORK_VALIDATION` |
 
 Règle locale :
 
 - si une règle existe déjà dans une source canonique, ce document pointe vers
+
   cette source au lieu de recopier son contenu.
 
 ---
@@ -83,13 +82,10 @@ Les duplications documentaires listees sur DOD_05 sont traitees via
 `META_06_REFERENCE_EXISTING_FILES` :
 
 | Duplication detectee | Action appliquee | Reference canonique |
-|---|---|---|
-| `DOD_05_OPTIMIZATION` vs process d’optimisation | contenu miroir retire,
-fichier converti en pointeur | `RUN_07_OPTIMIZATION_PROCESS` |
-| Regles anti-duplication recopiees localement | bloc remplace par references |
-`META_06_REFERENCE_EXISTING_FILES`, `CONSTRAINT_02_NON_DUPLICATION_POLICY` |
-| Rappels naming/frontmatter recopiees | bloc remplace par references |
-`META_03_NAMING_CONVENTIONS`, `META_05_FRONTMATTER` |
+| --- | --- | --- |
+| `DOD_05_OPTIMIZATION` vs process d’optimisation | contenu miroir retiré, fichier converti en pointeur | `RUN_07_OPTIMIZATION_PROCESS` |
+| Règles anti-duplication recopiées localement | bloc remplacé par références | `META_06_REFERENCE_EXISTING_FILES`, `CONSTRAINT_02_NON_DUPLICATION_POLICY` |
+| Rappels naming/frontmatter recopiées | bloc remplacé par références | `META_03_NAMING_CONVENTIONS`, `META_05_FRONTMATTER` |
 
 ### PASS 1 — Audit structurel
 
@@ -127,6 +123,7 @@ Action :
 
 - conserver la règle canonique
 - remplacer les duplications par des références d’ID (cf.
+
   `META_06_REFERENCE_EXISTING_FILES`)
 
 ---
@@ -202,6 +199,9 @@ Cela garantit que le framework GAPC reste **stable et évolutif**.
 ## Changelog
 
 - v1.1 (06-03-2026) : remplace les blocs dupliqués par des références canoniques
+
   (anti-duplication).
+
 - v1.2 (06-03-2026) : ajoute la liste des duplications traitees + mapping vers
+
   references canoniques.

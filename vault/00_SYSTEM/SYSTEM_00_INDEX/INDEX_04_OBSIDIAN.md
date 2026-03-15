@@ -38,9 +38,9 @@ framework GAPC :
 - Obsidian installé
 - Vault ouvert : `repo/vault/`
 - Conventions actives :
-  - Naming conventions (META_00)
-  - Frontmatter YAML obligatoire (META_01)
-  - Règles de rédaction (INDEX_03)
+    - Naming conventions (META_00)
+    - Frontmatter YAML obligatoire (META_01)
+    - Règles de rédaction (INDEX_03)
 
 ---
 
@@ -155,6 +155,7 @@ Règles :
 - Tags courts, sans accents, sans espaces
 - 3–7 tags max
 - Préférer des tags “fonction”
+
   (`workflow`, `validator`) aux tags “humeur”
 
 ### 4.2 Recherche efficace
@@ -182,18 +183,18 @@ Règles :
 
 ### 5.1 Règle d’or
 
-**1 composant (CO) = 1 étape = 1 intention = 1 commit**
+1 composant (CO) = 1 étape = 1 intention = 1 commit.
 
 ### 5.2 Début de session (5–10 min)
 
 - [ ] Ouvrir l’index du product actif (`*_DOD/` + backlog composants)
 - [ ] Choisir **1 CO**
 - [ ] Préparer un mini “context pack” :
-  - Goal
-  - Constraints
-  - Current state
-  - Files
-  - Expected output
+    - Goal
+    - Constraints
+    - Current state
+    - Files
+    - Expected output
 
 ### 5.3 Pendant la session
 
@@ -298,9 +299,12 @@ Avant de passer un doc en READY_TO_FREEZE :
 ## Changelog
 
 - v1.2 (13-03-2026) : aligne la navigation Obsidian sur `99_CACHE`, `README.md`
+
   et `SYSTEM_99_FAQ`.
+
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v0.1 (27-02-2026) : création du draft (réécriture depuis la v0, alignée
+
   naming/frontmatter).
 
 ---

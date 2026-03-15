@@ -34,7 +34,9 @@ production GAPC.
 
 - evidence pack (CORE) rempli : `EXTENSION_04_EVIDENCE_PACK`
 - evidence pack GAPC (si objectif = GAPC_READY/FROZEN) :
+
   `GAPC_TOOLING_TPL_02_BETA_EVIDENCE_PACK`
+
 - outputs listés : noms de fichiers + emplacement (path)
 - check no-secrets/no-PII validé
 - lien vers le CO responsable (Backlog CO)
@@ -56,5 +58,7 @@ production GAPC.
 - v1.3 (06-03-2026) : alignement `id==filename` et heading.
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation
+
   frontmatter/id/depends_on.
+
 - v1.0 : READY_TO_FREEZE.

@@ -258,12 +258,17 @@ CORE > PACKAGE > PRODUCT > SYSTEM > CACHE
 
 - `WORKFLOW_*` = execution quotidienne.
 - `RUN_01_SETUP_PRODUCT` = bootstrap, profil, routine, destination, cycle de
+
   vie, merge-out, gouvernance.
+
 - les fichiers de `RUN_01_SETUP_PRODUCT` utilisent la nomenclature `SETUP_PRODUCT_00..07`.
 - noyau `WORKFLOW` actif : `WORKFLOW_00/03/04/05/06/07/08/10`.
 - annexes legacy : `WORKFLOW_01` et `WORKFLOW_02`, sorties du scope SYSTEM
+
   actif et archivees en `CACHE_SYSTEM_01_RUN`.
+
 - le lot checklist actif du `CORE` commence a `CHECKLIST_01_*`; aucun
+
   `CHECKLIST_00_INDEX` canonique n est maintenu.
 
 ---
@@ -275,33 +280,57 @@ Modifications uniquement via : patch ciblé, validation, version bump.
 ## Changelog
 
 - v1.15 (13-03-2026) : ajoute `00_SYSTEM/README.md` a l arborescence active
+
   apres son recentrage comme point d entree SYSTEM.
+
 - v1.14 (13-03-2026) : archive `BACKLOG_01_SYSTEM_RUN_SETUP_PRODUCT` et
+
   `FRAMEWORK_00_AMELIORATION_PIPELINE` en `99_CACHE`, retire
   `PATCH_01_FRAMEWORK` du scope actif.
+
 - v1.13 (13-03-2026) : cree le sous-lot `EVIDENCE_00_FRAMEWORK`, renumerote
+
   les preuves framework en `01..04` et ajoute `EVIDENCE_00_FRAMEWORK_INDEX`.
+
 - v1.12 (13-03-2026) : ajoute `LLM_03_MENTOR_UTILITES` a l index actif et
+
   aligne `LLM_00_RAG_PRINCIPES` sur une reference product generique.
+
 - v1.11 (13-03-2026) : recale `SCRIPT_00` et `SCRIPT_01`, retire
+
   `SCRIPT_02` du scope actif et l archive en `CACHE_SYSTEM_03_SCRIPT`,
   corrige l entree `SCRIPT_03_INSTRUCTIONS_CODEX`.
+
 - v1.10 (13-03-2026) : fusionne `GIT_04` dans `GIT_01` et archive `GIT_00`,
+
   `GIT_04`, `GIT_05` en `99_CACHE`.
+
 - v1.9 (13-03-2026) : deplace `WORKFLOW_01_COMPOSANTS` et `WORKFLOW_02_CHECKLISTS` en `99_CACHE`.
 - v1.8 (13-03-2026) : renomme les fichiers `RUN_*` en `WORKFLOW_*` et
+
   aligne l arborescence reelle `RUN_00_WORKFLOW`.
+
 - v1.7 (13-03-2026) : deplace `SETUP_PRODUCT_*` sous
+
   `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT` et retire `SYSTEM_20_MULTI_PRODUCT`
   du repository actif.
+
 - v1.6 (13-03-2026) : raccorde l index repository au cadre final `WORKFLOW`
+
   vs `SETUP_PRODUCT` et retire `CHECKLIST_00_INDEX.md`.
+
 - v1.5 (13-03-2026) : remplace le lot `MP_*` par `SETUP_PRODUCT_00..07`
+
   dans `SYSTEM_20_MULTI_PRODUCT`.
+
 - v1.4 (13-03-2026) : ajout du lot `SYSTEM_20_MULTI_PRODUCT`, de
+
   `BACKLOG_01` et des runbooks `WORKFLOW_06/07/08`.
+
 - v1.3 (09-03-2026) : alignement de l index repository avec
+
   scripts/evidence FRAMEWORK canons et arc `99_CACHE`.
+
 - v1.2 (05-03-2026) : repository complet stabilisé
 
   (CORE, PACKAGE, CHECKLIST, EXTENSION, PATCH_HOSTING, FAQ)

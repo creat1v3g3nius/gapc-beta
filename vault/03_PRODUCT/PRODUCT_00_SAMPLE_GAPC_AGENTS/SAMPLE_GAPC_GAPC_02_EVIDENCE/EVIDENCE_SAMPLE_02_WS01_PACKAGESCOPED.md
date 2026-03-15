@@ -38,23 +38,30 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 ```txt
 Prompt pack:
+
 - WORKFLOW_07_TESTS_LLM / WS_01 PackageScoped
 
 Sources majeures:
+
 - GAPC_DISCIPLINE_00_RAG_PROFILE
 - GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
 - GAPC_CONSTRAINT_01_SOURCES_POLICY
 - GAPC_META_00_PACKAGE_PROFILE
 
 Verdict:
+
 - PASS 5/5
+
 ```
 
 ## Notes
 
 - La collision `PRODUCT actif` vs `docs product actifs` a ete levee pour ne pas
+
   contaminer `WS_01`.
+
 - Le format inline d AnythingLLM a ete traite en mode tolerant tant que le fond
+
   restait exact.
 
 ## Amendements (FROZEN)
@@ -64,6 +71,9 @@ Verdict:
 ## Changelog
 
 - v1.1 (13-03-2026) : passe la preuve `WS_01 PackageScoped` en
+
   `READY_TO_FREEZE`.
+
 - v1.0 (12-03-2026) : creation de la preuve `WS_01 PackageScoped` avec verdict
+
   PASS 5/5.

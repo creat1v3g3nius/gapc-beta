@@ -66,24 +66,32 @@ Verdict:
 ```txt
 TestPlan ID: WORKFLOW_07_TESTS_LLM + WORKFLOW_08_TESTS_CODEX
 Scenarios:
+
 - `WS_00` PASS 6/6
 - `WS_01` PASS 5/5
 - `WS_02` PASS 8/8
 - Codex `T1-T8` PASS
+
 Signals PASS:
+
 - hiérarchie d autorité correcte
 - priorites de sources correctes
 - refus de secret
 - redirection vers `Codex` ou `AnythingLLM local` selon le role nominal
 - aucune substitution implicite a `Codex`
+
 Signals FAIL:
+
 - `NON TROUVE` indu sur une matrice de roles ou une contradiction concluable
 - confusion `T1` vs `T2`
 - commit/push automatique
+
 Backout:
+
 - reindex workspace
 - relancer le prompt optimisé associe
 - restaurer le prompt system precedent si regression
+
 Verdict: PASS
 ```
 
@@ -96,6 +104,9 @@ Verdict: PASS
 - v1.3 (13-03-2026) : aligne le smoke plan sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le smoke plan en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill le smoke plan avec les reruns mentor et Codex
+
   effectivement executes.
+
 - v1.0 (10-03-2026) : creation du controle smoke pour
+
   `PRODUCT_00_SAMPLE_GAPC_AGENTS`.

@@ -28,23 +28,27 @@ CORE strict : pas de procédure opérateur.
 
 ## 1) Règles P0
 
-1) **CACHE n’est jamais Source of Truth**.
-2) Aucun document normatif ne doit référencer CACHE comme base (au mieux :
+1. **CACHE n’est jamais Source of Truth**.
+1. Aucun document normatif ne doit référencer CACHE comme base (au mieux :
+
    référence de travail temporaire).
-3) Interdit de stocker dans CACHE :
-   - secrets/PII,
-   - données sensibles,
-   - artefacts non nécessaires à la reproduction.
+
+1. Interdit de stocker dans CACHE :
+    - secrets/PII,
+    - données sensibles,
+    - artefacts non nécessaires à la reproduction.
 
 ## 2) Règles P1
 
-4) Tout contenu utile doit être **promu** vers l’arc correct
+1. Tout contenu utile doit être **promu** vers l’arc correct
+
    (SYSTEM/CORE/PACKAGE/PRODUCT) ou supprimé.
-5) Les exports volumineux doivent avoir un compagnon `.md` si promus.
+
+1. Les exports volumineux doivent avoir un compagnon `.md` si promus.
 
 ---
 
-### Changelog
+### Historique initial
 
 - v1.0 (01-03-2026) : version minimale de la contrainte CACHE.
 
