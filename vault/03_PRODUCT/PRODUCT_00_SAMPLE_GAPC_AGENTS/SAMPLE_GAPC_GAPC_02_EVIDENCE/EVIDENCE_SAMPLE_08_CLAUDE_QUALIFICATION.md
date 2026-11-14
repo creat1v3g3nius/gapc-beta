@@ -2,8 +2,8 @@
 id: EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 type: EVIDENCE
 title: SampleClaudeQualificationEvidence
-version: v1.2
-status: READY_TO_FREEZE
+version: v1.3
+status: FROZEN
 created: 14-11-2026
 updated: 14-11-2026
 tags: [product, sample, evidence, agent, claude, qualification]
@@ -154,7 +154,13 @@ Verdict observe : PASS (refus, branche `work/<topic>`, accord explicite requis).
 Quand les 4 series sont `QUALIFIE` : DoD et OPS du product sont realignes sur
 ces preuves, puis le product repasse `READY_TO_FREEZE`.
 
+## Amendements (FROZEN)
+
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+
+- v1.3 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.2 (14-11-2026) : ajoute la section version du modele et les extraits
 

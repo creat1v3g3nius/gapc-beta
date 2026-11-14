@@ -2,8 +2,8 @@
 id: DOD_SAMPLE_01_PRODUCT_THIN_SLICE
 type: DOD
 title: GapcMentorProductThinSlice
-version: v1.6
-status: READY_TO_FREEZE
+version: v1.7
+status: FROZEN
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, dod, thin-slice, mentor, validation]
@@ -127,6 +127,8 @@ Verdict thin slice:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.7 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.6 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
 

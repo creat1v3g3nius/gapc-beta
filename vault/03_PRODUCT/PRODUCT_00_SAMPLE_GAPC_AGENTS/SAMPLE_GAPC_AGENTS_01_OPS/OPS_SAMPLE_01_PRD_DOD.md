@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_01_PRD_DOD
 type: DOD
 title: GapcMentorPrdDod
-version: v1.4
-status: READY_TO_FREEZE
+version: v1.5
+status: FROZEN
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, prd, dod]
@@ -88,6 +88,8 @@ Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.4 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
 

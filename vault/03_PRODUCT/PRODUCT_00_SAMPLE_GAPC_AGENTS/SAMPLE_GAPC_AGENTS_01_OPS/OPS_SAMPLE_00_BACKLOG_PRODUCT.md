@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_00_BACKLOG_PRODUCT
 type: DOD
 title: GapcMentorBacklogProduct
-version: v1.7
-status: READY_TO_FREEZE
+version: v1.8
+status: FROZEN
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, backlog, product, dod]
@@ -164,6 +164,8 @@ Next step unique: conserver ce backlog comme reference gelée du produit
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.8 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.7 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
 

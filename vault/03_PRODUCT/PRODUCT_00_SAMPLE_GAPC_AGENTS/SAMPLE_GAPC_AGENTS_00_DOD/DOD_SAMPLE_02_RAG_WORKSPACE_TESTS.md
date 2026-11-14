@@ -2,8 +2,8 @@
 id: DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 type: DOD
 title: GapcMentorRagWorkspaceTests
-version: v1.8
-status: READY_TO_FREEZE
+version: v1.9
+status: FROZEN
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, dod, rag, workspace, tests]
@@ -67,6 +67,8 @@ FAIL si un seul test est FAIL : corriger `CLAUDE.md` et
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.9 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.8 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; DoD reecrite (renvoi a `WORKFLOW_07` / `WORKFLOW_08`), role API
 
