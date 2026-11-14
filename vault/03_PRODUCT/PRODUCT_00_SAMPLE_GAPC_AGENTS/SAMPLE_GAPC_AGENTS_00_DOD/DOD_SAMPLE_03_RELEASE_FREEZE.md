@@ -2,10 +2,10 @@
 id: DOD_SAMPLE_03_RELEASE_FREEZE
 type: DOD
 title: GapcMentorReleaseFreeze
-version: v1.4
-status: FROZEN
+version: v1.5
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, dod, release, freeze, frozen]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
@@ -28,6 +28,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Utiliser les ids `*_SAMPLE` dans le lot PRODUCT.
 
 # DOD_SAMPLE_03 - Release Freeze
+
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
 
 ## Objet
 
@@ -79,16 +86,16 @@ Evidence IDs:
 
 - DOD_SAMPLE_00_PRODUCT_VALIDATION
 - DOD_SAMPLE_01_PRODUCT_THIN_SLICE
-- EVIDENCE_SAMPLE_00_INDEX
-- EVIDENCE_SAMPLE_01_WS00_RULESONLY
-- EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
-- EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
-- EVIDENCE_SAMPLE_04_CODEX_IDE
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 - OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
 
 Release note:
 
-- EVIDENCE_SAMPLE_05_RELEASE_NOTE_PRODUCT_VALIDATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 
 Next step unique:
 
@@ -108,6 +115,10 @@ Next step unique:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (13-03-2026) : bascule le gate final produit en `FROZEN`.
 - v1.4 (13-03-2026) : raccorde la release note produit au gate

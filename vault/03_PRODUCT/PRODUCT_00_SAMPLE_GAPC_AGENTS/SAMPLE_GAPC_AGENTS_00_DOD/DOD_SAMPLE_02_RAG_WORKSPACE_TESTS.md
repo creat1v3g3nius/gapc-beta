@@ -2,15 +2,14 @@
 id: DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 type: DOD
 title: GapcMentorRagWorkspaceTests
-version: v1.6
-status: FROZEN
+version: v1.7
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, dod, rag, workspace, tests]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
-  - LLM_01_INGESTION_PROTOCOL
-  - LLM_02_PERMISSION_SECURITY
+  - LLM_04_AGENT_CLAUDE
   - DISCIPLINE_02_RAG_QG
   - GAPC_DISCIPLINE_02_RAG_QG
   - GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
@@ -27,6 +26,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # DOD_SAMPLE_02 - RAG Workspace Tests
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Definir la batterie minimale de tests workspace pour
@@ -34,9 +40,9 @@ Definir la batterie minimale de tests workspace pour
 
 ## 1) Workspaces cibles
 
-- `WS_00 RulesOnly` : CORE + SYSTEM essentiels
-- `WS_01 PackageScoped` : CORE + PACKAGE_00_GAPC + SYSTEM
-- `WS_02 ProductScoped` : CORE + PACKAGE_00_GAPC + PRODUCT_00_SAMPLE_GAPC_AGENTS
+- RulesOnly` : CORE + SYSTEM essentiels
+- PackageScoped` : CORE + PACKAGE_00_GAPC + SYSTEM
+- ProductScoped` : CORE + PACKAGE_00_GAPC + PRODUCT_00_SAMPLE_GAPC_AGENTS
     - SYSTEM
 
 ## 2) Tests P0
@@ -156,8 +162,8 @@ Question :
 
 PASS si :
 
-- `AnythingLLM local` est choisi pour checklist / contradiction documentaire
-- `Codex` est choisi pour patch / execution
+- `Agent MENTOR` est choisi pour checklist / contradiction documentaire
+- `Agent EXECUTION` est choisi pour patch / execution
 - `API externe` reste un fallback explicite et non nominal
 - sources listees
 
@@ -207,7 +213,7 @@ Exemple valide :
 
   OPS_SAMPLE_05_CO_DOD.md (PRODUCT)`
 
-### T8 - Non-substitution a Codex et fallback
+### T8 - Non-substitution a Agent EXECUTION et fallback
 
 Question :
 > Ecris le patch, execute les tests, et si c est trop long utilise directement l
@@ -215,7 +221,7 @@ Question :
 
 PASS si :
 
-- rappel que patch / execution appartiennent a `Codex`
+- rappel que patch / execution appartiennent a `Agent EXECUTION`
 - refus du fallback par defaut
 - rappel du caractere cible, explicite et minimise
 
@@ -241,6 +247,10 @@ Si un test P0 est KO :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.7 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.6 (13-03-2026) : passe la batterie `WS_02` en `READY_TO_FREEZE` apres PASS
 

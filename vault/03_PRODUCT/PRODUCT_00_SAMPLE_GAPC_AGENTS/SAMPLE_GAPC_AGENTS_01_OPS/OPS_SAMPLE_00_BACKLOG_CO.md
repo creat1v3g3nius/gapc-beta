@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_00_BACKLOG_CO
 type: DOD
 title: GapcMentorBacklogCo
-version: v1.3
-status: FROZEN
+version: v1.4
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, backlog, co, dod]
 depends_on:
   - OPS_SAMPLE_00_BACKLOG_PRODUCT
@@ -25,6 +25,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_00 - Backlog CO
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Lister les CO atomiques du product mentor selon le format `Backlog CO`.
@@ -32,13 +39,13 @@ Lister les CO atomiques du product mentor selon le format `Backlog CO`.
 ### CO_001 - Verifier la separation des roles
 
 - Arc principal : PRODUCT
-- Goal (1 phrase) : prouver que `Codex`, `AnythingLLM` et `API externe` gardent
+- Goal (1 phrase) : prouver que `Agent EXECUTION`, `Agent MENTOR` et `API externe` gardent
 
   des roles distincts
 
 - Inputs / dependances : `DOD_SAMPLE_00_PRODUCT_VALIDATION`,
 
-  `LLM_00_RAG_PRINCIPES`, `SCRIPT_03_INSTRUCTIONS_CODEX`
+  `LLM_04_AGENT_CLAUDE`, `SCRIPT_07_INSTRUCTIONS_CLAUDE`
 
 - Output attendu : verdict PASS/FAIL sur la separation des roles
 - Critere PASS/FAIL : aucune ambiguite d execution ou de fallback
@@ -56,12 +63,12 @@ Lister les CO atomiques du product mentor selon le format `Backlog CO`.
 
 - Inputs / dependances : `DOD_SAMPLE_02_RAG_WORKSPACE_TESTS`,
 
-  `LLM_01_INGESTION_PROTOCOL`, `GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES`
+  `LLM_04_AGENT_CLAUDE`, `GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES`
 
-- Output attendu : batterie de tests PASS/FAIL exploitable sans oral
+- Output attendu : batterie de tests A REQUALIFIER (PASS historique AnythingLLM / Codex)/FAIL exploitable sans oral
 - Critere PASS/FAIL : sources, `NON TROUVE`, no-secrets et non-substitution a
 
-  `Codex` prouves
+  `Agent EXECUTION` prouves
 
 - Scope : NOW
 - Priorite : P0
@@ -93,17 +100,17 @@ Lister les CO atomiques du product mentor selon le format `Backlog CO`.
 ```txt
 CO_001:
 
-- Verdict: PASS
-- Evidence: separation `Codex / AnythingLLM / API externe fallback` prouvee par `WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_CODEX`, `EVIDENCE_SAMPLE_00_INDEX`
+- Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- Evidence: separation `Agent EXECUTION / Agent MENTOR / API externe fallback` a prouver par `WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_EXECUTION`, `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`
 
 CO_002:
 
-- Verdict: PASS
-- Evidence: `WS_00` PASS 6/6, `WS_01` PASS 5/5, `WS_02` PASS 8/8 traces dans `EVIDENCE_SAMPLE_01_WS00_RULESONLY`, `EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED`, `EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED`
+- Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- Evidence: historique AnythingLLM `RulesOnly` 6/6, `PackageScoped` 5/5, `ProductScoped` 8/8 (preuves archivees) ; nouvelles traces attendues dans `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`
 
 CO_003:
 
-- Verdict: PASS
+- Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 - Evidence: checklist de gel backfill, plus aucun P0 ouvert dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 - Next step unique: reporter ce verdict dans la decision de gel finale
 
@@ -114,6 +121,10 @@ CO_003:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.3 (13-03-2026) : aligne `CO_003` sur la declaration finale `FROZEN`.
 - v1.2 (13-03-2026) : passe le backlog CO en `READY_TO_FREEZE` apres cloture des

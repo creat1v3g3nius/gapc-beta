@@ -2,10 +2,10 @@
 id: DOD_SAMPLE_00_PRODUCT_VALIDATION
 type: DOD
 title: GapcMentorProductValidation
-version: v1.3
-status: FROZEN
+version: v1.4
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, dod, validation, rag, mentor]
 depends_on:
   - PIPELINE_00_PRODUCT
@@ -16,10 +16,8 @@ depends_on:
   - GAPC_DISCIPLINE_01_GEL_RULES
   - GAPC_DISCIPLINE_02_RAG_QG
   - GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
-  - LLM_00_RAG_PRINCIPES
-  - LLM_01_INGESTION_PROTOCOL
-  - LLM_02_PERMISSION_SECURITY
-  - SCRIPT_03_INSTRUCTIONS_CODEX
+  - LLM_04_AGENT_CLAUDE
+  - SCRIPT_07_INSTRUCTIONS_CLAUDE
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_00_DOD
 active-package: PACKAGE_00_GAPC
@@ -33,13 +31,20 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # DOD_SAMPLE_00 - Product Validation
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Valider que `PRODUCT_00_SAMPLE_GAPC_AGENTS` prouve un setup product exploitable
 pour :
 
-- `Codex` en execution, patch et diagnostic technique
-- `AnythingLLM local` en mentor documentaire read-only
+- `Agent EXECUTION` en execution, patch et diagnostic technique
+- `Agent MENTOR` en mentor documentaire read-only
 - `API externe fallback` en fallback cible, explicite et minimise
 
 Le product porte les preuves, les checks et les verdicts.
@@ -60,15 +65,15 @@ Les regles transverses restent dans `CORE`, les overlays restent dans
 
 PASS si :
 
-- `Codex` porte code, patch, execution, smoke et diagnostics
-- `AnythingLLM` reste read-only, cite ses sources et n execute rien
+- `Agent EXECUTION` porte code, patch, execution, smoke et diagnostics
+- `Agent MENTOR` reste read-only, cite ses sources et n execute rien
 - `API externe fallback` n est jamais le mode nominal
 
 KO si :
 
 - le mentor produit un patch d implementation
 - un test pousse a utiliser l API par defaut
-- la frontiere `Codex / mentor / API` n est pas lisible
+- la frontiere `Agent EXECUTION / mentor / API` n est pas lisible
 
 ### 2.2 Scope et sources
 
@@ -96,7 +101,7 @@ KO si :
 
 - le workspace "all vault" devient nominal
 - les actifs ne sont pas isoles
-- les tests ne prouvent pas la non-substitution a Codex
+- les tests ne prouvent pas la non-substitution a Agent EXECUTION
 
 ### 2.4 Evidence minimale
 
@@ -131,15 +136,15 @@ P0 fails:
 
 Evidence IDs:
 
-- EVIDENCE_SAMPLE_00_INDEX
-- EVIDENCE_SAMPLE_01_WS00_RULESONLY
-- EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
-- EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
-- EVIDENCE_SAMPLE_04_CODEX_IDE
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 
 Risques ouverts:
 
-- aucun P0 ouvert sur le setup mentor + Codex
+- aucun P0 ouvert sur le setup mentor + Agent EXECUTION
 
 Next step unique:
 
@@ -159,6 +164,10 @@ Next step unique:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.3 (13-03-2026) : normalise le libelle `API externe fallback` et passe le
 

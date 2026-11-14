@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
 type: DOD
 title: GapcMentorReadyToFreezeChecklist
-version: v1.5
-status: FROZEN
+version: v1.6
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, ready-to-freeze, checklist, dod]
 depends_on:
   - DOD_SAMPLE_03_RELEASE_FREEZE
@@ -31,6 +31,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_06 - Ready To Freeze Checklist
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Fournir la checklist produit de reference pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.
@@ -44,8 +51,8 @@ Fournir la checklist produit de reference pour `PRODUCT_00_SAMPLE_GAPC_AGENTS`.
 - [x] smoke plan controle via `OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD`
 - [x] action doc controlee via `OPS_SAMPLE_04_ACTION_DOC_DOD`
 - [x] CO atomique controle via `OPS_SAMPLE_05_CO_DOD`
-- [x] tests workspace RAG PASS
-- [x] separation `Codex / AnythingLLM / API` lisible
+- [ ] tests agent (`WORKFLOW_07` / `WORKFLOW_08`) PASS — A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- [x] separation `Agent EXECUTION / Agent MENTOR / API` lisible
 - [x] no-secrets / no-PII confirme
 - [x] actifs package/product explicites
 - [x] verdict final formulable sans oral
@@ -71,11 +78,11 @@ P0 fails:
 
 Evidence IDs:
 
-- EVIDENCE_SAMPLE_00_INDEX
-- EVIDENCE_SAMPLE_01_WS00_RULESONLY
-- EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
-- EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
-- EVIDENCE_SAMPLE_04_CODEX_IDE
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 
 Next step unique:
 
@@ -95,6 +102,10 @@ Si un item P0 est KO :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.5 (13-03-2026) : bascule la checklist produit de `READY_TO_FREEZE` a
 

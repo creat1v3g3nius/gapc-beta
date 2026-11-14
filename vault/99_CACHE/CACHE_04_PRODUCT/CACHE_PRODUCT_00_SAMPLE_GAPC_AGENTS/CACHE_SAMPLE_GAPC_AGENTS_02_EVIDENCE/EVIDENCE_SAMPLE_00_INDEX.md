@@ -2,10 +2,10 @@
 id: EVIDENCE_SAMPLE_00_INDEX
 type: EVIDENCE
 title: GapcMentorEvidenceIndexSample
-version: v1.3
-status: FROZEN
+version: v1.4
+status: DEPRECATED
 created: 12-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, rag, workspace, frozen]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
@@ -21,8 +21,8 @@ depends_on:
   - EVIDENCE_SAMPLE_05_RELEASE_NOTE_PRODUCT_VALIDATION
   - EVIDENCE_SAMPLE_06_REVIEW_PRODUCT_VALIDATION
   - EVIDENCE_SAMPLE_07_ADR_PRODUCT_SCOPE
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
+arc: CACHE
+scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_SAMPLE_GAPC_AGENTS/CACHE_SAMPLE_GAPC_AGENTS_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
@@ -151,6 +151,10 @@ Next step:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (preuve AnythingLLM / Codex,
+
+  remplacee par `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.3 (13-03-2026) : bascule le pack evidence en `FROZEN`.
 - v1.3 (13-03-2026) : ajoute `ADR + RELEASE NOTE + REVIEW` au pack `EVIDENCE`.

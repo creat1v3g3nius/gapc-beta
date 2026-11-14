@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_01_PRD_DOD
 type: DOD
 title: GapcMentorPrdDod
-version: v1.2
-status: FROZEN
+version: v1.3
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, prd, dod]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
@@ -24,6 +24,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_01 - PRD DoD
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Verifier que le PRD du product mentor est suffisant pour lancer un thin slice
@@ -34,7 +41,7 @@ sans oral.
 - objectif produit en 1 phrase
 - perimetre IN/OUT
 - hypothese testable
-- contraintes setup : `Codex`, `AnythingLLM`, `API fallback`
+- contraintes setup : `Agent EXECUTION`, `Agent MENTOR`, `API fallback`
 
 ## 2) DoD PRD (PASS/FAIL)
 
@@ -66,18 +73,18 @@ Next step unique:
 
 ```txt
 PRD ID: OPS_SAMPLE_00_BACKLOG_PRODUCT
-Goal: prouver un setup nominal ou `Codex` execute, `AnythingLLM` lit et l `API externe` reste un fallback cible
+Goal: prouver un setup nominal ou `Agent EXECUTION` execute, `Agent MENTOR` lit et l `API externe` reste un fallback cible
 In/Out:
 
-- IN: configuration mentor documentaire, separation des roles, workspaces `WS_00`, `WS_01`, `WS_02`, discipline no-secrets
-- OUT: implementation applicative hors setup mentor/Codex
+- IN: configuration mentor documentaire, separation des roles, workspaces `RulesOnly`, `PackageScoped`, `ProductScoped`, discipline no-secrets
+- OUT: implementation applicative hors setup mentor/Agent EXECUTION
 
 Risques:
 
-- derive moteur AnythingLLM sur des sorties trop implicites
+- derive moteur Agent MENTOR sur des sorties trop implicites
 - confusion residuale entre consultation documentaire et action IDE
 
-Verdict: PASS
+Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
 
@@ -86,6 +93,10 @@ Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.2 (13-03-2026) : passe le controle PRD en `READY_TO_FREEZE`.
 - v1.1 (13-03-2026) : backfill l evidence PRD avec le but, le perimetre et le

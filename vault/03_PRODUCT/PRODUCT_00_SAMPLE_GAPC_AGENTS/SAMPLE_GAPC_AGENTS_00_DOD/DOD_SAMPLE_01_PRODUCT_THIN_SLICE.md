@@ -2,10 +2,10 @@
 id: DOD_SAMPLE_01_PRODUCT_THIN_SLICE
 type: DOD
 title: GapcMentorProductThinSlice
-version: v1.4
-status: FROZEN
+version: v1.5
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, dod, thin-slice, mentor, validation]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
@@ -33,6 +33,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # DOD_SAMPLE_01 - Product Thin Slice
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Definir le cycle minimal que `PRODUCT_00_SAMPLE_GAPC_AGENTS` doit demontrer sans
@@ -44,8 +51,8 @@ Le thin slice valide un scenario simple :
 
 1. une question documentaire ciblee est posee au mentor
 1. le mentor repond avec sources, hypothese et next step unique
-1. une demande d implementation est redirigee vers `Codex`
-1. `Codex` produit le patch ou l action technique correspondante
+1. une demande d implementation est redirigee vers `Agent EXECUTION`
+1. `Agent EXECUTION` produit le patch ou l action technique correspondante
 1. les checks documentaires et de scope restent PASS
 
 ## 2) Artefacts minimaux
@@ -65,7 +72,7 @@ PASS si :
 - la question documentaire est resolue sans invention
 - les sources sont citees
 - le mentor reste read-only
-- la demande technique passe bien chez `Codex`
+- la demande technique passe bien chez `Agent EXECUTION`
 - aucun secret n est expose
 
 FAIL si :
@@ -80,7 +87,7 @@ FAIL si :
 Question:
 Sources:
 Reponse mentor:
-Redirection Codex:
+Redirection Agent EXECUTION:
 Action technique:
 Verdict thin slice:
 ```
@@ -90,29 +97,29 @@ Verdict thin slice:
 ```txt
 Question:
 
-- question documentaire ciblee dans `WS_02 ProductScoped` sur le setup mentor / product
+- question documentaire ciblee dans ProductScoped` sur le setup mentor / product
 
 Sources:
 
 - DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 - OPS_SAMPLE_02_SPEC_DOD
-- LLM_03_MENTOR_UTILITES
+- LLM_04_AGENT_CLAUDE
 
 Reponse mentor:
 
 - reponse sourcee, read-only, sans patch ni execution
 
-Redirection Codex:
+Redirection Agent EXECUTION:
 
-- demande technique redirigee vers Codex pour patch / execution / tests
+- demande technique redirigee vers Agent EXECUTION pour patch / execution / tests
 
 Action technique:
 
-- batterie `WORKFLOW_08_TESTS_CODEX` executee avec PASS
+- batterie `WORKFLOW_08_TESTS_EXECUTION` : A REQUALIFIER (batterie Codex historique PASS)
 
 Verdict thin slice:
 
-- PASS
+- A REQUALIFIER (PASS historique AnythingLLM / Codex)
 
 ```
 
@@ -125,6 +132,10 @@ Verdict thin slice:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (13-03-2026) : aligne le next step du thin slice sur l etat `FROZEN`.
 - v1.3 (13-03-2026) : passe le thin slice en `READY_TO_FREEZE` apres backfill

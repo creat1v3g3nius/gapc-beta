@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_05_CO_DOD
 type: DOD
 title: GapcMentorComponentOutputDod
-version: v1.3
-status: FROZEN
+version: v1.4
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, co, dod, backlog]
 depends_on:
   - OPS_SAMPLE_00_BACKLOG_PRODUCT
@@ -28,6 +28,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Utiliser les ids `*_SAMPLE` dans le lot PRODUCT.
 
 # OPS_SAMPLE_05 - CO DoD
+
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
 
 ## Objet
 
@@ -80,21 +87,21 @@ Goal:
 
 Output:
 
-- separation mentor / Codex / API prouvee
-- batteries workspace `WS_00`, `WS_01`, `WS_02` PASS
+- separation mentor / Agent EXECUTION / API prouvee
+- batteries workspace `RulesOnly`, `PackageScoped`, `ProductScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex)
 - checklist `READY_TO_FREEZE` backfill et formulable sans oral
 
 PASS/FAIL:
 
-- CO_001: PASS
-- CO_002: PASS
-- CO_003: PASS
+- CO_001: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- CO_002: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- CO_003: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 
 Risque:
 
-- pas de P0 restant sur le setup mentor + Codex
+- pas de P0 restant sur le setup mentor + Agent EXECUTION
 
-Verdict: PASS
+Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
 
@@ -103,6 +110,10 @@ Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKL
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.3 (13-03-2026) : passe le controle CO en `READY_TO_FREEZE`.
 - v1.2 (13-03-2026) : backfill les preuves des trois CO produits avec verdict

@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_02_SPEC_DOD
 type: DOD
 title: GapcMentorSpecDod
-version: v1.5
-status: FROZEN
+version: v1.6
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, spec, dod]
 depends_on:
   - OPS_SAMPLE_00_BACKLOG_PRODUCT
@@ -26,6 +26,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_02 - Spec DoD
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Verifier que la spec technique traduit le PRD en contrat executable sans deriver
@@ -38,7 +45,7 @@ La spec doit deriver d un backlog produit et d un CO explicites.
 PASS si :
 
 - la spec distingue clairement question documentaire et action technique
-- `Codex` porte l implementation et les tests
+- `Agent EXECUTION` porte l implementation et les tests
 - le mentor reste read-only
 - les permissions et no-secrets sont mentionnes
 - la priorisation produit distingue `GAPC discipline`, `autres docs package
@@ -138,8 +145,8 @@ Spec ID: OPS_SAMPLE_02_SPEC_DOD
 PRD reference: OPS_SAMPLE_00_BACKLOG_PRODUCT
 Contrats:
 
-- `Codex` = implementation, patch, execution, tests
-- `AnythingLLM local` = mentor documentaire read-only
+- `Agent EXECUTION` = implementation, patch, execution, tests
+- `Agent MENTOR` = mentor documentaire read-only
 - `API externe fallback` = fallback cible, jamais nominal
 - priorites de sources produit = `CORE -> GAPC discipline -> autres docs package GAPC -> docs product actifs -> SYSTEM`
 
@@ -150,7 +157,7 @@ Contraintes:
 - refus explicite d un autre product
 - `no-secrets / no-PII`
 
-Verdict: PASS
+Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 Next step unique: conserver cette spec comme reference produit pour les reruns
 ```
 
@@ -159,6 +166,10 @@ Next step unique: conserver cette spec comme reference produit pour les reruns
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.5 (13-03-2026) : passe la spec produit en `READY_TO_FREEZE`.
 - v1.4 (13-03-2026) : backfill l evidence de spec avec les contrats finaux et le

@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_04_ACTION_DOC_DOD
 type: DOD
 title: GapcMentorActionDocDod
-version: v1.3
-status: FROZEN
+version: v1.4
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, action-doc, dod]
 depends_on:
   - OPS_SAMPLE_02_SPEC_DOD
@@ -24,6 +24,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Utiliser les ids `*_SAMPLE` dans le lot PRODUCT.
 
 # OPS_SAMPLE_04 - Action Doc DoD
+
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
 
 ## Objet
 
@@ -63,7 +70,7 @@ Next step unique:
 Fichier:
 
 - WORKFLOW_07_TESTS_LLM
-- WORKFLOW_08_TESTS_CODEX
+- WORKFLOW_08_TESTS_EXECUTION
 - GAPC_DISCIPLINE_00_RAG_PROFILE
 - GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
 - OPS_SAMPLE_02_SPEC_DOD
@@ -76,7 +83,7 @@ Section:
 
 Intention:
 
-- stabiliser la qualification mentor AnythingLLM et agent Codex
+- stabiliser la qualification mentor Agent MENTOR et Agent EXECUTION
 
 Patch:
 
@@ -86,12 +93,12 @@ Patch:
 
 Validation:
 
-- `WS_00` PASS
-- `WS_01` PASS
-- `WS_02` PASS
-- Codex PASS
+- `RulesOnly` A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- `PackageScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- `ProductScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- Agent EXECUTION A REQUALIFIER (PASS historique AnythingLLM / Codex)
 
-Verdict: PASS
+Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 Next step unique: figer ces prompts comme reference operative dans le lot produit
 ```
 
@@ -100,6 +107,10 @@ Next step unique: figer ces prompts comme reference operative dans le lot produi
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.3 (13-03-2026) : aligne le controle action doc sur l etat final `FROZEN`.
 - v1.2 (13-03-2026) : passe le controle action doc en `READY_TO_FREEZE`.

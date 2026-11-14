@@ -2,10 +2,10 @@
 id: EVIDENCE_SAMPLE_05_RELEASE_NOTE_PRODUCT_VALIDATION
 type: EVIDENCE
 title: ReleaseNoteProductValidationSample
-version: v1.0
-status: FROZEN
+version: v1.1
+status: DEPRECATED
 created: 13-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, release-note, frozen]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
@@ -16,8 +16,8 @@ depends_on:
   - WORKFLOW_07_TESTS_LLM
   - WORKFLOW_08_TESTS_CODEX
   - EVIDENCE_SAMPLE_00_INDEX
-arc: PRODUCT
-scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_GAPC_02_EVIDENCE
+arc: CACHE
+scope: vault/99_CACHE/CACHE_04_PRODUCT/CACHE_PRODUCT_00_SAMPLE_GAPC_AGENTS/CACHE_SAMPLE_GAPC_AGENTS_02_EVIDENCE
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 ---
@@ -87,6 +87,10 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.1 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (preuve AnythingLLM / Codex,
+
+  remplacee par `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.0 (13-03-2026) : aligne la note de release sur l etat `FROZEN`.
 - v1.0 (13-03-2026) : création de la release note de validation produit après

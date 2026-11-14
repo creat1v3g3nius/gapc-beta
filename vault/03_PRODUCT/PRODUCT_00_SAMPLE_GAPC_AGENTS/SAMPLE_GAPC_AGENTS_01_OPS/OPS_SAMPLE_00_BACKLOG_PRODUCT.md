@@ -2,10 +2,10 @@
 id: OPS_SAMPLE_00_BACKLOG_PRODUCT
 type: DOD
 title: GapcMentorBacklogProduct
-version: v1.5
-status: FROZEN
+version: v1.6
+status: DRAFT
 created: 10-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, ops, backlog, product, dod]
 depends_on:
   - PIPELINE_02_BACKLOG_PRODUCT
@@ -25,6 +25,13 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_00 - Backlog Product
 
+> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
+> AnythingLLM / Codex est remplace par l agent Claude
+> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
+> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
+> designent un role retire, a supprimer a la requalification.
+
+
 ## Objet
 
 Structurer le backlog produit minimal de `PRODUCT_00_SAMPLE_GAPC_AGENTS` pour
@@ -34,7 +41,7 @@ rendre la chaine de preuve lisible et actionnable.
 
 - Product cible : `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - Package actif : `PACKAGE_00_GAPC`
-- But : prouver un setup nominal ou `Codex` execute, `AnythingLLM` lit et l `API
+- But : prouver un setup nominal ou `Agent EXECUTION` execute, `Agent MENTOR` lit et l `API
 
   externe` reste un fallback cible
 
@@ -42,7 +49,7 @@ rendre la chaine de preuve lisible et actionnable.
 
 ## 2) CO actifs
 
-- `CO_001` : verifier la separation `Codex / AnythingLLM / API`
+- `CO_001` : verifier la separation `Agent EXECUTION / Agent MENTOR / API`
 - `CO_002` : prouver les workspaces RAG et les tests P0
 - `CO_003` : formaliser le passage `FROZEN`
 
@@ -61,7 +68,7 @@ rendre la chaine de preuve lisible et actionnable.
 - pas de multi-package ni multi-product
 - pas de secret ou PII
 - pas de fallback API implicite
-- pour `WS_02`, 1 product actif = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
+- pour `ProductScoped`, 1 product actif = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - un autre product doit etre refuse explicitement avec demande d isolation
 - les priorites de sources produit suivent `CORE -> GAPC discipline -> autres
 
@@ -136,24 +143,24 @@ Exemple minimal valide :
 ```txt
 Workspace status:
 
-- WS_00 RulesOnly: PASS
-- WS_01 PackageScoped: PASS
-- WS_02 ProductScoped: PASS
+- RulesOnly: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- PackageScoped: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- ProductScoped: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 
-Codex status:
+Agent EXECUTION status:
 
-- Batterie WORKFLOW_08_TESTS_CODEX: PASS
+- Batterie WORKFLOW_08_TESTS_EXECUTION: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 
 Evidence IDs:
 
-- EVIDENCE_SAMPLE_00_INDEX
-- EVIDENCE_SAMPLE_01_WS00_RULESONLY
-- EVIDENCE_SAMPLE_02_WS01_PACKAGESCOPED
-- EVIDENCE_SAMPLE_03_WS02_PRODUCTSCOPED
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+- EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 
 Backlog status: FROZEN
 CO actifs: CO_001, CO_002, CO_003
-Risques: aucun P0 ouvert sur la configuration mentor + Codex
+Risques: aucun P0 ouvert sur la configuration mentor + Agent EXECUTION
 Next step unique: conserver ce backlog comme reference gelée du produit
 ```
 
@@ -162,6 +169,10 @@ Next step unique: conserver ce backlog comme reference gelée du produit
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
+
+  Claude, preuves AnythingLLM / Codex archivees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.5 (13-03-2026) : aligne `CO_003` sur l etat final `FROZEN`.
 - v1.4 (13-03-2026) : bascule le backlog produit en `FROZEN`.
