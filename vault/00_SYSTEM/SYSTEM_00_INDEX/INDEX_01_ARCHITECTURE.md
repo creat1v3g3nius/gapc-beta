@@ -2,10 +2,10 @@
 id: INDEX_01_ARCHITECTURE
 type: INDEX
 title: ArchitectureFrameworkGAPC
-version: v1.10
+version: v1.11
 status: FROZEN
 created: 27-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [repo, framework-architecture, index, system]
 depends_on: []
 arc: SYSTEM
@@ -16,8 +16,8 @@ scope: vault/00_SYSTEM/SYSTEM_00_INDEX
 
 Ce document formalise l'architecture officielle du framework GAPC.
 
-Il respecte strictement : - Les règles de naming (META_00) - Les règles
-de frontmatter YAML (META_01) - La hiérarchie contractuelle CORE →
+Il respecte strictement : - Les règles de naming (META_03_NAMING_CONVENTIONS) - Les règles
+de frontmatter YAML (META_05_FRONTMATTER) - La hiérarchie contractuelle CORE →
 PACKAGE → PRODUCT.
 
 ---
@@ -141,11 +141,11 @@ Rôle : Définir les règles transverses universelles.
 
 Règles système : naming, frontmatter, SOP, output protocol.
 
-### 4.2 FIELD
+### 4.2 DISCIPLINE
 
 Classifier générique, quality gates génériques, risk register générique.
 
-### 4.3 RESTRAINT
+### 4.3 CONSTRAINT
 
 RAG scope policy, garde-fous, anti-duplication.
 
@@ -172,7 +172,7 @@ Familles possibles :
 
 Un package peut :
 
-- Étendre le classifier générique (`FIELD -> RUBRIC`)
+- Étendre le classifier générique (`DISCIPLINE -> RUBRIC`)
 - Ajouter des règles de priorisation spécifiques (`SOT`)
 - Adapter les templates (`TPL`)
 - Ajouter des références de connaissances (`REF`)
@@ -194,7 +194,7 @@ PRODUCT_X/ PRODUCT_X\_DOD/ PRODUCT_X\_CO_000/ PRODUCT_X\_CO_001/
 1 CO = 1 intention = 1 commit.
 
 Chaque fichier PRODUCT doit respecter : - Naming - Frontmatter -
-FIELD générique - FIELD spécifique si package actif
+DISCIPLINE générique - DISCIPLINE spécifique si package actif
 
 ---
 
@@ -243,6 +243,10 @@ version.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.11 (14-11-2026) : remplace les familles legacy `FIELD`/`RESTRAINT` par `DISCIPLINE`/`CONSTRAINT`
+
+  et cite `META_03_NAMING_CONVENTIONS` / `META_05_FRONTMATTER`.
 
 - v1.10 (13-03-2026) : ajoute la famille `FAQ`, raccorde `SYSTEM_99_FAQ`
 

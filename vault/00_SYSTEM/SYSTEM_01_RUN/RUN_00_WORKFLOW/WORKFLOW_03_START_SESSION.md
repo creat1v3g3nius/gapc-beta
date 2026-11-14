@@ -2,7 +2,7 @@
 id: WORKFLOW_03_START_SESSION
 type: WORKFLOW
 title: WorkflowStartSession
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -39,8 +39,8 @@ Références :
 
 ## 1) Variables de session (à remplir)
 
-- **Package actif** : `<PACKAGE_ID>` (ex: `PACKAGE_02_GAPC`)
-- **Product actif** : `<PRODUCT_ID>` (ex: `PRODUCT_02_GAPCMVP`)
+- **Package actif** : `<PACKAGE_ID>` (ex: `PACKAGE_00_GAPC`)
+- **Product actif** : `<PRODUCT_ID>` (ex: `PRODUCT_00_SAMPLE_GAPC_AGENTS`)
 - **Composant (CO) ciblé** : `<CO_ID>` (ex: `CO_003`)
 - **Type de changement** : `docs | chore | feat | fix | refactor | test`
 - **Scope** : `<scope>` (ex: `vault`, `scripts`, `llm`, `product`)
@@ -153,7 +153,7 @@ Checklist KO fréquents :
 
 - `id` ≠ nom de fichier
 - `type` invalide
-- champs manquants (`version`, `status`, `scope`, `arc`, `dependances`)
+- champs manquants (`version`, `status`, `scope`, `arc`, `depends_on`)
 - format date incohérent
 
 ---
@@ -275,6 +275,10 @@ Tu dois pouvoir montrer :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : exemples d actifs alignes (`PACKAGE_00_GAPC`,
+
+  `PRODUCT_00_SAMPLE_GAPC_AGENTS`) et champ `depends_on`.
 
 - v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (13-03-2026) : retire la dependance a `WORKFLOW_01`, recable les CO

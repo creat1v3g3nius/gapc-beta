@@ -2,7 +2,7 @@
 id: WORKFLOW_04_END_SESSION
 type: WORKFLOW
 title: EndSessionProtocol
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -59,9 +59,9 @@ Références :
 
 - [ ] Validator frontmatter/naming **OK** (sinon : pas de commit).
 - [ ] `id` = nom de fichier (sans extension).
-- [ ] Champs YAML requis présents (`type`, `title`, `version`, `status`,
+- [ ] Champs YAML requis présents (`id`, `type`, `title`, `version`,
 
-  `creation`, `maj`, `scope`, `tags`, `dependances`, `arc`).
+  `status`, `created`, `updated`, `arc`, `scope`, `tags`, `depends_on`).
 
 ### 2.3) Smoke (si applicable)
 
@@ -114,7 +114,7 @@ Si tu ne peux pas commit :
 
 - [ ] raison en 1 ligne
 - [ ] 1 action de déblocage claire (qui, quoi, comment)
-- [ ] dépendances mises à jour (frontmatter `dependances` si pertinent)
+- [ ] dépendances mises à jour (frontmatter `depends_on` si pertinent)
 
 ---
 
@@ -189,6 +189,10 @@ Règle :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : aligne la liste des champs YAML requis sur le validator
+
+  (`created`, `updated`, `depends_on`).
 
 - v1.3 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.2 (13-03-2026) : retire la dependance a `WORKFLOW_01` et recable la
