@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_02_PROFILE_SELECTION
 type: SETUP_PRODUCT
 title: SetupProductProfileSelection
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 13-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [system, multi-product, profile, selection]
 depends_on:
   - SETUP_PRODUCT_00_INDEX
@@ -31,8 +31,8 @@ produit.
 ## Matrice minimale
 
 - `mentor_doc_only` : evidence et DOD legers, ops minimaux
-- `mentor_rag_validated` : DOD workspace, ops smoke, evidence qualif
-- `hybrid_doc_code` : evidence, ops et redirection stricte vers Codex
+- `mentor_rag_validated` : DOD qualification agent (MENTOR), ops smoke, evidence qualif
+- `hybrid_doc_code` : evidence, ops et passage controle MENTOR -> EXECUTION
 - `ops_heavy_product` : ops dominants, preuves d execution et runbooks renforces
 
 ## Regle de sortie
@@ -57,6 +57,10 @@ Pour chaque profil, documenter :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.3 (15-03-2026) : passage en FROZEN du protocole de selection de profil
 

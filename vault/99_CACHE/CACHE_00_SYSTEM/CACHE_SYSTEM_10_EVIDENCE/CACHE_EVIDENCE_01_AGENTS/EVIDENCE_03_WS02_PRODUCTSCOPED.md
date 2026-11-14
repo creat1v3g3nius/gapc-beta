@@ -2,10 +2,10 @@
 id: EVIDENCE_03_WS02_PRODUCTSCOPED
 type: EVIDENCE
 title: GapcMentorWs02ProductScoped
-version: v1.1
-status: FROZEN
+version: v1.2
+status: DEPRECATED
 created: 12-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, ws02, productscoped, rag]
 depends_on:
   - DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
@@ -13,8 +13,8 @@ depends_on:
   - OPS_SAMPLE_02_SPEC_DOD
   - OPS_SAMPLE_00_BACKLOG_PRODUCT
   - LLM_03_MENTOR_UTILITES
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/CACHE_EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_GAPC_MENTOR
 ---
@@ -76,6 +76,10 @@ Verdict:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (13-03-2026) : passe la preuve `WS_02 ProductScoped` en
 

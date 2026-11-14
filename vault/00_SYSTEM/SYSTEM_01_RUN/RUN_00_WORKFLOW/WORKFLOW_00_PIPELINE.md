@@ -2,7 +2,7 @@
 id: WORKFLOW_00_PIPELINE
 type: WORKFLOW
 title: PipelineExecutionWorkflow
-version: v1.5
+version: v1.6
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -15,8 +15,8 @@ scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 # WORKFLOW_00 - Pipeline Execution Workflow
 
 Règles opérationnelles minimales pour exécuter le workflow :
-**Obsidian (Vault) → VS Code + Git (+ Copilot/Codex) → AnythingLLM
-(Mentor/RAG)**,
+**Obsidian (Vault) → VS Code + Git → agent Claude (modes MENTOR /
+EXECUTION, `LLM_04_AGENT_CLAUDE`)**,
 avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 
 ---
@@ -70,13 +70,13 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 - Vérité stable : Vault (META/DISCIPLINE/CONSTRAINT)
 - Vérité secondaire (TOOLING/PACKAGE) : fichiers KNOWLEDGE ET SOT
 - Exécution : repo Git (VS Code + Git)
-- Aide au raisonnement : AnythingLLM (lecture/extraction), jamais décision
+- Aide au raisonnement et à l exécution : agent Claude, jamais décision
 
   autonome
 
 ---
 
-## 3. Règles VS Code + Copilot/Codex (in-IDE)
+## 3. Règles agent en mode EXECUTION (in-IDE)
 
 - **Diff-first** : demander un diff avant application.
 - **No auto-commit** : tu valides le diff, puis tu commits.
@@ -90,13 +90,13 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 
 ---
 
-## 4  Règles AnythingLLM
+## 4  Règles agent en mode MENTOR
 
-- Démarrer small corpus (RulesOnly).
-- Exiger sources : citations si possible, sinon fichiers.
+- Plan mode (lecture seule), Context Pack déclaré en début de session.
+- Exiger sources : fichiers cités avec leur ID.
 - Si info absente → répondre “NON TROUVÉ”.
-- Check package et product actif.
-- Étendre par couches + tests après chaque ingestion.
+- Lire uniquement CORE + package actif + product actif + SYSTEM.
+- Requalifier via `WORKFLOW_07_TESTS_LLM` après modification des instructions.
 
 ---
 
@@ -114,7 +114,7 @@ Avant merge/main :
 - `WORKFLOW_03_START_SESSION`, `WORKFLOW_04_END_SESSION`,
 
   `WORKFLOW_05_INCIDENT`, `WORKFLOW_06_VAULT_HEALTH_CHECK`,
-  `WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_CODEX` et
+  `WORKFLOW_07_TESTS_LLM`, `WORKFLOW_08_TESTS_EXECUTION` et
   `WORKFLOW_10_COMMANDES` sont les points d entree operatoires.
 
 - `SETUP_PRODUCT_03_ROUTINE_OPERATIONS` declare les reruns obligatoires,
@@ -141,6 +141,10 @@ Avant merge/main :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.5 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
 

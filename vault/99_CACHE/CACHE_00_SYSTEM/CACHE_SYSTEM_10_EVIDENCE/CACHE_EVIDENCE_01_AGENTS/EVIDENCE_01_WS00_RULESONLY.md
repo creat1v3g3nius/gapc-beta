@@ -2,17 +2,17 @@
 id: EVIDENCE_01_WS00_RULESONLY
 type: EVIDENCE
 title: GapcMentorWs00RulesOnly
-version: v1.1
-status: FROZEN
+version: v1.2
+status: DEPRECATED
 created: 12-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, ws00, rulesonly, rag]
 depends_on:
   - LLM_01_INGESTION_PROTOCOL
   - WORKFLOW_07_TESTS_LLM
   - DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/CACHE_EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_GAPC_MENTOR
 ---
@@ -66,6 +66,10 @@ Verdict:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (13-03-2026) : passe la preuve `WS_00 RulesOnly` en `READY_TO_FREEZE`.
 - v1.0 (12-03-2026) : creation de la preuve `WS_00 RulesOnly` avec verdict PASS

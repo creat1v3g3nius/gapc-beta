@@ -2,7 +2,7 @@
 id: WORKFLOW_10_COMMANDES
 type: WORKFLOW
 title: ListCommandesLLM
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -14,7 +14,7 @@ depends_on:
   - WORKFLOW_05_INCIDENT
   - WORKFLOW_06_VAULT_HEALTH_CHECK
   - WORKFLOW_07_TESTS_LLM
-  - WORKFLOW_08_TESTS_CODEX
+  - WORKFLOW_08_TESTS_EXECUTION
   - PIPELINE_03_BACKLOG_COMPOSANTS
   - CHECKLIST_01_START_SESSION
   - CHECKLIST_02_END_SESSION
@@ -26,7 +26,7 @@ scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 # WORKFLOW_10 - List Commandes LLM
 
 Bibliothèque de **prompts/commandes standard** pour piloter le workflow de
-production avec un LLM (ChatGPT / AnythingLLM / Codex in-IDE), de façon :
+production avec l agent Claude (modes MENTOR / EXECUTION), de façon :
 
 - **scalable** (multi-package, multi-product),
 - **anti-dérive** (scope verrouillé, 1 intention),
@@ -147,7 +147,7 @@ Propose soit: réduction scope, soit découpage en 2–3 CO.
 
 ---
 
-## 5) Git / VS Code / Codex (diff-first, no auto-commit)
+## 5) Git / VS Code / agent EXECUTION (diff-first, no auto-commit)
 
 ### 5.1) CMD_CODE_00 — Patch Git minimal + commit + tests
 
@@ -179,14 +179,14 @@ Donne: comment l’exécuter, quels signaux = OK/KO.
 
 ---
 
-## 6) AnythingLLM / RAG (`WORKFLOW_07` + `SYSTEM_04_LLM`)
+## 6) Agent MENTOR / RAG (`WORKFLOW_07` + `SYSTEM_04_LLM`)
 
 ### 6.1) CMD_RAG_00 — Setup “RulesOnly”
 
 ```text
-À partir de WORKFLOW_07_TESTS_LLM et de SYSTEM_04_LLM, propose un plan
-d’ingestion RulesOnly (CORE+SYSTEM minimaux), puis une batterie de 10
-tests.
+À partir de WORKFLOW_07_TESTS_LLM et de LLM_04_AGENT_CLAUDE, ouvre une
+session MENTOR en périmètre RulesOnly (CORE+SYSTEM, aucun package) et
+déroule la série commune de tests.
 Règle: si info absente -> répondre NON TROUVÉ.
 ```
 
@@ -195,8 +195,8 @@ Règle: si info absente -> répondre NON TROUVÉ.
 ```text
 Je veux activer <PACKAGE_ID>. Donne:
 
-- ordre d’ingestion (couche par couche)
-- tests après chaque couche
+- le Context Pack de session (package actif déclaré)
+- les tests package à rejouer
 - garde-fous anti-mélange multi-packages
 
 ```
@@ -268,8 +268,8 @@ Output: P0/P1/P2 + fixes.
 
 ## 9.3) Batteries de tests
 
-- Qualification mentor AnythingLLM : `WORKFLOW_07_TESTS_LLM`
-- Qualification agent Codex : `WORKFLOW_08_TESTS_CODEX`
+- Qualification agent mode MENTOR : `WORKFLOW_07_TESTS_LLM`
+- Qualification agent mode EXECUTION : `WORKFLOW_08_TESTS_EXECUTION`
 
 ---
 
@@ -310,6 +310,10 @@ Output: P0/P1/P2 + fixes.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (13-03-2026) : retire les renvois a `WORKFLOW_01` / `WORKFLOW_02`

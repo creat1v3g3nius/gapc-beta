@@ -2,10 +2,10 @@
 id: GIT_03_PATCH_COMMIT
 type: GIT
 title: CodePatchCommit
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [boostrap, patch-commit, git, system]
 depends_on: [INDEX_01_ARCHITECTURE, WORKFLOW_00_PIPELINE]
 arc: SYSTEM
@@ -51,7 +51,7 @@ Stop condition :
 ## 2) Avant patch (P0)
 
 - [ ] **Context Pack** rempli (Goal/Constraints/Files/Expected output).
-- [ ] Si assistant (Codex/Copilot) : **diff-first** demandé.
+- [ ] Si agent Claude (mode EXECUTION) : **diff-first** demandé.
 - [ ] Je comprends “ce que ça change” (≥ 70%).
 - [ ] Le patch respecte **1 intention** (CO unique ou objectif unique).
 - [ ] Je sais quels fichiers sont
@@ -253,6 +253,10 @@ Règle :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.2 (13-03-2026) : fusionne la DoD squash merge
 

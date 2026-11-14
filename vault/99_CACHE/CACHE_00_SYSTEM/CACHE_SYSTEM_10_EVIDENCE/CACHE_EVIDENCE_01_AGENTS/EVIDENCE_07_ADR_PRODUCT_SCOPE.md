@@ -2,10 +2,10 @@
 id: EVIDENCE_07_ADR_PRODUCT_SCOPE
 type: EVIDENCE
 title: AdrProductScope
-version: v1.0
-status: FROZEN
+version: v1.1
+status: DEPRECATED
 created: 13-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, adr, scope, decision]
 depends_on:
   - TPL_02_ADR_LITE
@@ -14,8 +14,8 @@ depends_on:
   - OPS_SAMPLE_00_BACKLOG_PRODUCT
   - OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
   - EVIDENCE_00_INDEX
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/CACHE_EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_GAPC_MENTOR
 ---
@@ -101,6 +101,10 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.1 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.0 (13-03-2026) : aligne l ADR sur la bascule finale `FROZEN`.
 - v1.0 (13-03-2026) : création de l ADR de périmètre produit après PASS complet

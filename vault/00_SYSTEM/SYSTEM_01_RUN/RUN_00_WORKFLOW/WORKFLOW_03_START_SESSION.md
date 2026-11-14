@@ -2,7 +2,7 @@
 id: WORKFLOW_03_START_SESSION
 type: WORKFLOW
 title: WorkflowStartSession
-version: v1.5
+version: v1.6
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -52,7 +52,7 @@ Références :
 - VS Code ouvert sur la racine du repo (`.git/` présent)
 - Obsidian ouvert sur `repo/vault/`
 - Validator frontmatter/naming disponible (bloquant avant commit)
-- (Optionnel) Mentor AnythingLLM prêt (workspace RulesOnly ou package-scoped)
+- Agent Claude ouvert sur `repo/` (`CLAUDE.md` chargé), mode déclaré
 
 ---
 
@@ -124,7 +124,7 @@ Stop condition :
 
 ## 6) Patch (diff-first)
 
-## 3.1) Avec un assistant (Codex/Copilot) — prompt standard
+## 3.1) Avec l agent Claude (mode EXECUTION) — prompt standard
 
 > Propose un **diff Git minimal** pour réaliser le CO.
 > Ne modifie que les fichiers nécessaires.
@@ -186,7 +186,7 @@ Exemples :
 
 - `docs(product): add CO_003 checklist`
 - `chore(scripts): tighten frontmatter validator`
-- `docs(llm): add package-scoped ingestion rules`
+- `docs(llm): align agent instructions`
 
 Stop condition :
 
@@ -205,13 +205,13 @@ Stop condition :
 
 ---
 
-## 11) Test Mentor (AnythingLLM)
+## 11) Test Mentor (agent Claude, mode MENTOR)
 
-### 11.1) Mode recommandé
+### 11.1) Périmètre recommandé
 
-- **RulesOnly** pour vérifier les règles (CORE/SYSTEM)
-- **Package-scoped** pour vérifier l’extension métier (package actif)
-- **Product-scoped** pour vérifier le composant du jour
+- **RulesOnly** (aucun package) pour vérifier les règles (CORE/SYSTEM)
+- **PackageScoped** pour vérifier l’extension métier (package actif)
+- **ProductScoped** pour vérifier le composant du jour
 
 ### 11.2) Prompt test (copier/coller)
 
@@ -233,9 +233,9 @@ KO si :
 
 Actions KO :
 
-- réduire le corpus
+- réduire le périmètre de lecture
 - corriger doublons
-- requalifier le mentor via `WORKFLOW_07_TESTS_LLM`
+- requalifier l agent via `WORKFLOW_07_TESTS_LLM`
 
 ---
 
@@ -275,6 +275,10 @@ Tu dois pouvoir montrer :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.5 (14-11-2026) : exemples d actifs alignes (`PACKAGE_00_GAPC`,
 

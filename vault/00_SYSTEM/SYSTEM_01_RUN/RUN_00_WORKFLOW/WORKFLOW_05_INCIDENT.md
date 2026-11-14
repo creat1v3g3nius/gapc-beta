@@ -2,7 +2,7 @@
 id: WORKFLOW_05_INCIDENT
 type: WORKFLOW
 title: IncidentResolutionProtocol
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -16,8 +16,8 @@ scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 
 Protocole **anti-panique** pour diagnostiquer et résoudre un incident
 pendant l’exécution du workflow GAPC :
-**Obsidian (Vault) → VS Code + Git → (scripts validator/smoke) → AnythingLLM
-(mentor)**.
+**Obsidian (Vault) → VS Code + Git → (scripts validator/smoke) → agent Claude
+(MENTOR / EXECUTION)**.
 
 Contraintes :
 
@@ -69,7 +69,7 @@ Interdits :
 - [ ] A — **Repo/Git**
 - [ ] B — **Vault/Obsidian**
 - [ ] C — **Scripts/Validator/Smoke**
-- [ ] D — **Mentor/RAG (AnythingLLM)**
+- [ ] D — **Agent LLM (Claude)**
 - [ ] E — **Données/Backup/Infra**
 
 ### 3.2) Impact
@@ -187,14 +187,14 @@ Actions safe :
 
 ---
 
-### D — Mentor/RAG (AnythingLLM)
+### D — Agent LLM (Claude)
 
 #### D1) Contention (immédiat)
 
-- [ ] Basculer sur workspace **RulesOnly**
-- [ ] Retirer la dernière couche ingérée
+- [ ] Repasser en Plan mode (lecture seule), annuler les écritures non validées
+- [ ] Nouvelle session en périmètre **RulesOnly** (aucun package actif)
 
-#### D2) Tests (obligatoires) — cf WORKFLOW_01
+#### D2) Tests (obligatoires) — cf WORKFLOW_07_TESTS_LLM
 
 - [ ] Hiérarchie des règles = OK
 - [ ] Non-invention = OK (**NON TROUVÉ**)
@@ -290,6 +290,10 @@ Next step unique:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.

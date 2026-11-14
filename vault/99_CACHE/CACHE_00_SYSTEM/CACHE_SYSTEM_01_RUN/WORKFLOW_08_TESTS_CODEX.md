@@ -2,8 +2,8 @@
 id: WORKFLOW_08_TESTS_CODEX
 type: WORKFLOW
 title: ListTestsCodex
-version: v1.4
-status: FROZEN
+version: v1.5
+status: DEPRECATED
 created: 12-03-2026
 updated: 14-11-2026
 tags: [workflow, tests-codex, run, system, ide, agent]
@@ -17,8 +17,8 @@ depends_on:
   - SETUP_PRODUCT_03_ROUTINE_OPERATIONS
   - SETUP_PRODUCT_05_LIFECYCLE_POLICY
   - SETUP_PRODUCT_07_GOVERNANCE_RULES
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_01_RUN
 ---
 
 # WORKFLOW_08 - Tests Codex
@@ -251,6 +251,10 @@ Le lot est `KO` si :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (15-03-2026) : passage en FROZEN apres validation de la batterie Codex

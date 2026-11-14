@@ -2,18 +2,18 @@
 id: EVIDENCE_04_CODEX_IDE
 type: EVIDENCE
 title: GapcMentorCodexIde
-version: v1.1
-status: FROZEN
+version: v1.2
+status: DEPRECATED
 created: 13-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, codex, ide, tests]
 depends_on:
   - WORKFLOW_08_TESTS_CODEX
   - SCRIPT_03_INSTRUCTIONS_CODEX
   - LLM_00_RAG_PRINCIPES
   - LLM_02_PERMISSION_SECURITY
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/CACHE_EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_GAPC_MENTOR
 ---
@@ -94,6 +94,10 @@ Next step unique:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (13-03-2026) : passe la preuve Codex IDE en `READY_TO_FREEZE`.
 - v1.0 (13-03-2026) : creation de la preuve Codex IDE a partir du modele

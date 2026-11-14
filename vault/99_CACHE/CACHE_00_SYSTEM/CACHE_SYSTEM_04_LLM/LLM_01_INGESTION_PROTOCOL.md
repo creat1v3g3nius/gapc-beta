@@ -2,14 +2,14 @@
 id: LLM_01_INGESTION_PROTOCOL
 type: LLM
 title: IngestionProtocol
-version: v1.5
-status: FROZEN
+version: v1.6
+status: DEPRECATED
 created: 28-02-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [agent, ingestion-protocol, llm, system, anythingllm, mentor]
 depends_on: [LLM_00_RAG_PRINCIPES]
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_04_LLM
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_04_LLM
 ---
 
 # LLM_01 - Protocole d’ingestion (AnythingLLM local)
@@ -330,6 +330,10 @@ Après chaque setup ou mise à jour :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.5 (10-03-2026) : impose la cohérence `source -> arc` pour `T5` et ajoute un
 

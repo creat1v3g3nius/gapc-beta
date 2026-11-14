@@ -2,7 +2,7 @@
 id: INDEX_01_ARCHITECTURE
 type: INDEX
 title: ArchitectureFrameworkGAPC
-version: v1.11
+version: v1.12
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -76,7 +76,7 @@ Noyau `WORKFLOW` actif :
 - `WORKFLOW_05_INCIDENT`
 - `WORKFLOW_06_VAULT_HEALTH_CHECK`
 - `WORKFLOW_07_TESTS_LLM`
-- `WORKFLOW_08_TESTS_CODEX`
+- `WORKFLOW_08_TESTS_EXECUTION`
 - `WORKFLOW_10_COMMANDES`
 
 Annexes legacy archivees hors scope actif :
@@ -243,6 +243,10 @@ version.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.12 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.11 (14-11-2026) : remplace les familles legacy `FIELD`/`RESTRAINT` par `DISCIPLINE`/`CONSTRAINT`
 

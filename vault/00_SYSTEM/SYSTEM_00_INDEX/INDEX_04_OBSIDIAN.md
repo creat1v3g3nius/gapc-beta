@@ -2,7 +2,7 @@
 id: INDEX_04_OBSIDIAN
 type: INDEX
 title: ObsidianConfig
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -27,11 +27,11 @@ framework GAPC :
 - navigation dans le Vault (SYSTEM/CORE/PACKAGE/PRODUCT/CACHE),
 - règles de liens, tags, recherches,
 - routines de session (Doc → Code → Commit),
-- bonnes pratiques pour limiter le bruit RAG (AnythingLLM).
+- bonnes pratiques pour limiter le bruit pour l agent LLM (Claude).
 
 **Source of Truth** : le Vault (Obsidian).
 **Exécution** : repo Git (VS Code).
-**Mentor** : AnythingLLM (lecture/extraction), jamais décision autonome.
+**Agent** : Claude (modes MENTOR / EXECUTION), jamais décision autonome.
 
 ## Pré-requis
 
@@ -148,7 +148,7 @@ Les tags servent à :
 
 - retrouver vite,
 - filtrer dans Obsidian,
-- aider le RAG (AnythingLLM) si ingéré.
+- aider l agent LLM à retrouver les sources.
 
 Règles :
 
@@ -219,7 +219,7 @@ Règles :
 - Context Pack
 - Checklists de session
 - Checklist incident
-- Checklist ingestion RAG
+- Checklist session agent (Context Pack)
 
 ### 6.2 Templates Obsidian (option)
 
@@ -232,16 +232,16 @@ Règle : pas de duplication entre CORE et PACKAGE.
 
 ---
 
-## 7. Intégration avec AnythingLLM (mentor)
+## 7. Intégration avec l agent Claude
 
-### 7.1 Discipline d’ingestion
+### 7.1 Discipline de périmètre
 
-- Ingestion minimale d’abord (RulesOnly)
-- Ajouter ensuite le package actif
+- Session RulesOnly d abord (aucun package actif)
+- Déclarer ensuite le package actif
 - Puis le product actif
-- Tester à chaque extension du corpus (batterie de prompts)
+- Requalifier après chaque changement d instructions (`WORKFLOW_07_TESTS_LLM`)
 
-### 7.2 Ce que le mentor a le droit de faire
+### 7.2 Ce que l agent a le droit de faire en mode MENTOR
 
 - extraire des règles,
 - proposer des drafts de documents,
@@ -297,6 +297,10 @@ Avant de passer un doc en READY_TO_FREEZE :
 ---
 
 ## Changelog
+
+- v1.4 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.3 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
 

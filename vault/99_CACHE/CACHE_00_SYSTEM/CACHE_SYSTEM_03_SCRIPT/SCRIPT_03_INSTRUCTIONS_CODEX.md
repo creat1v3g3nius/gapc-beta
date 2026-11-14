@@ -2,10 +2,10 @@
 id: SCRIPT_03_INSTRUCTIONS_CODEX
 type: SCRIPT
 title: CodexIdeInstructions
-version: v1.1
-status: FROZEN
+version: v1.2
+status: DEPRECATED
 created: 10-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [codex, vscode, ide, agent, system, prompt, instructions, gapc]
 depends_on:
   - META_01_OUTPUT_PROTOCOL
@@ -13,8 +13,8 @@ depends_on:
   - LLM_00_RAG_PRINCIPES
   - LLM_01_INGESTION_PROTOCOL
   - LLM_02_PERMISSION_SECURITY
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_03_SCRIPT
 ---
 
 # SCRIPT_03 - Instructions Agent IDE (Codex / VS Code)
@@ -317,6 +317,10 @@ naming avant passage READY_TO_FREEZE final.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (15-03-2026) : passage en FROZEN apres validation documentaire globale du
 

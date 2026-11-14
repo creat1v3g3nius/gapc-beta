@@ -2,14 +2,14 @@
 id: LLM_02_PERMISSION_SECURITY
 type: LLM
 title: PermissionsSecurity
-version: v1.2
-status: FROZEN
+version: v1.3
+status: DEPRECATED
 created: 28-02-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [agent, permission-security, llm, system, security, anythingllm]
 depends_on: [LLM_00_RAG_PRINCIPES, LLM_01_INGESTION_PROTOCOL]
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_04_LLM
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_04_LLM
 ---
 
 # LLM_02 - Permissions & Sécurité minimale
@@ -243,6 +243,10 @@ Attendu :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.2 (10-03-2026) : alignement sécurité sur l’architecture LLM cible.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.

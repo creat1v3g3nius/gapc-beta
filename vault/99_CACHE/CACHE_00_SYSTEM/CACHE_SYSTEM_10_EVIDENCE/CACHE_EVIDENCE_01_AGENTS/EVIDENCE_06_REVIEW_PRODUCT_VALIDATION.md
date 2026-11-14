@@ -2,10 +2,10 @@
 id: EVIDENCE_06_REVIEW_PRODUCT_VALIDATION
 type: EVIDENCE
 title: ReviewProductValidation
-version: v1.1
-status: FROZEN
+version: v1.2
+status: DEPRECATED
 created: 13-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [product, gapc-mentor, evidence, review, quality]
 depends_on:
   - DOD_SAMPLE_00_PRODUCT_VALIDATION
@@ -18,8 +18,8 @@ depends_on:
   - OPS_SAMPLE_04_ACTION_DOC_DOD
   - OPS_SAMPLE_05_CO_DOD
   - OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_01_AGENTS
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_10_EVIDENCE/CACHE_EVIDENCE_01_AGENTS
 active-package: PACKAGE_00_GAPC
 active-product: PRODUCT_00_GAPC_MENTOR
 ---
@@ -64,6 +64,10 @@ active-product: PRODUCT_00_GAPC_MENTOR
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (13-03-2026) : aligne la review finale sur l etat `FROZEN`.
 - v1.0 (13-03-2026) : création de la review finale de validation produit.

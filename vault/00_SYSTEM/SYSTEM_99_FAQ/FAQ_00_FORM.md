@@ -2,19 +2,18 @@
 id: FAQ_00_FORM
 type: FAQ
 title: FaqForm
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 02-03-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [system, faq, form, support]
 depends_on:
   - INDEX_05_GLOSSARY
   - WORKFLOW_00_PIPELINE
   - WORKFLOW_06_VAULT_HEALTH_CHECK
-  - SCRIPT_03_INSTRUCTIONS_CODEX
-  - LLM_00_RAG_PRINCIPES
+  - SCRIPT_07_INSTRUCTIONS_CLAUDE
+  - LLM_04_AGENT_CLAUDE
   - EVIDENCE_00_FRAMEWORK_INDEX
-  - EVIDENCE_00_INDEX
   - CONSTRAINT_03_SECRETS_POLICY
   - CONSTRAINT_05_CACHE_POLICY
 arc: SYSTEM
@@ -42,10 +41,9 @@ Références courantes :
 
 - runbooks quotidiens : `WORKFLOW_00_PIPELINE`
 - health check documentaire : `WORKFLOW_06_VAULT_HEALTH_CHECK`
-- cadrage Codex IDE : `SCRIPT_03_INSTRUCTIONS_CODEX`
-- mentor documentaire : `LLM_00_RAG_PRINCIPES`
+- instructions agent Claude : `SCRIPT_07_INSTRUCTIONS_CLAUDE` (projection `CLAUDE.md`)
+- dispositif agent : `LLM_04_AGENT_CLAUDE`
 - preuves framework : `EVIDENCE_00_FRAMEWORK_INDEX`
-- preuves agents : `EVIDENCE_00_INDEX`
 
 ---
 
@@ -143,13 +141,13 @@ Contrôles utiles :
 
 ---
 
-## E. RAG / Mentor
+## E. Agent LLM (mode MENTOR)
 
-### E1 — Que faire si le mentor n’a pas la réponse ?
+### E1 — Que faire si l agent n’a pas la réponse ?
 
 Réponse attendue : `NON TROUVÉ` + proposition d’action
 (créer/compléter le document source).
-Source utile : `LLM_00_RAG_PRINCIPES`.
+Source utile : `META_00_HANDBOOK`.
 
 ### E2 — Comment éviter “mélange de packages” ?
 
@@ -158,8 +156,8 @@ Refuser une réponse globale si contexte flou.
 
 Sources utiles :
 
-- `LLM_01_INGESTION_PROTOCOL`
-- `LLM_03_MENTOR_UTILITES`
+- `SCRIPT_07_INSTRUCTIONS_CLAUDE`
+- `LLM_04_AGENT_CLAUDE`
 
 ---
 
@@ -173,7 +171,7 @@ Pas de refactor massif non demandé.
 ### F2 — Diff-first
 
 Toujours produire un patch ciblé (ou START/END REPLACE) avant commit.
-Source utile : `SCRIPT_03_INSTRUCTIONS_CODEX`.
+Source utile : `SCRIPT_07_INSTRUCTIONS_CLAUDE`.
 
 ---
 
@@ -247,6 +245,10 @@ Next step souhaité:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (13-03-2026) : aligne la FAQ sur la structure active
 

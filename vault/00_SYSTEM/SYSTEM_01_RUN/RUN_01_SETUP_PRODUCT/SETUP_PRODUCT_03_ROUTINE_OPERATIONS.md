@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_03_ROUTINE_OPERATIONS
 type: SETUP_PRODUCT
 title: SetupProductRoutineOperations
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 13-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [system, multi-product, routine, operations]
 depends_on:
   - SETUP_PRODUCT_00_INDEX
@@ -13,7 +13,7 @@ depends_on:
   - WORKFLOW_00_PIPELINE
   - WORKFLOW_06_VAULT_HEALTH_CHECK
   - WORKFLOW_07_TESTS_LLM
-  - WORKFLOW_08_TESTS_CODEX
+  - WORKFLOW_08_TESTS_EXECUTION
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT
 ---
@@ -34,7 +34,7 @@ Definir la routine d exploitation d un product actif.
 
 - les reruns requis sont executes via `WORKFLOW_06_VAULT_HEALTH_CHECK`,
 
-  `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_CODEX`.
+  `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_EXECUTION`.
 
 ## Routine minimale
 
@@ -45,9 +45,9 @@ Definir la routine d exploitation d un product actif.
 
 ## Evenements qui imposent un rerun
 
-- changement de prompt system
-- changement de corpus `CORE`, `SYSTEM` ou `PACKAGE`
-- changement de workflow mentor ou Codex
+- changement d instructions agent (`CLAUDE.md`, `SCRIPT_07_INSTRUCTIONS_CLAUDE`)
+- changement de regles `CORE`, `SYSTEM` ou `PACKAGE`
+- changement de workflow agent (modes MENTOR / EXECUTION)
 - changement de gates DOD/OPS/EVIDENCE
 
 ## Resultat attendu
@@ -70,6 +70,10 @@ Definir la routine d exploitation d un product actif.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (15-03-2026) : passage en FROZEN du protocole de routine produit.
 - v1.3 (13-03-2026) : rehoste le protocole sous `SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT`.

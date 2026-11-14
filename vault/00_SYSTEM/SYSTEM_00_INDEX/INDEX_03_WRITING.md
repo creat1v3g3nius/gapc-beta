@@ -2,7 +2,7 @@
 id: INDEX_03_WRITING
 type: INDEX
 title: WritingFilesFormats
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -30,7 +30,7 @@ Un format n'existe que s'il a une utilité.
 ### 1.2 Pourquoi
 
 - lisible, diffable (Git), compatible Obsidian
-- indexable pour AnythingLLM
+- lisible et citable par l agent LLM (IDs, sections courtes)
 
 ### 1.3 Règles minimalistes de structure
 
@@ -174,6 +174,10 @@ flowchart TD
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.2 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
 

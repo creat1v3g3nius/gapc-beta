@@ -2,14 +2,14 @@
 id: LLM_00_RAG_PRINCIPES
 type: LLM
 title: RagPrincipes
-version: v1.4
-status: FROZEN
+version: v1.5
+status: DEPRECATED
 created: 28-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [agent, rag-principes, llm, system, mentor, anythingllm, codex]
 depends_on: []
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_04_LLM
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_04_LLM
 ---
 
 # LLM_00 - RAG Principes (Mentor AnythingLLM)
@@ -245,6 +245,10 @@ Ce découpage est le mode nominal du système LLM documentaire.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (13-03-2026) : remplace la reference explicite a `PRODUCT_00_BETA_GAPC`
 

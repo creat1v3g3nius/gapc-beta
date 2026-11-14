@@ -2,7 +2,7 @@
 id: WORKFLOW_04_END_SESSION
 type: WORKFLOW
 title: EndSessionProtocol
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -118,7 +118,7 @@ Si tu ne peux pas commit :
 
 ---
 
-## 6) Mentor (AnythingLLM) — check rapide (option)
+## 6) Agent en mode MENTOR — check rapide (option)
 
 À faire si tu as :
 
@@ -137,7 +137,7 @@ Test minimal :
 
 Si KO :
 
-- [ ] réduire corpus
+- [ ] réduire le périmètre de lecture
 - [ ] requalifier via `WORKFLOW_07_TESTS_LLM`
 
 ---
@@ -189,6 +189,10 @@ Règle :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (14-11-2026) : aligne la liste des champs YAML requis sur le validator
 

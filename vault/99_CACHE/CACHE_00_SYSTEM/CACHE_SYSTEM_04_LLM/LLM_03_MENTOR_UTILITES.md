@@ -2,17 +2,17 @@
 id: LLM_03_MENTOR_UTILITES
 type: LLM
 title: MentorUtilites
-version: v1.1
-status: FROZEN
+version: v1.2
+status: DEPRECATED
 created: 10-03-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [agent, mentor, utilites, llm, system, anythingllm]
 depends_on:
   - LLM_00_RAG_PRINCIPES
   - LLM_01_INGESTION_PROTOCOL
   - LLM_02_PERMISSION_SECURITY
-arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_04_LLM
+arc: CACHE
+scope: vault/99_CACHE/CACHE_00_SYSTEM/CACHE_SYSTEM_04_LLM
 ---
 
 # LLM_03 - Utilités du Mentor RAG (séparation des tâches)
@@ -267,6 +267,10 @@ Il n est pas conçu pour :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : DEPRECATED, archive en `99_CACHE` (dispositif AnythingLLM /
+
+  Codex remplace par l agent Claude, `EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.1 (10-03-2026) : sépare explicitement les tâches entre Codex, AnythingLLM
 

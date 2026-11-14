@@ -2,10 +2,10 @@
 id: SETUP_PRODUCT_05_LIFECYCLE_POLICY
 type: SETUP_PRODUCT
 title: SetupProductLifecyclePolicy
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 13-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [system, multi-product, lifecycle, policy]
 depends_on:
   - SETUP_PRODUCT_00_INDEX
@@ -14,7 +14,7 @@ depends_on:
   - CHECKLIST_03_READY_TO_FREEZE
   - WORKFLOW_06_VAULT_HEALTH_CHECK
   - WORKFLOW_07_TESTS_LLM
-  - WORKFLOW_08_TESTS_CODEX
+  - WORKFLOW_08_TESTS_EXECUTION
 arc: SYSTEM
 scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_01_SETUP_PRODUCT
 ---
@@ -76,6 +76,10 @@ Definir les etats d un product et les criteres de passage.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : realigne sur l agent Claude (modes MENTOR / EXECUTION) ;
+
+  references AnythingLLM / Codex retirees (`EVIDENCE_05_ADR_CLAUDE_AGENT`).
 
 - v1.4 (15-03-2026) : passage en FROZEN de la politique de cycle de vie produit.
 - v1.3 (13-03-2026) : rehoste le protocole sous
