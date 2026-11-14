@@ -2,7 +2,7 @@
 id: STUDIO_DISCIPLINE_00_RAG_PROFILE
 type: DISCIPLINE
 title: StudioRagProfile
-version: v1.0
+version: v1.1
 status: DRAFT
 created: 14-11-2026
 updated: 14-11-2026
@@ -88,10 +88,14 @@ Interdit dans tout corpus :
 
 ## 4) Roles (inchanges)
 
-- `AnythingLLM local` : lecture, checklist, synthese, audit documentaire.
-- `Codex` : fichiers, scripts, execution.
-- `API externe fallback` : usage documentaire explicite, sans donnee client.
+- `Agent MENTOR` : lecture, checklist, synthese, audit documentaire.
+- `Agent EXECUTION` : fichiers, scripts, execution (diff-first).
+- `Humain (decision)` : arbitrage client, validation, nouvelle regle.
 
 ## Changelog
+
+- v1.1 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.0 (14-11-2026) : creation du profil RAG studio.

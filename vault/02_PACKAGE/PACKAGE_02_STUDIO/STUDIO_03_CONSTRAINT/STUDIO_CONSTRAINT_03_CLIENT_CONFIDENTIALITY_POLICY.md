@@ -2,7 +2,7 @@
 id: STUDIO_CONSTRAINT_03_CLIENT_CONFIDENTIALITY_POLICY
 type: CONSTRAINT
 title: StudioClientConfidentialityPolicy
-version: v1.0
+version: v1.1
 status: DRAFT
 created: 14-11-2026
 updated: 14-11-2026
@@ -46,7 +46,7 @@ vault et le corpus du mentor. Renforce `CONSTRAINT_03_SECRETS_POLICY`.
 ## 3) Mentor et outils externes
 
 - corpus mentor : documents texte du projet uniquement, pseudonymises,
-- API externe fallback : aucun document client,
+- l agent est heberge : rien de ce qu il lit ne doit identifier un client,
 - generateurs : pas d envoi de fichier client confidentiel sans accord du
 
   client (`STUDIO_CONSTRAINT_00_ALLOW_LIST`).
@@ -58,5 +58,9 @@ Une donnee client detectee dans le repo est traitee comme un incident
 trace sans reproduire la donnee.
 
 ## Changelog
+
+- v1.1 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.0 (14-11-2026) : creation de la politique de confidentialite client.

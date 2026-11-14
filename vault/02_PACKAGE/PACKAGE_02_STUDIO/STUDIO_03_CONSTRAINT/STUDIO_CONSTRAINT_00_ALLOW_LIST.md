@@ -2,7 +2,7 @@
 id: STUDIO_CONSTRAINT_00_ALLOW_LIST
 type: CONSTRAINT
 title: StudioAllowList
-version: v1.0
+version: v1.1
 status: DRAFT
 created: 14-11-2026
 updated: 14-11-2026
@@ -29,7 +29,8 @@ regles renforcent `CONSTRAINT_00_GUARD_RAILS` et n y creent aucune exception.
 ## 1) Autorise (par defaut)
 
 - outils de repo et de session prevus par CORE / SYSTEM (diff-first),
-- mentor documentaire en corpus `STUDIO_R0` ou `STUDIO_R1`, read-only,
+- agent Claude en perimetre `STUDIO_R0` ou `STUDIO_R1` (MENTOR read-only,
+  EXECUTION diff-first),
 - generateurs et outils externes listes dans
 
   `STUDIO_TOOLING_EXTENSION_00_ALLOW_LIST`, utilises via leur protocole CORE,
@@ -53,12 +54,16 @@ regles renforcent `CONSTRAINT_00_GUARD_RAILS` et n y creent aucune exception.
   permettent leur reutilisation, sans accord du client,
 
 - asset genere sans evidence pack,
-- auto-commit, auto-push, ingestion "tout le vault".
+- auto-commit, auto-push, lecture de plusieurs packages ou projets.
 
 ## 3) Regle P0
 
 Toute derogation est **KO** sans `STUDIO_CONSTRAINT_04_EXCEPTION_POLICY`.
 
 ## Changelog
+
+- v1.1 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.0 (14-11-2026) : creation de l allowlist studio.

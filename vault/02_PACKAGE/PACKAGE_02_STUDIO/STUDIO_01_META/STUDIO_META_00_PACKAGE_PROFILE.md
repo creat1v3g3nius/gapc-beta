@@ -2,7 +2,7 @@
 id: STUDIO_META_00_PACKAGE_PROFILE
 type: META
 title: StudioPackageProfile
-version: v1.0
+version: v1.1
 status: DRAFT
 created: 14-11-2026
 updated: 14-11-2026
@@ -68,7 +68,7 @@ Chaque projet client (ou projet interne du studio) est instancie comme un
 - no-secrets / no-PII,
 - actifs uniques : 1 package actif, 1 product (projet) actif,
 - `NON TROUVE` si absence de source,
-- mentor read-only, API externe en fallback explicite,
+- agent LLM en 2 modes (MENTOR read-only, EXECUTION diff-first),
 - 1 intention = 1 CO = 1 commit.
 
 ## 4) Invariants P0 propres au studio
@@ -108,8 +108,8 @@ Chaque projet client (ou projet interne du studio) est instancie comme un
 - **SYSTEM** : sessions, Git, incidents (`WORKFLOW_*`).
 
 Regle : `PACKAGE_02_STUDIO` etend `CORE` ; il ne remplace ni la hierarchie
-d autorite, ni la separation des roles `AnythingLLM local / Codex / API
-externe fallback`.
+d autorite, ni la separation des roles `Agent MENTOR / Agent EXECUTION /
+Humain`.
 
 ---
 
@@ -120,5 +120,9 @@ metier par le owner du studio et un premier projet pilote
 (`STUDIO_DISCIPLINE_01_GEL_RULES`).
 
 ## Changelog
+
+- v1.1 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.0 (14-11-2026) : creation du profil PACKAGE_02_STUDIO derive du CORE.
