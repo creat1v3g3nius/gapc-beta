@@ -40,14 +40,14 @@ HEADING_RE = re.compile(r"^(#{1,6})\s+(.+?)\s*$")
 CHANGELOG_ENTRY_RE = re.compile(r"^- v(?P<version>\d+\.\d+) \((?P<date>\d{2}-\d{2}-\d{4})\)")
 
 # Allowed ID prefixes by frontmatter type for harmony checks.
-# This avoids over-flagging package-specific families (GAPC_*, ASSO_*, HOSTING_*).
+# This avoids over-flagging package-specific families (GAPC_*, ASSO_*, STUDIO_*, HOSTING_*).
 ALLOWED_PREFIXES_BY_TYPE = {
     "RUN": {"RUN"},
     "GIT": {"GIT"},
-    "INDEX": {"INDEX", "CORE", "GAPC", "ASSO", "CACHE"},
-    "META": {"META", "GAPC", "ASSO"},
-    "DISCIPLINE": {"DISCIPLINE", "GAPC", "ASSO"},
-    "CONSTRAINT": {"CONSTRAINT", "GAPC", "ASSO"},
+    "INDEX": {"INDEX", "CORE", "GAPC", "ASSO", "STUDIO", "CACHE"},
+    "META": {"META", "GAPC", "ASSO", "STUDIO"},
+    "DISCIPLINE": {"DISCIPLINE", "GAPC", "ASSO", "STUDIO"},
+    "CONSTRAINT": {"CONSTRAINT", "GAPC", "ASSO", "STUDIO"},
     "PATCH": {"PATCH", "HOSTING", "FRAMEWORK"},
     "SCRIPT": {"SCRIPT"},
     "SCRIPTS": {"SCRIPT"},
@@ -69,6 +69,7 @@ ALLOWED_PREFIXES_BY_TYPE = {
         "CHECKLIST",
         "GAPC",
         "ASSO",
+        "STUDIO",
     },
 }
 
