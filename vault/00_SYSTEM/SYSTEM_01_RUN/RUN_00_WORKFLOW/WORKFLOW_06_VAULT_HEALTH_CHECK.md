@@ -2,10 +2,10 @@
 id: WORKFLOW_06_VAULT_HEALTH_CHECK
 type: WORKFLOW
 title: VaultHealthCheckRunbook
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 06-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [vault, audit, health-check, gapc, checklist, run, system]
 depends_on:
   - META_03_NAMING_CONVENTIONS
@@ -19,7 +19,7 @@ depends_on:
   - PIPELINE_00_PRODUCT
   - PIPELINE_03_BACKLOG_COMPOSANTS
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_06 - Vault Health Check
@@ -347,6 +347,7 @@ Après exécution du health check :
 
 ## Changelog
 
+- v1.3 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.2 (15-03-2026) : passage en FROZEN apres validation du workflow dans le
 
   smoke repo.

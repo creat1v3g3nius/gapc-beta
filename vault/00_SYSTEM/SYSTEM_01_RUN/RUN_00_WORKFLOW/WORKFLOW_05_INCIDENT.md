@@ -2,14 +2,14 @@
 id: WORKFLOW_05_INCIDENT
 type: WORKFLOW
 title: IncidentResolutionProtocol
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [workflow, incident-protocol, run, system]
 depends_on: [WORKFLOW_00_PIPELINE]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_05 - Incident Resolution Protocol
@@ -291,5 +291,6 @@ Next step unique:
 
 ## Changelog
 
+- v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

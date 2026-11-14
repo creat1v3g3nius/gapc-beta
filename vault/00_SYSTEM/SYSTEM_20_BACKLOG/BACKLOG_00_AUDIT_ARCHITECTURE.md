@@ -2,14 +2,14 @@
 id: BACKLOG_00_AUDIT_ARCHITECTURE
 type: BACKLOG
 title: AuditQualiteArchitectureGapc
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [tracabilite, audit-architecture, backlog, system]
 depends_on: [INDEX_01_ARCHITECTURE, INDEX_02_REPOSITORY]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_10_BACKLOG
+scope: vault/00_SYSTEM/SYSTEM_20_BACKLOG
 ---
 
 # BACKLOG_00 - Audit Qualité Architecture GAPC
@@ -222,5 +222,6 @@ Score maturité architecture : 9.2 / 10
 
 ## Changelog
 
+- v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_20_BACKLOG`).
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

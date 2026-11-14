@@ -2,17 +2,17 @@
 id: CACHE_ASSO_INDEX_04_TOOLING
 type: INDEX
 title: AssoIndexTooling
-version: v1.3
+version: v1.4
 status: DEPRECATED
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [package, asso, index, p2, minimal]
 depends_on:
   - ASSO_INDEX_04_TOOLING
   - ASSO_KNOWLEDGE_00_INDEX
   - ASSO_TPL_00_STRUCTURED_DOC_CANON
 arc: CACHE
-scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
+scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO
 ---
 
 # CACHE_ASSO_INDEX_04 - TOOLING
@@ -27,6 +27,7 @@ scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO`).
 - v1.3 (04-03-2026) : correction `scope` du frontmatter + déplacement dans
 
   CACHE.

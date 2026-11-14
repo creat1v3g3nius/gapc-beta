@@ -2,17 +2,17 @@
 id: HOSTING_00_INDEX_CONFIG
 type: PATCH
 title: HostingConfigIndex
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [hosting, index, patch, system]
 depends_on:
   - LLM_02_PERMISSION_SECURITY
   - SCRIPT_01_SMOKE_RUNNER
   - SCRIPT_00_VALIDATOR
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_20_PATCH/PATCH_00_HOSTING
+scope: vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_00_HOSTING
 ---
 
 # HOSTING_00 - Index configuration (D1/D2)
@@ -61,5 +61,6 @@ Appliquer `HOSTING_01_TARGET`, puis `HOSTING_02_BACKUPRSYNC`.
 
 ## Changelog
 
+- v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_00_HOSTING`).
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

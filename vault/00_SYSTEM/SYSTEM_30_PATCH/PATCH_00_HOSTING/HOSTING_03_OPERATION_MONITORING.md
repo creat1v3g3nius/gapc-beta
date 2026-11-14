@@ -2,14 +2,14 @@
 id: HOSTING_03_OPERATION_MONITORING
 type: PATCH
 title: HostingOperationsMonitoring
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [hosting, operation-monitoring, patch, system]
 depends_on: [HOSTING_01_TARGET_ARCHITECTURE]
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_20_PATCH/PATCH_00_HOSTING
+scope: vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_00_HOSTING
 ---
 
 # HOSTING_03 — Operations & Monitoring (P1)
@@ -95,5 +95,6 @@ Mettre `logrotate` en place et planifier un test restauration mensuel.
 
 ## Changelog
 
+- v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_00_HOSTING`).
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

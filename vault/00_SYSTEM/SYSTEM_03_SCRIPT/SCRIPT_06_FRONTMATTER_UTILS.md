@@ -2,10 +2,10 @@
 id: SCRIPT_06_FRONTMATTER_UTILS
 type: SCRIPTS
 title: FrontmatterUtilsProcess
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 09-03-2026
-updated: 09-03-2026
+updated: 14-11-2026
 tags: [system, script, frontmatter, utils, parser, process]
 depends_on:
   - META_01_OUTPUT_PROTOCOL
@@ -16,7 +16,7 @@ depends_on:
   - SCRIPT_04_DOC_INTEGRITY_CHECKER
   - FRAMEWORK_00_AMELIORATION_PIPELINE
 arc: SYSTEM
-scope: vault/00_SYSTEM/03_SCRIPT
+scope: vault/00_SYSTEM/SYSTEM_03_SCRIPT
 ---
 
 # SCRIPT_06 - FRONTMATTER_UTILS
@@ -316,5 +316,6 @@ cas limites.
 
 ## Changelog
 
+- v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_03_SCRIPT`).
 - v1.1 (09-03-2026) : passage en FROZEN.
 - v1.0 (09-03-2026) : creation du process.

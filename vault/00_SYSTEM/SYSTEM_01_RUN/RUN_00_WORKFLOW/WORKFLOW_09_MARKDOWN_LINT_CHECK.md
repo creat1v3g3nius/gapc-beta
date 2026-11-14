@@ -2,10 +2,10 @@
 id: WORKFLOW_09_MARKDOWN_LINT_CHECK
 type: WORKFLOW
 title: MarkdownLintCheck
-version: v1.6
+version: v1.7
 status: FROZEN
 created: 15-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [workflow, markdownlint, markdown, vscode, lint, run, system]
 depends_on:
   - WORKFLOW_00_PIPELINE
@@ -14,7 +14,7 @@ depends_on:
   - META_04_WRITING_RULES
   - META_05_FRONTMATTER
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_09 - Markdown Lint Check
@@ -227,6 +227,7 @@ Pour un lot contrôlé, produire au minimum :
 
 ## Changelog
 
+- v1.7 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.6 (15-03-2026) : desactive `MD013` et `MD046` au niveau repo et aligne
   le runbook sur ces exceptions globales.
 - v1.5 (15-03-2026) : ajoute `MD046` parmi les regles observees dans

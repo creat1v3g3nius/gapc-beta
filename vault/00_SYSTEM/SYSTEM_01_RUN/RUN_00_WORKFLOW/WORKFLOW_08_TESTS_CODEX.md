@@ -2,10 +2,10 @@
 id: WORKFLOW_08_TESTS_CODEX
 type: WORKFLOW
 title: ListTestsCodex
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 12-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [workflow, tests-codex, run, system, ide, agent]
 depends_on:
   - WORKFLOW_00_PIPELINE
@@ -18,7 +18,7 @@ depends_on:
   - SETUP_PRODUCT_05_LIFECYCLE_POLICY
   - SETUP_PRODUCT_07_GOVERNANCE_RULES
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_08 - Tests Codex
@@ -252,6 +252,7 @@ Le lot est `KO` si :
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (15-03-2026) : passage en FROZEN apres validation de la batterie Codex
 
   IDE.

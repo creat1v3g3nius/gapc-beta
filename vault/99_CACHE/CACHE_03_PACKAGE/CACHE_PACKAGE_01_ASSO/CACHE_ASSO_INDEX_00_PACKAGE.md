@@ -2,14 +2,14 @@
 id: CACHE_ASSO_INDEX_00_PACKAGE
 type: INDEX
 title: AssoPackageIndex
-version: v1.3
+version: v1.4
 status: DEPRECATED
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [package, asso, index, p0, product-ready]
 depends_on: []
 arc: CACHE
-scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
+scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO
 ---
 
 # CACHE_ASSO_INDEX_00 - PACKAGE
@@ -60,6 +60,7 @@ Pas de procédures opérateur (SYSTEM) ni de preuves/DoD (PRODUCT).
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO`).
 - v1.3 (04-03-2026) : correction `scope` + `depend_on` du frontmatter +
 
   déplacement dans CACHE.

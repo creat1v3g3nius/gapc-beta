@@ -2,10 +2,10 @@
 id: WORKFLOW_07_TESTS_LLM
 type: WORKFLOW
 title: ListTestsLLM
-version: v1.5
+version: v1.6
 status: FROZEN
 created: 11-03-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [workflow, tests-llm, run, system, rag, mentor]
 depends_on:
   - WORKFLOW_00_PIPELINE
@@ -17,7 +17,7 @@ depends_on:
   - SETUP_PRODUCT_05_LIFECYCLE_POLICY
   - SETUP_PRODUCT_07_GOVERNANCE_RULES
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_07 - Tests LLM
@@ -451,6 +451,7 @@ Le test `T6` est `KO` si :
 
 ## Changelog
 
+- v1.6 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.5 (15-03-2026) : passage en FROZEN apres validation des batteries `WS_00`,
 
   `WS_01` et `WS_02`.

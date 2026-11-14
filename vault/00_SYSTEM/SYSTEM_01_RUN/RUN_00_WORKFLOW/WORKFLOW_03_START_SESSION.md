@@ -2,10 +2,10 @@
 id: WORKFLOW_03_START_SESSION
 type: WORKFLOW
 title: WorkflowStartSession
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 27-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [workflow, start-session, run, system]
 depends_on:
   - WORKFLOW_00_PIPELINE
@@ -14,7 +14,7 @@ depends_on:
   - PIPELINE_03_BACKLOG_COMPOSANTS
   - CHECKLIST_01_START_SESSION
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_03 - Workflow Start Session
@@ -276,6 +276,7 @@ Tu dois pouvoir montrer :
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (13-03-2026) : retire la dependance a `WORKFLOW_01`, recable les CO
 
   vers `PIPELINE_03_BACKLOG_COMPOSANTS`.

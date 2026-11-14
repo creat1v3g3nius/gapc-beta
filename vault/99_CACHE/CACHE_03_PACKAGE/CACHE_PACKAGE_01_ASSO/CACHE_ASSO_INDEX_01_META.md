@@ -2,14 +2,14 @@
 id: CACHE_ASSO_INDEX_01_META
 type: INDEX
 title: AssoIndexMeta
-version: v1.3
+version: v1.4
 status: DEPRECATED
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [package, asso, index, p2, minimal]
 depends_on: [ASSO_META_00_PACKAGE_PROFILE, ASSO_META_01_DOMAIN_DEFINITIONS]
 arc: CACHE
-scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
+scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO
 ---
 
 # CACHE_ASSO_INDEX_01 - META
@@ -21,6 +21,7 @@ scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO`).
 - v1.3 (04-03-2026) : correction `scope` du frontmatter + déplacement dans
 
   CACHE.

@@ -2,17 +2,17 @@
 id: ASSO_CHECKLIST_00_INDEX
 type: TOOLING
 title: AssoChecklistIndex
-version: v1.3
+version: v1.4
 status: DEPRECATED
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [package, asso, tooling, checklist, index, p1]
 depends_on:
   - CHECKLIST_00_INDEX
   - ASSO_CHECKLIST_01_READY_TO_FREEZE_ADDON
   - ASSO_DISCIPLINE_01_GEL_RULES
 arc: CACHE
-scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_GAPC/
+scope: vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO
 ---
 
 # ASSO_CHECKLIST_00 - Index
@@ -34,6 +34,7 @@ CORE.
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/99_CACHE/CACHE_03_PACKAGE/CACHE_PACKAGE_01_ASSO`).
 - v1.3 (04-03-2026) : correction `scope` du frontmatter + déplacement dans
 
   CACHE.

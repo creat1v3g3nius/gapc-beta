@@ -2,10 +2,10 @@
 id: WORKFLOW_10_COMMANDES
 type: WORKFLOW
 title: ListCommandesLLM
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 27-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [workflow, commandes-llm, run, system]
 depends_on:
   - WORKFLOW_00_PIPELINE
@@ -20,7 +20,7 @@ depends_on:
   - CHECKLIST_02_END_SESSION
   - CHECKLIST_05_INCIDENT
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_10 - List Commandes LLM
@@ -311,6 +311,7 @@ Output: P0/P1/P2 + fixes.
 
 ## Changelog
 
+- v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (13-03-2026) : retire les renvois a `WORKFLOW_01` / `WORKFLOW_02`
 
   et recable les commandes sur `WORKFLOW_03/04/05/06` et `PIPELINE_03`.

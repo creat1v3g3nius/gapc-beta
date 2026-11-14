@@ -2,17 +2,17 @@
 id: HOSTING_02_BACKUP_RSYNC
 type: PATCH
 title: HostingBackupRsyncSnapshots
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 28-02-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [hosting, backup-rsync, patch, system]
 depends_on:
   - HOSTING_01_TARGET_ARCHITECTURE
   - HOSTING_03_OPERATION_MONITORING
   - HOSTING_04_DISASTER_RECOVERY
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_20_PATCH/PATCH_00_HOSTING
+scope: vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_00_HOSTING
 ---
 
 # HOSTING_02 - Backup D1→D2 (rsync) + logs + vérification
@@ -163,5 +163,6 @@ Déployer script + timer, puis vérifier 2 jours (logs + tailles).
 
 ## Changelog
 
+- v1.2 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_30_PATCH/PATCH_00_HOSTING`).
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

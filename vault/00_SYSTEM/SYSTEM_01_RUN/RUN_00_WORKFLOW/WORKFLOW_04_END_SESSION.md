@@ -2,10 +2,10 @@
 id: WORKFLOW_04_END_SESSION
 type: WORKFLOW
 title: EndSessionProtocol
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 27-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [workflow, end-session, run, system]
 depends_on:
   - WORKFLOW_00_PIPELINE
@@ -13,7 +13,7 @@ depends_on:
   - CHECKLIST_02_END_SESSION
   - WORKFLOW_07_TESTS_LLM
 arc: SYSTEM
-scope: vault/00_SYSTEM/SYSTEM_01_RUN
+scope: vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW
 ---
 
 # WORKFLOW_04 - End Session Protocol
@@ -190,6 +190,7 @@ Règle :
 
 ## Changelog
 
+- v1.3 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.2 (13-03-2026) : retire la dependance a `WORKFLOW_01` et recable la
 
   cloture vers `CHECKLIST_02` et `WORKFLOW_07`.
