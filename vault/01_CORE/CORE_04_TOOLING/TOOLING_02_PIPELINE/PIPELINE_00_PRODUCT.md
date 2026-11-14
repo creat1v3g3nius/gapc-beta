@@ -2,10 +2,10 @@
 id: PIPELINE_00_PRODUCT
 type: TOOLING
 title: PipelineProduct
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [tooling, pipeline, product, core]
 depends_on:
   - META_00_HANDBOOK
@@ -63,12 +63,12 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 **Input** : idée / besoin
 **Output** : PRD 1-page
 
-- Produire un PRD via `TPL_00_PRDONEPAGER`.
-- Classifier les items majeurs via `DISCIPLINE_06_SCOPECLASSIFIER`
+- Produire un PRD via `TPL_00_PROD_ONE_PAGER`.
+- Classifier les items majeurs via `DISCIPLINE_06_SCOPE_CLASSIFIER`
 
   (NOW/NEXT/LATER/REJECT).
 
-- Si décision structurante détectée → ADR via `TPL_02_ADRLITE`.
+- Si décision structurante détectée → ADR via `TPL_02_ADR_LITE`.
 
 **Gate** : DocQG READY_TO_FREEZE (sur le PRD).
 
@@ -79,7 +79,7 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 **Output** : Backlog product + CO atomiques
 
 - Construire backlog product (voir `PIPELINE_02_BACKLOG_PRODUCT`).
-- Produire CO atomiques via `TPL_03_BACKLOGCO` (1 intention).
+- Produire CO atomiques via `TPL_03_BACKLOG_CO` (1 intention).
 - Pour chaque CO : définir output + PASS/FAIL + risques.
 
 **Gate** : cohérence scope (pas de multi-arcs sans découpage).
@@ -90,9 +90,9 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 
 **Output** : Spec Tech + décisions
 
-- Produire spec via `TPL_01_SPECTECH`.
-- Tracer décisions structurantes via `TPL_02_ADRLITE`.
-- Définir smoke plan via `TPL_04_TESTPLANSMOKE` (si exécution).
+- Produire spec via `TPL_01_SPEC_TECH`.
+- Tracer décisions structurantes via `TPL_02_ADR_LITE`.
+- Définir smoke plan via `TPL_04_TEST_PLAN_SMOKE` (si exécution).
 
 **Gate** : DocQG READY_TO_FREEZE (Spec + ADR).
 
@@ -102,9 +102,9 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 
 **Output** : patches doc/code, commits, validation
 
-- Action Doc : `TPL_05_ACTIONDOC` (diff-first).
-- Action Code : `TPL_06_ACTIONCODE` (diff-first).
-- Review : `TPL_09_REVIEWCHECK`.
+- Action Doc : `TPL_05_ACTION_DOC` (diff-first).
+- Action Code : `TPL_06_ACTION_CODE` (diff-first).
+- Review : `TPL_09_REVIEW_CHECK`.
 
 **Gates** :
 
@@ -119,7 +119,7 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 **Output** : état READY_TO_FREEZE puis FROZEN
 
 - Déclarer READY_TO_FREEZE via `DISCIPLINE_01_GEL_RULES`.
-- Produire Release Note via `TPL_10_RELEASENOTE` si gel/release.
+- Produire Release Note via `TPL_10_RELEASE_NOTE` si gel/release.
 - Passer FROZEN si critères de gel satisfaits (amendements contrôlés,
 
   reproductibilité, zéro P0 ouvert).
@@ -147,6 +147,10 @@ Les exigences métier vivent dans PACKAGE/PRODUCT.
 - v1.0 (01-03-2026) : création pipeline product CORE (P0).
 
 ## Changelog
+
+- v1.4 (14-11-2026) : corrige les IDs `TPL_*` et `DISCIPLINE_06_SCOPE_CLASSIFIER` cites dans
+
+  le corps (alignes sur les noms de fichiers reels).
 
 - v1.3 (04-03-2026) : corrections des ids `depends_on` + heading.
 - v1.2 (02-03-2026) : normalisation frontmatter.
