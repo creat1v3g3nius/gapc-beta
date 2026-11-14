@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_02_SPEC_DOD
 type: DOD
 title: GapcMentorSpecDod
-version: v1.6
-status: DRAFT
+version: v1.7
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, spec, dod]
@@ -26,11 +26,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_02 - Spec DoD
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -147,7 +142,7 @@ Contrats:
 
 - `Agent EXECUTION` = implementation, patch, execution, tests
 - `Agent MENTOR` = mentor documentaire read-only
-- `API externe fallback` = fallback cible, jamais nominal
+- `Humain (decision)` = arbitrage et validation
 - priorites de sources produit = `CORE -> GAPC discipline -> autres docs package GAPC -> docs product actifs -> SYSTEM`
 
 Contraintes:
@@ -157,7 +152,7 @@ Contraintes:
 - refus explicite d un autre product
 - `no-secrets / no-PII`
 
-Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+Verdict: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 Next step unique: conserver cette spec comme reference produit pour les reruns
 ```
 
@@ -166,6 +161,10 @@ Next step unique: conserver cette spec comme reference produit pour les reruns
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.7 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.6 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

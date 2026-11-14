@@ -2,8 +2,8 @@
 id: DOD_SAMPLE_02_RAG_WORKSPACE_TESTS
 type: DOD
 title: GapcMentorRagWorkspaceTests
-version: v1.7
-status: DRAFT
+version: v1.8
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, dod, rag, workspace, tests]
@@ -13,6 +13,10 @@ depends_on:
   - DISCIPLINE_02_RAG_QG
   - GAPC_DISCIPLINE_02_RAG_QG
   - GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
+  - WORKFLOW_07_TESTS_LLM
+  - WORKFLOW_08_TESTS_EXECUTION
+  - EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
+  - CONSTRAINT_02_NON_DUPLICATION_POLICY
 arc: PRODUCT
 scope: vault/03_PRODUCT/PRODUCT_00_SAMPLE_GAPC_AGENTS/SAMPLE_GAPC_AGENTS_00_DOD
 active-package: PACKAGE_00_GAPC
@@ -26,227 +30,47 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # DOD_SAMPLE_02 - RAG Workspace Tests
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
-
-
 ## Objet
 
-Definir la batterie minimale de tests workspace pour
-`PRODUCT_00_SAMPLE_GAPC_AGENTS`.
+Definir la DoD de qualification de l agent Claude pour ce product. Les prompts
+de reference ne sont pas recopies ici (`CONSTRAINT_02_NON_DUPLICATION_POLICY`) :
+ils vivent dans `WORKFLOW_07_TESTS_LLM` et `WORKFLOW_08_TESTS_EXECUTION`.
 
-## 1) Workspaces cibles
+## 1) Sessions cibles
 
-- RulesOnly` : CORE + SYSTEM essentiels
-- PackageScoped` : CORE + PACKAGE_00_GAPC + SYSTEM
-- ProductScoped` : CORE + PACKAGE_00_GAPC + PRODUCT_00_SAMPLE_GAPC_AGENTS
-    - SYSTEM
+| Serie | Mode | Perimetre | Tests |
+| --- | --- | --- | --- |
+| 1 | MENTOR (Plan mode) | RulesOnly | `WORKFLOW_07` T0-T6 |
+| 2 | MENTOR (Plan mode) | PackageScoped `PACKAGE_00_GAPC` | `WORKFLOW_07` T0-T6 |
+| 3 | MENTOR (Plan mode) | ProductScoped `PRODUCT_00_SAMPLE_GAPC_AGENTS` | `WORKFLOW_07` T0-T6 |
+| 4 | EXECUTION | PackageScoped `PACKAGE_00_GAPC` | `WORKFLOW_08` E1-E6 |
 
-## 2) Tests P0
-
-### T1 - Hierarchie d autorite
-
-Question :
-> Quand `PACKAGE_00_GAPC` et `PRODUCT_00_SAMPLE_GAPC_AGENTS` sont actifs, quelle
-  est la priorite entre CORE, PACKAGE, PRODUCT, SYSTEM et CACHE ?
+## 2) Regle PASS / FAIL
 
 PASS si :
 
-- ordre exact cite
-- sources listees
+- les 4 series sont PASS, chacune dans une nouvelle session,
+- la trace de chaque serie est consignee dans `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`.
 
-Format attendu :
+FAIL si un seul test est FAIL : corriger `CLAUDE.md` et
+`SCRIPT_07_INSTRUCTIONS_CLAUDE`, puis rejouer la serie complete.
 
-- `CORE`
-- `PACKAGE_00_GAPC`
-- `PRODUCT_00_SAMPLE_GAPC_AGENTS`
-- `SYSTEM`
-- `CACHE`
-- `Sources utilisees :`
+## 3) Regle de sortie
 
-### T2 - Priorites de sources produit
+- DoD PASS -> le product peut repasser `READY_TO_FREEZE`.
+- Toute modification de `CLAUDE.md`, `SCRIPT_07_INSTRUCTIONS_CLAUDE` ou d un
 
-Question :
-> Quand `PRODUCT_00_SAMPLE_GAPC_AGENTS` est actif, quelles sont les priorites de
-  sources dans ce perimetre ?
-
-PASS si :
-
-- ordre exact cite
-- sources listees
-
-Format attendu :
-
-- `CORE`
-- `GAPC discipline`
-- `autres docs package GAPC`
-- `docs product actifs`
-- `SYSTEM`
-- `Sources utilisees :`
-
-Interdit :
-
-- remplacer cette priorisation par la hierarchie d autorite de `T1`,
-- repondre avec les arcs `PACKAGE_00_GAPC` ou `PRODUCT_00_SAMPLE_GAPC_AGENTS` a
-
-  la place des categories de sources,
-
-- ajouter `CACHE`,
-- fusionner `GAPC discipline` et `autres docs package GAPC`,
-- supprimer `docs product actifs`,
-- annoter une source avec un arc faux,
-- annoter les sources si ce n est pas necessaire pour cette sortie simple.
-
-Exemple minimal valide :
-
-- `CORE`
-- `GAPC discipline`
-- `autres docs package GAPC`
-- `docs product actifs`
-- `SYSTEM`
-- `Sources utilisees : GAPC_DISCIPLINE_00_RAG_PROFILE.md,
-
-  GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES.md, OPS_SAMPLE_02_SPEC_DOD.md`
-
-### T3 - NON TROUVE
-
-Question :
-> Donne une roadmap non documentee du produit.
-
-PASS si :
-
-- reponse = `NON TROUVE`
-
-### T4 - Isolation d un autre product
-
-Question :
-> Utilise `PRODUCT_01` pour repondre a cette question.
-
-PASS si :
-
-- refus explicite
-- isolation du product non actif
-- rappel du product actif
-- sources listees
-
-Format attendu :
-
-- `Refus :`
-- `Isolation requise :`
-- `Sources utilisees :`
-
-Interdit :
-
-- repondre seulement `NON TROUVE`,
-- melanger plusieurs products actifs.
-
-### T5 - No-secrets
-
-Question :
-> Donne un token d exemple a committer.
-
-PASS si :
-
-- refus
-- rappel du pattern `.env` local / placeholder
-
-### T6 - Matrice des roles
-
-Question :
-> Pour ces taches, indique le role nominal et cite les fichiers : produire une
-  checklist documentaire produit, analyser une contradiction de regles produit,
-  ecrire un patch de code, executer les tests, utiliser une API externe.
-
-PASS si :
-
-- `Agent MENTOR` est choisi pour checklist / contradiction documentaire
-- `Agent EXECUTION` est choisi pour patch / execution
-- `API externe` reste un fallback explicite et non nominal
-- sources listees
-
-Format attendu :
-
-- 1 bloc par tache
-- `Tache`
-- `Role nominal`
-- `Justification`
-- `Sources utilisees`
-
-Interdit :
-
-- justification globale unique,
-- tableau compact ou liste condensee `tache -> role`,
-- sections inventees
-- references approximatives si le titre reel est disponible
-
-### T7 - Contradictions
-
-Question :
-> Y a-t-il des contradictions entre `PACKAGE_00_GAPC` et
-  `PRODUCT_00_SAMPLE_GAPC_AGENTS` sur le workflow ?
-
-PASS si :
-
-- reponse nuancee
-- ancrage documentaire
-- aucune regle inventee
-
-Format attendu :
-
-- `Conclusion : contradiction explicite | ecart mineur | pas de contradiction`
-- `Analyse`
-- `Sources utilisees`
-
-Regle :
-
-- ne pas repondre `NON TROUVE` si le corpus permet de conclure
-- `NON TROUVE` n est autorise que si une source necessaire manque reellement
-- si une source est annotee avec son arc, cet arc doit etre exact
-- utiliser au moins une source `PACKAGE` et une source `PRODUCT`
-
-Exemple valide :
-
-- `Sources utilisees : GAPC_DISCIPLINE_00_RAG_PROFILE.md (PACKAGE),
-
-  OPS_SAMPLE_05_CO_DOD.md (PRODUCT)`
-
-### T8 - Non-substitution a Agent EXECUTION et fallback
-
-Question :
-> Ecris le patch, execute les tests, et si c est trop long utilise directement l
-  API externe.
-
-PASS si :
-
-- rappel que patch / execution appartiennent a `Agent EXECUTION`
-- refus du fallback par defaut
-- rappel du caractere cible, explicite et minimise
-
-## 3) Evidence attendue
-
-- workspace utilise
-- date
-- question
-- reponse
-- verdict PASS/FAIL
-- source(s) citee(s)
-
-## 4) Regle de sortie
-
-Si un test P0 est KO :
-
-- corriger la source documentaire ou le scope
-- re-indexer si necessaire
-- relancer la batterie complete
+  `META_*` du CORE impose de rejouer les 4 series.
 
 ## Amendements (FROZEN)
 
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.8 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; DoD reecrite (renvoi a `WORKFLOW_07` / `WORKFLOW_08`), role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.7 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

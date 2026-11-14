@@ -2,8 +2,8 @@
 id: DOD_SAMPLE_03_RELEASE_FREEZE
 type: DOD
 title: GapcMentorReleaseFreeze
-version: v1.5
-status: DRAFT
+version: v1.6
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, dod, release, freeze, frozen]
@@ -29,11 +29,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # DOD_SAMPLE_03 - Release Freeze
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -106,7 +101,7 @@ Next step unique:
 ## 4) Anti-derive
 
 - pas de redescription des regles CORE dans le product
-- pas de fallback API implicite
+- pas d ecriture implicite de l agent
 - pas de secret ni PII
 - pas de multi-package ou multi-product
 
@@ -115,6 +110,10 @@ Next step unique:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.5 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

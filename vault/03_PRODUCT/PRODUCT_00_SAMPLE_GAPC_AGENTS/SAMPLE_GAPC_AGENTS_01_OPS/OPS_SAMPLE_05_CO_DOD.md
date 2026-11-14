@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_05_CO_DOD
 type: DOD
 title: GapcMentorComponentOutputDod
-version: v1.4
-status: DRAFT
+version: v1.5
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, co, dod, backlog]
@@ -29,11 +29,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_05 - CO DoD
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -53,7 +48,7 @@ FAIL si :
 
 - le CO couvre plusieurs intentions
 - la sortie attendue ne peut pas etre verifiee
-- le CO force un fallback API non justifie
+- le CO force une ecriture hors mode EXECUTION
 
 ## 2) Evidence
 
@@ -88,20 +83,20 @@ Goal:
 Output:
 
 - separation mentor / Agent EXECUTION / API prouvee
-- batteries workspace `RulesOnly`, `PackageScoped`, `ProductScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- batteries workspace `RulesOnly`, `PackageScoped`, `ProductScoped` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 - checklist `READY_TO_FREEZE` backfill et formulable sans oral
 
 PASS/FAIL:
 
-- CO_001: A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- CO_002: A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- CO_003: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- CO_001: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- CO_002: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- CO_003: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 
 Risque:
 
 - pas de P0 restant sur le setup mentor + Agent EXECUTION
 
-Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+Verdict: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
 
@@ -110,6 +105,10 @@ Next step unique: reporter ce verdict dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKL
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

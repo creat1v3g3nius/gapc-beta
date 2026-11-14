@@ -2,8 +2,8 @@
 id: DOD_SAMPLE_01_PRODUCT_THIN_SLICE
 type: DOD
 title: GapcMentorProductThinSlice
-version: v1.5
-status: DRAFT
+version: v1.6
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, dod, thin-slice, mentor, validation]
@@ -33,11 +33,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # DOD_SAMPLE_01 - Product Thin Slice
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -78,7 +73,7 @@ PASS si :
 FAIL si :
 
 - la reponse documentaire derive vers patch ou execution
-- le fallback API devient obligatoire pour un cas nominal
+- l agent ecrit hors mode EXECUTION ou sans approbation
 - le scope package/product n est pas stable
 
 ## 4) Evidence attendue
@@ -115,11 +110,11 @@ Redirection Agent EXECUTION:
 
 Action technique:
 
-- batterie `WORKFLOW_08_TESTS_EXECUTION` : A REQUALIFIER (batterie Codex historique PASS)
+- batterie `WORKFLOW_08_TESTS_EXECUTION` : PASS 6/6 (E1-E6)
 
 Verdict thin slice:
 
-- A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 
 ```
 
@@ -132,6 +127,10 @@ Verdict thin slice:
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.5 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

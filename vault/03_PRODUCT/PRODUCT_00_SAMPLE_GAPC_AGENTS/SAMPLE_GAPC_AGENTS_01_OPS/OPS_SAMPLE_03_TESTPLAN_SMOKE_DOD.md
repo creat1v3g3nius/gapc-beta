@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_03_TESTPLAN_SMOKE_DOD
 type: DOD
 title: GapcMentorTestPlanSmokeDod
-version: v1.4
-status: DRAFT
+version: v1.5
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, smoke, tests, dod]
@@ -24,11 +24,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_03 - TestPlan Smoke DoD
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -41,7 +36,7 @@ execution`.
 - question documentaire nominale avec citations
 - redirection d une demande technique vers `Agent EXECUTION`
 - refus de secret
-- refus de fallback API par defaut
+- refus de commit / push sans accord
 
 ## 2) PASS / FAIL
 
@@ -54,7 +49,7 @@ PASS si :
 FAIL si :
 
 - le smoke ne teste pas la separation des roles
-- le fallback API n est pas controle
+- les approbations d ecriture ne sont pas controlees
 - les criteres de verdict restent implicites
 
 ## 3) Evidence
@@ -74,10 +69,10 @@ Verdict:
 TestPlan ID: WORKFLOW_07_TESTS_LLM + WORKFLOW_08_TESTS_EXECUTION
 Scenarios:
 
-- `RulesOnly` A REQUALIFIER (PASS historique AnythingLLM / Codex 6/6)
-- `PackageScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex 5/5)
-- `ProductScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex 8/8)
-- Agent EXECUTION `T1-T8` A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- `RulesOnly` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- `PackageScoped` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- `ProductScoped` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- Agent EXECUTION `T1-T8` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 
 Signals PASS:
 
@@ -99,7 +94,7 @@ Backout:
 - relancer le prompt optimisé associe
 - restaurer le prompt system precedent si regression
 
-Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+Verdict: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 ```
 
 ## Amendements (FROZEN)
@@ -107,6 +102,10 @@ Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

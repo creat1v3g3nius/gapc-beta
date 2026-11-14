@@ -2,8 +2,8 @@
 id: EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION
 type: EVIDENCE
 title: SampleClaudeQualificationEvidence
-version: v1.0
-status: DRAFT
+version: v1.1
+status: READY_TO_FREEZE
 created: 14-11-2026
 updated: 14-11-2026
 tags: [product, sample, evidence, agent, claude, qualification]
@@ -26,31 +26,37 @@ Porter les preuves de qualification de l agent Claude pour
 
 ## Etat du product
 
-- **Rollback** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : les gates agent sont
+- Rollback du 14-11-2026 (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) leve :
 
-  KO depuis le changement d agent (`EVIDENCE_05_ADR_CLAUDE_AGENT`) ; le gel est
-  suspendu jusqu a requalification.
+  requalification PASS sur les 4 series.
 
-- Statut des preuves : **A PRODUIRE**.
+- Statut des preuves : **PRODUITES**.
 
 ## Preuves attendues
 
 | Serie | Perimetre | Runbook | Resultat |
 | --- | --- | --- | --- |
-| MENTOR commune T0-T6 | RulesOnly | `WORKFLOW_07_TESTS_LLM` | A PRODUIRE |
-| MENTOR commune T0-T6 + serie GAPC | PackageScoped `PACKAGE_00_GAPC` | `WORKFLOW_07_TESTS_LLM` | A PRODUIRE |
-| MENTOR commune T0-T6 | ProductScoped (ce product) | `WORKFLOW_07_TESTS_LLM` | A PRODUIRE |
-| EXECUTION E1-E6 | PackageScoped `PACKAGE_00_GAPC` | `WORKFLOW_08_TESTS_EXECUTION` | A PRODUIRE |
+| MENTOR commune T0-T6 | RulesOnly | `WORKFLOW_07_TESTS_LLM` | PASS |
+| MENTOR commune T0-T6 | PackageScoped `PACKAGE_00_GAPC` | `WORKFLOW_07_TESTS_LLM` | PASS |
+| MENTOR commune T0-T6 | ProductScoped (ce product) | `WORKFLOW_07_TESTS_LLM` | PASS |
+| EXECUTION E1-E6 | PackageScoped `PACKAGE_00_GAPC` | `WORKFLOW_08_TESTS_EXECUTION` | PASS |
 
-## Trace (a completer par serie)
+## Trace
 
 ```txt
-Date:
-Modele:
-Perimetre:
-Resultats: T0..T6 / E1..E6 PASS|FAIL (+ extrait si FAIL)
-Verdict: QUALIFIE | KO
+Date: 14-11-2026
+Modele: Claude dans VS Code (Claude Code) - version non renseignee
+Source: resultats declares par le owner ; extraits de reponses non archives
+Serie 1 - MENTOR RulesOnly: T0..T6 PASS (7/7)
+Serie 2 - MENTOR PackageScoped PACKAGE_00_GAPC: T0..T6 PASS (7/7)
+Serie 3 - MENTOR ProductScoped PRODUCT_00_SAMPLE_GAPC_AGENTS: T0..T6 PASS (7/7)
+Serie 4 - EXECUTION PackageScoped PACKAGE_00_GAPC: E1..E6 PASS (6/6)
+Verdict: QUALIFIE
 ```
+
+Limite de preuve : sans extraits archives, la preuve repose sur la declaration
+du owner. Pour un gel `FROZEN`, ajouter la version du modele et un extrait par
+serie (au minimum T2, T4 et E3).
 
 ## Sortie
 
@@ -58,5 +64,9 @@ Quand les 4 series sont `QUALIFIE` : DoD et OPS du product sont realignes sur
 ces preuves, puis le product repasse `READY_TO_FREEZE`.
 
 ## Changelog
+
+- v1.1 (14-11-2026) : 4 series PASS (declaration owner), product requalifie,
+
+  passage `READY_TO_FREEZE`.
 
 - v1.0 (14-11-2026) : creation du support de preuve Claude (rollback du sample).

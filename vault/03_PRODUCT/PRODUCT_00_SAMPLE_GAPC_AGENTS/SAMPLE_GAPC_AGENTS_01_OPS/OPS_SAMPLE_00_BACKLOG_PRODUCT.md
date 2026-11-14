@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_00_BACKLOG_PRODUCT
 type: DOD
 title: GapcMentorBacklogProduct
-version: v1.6
-status: DRAFT
+version: v1.7
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, backlog, product, dod]
@@ -25,11 +25,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_00 - Backlog Product
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -41,9 +36,9 @@ rendre la chaine de preuve lisible et actionnable.
 
 - Product cible : `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - Package actif : `PACKAGE_00_GAPC`
-- But : prouver un setup nominal ou `Agent EXECUTION` execute, `Agent MENTOR` lit et l `API
+- But : prouver un setup nominal ou `Agent EXECUTION` execute, `Agent MENTOR` lit et l
 
-  externe` reste un fallback cible
+  `Humain` decide
 
 - Statut global : `FROZEN`
 
@@ -67,7 +62,7 @@ rendre la chaine de preuve lisible et actionnable.
 - 1 intention = 1 CO
 - pas de multi-package ni multi-product
 - pas de secret ou PII
-- pas de fallback API implicite
+- pas d ecriture implicite de l agent
 - pour `ProductScoped`, 1 product actif = `PRODUCT_00_SAMPLE_GAPC_AGENTS`
 - un autre product doit etre refuse explicitement avec demande d isolation
 - les priorites de sources produit suivent `CORE -> GAPC discipline -> autres
@@ -143,13 +138,13 @@ Exemple minimal valide :
 ```txt
 Workspace status:
 
-- RulesOnly: A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- PackageScoped: A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- ProductScoped: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- RulesOnly: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- PackageScoped: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- ProductScoped: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 
 Agent EXECUTION status:
 
-- Batterie WORKFLOW_08_TESTS_EXECUTION: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- Batterie WORKFLOW_08_TESTS_EXECUTION: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 
 Evidence IDs:
 
@@ -169,6 +164,10 @@ Next step unique: conserver ce backlog comme reference gelée du produit
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.7 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.6 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

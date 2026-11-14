@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_01_PRD_DOD
 type: DOD
 title: GapcMentorPrdDod
-version: v1.3
-status: DRAFT
+version: v1.4
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, prd, dod]
@@ -24,11 +24,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_01 - PRD DoD
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -41,7 +36,7 @@ sans oral.
 - objectif produit en 1 phrase
 - perimetre IN/OUT
 - hypothese testable
-- contraintes setup : `Agent EXECUTION`, `Agent MENTOR`, `API fallback`
+- contraintes setup : `Agent EXECUTION`, `Agent MENTOR`, `Humain (decision)`
 
 ## 2) DoD PRD (PASS/FAIL)
 
@@ -55,7 +50,7 @@ PASS si :
 FAIL si :
 
 - le PRD melange documentaire et implementation sans frontiere
-- le fallback API est decrit comme mode nominal
+- le mode MENTOR est decrit comme pouvant ecrire
 - les actifs package/product sont absents
 
 ## 3) Evidence
@@ -73,7 +68,7 @@ Next step unique:
 
 ```txt
 PRD ID: OPS_SAMPLE_00_BACKLOG_PRODUCT
-Goal: prouver un setup nominal ou `Agent EXECUTION` execute, `Agent MENTOR` lit et l `API externe` reste un fallback cible
+Goal: prouver un setup nominal ou `Agent EXECUTION` execute, `Agent MENTOR` lit et l `Humain` decide
 In/Out:
 
 - IN: configuration mentor documentaire, separation des roles, workspaces `RulesOnly`, `PackageScoped`, `ProductScoped`, discipline no-secrets
@@ -84,7 +79,7 @@ Risques:
 - derive moteur Agent MENTOR sur des sorties trop implicites
 - confusion residuale entre consultation documentaire et action IDE
 
-Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+Verdict: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST`
 ```
 
@@ -93,6 +88,10 @@ Next step unique: reporter ce PASS dans `OPS_SAMPLE_06_READY_TO_FREEZE_CHECKLIST
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.3 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 

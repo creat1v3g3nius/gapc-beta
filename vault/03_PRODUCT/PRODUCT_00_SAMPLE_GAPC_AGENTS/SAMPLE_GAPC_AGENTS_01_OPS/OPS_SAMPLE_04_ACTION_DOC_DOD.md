@@ -2,8 +2,8 @@
 id: OPS_SAMPLE_04_ACTION_DOC_DOD
 type: DOD
 title: GapcMentorActionDocDod
-version: v1.4
-status: DRAFT
+version: v1.5
+status: READY_TO_FREEZE
 created: 10-03-2026
 updated: 14-11-2026
 tags: [product, gapc-mentor, ops, action-doc, dod]
@@ -25,11 +25,6 @@ active-product: PRODUCT_00_SAMPLE_GAPC_AGENTS
 
 # OPS_SAMPLE_04 - Action Doc DoD
 
-> **Rollback 14-11-2026** (`SETUP_PRODUCT_05_LIFECYCLE_POLICY`) : le dispositif
-> AnythingLLM / Codex est remplace par l agent Claude
-> (`EVIDENCE_05_ADR_CLAUDE_AGENT`). Gel suspendu, document repasse en `DRAFT`
-> en attente des preuves `EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`. Les mentions `API externe` restantes
-> designent un role retire, a supprimer a la requalification.
 
 
 ## Objet
@@ -93,12 +88,12 @@ Patch:
 
 Validation:
 
-- `RulesOnly` A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- `PackageScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- `ProductScoped` A REQUALIFIER (PASS historique AnythingLLM / Codex)
-- Agent EXECUTION A REQUALIFIER (PASS historique AnythingLLM / Codex)
+- `RulesOnly` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- `PackageScoped` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- `ProductScoped` PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
+- Agent EXECUTION PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 
-Verdict: A REQUALIFIER (PASS historique AnythingLLM / Codex)
+Verdict: PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`)
 Next step unique: figer ces prompts comme reference operative dans le lot produit
 ```
 
@@ -107,6 +102,10 @@ Next step unique: figer ces prompts comme reference operative dans le lot produi
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : requalification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`) ; role API
+
+  externe retire ; passage `READY_TO_FREEZE`.
 
 - v1.4 (14-11-2026) : rollback (gel suspendu) ; references realignees sur l agent
 
