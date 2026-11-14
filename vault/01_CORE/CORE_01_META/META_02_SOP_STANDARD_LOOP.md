@@ -2,20 +2,21 @@
 id: META_02_SOP_STANDARD_LOOP
 type: META
 title: SopStandardLoop
-version: v1.5
+version: v1.6
 status: FROZEN
 created: 28-02-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [governance, sop, llm, meta, core]
 depends_on: [META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL]
 arc: CORE
 scope: vault/01_CORE/CORE_01_META
 ---
 
-# META_02 - Boucle Standard SOP du Mentor LLM
+# META_02 - Boucle Standard SOP de l Agent LLM
 
-Permet de définir la **boucle standard** que le mentor LLM (AnythingLLM) doit
-appliquer à **chaque interaction**, en cohérence avec :
+Permet de définir la **boucle standard** que l agent LLM (modes MENTOR et
+EXECUTION, `META_00_HANDBOOK`) doit appliquer à **chaque interaction**, en
+cohérence avec :
 
 - `META_00_HANDBOOK` (règles de gouvernance),
 - `META_01_OUTPUT_PROTOCOL` (format de sortie),
@@ -42,10 +43,13 @@ dans SYSTEM.
 
    action.
 
-1. **Fallback API** : jamais par défaut ; seulement si le local échoue
+1. **Mode déclaré** : MENTOR (lecture seule) ou EXECUTION (diff-first, aucun
 
-   réellement, avec justification explicite, périmètre minimisé et sans
-   secret/PII.
+   commit ni push sans accord) ; sans déclaration, l agent le demande.
+
+1. **Périmètre minimal** : l agent ne lit que les sources des actifs, sans
+
+   secret, PII ni fichier client brut (agent possiblement hébergé).
 
 1. **Anti-dérive** : si la demande touche 2 arcs (ex: CORE + PRODUCT) → proposer
 
@@ -78,7 +82,7 @@ Le mentor extrait :
 - objectif (1 phrase),
 - livrable attendu (doc / patch / audit / run plan),
 - contraintes explicites (no-secrets, timebox, scope),
-- mode de traitement attendu : local nominal ou fallback API justifié,
+- mode de session : MENTOR ou EXECUTION,
 - **actifs** : package / product / CO si mentionnés,
 - fichiers fournis (IDs, chemins, extraits).
 
@@ -104,7 +108,7 @@ Si NON :
 - proposer une procédure d’isolation :
     - choisir 1 package actif,
     - choisir 1 product actif (si pertinent),
-    - réduire le corpus (RulesOnly → package → product),
+    - réduire le périmètre de lecture (CORE seul → package → product),
     - puis reprendre la demande.
 
 ---
@@ -133,9 +137,10 @@ Le mentor choisit 1 mode :
 
 - **Run plan** (par défaut) : plan d’exécution + artefacts TOOLING
 - **Doc** : fichier complet ou START/END REPLACE
-- **Code** : redirection vers Codex + sources applicables + contraintes +
+- **Code** : en MENTOR, cadrage (sources, contraintes, risques) + proposition
 
-  risques
+  de passer en EXECUTION ; en EXECUTION, patch annoncé puis appliqué +
+  contrôles
 
 - **Audit** : verdict OK/KO + P0/P1/P2 + correctifs
 
@@ -168,7 +173,7 @@ Checklist :
 - [ ] pas de secrets
 - [ ] pas de décision fantôme (ADR si nécessaire)
 - [ ] pas de mélange multi-packages/products
-- [ ] pas de fallback API implicite ou non minimisé
+- [ ] aucune écriture en mode MENTOR ; aucun commit ni push sans accord
 - [ ] sources citées (sauf `NON TROUVÉ`)
 - [ ] citations exactes, sans section inventée
 - [ ] pas de `NON TROUVÉ` si une conclusion est formulée
@@ -191,6 +196,10 @@ Si KO :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : pre-regles `mode declare` et `perimetre minimal` a la place du
+
+  fallback API ; etape D realignee sur les 2 modes.
 
 - v1.5 (10-03-2026) : ajoute le contrôle de cohérence `source -> arc` dans l
 

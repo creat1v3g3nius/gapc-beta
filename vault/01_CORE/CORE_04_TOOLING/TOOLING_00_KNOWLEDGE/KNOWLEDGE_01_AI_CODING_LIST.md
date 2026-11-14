@@ -2,10 +2,10 @@
 id: KNOWLEDGE_01_AI_CODING_LIST
 type: TOOLING
 title: AiCodingList
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 01-03-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [tooling, knowledge, ai-coding, core]
 depends_on: []
 arc: CORE
@@ -36,6 +36,8 @@ Référentiel d’outils et de patterns pour coder avec assistance IA en respect
 
 - **GitHub Copilot / Copilot Chat** — complétion + chat contextuel.
 - **OpenAI/Codex (agent)** — génération patch/diff (à cadrer strictement).
+- **Claude Code (agent)** — lecture du repo, patchs et exécution (à cadrer
+  par fichier d instructions + modes).
 - **Continue / Tabby** — alternatives self-host / open-source (selon contexte).
 
 ## 3) Qualité & lint (à coupler avec IA)
@@ -84,5 +86,7 @@ Référentiel d’outils et de patterns pour coder avec assistance IA en respect
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : ajoute Claude Code aux assistants in-editor.
 
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

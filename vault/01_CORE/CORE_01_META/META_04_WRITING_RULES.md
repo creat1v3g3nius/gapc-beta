@@ -2,7 +2,7 @@
 id: META_04_WRITING_RULES
 type: META
 title: WritingFilesRulesLLM
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 28-02-2026
 updated: 14-11-2026
@@ -30,7 +30,7 @@ Un format n'existe que s'il a une utilité.
 ### 1.2 Pourquoi
 
 - lisible, diffable (Git), compatible Obsidian
-- indexable pour AnythingLLM
+- lisible et citable par l agent LLM (IDs, sections courtes)
 
 ### 1.3 Règles minimalistes de structure
 
@@ -169,6 +169,8 @@ flowchart TD
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : retire la reference a AnythingLLM (lisible par l agent LLM).
 
 - v1.3 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
 

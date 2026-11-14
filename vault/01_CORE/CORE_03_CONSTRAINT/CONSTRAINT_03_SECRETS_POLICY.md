@@ -2,10 +2,10 @@
 id: CONSTRAINT_03_SECRETS_POLICY
 type: CONSTRAINT
 title: SecretsPolicy
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 01-03-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [limites, secrets-policy, llm, discipline, core]
 depends_on: [CONSTRAINT_00_GUARD_RAILS, CONSTRAINT_01_RAG_SCOPE_POLICY, META_00_HANDBOOK, META_01_OUTPUT_PROTOCOL, DISCIPLINE_00_RAG_PROFILE, DISCIPLINE_02_RAG_QG]
 arc: CORE
@@ -65,11 +65,13 @@ Un artefact est **KO** si :
 
 Cette contrainte prime sur toute priorité produit (toujours P0).
 
-Si un fallback API externe est utilisé :
+Si l agent LLM est un service hébergé (tout ce qu il lit sort du poste) :
 
-- aucun secret ou PII ne doit être transmis,
-- seul l’extrait strictement utile peut être envoyé,
-- l’envoi d’un corpus complet est interdit si un extrait suffit.
+- aucun secret ou PII ne doit lui être lu ni transmis,
+- son périmètre de lecture est limité aux sources des actifs,
+- aucun fichier client brut ne lui est soumis (documents texte pseudonymisés
+
+  uniquement).
 
 ---
 
@@ -104,6 +106,10 @@ peuvent pas :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : remplace la regle fallback API par la regle agent heberge
+
+  (perimetre minimal, aucun fichier client brut).
 
 - v1.4 (10-03-2026) : ajoute la contrainte de minimisation et d’exclusion des
 

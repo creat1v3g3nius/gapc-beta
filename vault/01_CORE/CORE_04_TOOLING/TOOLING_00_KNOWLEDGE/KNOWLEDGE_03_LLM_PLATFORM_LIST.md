@@ -2,10 +2,10 @@
 id: KNOWLEDGE_03_LLM_PLATFORM_LIST
 type: TOOLING
 title: LlmPlatformList
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 01-03-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [tooling, knowledge, llm-plateform, core]
 depends_on: []
 arc: CORE
@@ -30,12 +30,16 @@ sans procédure.
 
 - **Copilot Chat / Agents** — in-editor, rapides pour patchs.
 - **Codex / assistants VS Code** — à cadrer via prompt system.
+- **Claude Code** — agent IDE/CLI qui lit le repo et peut l exécuter ; cadré
+  par un fichier d instructions à la racine et un mode lecture seule (plan).
 
 ## 3) Critères de choix (P0)
 
-- **Workspaces / scopes** : RulesOnly vs PackageScoped vs ProductScoped.
+- **Workspaces / scopes** : RulesOnly vs PackageScoped vs ProductScoped (par
+  ingestion, ou par périmètre de lecture déclaré pour un agent IDE).
 - **Citations / sources** : capacité à montrer “d’où vient la réponse”.
-- **Contrôle** : read-only, pas d’actions non demandées.
+- **Contrôle** : mode lecture seule disponible, pas d’actions non demandées.
+- **Hébergement** : local ou service externe (impact confidentialité).
 - **Sécurité** : gestion des permissions, logs, no-secrets.
 - **Export** : possibilité de tracer (notes, prompts, résultats).
 
@@ -62,5 +66,9 @@ sans procédure.
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : ajoute Claude Code et les criteres perimetre de lecture /
+
+  hebergement.
 
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

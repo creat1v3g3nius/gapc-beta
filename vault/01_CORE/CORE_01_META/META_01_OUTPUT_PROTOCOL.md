@@ -2,10 +2,10 @@
 id: META_01_OUTPUT_PROTOCOL
 type: META
 title: OutputProtocolMentorLLM
-version: v1.5
+version: v1.6
 status: FROZEN
 created: 28-02-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [governance, output-protocol, llm, meta, core]
 depends_on:
   - META_03_NAMING_CONVENTIONS
@@ -15,16 +15,17 @@ arc: CORE
 scope: vault/01_CORE/CORE_01_META
 ---
 
-# META_01 - Output Protocol du Mentor LLM
+# META_01 - Output Protocol de l Agent LLM
 
-Ce document permet de standardiser **toutes les réponses** du mentor LLM
-(AnythingLLM / agent) afin qu’elles soient :
+Ce document permet de standardiser **toutes les réponses** de l agent LLM
+(mode MENTOR par défaut, mode EXECUTION selon `META_00_HANDBOOK`) afin
+qu’elles soient :
 
 - **actionnables** et **anti-vague**,
 - **sourcées** (fichiers cités),
 - **compatibles** avec l’architecture GAPC (CORE → PACKAGE → PRODUCT → SYSTEM),
 - **no-secrets**,
-- adaptées au rôle **mentor read-only** (le mentor propose, l’humain décide).
+- adaptées au rôle **non décisionnel** de l agent (il propose, l’humain décide).
 
 ---
 
@@ -38,9 +39,9 @@ si disponibles).
 
 1. **NON TROUVÉ** (anti-hallucination)
 
-   Si l’info n’existe pas dans le corpus fourni/ingéré → répondre exactement :
+   Si l’info n’existe pas dans les sources autorisées → répondre exactement :
 `NON TROUVÉ`, puis proposer **1 action** (créer/compléter un fichier, ADR-lite,
-ingestion).
+élargir le périmètre de lecture).
 
    Interdit :
 
@@ -65,9 +66,9 @@ procédure d’isolation.
 passe dans repo/Vault/logs.
    Pattern attendu : `.env` ignoré + `.env.example` sans secrets.
 
-1. **Mentor read-only / non décisionnel**
+1. **Agent non décisionnel (read-only en mode MENTOR)**
 
-   Le mentor ne “décide” pas.
+   L agent ne “décide” pas ; en mode MENTOR il ne modifie aucun fichier.
    Si une décision structurante apparaît → proposer une **ADR-lite** (statut
 PROPOSED) + impacts.
 
@@ -89,7 +90,7 @@ frontmatter réel du fichier.
    Exemple valide :
 
     - `META_00_HANDBOOK.md (CORE)`
-    - `LLM_01_INGESTION_PROTOCOL.md (SYSTEM)`
+    - `SCRIPT_07_INSTRUCTIONS_CLAUDE.md (SYSTEM)`
 
 ---
 
@@ -139,19 +140,28 @@ Obligatoire :
 
 ### 3.2 Si la demande est “code / scripts / exécution”
 
-Le mentor doit produire :
+En mode **MENTOR**, l agent doit produire :
 
-- une redirection explicite vers **Codex** pour l’implémentation,
 - les sources applicables,
 - les contraintes,
 - les risques,
-- un next step unique
+- un next step unique, avec proposition de passer en mode EXECUTION
 
-Interdit :
+Interdit en mode MENTOR :
 
-- produire un patch d’implémentation
+- appliquer un patch
 - exécuter des scripts
-- auto-commit
+
+En mode **EXECUTION**, l agent doit produire :
+
+- les fichiers touchés et le changement prévu, avant application
+- le patch appliqué (1 intention)
+- le résultat des contrôles SYSTEM
+- un message de commit proposé `type(scope): action`
+
+Interdit dans les deux modes :
+
+- auto-commit ou auto-push
 - patch multi-intentions
 
 ### 3.3 Si la demande est “audit / check”
@@ -167,7 +177,7 @@ Le mentor doit produire :
 Le mentor doit produire, pour chaque tâche :
 
 - la tâche
-- le rôle nominal : `AnythingLLM local | Codex | API externe fallback`
+- le rôle nominal : `Agent MENTOR | Agent EXECUTION | Humain (décision)`
 - une justification courte
 - les sources utilisées
 
@@ -196,9 +206,9 @@ Règle :
 
 Exemple minimal valide :
 
-- `Sources utilisées : META_00_HANDBOOK.md (CORE), LLM_01_INGESTION_PROTOCOL.md
+- `Sources utilisées : META_00_HANDBOOK.md (CORE),
 
-  (SYSTEM)`
+  SCRIPT_07_INSTRUCTIONS_CLAUDE.md (SYSTEM)`
 
 ---
 
@@ -234,6 +244,10 @@ Si absent, le mentor liste ses hypothèses (max 5) avant de répondre.
 ---
 
 ## Changelog
+
+- v1.6 (14-11-2026) : formats de sortie par mode (MENTOR / EXECUTION), matrice de roles
+
+  `Agent MENTOR | Agent EXECUTION | Humain`, exemples SYSTEM realignes.
 
 - v1.5 (10-03-2026) : impose l exactitude de l arc quand une source est annotée
 
