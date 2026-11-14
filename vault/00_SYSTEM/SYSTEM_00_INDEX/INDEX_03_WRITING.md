@@ -2,10 +2,10 @@
 id: INDEX_03_WRITING
 type: INDEX
 title: WritingFilesFormats
-version: v1.1
+version: v1.2
 status: FROZEN
 created: 27-02-2026
-updated: 02-03-2026
+updated: 14-11-2026
 tags: [repo, writing-formats, index, system]
 depends_on: [INDEX_01_ARCHITECTURE]
 arc: SYSTEM
@@ -57,7 +57,7 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 - `id` (unique)
 - `type`
 
-`(INDEX|WORKFLOW|GIT|LLM|BACKLOG|PATCH|META|FIELD|RESTRAINT|`
+`(INDEX|WORKFLOW|GIT|LLM|BACKLOG|PATCH|META|DISCIPLINE|CONSTRAINT|`
 `TOOLING|RUBRIC|SOT...)`
   -> correspond aux familles d'un arc.
 
@@ -174,6 +174,10 @@ flowchart TD
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.2 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
+
+  `DISCIPLINE` / `CONSTRAINT` (familles reelles du vault).
 
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter/id/scope.
 - v1.0 : READY_TO_FREEZE.

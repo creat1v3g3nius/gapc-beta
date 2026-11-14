@@ -2,10 +2,10 @@
 id: INDEX_04_OBSIDIAN
 type: INDEX
 title: ObsidianConfig
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 27-02-2026
-updated: 13-03-2026
+updated: 14-11-2026
 tags: [repo, obsidian-knowledge, index, system]
 depends_on:
   - INDEX_01_ARCHITECTURE
@@ -72,7 +72,7 @@ Le Vault est structuré en arcs :
 
 Chaque fichier appartient à une **famille**
 (INDEX/WORKFLOW/GIT/SCRIPT/LLM/BACKLOG/PATCH/FAQ/META/DISCIPLINE/
-RESTRAINT/TOOLING…).
+CONSTRAINT/TOOLING…).
 
 La famille doit être cohérente avec le dossier parent.
 
@@ -297,6 +297,10 @@ Avant de passer un doc en READY_TO_FREEZE :
 ---
 
 ## Changelog
+
+- v1.3 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
+
+  `DISCIPLINE` / `CONSTRAINT` (familles reelles du vault).
 
 - v1.2 (13-03-2026) : aligne la navigation Obsidian sur `99_CACHE`, `README.md`
 

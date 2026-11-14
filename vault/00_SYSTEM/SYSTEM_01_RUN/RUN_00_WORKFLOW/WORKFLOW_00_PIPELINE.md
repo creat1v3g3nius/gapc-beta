@@ -2,7 +2,7 @@
 id: WORKFLOW_00_PIPELINE
 type: WORKFLOW
 title: PipelineExecutionWorkflow
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 27-02-2026
 updated: 14-11-2026
@@ -67,7 +67,7 @@ avec traçabilité, reproductibilité, et discipline **Doc + Code**.
 
 ## 2. Source of truth
 
-- Vérité stable : Vault (META/FIELD/RESTRAINT)
+- Vérité stable : Vault (META/DISCIPLINE/CONSTRAINT)
 - Vérité secondaire (TOOLING/PACKAGE) : fichiers KNOWLEDGE ET SOT
 - Exécution : repo Git (VS Code + Git)
 - Aide au raisonnement : AnythingLLM (lecture/extraction), jamais décision
@@ -141,6 +141,10 @@ Avant merge/main :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.5 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
+
+  `DISCIPLINE` / `CONSTRAINT` (familles reelles du vault).
 
 - v1.4 (14-11-2026) : aligne `scope` sur le dossier reel (`vault/00_SYSTEM/SYSTEM_01_RUN/RUN_00_WORKFLOW`).
 - v1.3 (13-03-2026) : ajoute la doctrine `WORKFLOW` vs `SETUP_PRODUCT` et
