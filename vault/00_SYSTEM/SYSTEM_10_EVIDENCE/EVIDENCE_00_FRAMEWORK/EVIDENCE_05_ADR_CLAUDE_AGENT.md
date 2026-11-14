@@ -2,8 +2,8 @@
 id: EVIDENCE_05_ADR_CLAUDE_AGENT
 type: EVIDENCE
 title: AdrClaudeAgent
-version: v1.0
-status: DRAFT
+version: v1.1
+status: FROZEN
 created: 14-11-2026
 updated: 14-11-2026
 tags: [system, evidence, adr, llm, agent, claude]
@@ -124,6 +124,12 @@ scope: vault/00_SYSTEM/SYSTEM_10_EVIDENCE/EVIDENCE_00_FRAMEWORK
 
 1. PRODUCT : realignement ou archivage des preuves AnythingLLM du sample.
 
+## Amendements (FROZEN)
+
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+
+- v1.1 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.0 (14-11-2026) : decision Claude Code agent unique en 2 modes.

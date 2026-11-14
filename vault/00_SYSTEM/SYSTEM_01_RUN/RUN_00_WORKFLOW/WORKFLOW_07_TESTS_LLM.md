@@ -2,8 +2,8 @@
 id: WORKFLOW_07_TESTS_LLM
 type: WORKFLOW
 title: ListTestsLLM
-version: v2.0
-status: DRAFT
+version: v2.1
+status: FROZEN
 created: 11-03-2026
 updated: 14-11-2026
 tags: [workflow, tests-llm, run, system, agent, mentor]
@@ -134,7 +134,13 @@ Verdict: QUALIFIE | KO
 
 La trace est conservee dans le product qui porte la qualification.
 
+## Amendements (FROZEN)
+
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+
+- v2.1 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v2.0 (14-11-2026) : reecriture pour l agent Claude en mode MENTOR (serie
 

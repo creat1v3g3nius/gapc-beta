@@ -2,8 +2,8 @@
 id: LLM_04_AGENT_CLAUDE
 type: LLM
 title: AgentClaudeSetup
-version: v1.0
-status: DRAFT
+version: v1.1
+status: FROZEN
 created: 14-11-2026
 updated: 14-11-2026
 tags: [system, llm, agent, claude, security]
@@ -106,6 +106,12 @@ Remplace `LLM_00_RAG_PRINCIPES`, `LLM_01_INGESTION_PROTOCOL`,
 
   `SCRIPT_07_INSTRUCTIONS_CLAUDE` ou d un document `META_*` du CORE.
 
+## Amendements (FROZEN)
+
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+
+- v1.1 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.0 (14-11-2026) : creation du dispositif Claude Code (remplace LLM_00..03).

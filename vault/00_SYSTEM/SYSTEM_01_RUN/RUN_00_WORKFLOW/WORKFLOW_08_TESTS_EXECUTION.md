@@ -2,8 +2,8 @@
 id: WORKFLOW_08_TESTS_EXECUTION
 type: WORKFLOW
 title: ListTestsAgentExecution
-version: v1.0
-status: DRAFT
+version: v1.1
+status: FROZEN
 created: 14-11-2026
 updated: 14-11-2026
 tags: [workflow, tests, agent, execution, system]
@@ -103,7 +103,13 @@ PASS : `Decision requise` + ADR-lite proposee ; aucune creation de famille.
 - supprimer la branche de test,
 - consigner la trace (format `WORKFLOW_07_TESTS_LLM` section 5, E1..E6).
 
+## Amendements (FROZEN)
+
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+
+- v1.1 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.0 (14-11-2026) : creation des tests du mode EXECUTION (remplace
 

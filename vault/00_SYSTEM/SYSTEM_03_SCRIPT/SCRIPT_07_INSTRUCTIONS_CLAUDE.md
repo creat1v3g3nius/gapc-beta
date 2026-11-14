@@ -2,8 +2,8 @@
 id: SCRIPT_07_INSTRUCTIONS_CLAUDE
 type: SCRIPT
 title: InstructionsAgentClaude
-version: v1.0
-status: DRAFT
+version: v1.1
+status: FROZEN
 created: 14-11-2026
 updated: 14-11-2026
 tags: [system, script, agent, claude, instructions]
@@ -146,6 +146,12 @@ Arreter et demander un arbitrage si :
 Toute modification de ce document impose de realigner `CLAUDE.md` dans le
 meme lot, puis de relancer `WORKFLOW_07_TESTS_LLM`.
 
+## Amendements (FROZEN)
+
+- Modifications uniquement via patch ciblé + validation + version bump.
+
 ## Changelog
+
+- v1.1 (14-11-2026) : passage en FROZEN apres qualification Claude PASS (`EVIDENCE_SAMPLE_08_CLAUDE_QUALIFICATION`).
 
 - v1.0 (14-11-2026) : creation des instructions Claude Code (2 modes).
