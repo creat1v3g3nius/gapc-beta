@@ -2,10 +2,10 @@
 id: GAPC_META_00_PACKAGE_PROFILE
 type: META
 title: GapcPackageProfile
-version: v1.5
+version: v1.6
 status: FROZEN
 created: 01-03-2026
-updated: 10-03-2026
+updated: 14-11-2026
 tags: [package, gapc, meta, profile, product-ready]
 depends_on:
   - META_00_HANDBOOK
@@ -72,7 +72,8 @@ Le package ne contient pas :
 - no-secrets / no-PII
 - actifs uniques (package/product)
 - `NON TROUVÉ` (anti-invention)
-- API externe en fallback ciblé, explicite, minimisé, sans secret
+- agent LLM en 2 modes (MENTOR read-only / EXECUTION diff-first), perimetre
+  minimal, sans secret
 - 1 intention = 1 CO = 1 commit
 
 ---
@@ -87,7 +88,7 @@ Règle explicite :
 
 - `PACKAGE_00_GAPC` étend `CORE` mais ne remplace ni la hiérarchie d autorité,
 
-  ni la séparation des rôles `AnythingLLM local / Codex / API externe fallback`.
+  ni la séparation des rôles `Agent MENTOR / Agent EXECUTION / Humain`.
 
 - toute comparaison `CORE vs PACKAGE_00_GAPC` doit donc conclure sur l extension
 
@@ -111,6 +112,10 @@ Règle explicite :
 Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.6 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.5 (10-03-2026) : explicite que GAPC étend CORE sans remplacer ni la
 

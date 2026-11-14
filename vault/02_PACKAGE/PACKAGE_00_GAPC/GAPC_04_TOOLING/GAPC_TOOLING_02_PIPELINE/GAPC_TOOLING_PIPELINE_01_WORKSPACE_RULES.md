@@ -2,10 +2,10 @@
 id: GAPC_TOOLING_PIPELINE_01_WORKSPACE_RULES
 type: TOOLING
 title: GapcWorkspaceRules
-version: v1.8
+version: v1.9
 status: FROZEN
 created: 01-03-2026
-updated: 12-03-2026
+updated: 14-11-2026
 tags: [package, gapc, tooling, pipeline, workspace, rag]
 depends_on:
   - PIPELINE_00_PRODUCT
@@ -86,12 +86,12 @@ Format attendu si le mentor restitue cet ordre :
 
 Clarification de scope :
 
-- pour `WS_01 PackageScoped`, conserver `PRODUCT actif`,
-- pour `WS_02 ProductScoped`, appliquer la regle `PRODUCT` plus specifique et
+- en session `PackageScoped` (package actif, product NA), conserver `PRODUCT actif`,
+- en session `ProductScoped` (product actif declare), appliquer la regle
 
-  restituer `docs product actifs`,
+  `PRODUCT` plus specifique et restituer `docs product actifs`,
 
-- ne pas reutiliser le format `WS_01` dans un workspace produit.
+- ne pas reutiliser le format `PackageScoped` dans une session produit.
 
 Format de sortie attendu pour une question simple sur les priorités de sources :
 
@@ -138,7 +138,7 @@ Interdit :
 
 - sources obligatoires (IDs) ou `NON TROUVÉ`
 - no-secrets/no-PII
-- fallback API éventuel : explicite, justifié, minimisé, sans secret/PII (hérité
+- agent heberge : perimetre de lecture minimal, sans secret/PII (herite
 
   CORE)
 
@@ -153,9 +153,9 @@ Pour une comparaison `CORE vs PACKAGE` :
 Pour une matrice de rôles :
 
 - nommer le rôle, pas le fichier
-- `checklist documentaire` => `AnythingLLM local`
-- `patch / exécution / tests` => `Codex`
-- `API externe` => `API externe fallback`
+- `checklist documentaire` => `Agent MENTOR`
+- `patch / exécution / tests` => `Agent EXECUTION`
+- `nouvelle regle / arbitrage` => `Humain (décision)`
 
 Format attendu :
 
@@ -173,8 +173,8 @@ Interdit :
 Exemple minimal valide :
 
 - `Tâche : produire une checklist documentaire GAPC`
-- `Rôle nominal : AnythingLLM local`
-- `Justification : la checklist documentaire relève du mentor documentaire dans
+- `Rôle nominal : Agent MENTOR`
+- `Justification : la checklist documentaire relève du mode MENTOR dans
 
   le périmètre GAPC.`
 
@@ -193,6 +193,10 @@ Pour un refus de package non actif :
 ---
 
 ## Changelog
+
+- v1.9 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.8 (12-03-2026) : clarifie la difference de sortie entre `WS_01` (`PRODUCT
 

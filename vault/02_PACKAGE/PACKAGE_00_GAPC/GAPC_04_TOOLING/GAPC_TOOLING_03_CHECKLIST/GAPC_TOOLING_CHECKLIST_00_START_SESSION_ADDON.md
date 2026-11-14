@@ -2,10 +2,10 @@
 id: GAPC_TOOLING_CHECKLIST_00_START_SESSION_ADDON
 type: TOOLING
 title: GapcStartSessionAddon
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [package, gapc, tooling, checklist, addon, start, p1]
 depends_on:
   - CONSTRAINT_00_GUARD_RAILS
@@ -35,7 +35,7 @@ Compléter `CHECKLIST_01_START_SESSION` avec des contrôles **spécifiques GAPC*
 - [ ] Active package = `PACKAGE_00_GAPC` (explicite)
 - [ ] Active product = `PRODUCT_XX` (ou NA) explicitement
 - [ ] Rubrics GAPC sélectionnées : Scope / Risk / Gel (+ RAG si utilisé)
-- [ ] Workspace scope choisi : RulesOnly → GAPC+Product (pas “all vault”)
+- [ ] Périmètre de session déclaré : RulesOnly → GAPC → GAPC+Product (jamais plusieurs packages)
 - [ ] Preuve attendue : evidence pack GAPC si objectif = GAPC_READY_TO_FREEZE
 - [ ] Si mentor utilisé : profil + actifs uniques rappelés (GAPC RAGProfile)
 
@@ -50,6 +50,10 @@ Compléter `CHECKLIST_01_START_SESSION` avec des contrôles **spécifiques GAPC*
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.2 (04-03-2026) : correction `scope` du frontmatter.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation

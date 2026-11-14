@@ -2,10 +2,10 @@
 id: GAPC_DISCIPLINE_00_RAG_PROFILE
 type: DISCIPLINE
 title: GapcRagProfile
-version: v1.8
+version: v1.9
 status: FROZEN
 created: 01-03-2026
-updated: 12-03-2026
+updated: 14-11-2026
 tags: [package, gapc, discipline, rag, profile, product-ready, no-secrets]
 depends_on:
   - DISCIPLINE_00_RAG_PROFILE
@@ -96,12 +96,12 @@ actif, il doit restituer exactement l ordre suivant :
 
 Clarification de scope :
 
-- en `WS_01 PackageScoped`, la sortie attendue reste `PRODUCT actif`,
-- en `WS_02 ProductScoped`, le niveau `PRODUCT` specialise prevaut et la sortie
+- en session `PackageScoped`, la sortie attendue reste `PRODUCT actif`,
+- en session `ProductScoped`, le niveau `PRODUCT` specialise prevaut et la
 
-  attendue devient `docs product actifs`,
+  sortie attendue devient `docs product actifs`,
 
-- un workspace produit ne doit pas recycler le libelle `PRODUCT actif` s il
+- une session produit ne doit pas recycler le libelle `PRODUCT actif` s il
 
   existe une regle `PRODUCT` plus specifique.
 
@@ -177,7 +177,7 @@ But : répondre sur l’outillage (TPL/PIPELINE/CHECKLIST/EXTENSION/KNOWLEDGE)
 appliqué à GAPC.
 Corpus attendu :
 
-- GAPC_R0 + CORE/TOOLING (si pas déjà dans CORE ingéré) + (option) docs product.
+- GAPC_R0 + CORE/TOOLING (si pas déjà lu) + (option) docs product.
 
 ---
 
@@ -200,14 +200,14 @@ Corpus attendu :
 
 Le package GAPC ne modifie pas la répartition transverse des rôles :
 
-- `AnythingLLM local` : checklist, synthèse, audit et comparaison documentaire
-- `Codex` : code, patch, exécution, tests
-- `API externe fallback` : usage documentaire explicite et non nominal
+- `Agent MENTOR` : checklist, synthèse, audit et comparaison documentaire
+- `Agent EXECUTION` : code, patch, exécution, tests
+- `Humain (décision)` : nouvelle règle, arbitrage, validation
 
 Interdit :
 
-- attribuer une checklist documentaire à `Codex`,
-- rediriger l usage d une API externe fallback vers `Codex`,
+- attribuer une checklist documentaire à `Agent EXECUTION`,
+- attribuer une décision à l agent,
 - remplacer un rôle par un fichier source au lieu de nommer le rôle.
 
 ### 4.2 Comparaison CORE vs PACKAGE
@@ -303,6 +303,10 @@ Interdit :
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.9 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.8 (12-03-2026) : clarifie la bascule `WS_01 = PRODUCT actif` vers `WS_02 =
 

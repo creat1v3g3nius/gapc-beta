@@ -2,10 +2,10 @@
 id: GAPC_TOOLING_KNOWLEDGE_00_ALLOWED_TOOLS
 type: TOOLING
 title: GapcAllowedTools
-version: v1.3
+version: v1.4
 status: FROZEN
 created: 01-03-2026
-updated: 09-03-2026
+updated: 14-11-2026
 tags: [package, gapc, tooling, knowledge, allowlist, p1]
 depends_on:
   - CONSTRAINT_00_GUARD_RAILS
@@ -37,23 +37,23 @@ Définir une **allowlist** d’outils autorisés/recommandés pour exécuter GAP
 
 - VS Code
 - Git (CLI)
-- Cursor (si workflow diff-first)
+- Claude Code en mode EXECUTION (diff-first, approbations actives)
 
 ### Interdits RAG (par défaut)
 
 - auto-commit / auto-push
 - outils qui imposent l’écriture automatique dans le repo
 
-## B) Mentor / RAG
+## B) Agent LLM (mode MENTOR)
 
 ### Autorisés (selon contexte)
 
-- AnythingLLM (workspaces séparés, read-only)
+- Claude Code en Plan mode (read-only), perimetre declare
 
 ### Interdits (par défaut)
 
-- ingestion “all vault”
-- workspaces multi-packages
+- lecture de plusieurs packages dans une session
+- acceptation automatique des modifications
 
 ## C) Générateurs média
 
@@ -71,6 +71,10 @@ Définir une **allowlist** d’outils autorisés/recommandés pour exécuter GAP
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.4 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.3 (09-03-2026) : remplace la dependance deprecated `EXTENSION_00_INDEX` par
 

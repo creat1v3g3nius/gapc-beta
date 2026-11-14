@@ -2,10 +2,10 @@
 id: GAPC_DISCIPLINE_04_RISK_REGISTER
 type: DISCIPLINE
 title: GapcRiskRegister
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 01-03-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [package, gapc, risk, register, rubric, product-ready, no-secrets]
 depends_on:
   - DISCIPLINE_07_RISK_REGISTER
@@ -95,7 +95,7 @@ Catégories recommandées (tu peux en ajouter, pas en retirer côté CORE) :
 ### E) Security
 
 - Secrets/PII dans docs, logs, exemples
-- Permissions AnythingLLM non read-only
+- Agent qui écrit hors mode EXECUTION ou sans approbation
 
 ---
 
@@ -201,6 +201,10 @@ Liens: (CO/ADR/doc/issue/commit)
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : roles realignes sur l agent Claude (`Agent MENTOR / Agent
+
+  EXECUTION / Humain`), references AnythingLLM / Codex / API fallback retirees.
 
 - v1.2 (04-03-2026) : correction du `scope` du frontmatter.
 - v1.1 (01-03-2026) : passage en FROZEN (status+version bump) + amendements
