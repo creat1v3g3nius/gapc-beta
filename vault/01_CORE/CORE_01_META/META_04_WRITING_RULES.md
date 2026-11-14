@@ -2,10 +2,10 @@
 id: META_04_WRITING_RULES
 type: META
 title: WritingFilesRulesLLM
-version: v1.2
+version: v1.3
 status: FROZEN
 created: 28-02-2026
-updated: 04-03-2026
+updated: 14-11-2026
 tags: [governance, writing-rules, llm, meta, core]
 depends_on: [META_03_NAMING_CONVENTIONS, META_05_FRONTMATTER]
 arc: CORE
@@ -55,7 +55,7 @@ Lorsqu'un champ ne peut être rempli - pas nécessaire : [x].
 1. Obligatoires
 
 - `id` (unique)
-- `type` (INDEX|WORKFLOW|GIT|LLM|BACKLOG|PATCH|META|FIELD|RESTRAINT|TOOLING...)
+- `type` (INDEX|WORKFLOW|GIT|LLM|BACKLOG|PATCH|META|DISCIPLINE|CONSTRAINT|TOOLING...)
 
   -> correspond aux familles d'un arc.
 
@@ -169,6 +169,10 @@ flowchart TD
 - Modifications uniquement via patch ciblé + validation + version bump.
 
 ## Changelog
+
+- v1.3 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
+
+  `DISCIPLINE` / `CONSTRAINT` (familles reelles du vault).
 
 - v1.2 (04-03-2026) : corrections frontmatter + heading.
 - v1.1 (02-03-2026) : passage en FROZEN + normalisation frontmatter.

@@ -2,10 +2,10 @@
 id: META_03_NAMING_CONVENTIONS
 type: META
 title: NamingConventionsFiles
-version: v1.4
+version: v1.5
 status: FROZEN
 created: 28-02-2026
-updated: 15-03-2026
+updated: 14-11-2026
 tags: [governance, naming-conventions, llm, meta, core]
 depends_on: []
 arc: CORE
@@ -15,7 +15,7 @@ scope: vault/01_CORE/CORE_01_META
 # META_03 - Formats et Règles standard de nomination des fichiers
 
 Chaque fichier fait partie d'une famille (**INDEX / EXECUTION / GIT / SCRIPTS /
-LLM / BACKLOG / PATCH / FAQ / META / FIELD / RESTRAINT / TOOLING...**) existant
+LLM / BACKLOG / PATCH / FAQ / META / DISCIPLINE / CONSTRAINT / TOOLING...**) existant
 dans une arc du système (**SYSTEM / CORE / PACKAGE / PRODUCT / CACHE**).
 Chaque arc est composé des familles nécessaires à son fonctionnement, leur
 présence n'est pas systématique et dépend de la fonction de l'arc.
@@ -35,7 +35,7 @@ présence n'est pas systématique et dépend de la fonction de l'arc.
 1. **Set de familles figé** :
 
     (**INDEX / EXECUTION / GIT / SCRIPTS / LLM / BACKLOG / PATCH / FAQ / META /
-FIELD / RESTRAINT / TOOLING**)
+DISCIPLINE / CONSTRAINT / TOOLING**)
 
     - Toute **nouvelle famille** nécessite une ADR.
 1. **Alignement obligatoire** :
@@ -55,6 +55,10 @@ FIELD / RESTRAINT / TOOLING**)
         - H1 : `# GAPC_TOOLING_KNOWLEDGE_00 - ALLOWED_TOOLS`
 
 ## Changelog
+
+- v1.5 (14-11-2026) : remplace les familles legacy `FIELD` / `RESTRAINT` par
+
+  `DISCIPLINE` / `CONSTRAINT` (familles reelles du vault).
 
 - v1.4 (15-03-2026) : explicite le format de nommage des fichiers et IDs de
 
